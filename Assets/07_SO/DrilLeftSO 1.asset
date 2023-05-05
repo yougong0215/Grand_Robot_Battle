@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: DrilLeftSO 1
+  m_EditorClassIdentifier: 
+  Type: 4
+  PartAsset: {fileID: 9062173955027456951, guid: fb56a50322c84c643b76d1f2980f5a11,
+    type: 3}
+  Sprite: {fileID: 21300000, guid: 6f81e0c8e210b414e92b6c77e5468677, type: 3}
+  Statues:
+    HP: 0
+    ATK: 0
+    DEF: 0
+    SPEED: 0
+  Explain: AASDF
+  RepalceMesh: 1
+  EquipPart: 0

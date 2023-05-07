@@ -5,11 +5,11 @@ using TMPro;
 
 public class PartUIInfo : MonoBehaviour
 {
-    UIRobotSetting _robot;
+    RobotSettingAndSOList _robot;
 
     private void Awake()
     {
-        _robot = GameObject.Find("MyRobot").GetComponent<UIRobotSetting>();
+        _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
     }
 
     public void Seleted(PartSO _partSO = null, PartEnum part = PartEnum.None)

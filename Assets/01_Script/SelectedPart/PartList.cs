@@ -77,19 +77,18 @@ public class PartList : MonoBehaviour
                 break;
             case PartEnum.RightArm:
                 return RightArm;
-                break;
+
             case PartEnum.LeftArm:
                 return LeftArm;
-                break;
+
             case PartEnum.Legs:
                 return Leg;
-                break;
+
             case PartEnum.Head:
                 return Head;
-                break;
+
             case PartEnum.Body:
                 return Body;
-                break;
         }
         return null;
 

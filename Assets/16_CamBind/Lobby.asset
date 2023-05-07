@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36baaa8bdcb9d8b49b9199833965d2c3, type: 3}
+  m_Name: Lobby
+  m_EditorClassIdentifier: 
+  m_CustomBlends:
+  - m_From: LobbyCam
+    m_To: RobotMakeCam
+    m_Blend:
+      m_Style: 7
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.054173157
+          inSlope: -0.23846781
+          outSlope: -0.23846781
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.099521644
+          value: 0.03044045
+          inSlope: -1.3639699
+          outSlope: -1.3639699
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.050375693
+        - serializedVersion: 3
+          time: 0.40431717
+          value: 0.6215325
+          inSlope: 5.139847
+          outSlope: 5.139847
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.1256951
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.44905603
+          value: 0.8212733
+          inSlope: 5.6656547
+          outSlope: 5.6656547
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.5044961
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.5201191
+          value: 0.96204424
+          inSlope: 0.005246172
+          outSlope: 0.005246172
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.087363586
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0.07909412
+          outSlope: 0.07909412
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - m_From: RobotMakeCam
+    m_To: LobbyCam
+    m_Blend:
+      m_Style: 1
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0

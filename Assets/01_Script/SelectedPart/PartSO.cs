@@ -35,6 +35,7 @@ public class PartSO : ScriptableObject
     [SerializeField] [TextArea] public string Explain;
     [SerializeField] public bool RepalceMesh = false;
     [SerializeField] public bool EquipPart = false;
+    [SerializeField] public Sprite SkillImage;
     [SerializeField] public SkillScriptBase Skill;
     
 }

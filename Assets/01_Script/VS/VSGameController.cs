@@ -30,26 +30,51 @@ public class VSGameController : MonoBehaviour
         _ins = this;
     }
 
-    void Start()
+    IEnumerator Start()
     {
         GameObject[] t = GameObject.FindGameObjectsWithTag("Unit");
 
-        foreach (GameObject o in t)
-        {
-            o.transform.parent = transform;
-            o.GetComponent<RobotSettingAndSOList>().VSSet();
+        //Debug.LogWarning(t.Count());
 
-        }
-
-        for (int i = 0; i < transform.childCount; i++)
+        for(int i=0; i < t.Length; i++)
         {
+            t[i].transform.parent = transform;
+            t[i].GetComponent<RobotSettingAndSOList>().VSSet();
+
+            yield return null;
             _players.Add(transform.GetChild(i).GetComponent<VSPlayer>());
+            _players[i].transform.localScale = new Vector3(1, 1, 1);
+        }
+        int red = 0, blue = 0;
+
+        for (int i = 0; i < _players.Count; i++)
+        {
+            yield return null;
+            
             _players[i].GameNumber = i;
+
+            
+
+            if(_players[i].team == Team.Red)
+            {
+                _players[i].transform.parent = RedTeamPos[red];
+                red++;
+            }
+            else
+            {
+                _players[i].transform.parent = BlueTeamPos[blue];
+                blue++;
+            }
+
+            _players[i].transform.localPosition = Vector3.zero;
+
+            _players[i].transform.localEulerAngles = Vector3.zero;
+            _players[i].BattleInit();
         }
 
         StartCoroutine(Sycle());
     }
-
+    
     public int TeamCount(Team t)
     {
         if(t == Team.Red)
@@ -62,9 +87,22 @@ public class VSGameController : MonoBehaviour
         }
     }
 
+    public int TeamSelect(Team t)
+    {
+        if (t == Team.Red)
+        {
+            return TeamBluePlayer[0].GameNumber;
+        }
+        else
+        {
+            return TeamRedPlayer[0].GameNumber;
+        }
+    }
+
     IEnumerator Sycle()
     {
-
+        TeamBluePlayer.Clear();
+        TeamRedPlayer.Clear();
 
 
 
@@ -91,6 +129,8 @@ public class VSGameController : MonoBehaviour
         }
 
         PlayerSpeedSort();
+
+
         int selected = 0;
 
 
@@ -102,11 +142,10 @@ public class VSGameController : MonoBehaviour
                 if (_players[j].GameNumber == _players[i].GetEnemyNum())
                 {
                     selected = j;
+                    yield return StartCoroutine(_players[i].DoSkill(_players[selected]));
                     break;
                 }
             }
-
-            yield return StartCoroutine(_players[i].DoSkill(_players[selected]));
         }
 
 
@@ -116,6 +155,9 @@ public class VSGameController : MonoBehaviour
         for(int i =0; i < _players.Count; i++)
         {
             _players[i].OnDead(ref Red, ref Blue);
+            Debug.Log($"{_players[i].name} : {_players[i].CurrentStat.HP}");
+            _players[i].SetEnemyNum(-1);
+            _players[i].SetSkillNum(-1);
         }
 
         if(Red != 0 && Blue != 0)

@@ -34,8 +34,8 @@ public class VSPlayer : MonoBehaviour
     [SerializeField] public int GameNumber = -1;
     [SerializeField] GameObject SelectedSkill;
 
-    [SerializeField] bool AI;
-    [SerializeField] List<SkillScriptBase> _skill;
+    [SerializeField] public bool AI;
+    [SerializeField] List<SkillScriptBase> _skill = new List<SkillScriptBase>();
 
     [SerializeField] int SelectedSkillPanel = -1;
     [SerializeField] int SelectedEnemyPanel = -1;
@@ -69,6 +69,8 @@ public class VSPlayer : MonoBehaviour
 
     Stat _myStat;
     public Stat CurrentStat => _myStat;
+
+
 
 
     private void Start()
@@ -161,6 +163,7 @@ public class VSPlayer : MonoBehaviour
 
     public void OpenSelectSkill()
     {
+        SelectedSkill.SetActive(true);
         for(int i =0; i< SelectedSkill.transform.childCount; i++)
         {
             SelectedSkill.transform.GetChild(i).GetComponent<VSSkillButton>().CurrentPlayer = this;
@@ -170,12 +173,15 @@ public class VSPlayer : MonoBehaviour
 
     public void OpenSelectEnemy()
     {
-
+        // 그냥 1로 고정함
+       SetEnemyNum(VSGameController.Instance.TeamSelect(team));
+        Debug.Log(GetEnemyNum());
+        ClossAllUI();
     }
 
     public void ClossAllUI()
     {
-
+        SelectedSkill.SetActive(false);
     }
 
     public IEnumerator DoSkill(VSPlayer vs)

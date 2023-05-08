@@ -9,9 +9,9 @@ public abstract class SkillScriptBase : MonoBehaviour
 {
     [SerializeField] Statues _statues;
     [SerializeField] GameObject UI;
-    [SerializeField] protected Stat SkillValue;
+    [SerializeField] protected Stat SkillValue = new Stat();
 
-    bool _skillMotionEnd = false;
+    protected bool _skillMotionEnd = false;
 
 
     /// <summary>

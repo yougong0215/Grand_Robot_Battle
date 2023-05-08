@@ -6,6 +6,7 @@ using UnityEngine;
 public class VSSkillButton : MonoBehaviour
 {
     public VSPlayer CurrentPlayer;
+    [SerializeField] int number = 0;
 
     public void SetSkillUI(GameObject obj = null)
     {
@@ -14,5 +15,18 @@ public class VSSkillButton : MonoBehaviour
             Instantiate(obj, transform);
         }
 
+    }
+
+    public void ReturnNumber()
+    {
+        CurrentPlayer.SetSkillNum(number);
+        Debug.Log($"Select : {number}");
+        CurrentPlayer.OpenSelectEnemy();
+        CurrentPlayer = null;
+    }
+
+    public void ReturnEnemyNumber()
+    {
+        CurrentPlayer.SetEnemyNum(number);
     }
 }

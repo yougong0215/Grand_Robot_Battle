@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
 {
+    [SerializeField] bool AI = false;
+    public Team team;
+
     [Header("Left Arm")]
     [SerializeField] GameObject LeftArmBone;
     [SerializeField] GameObject LeftArmMesh;
@@ -33,13 +36,51 @@ public class RobotSettingAndSOList : MonoBehaviour
     [SerializeField] PartSO Leg;
 
 
-    Stat _statues;
+    Stat _statues = new Stat();
 
     public Stat Stat => _statues;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
 
-    void Setting(bool ReplaceMesh, PartSO input,GameObject bone,ref GameObject Equip, ref PartSO MYSO, GameObject mesh = null)
+    private void Start()
+    {
+        if(team == Team.Blue)
+        {
+            if (Left)
+            {
+                EquipPart(PartEnum.LeftArm, Left, Left.RepalceMesh);
+            }
+
+            if (Right)
+            {
+                EquipPart(PartEnum.RightArm, Right, Right.RepalceMesh);
+            }
+
+            if (Head)
+            {
+                EquipPart(PartEnum.Head, Head);
+            }
+
+            if (Body)
+            {
+                EquipPart(PartEnum.Body, Body);
+            }
+
+            if (Leg)
+            {
+                EquipPart(PartEnum.Legs, Leg);
+            }
+        }
+       
+    }
+
+
+
+    PartSO Setting(bool ReplaceMesh, PartSO input,GameObject bone, ref GameObject Equip, PartSO MYSO, GameObject mesh = null)
     {
         if (ReplaceMesh)
         {
@@ -49,6 +90,11 @@ public class RobotSettingAndSOList : MonoBehaviour
 
         if (input == null)
         {
+            if (Equip != null)
+            {
+                Destroy(Equip);
+            }
+
             if (mesh != null)
                 mesh.SetActive(true);
 
@@ -60,16 +106,15 @@ public class RobotSettingAndSOList : MonoBehaviour
                 _statues.SPEED -= MYSO.Statues.SPEED;
             }
 
-            if (Equip)
-            {
-                Destroy(Equip);
-            }
-            Equip = null;
             MYSO = null;
 
         }
         else
         {
+            if(Equip != null)
+            {
+                Destroy(Equip);
+            }
 
             MYSO = input;
 
@@ -80,6 +125,7 @@ public class RobotSettingAndSOList : MonoBehaviour
 
             Equip = Instantiate(input.PartAsset, bone.transform);
         }
+        return MYSO;
     }
     
 
@@ -92,29 +138,33 @@ public class RobotSettingAndSOList : MonoBehaviour
             case PartEnum.None:
                 break;
             case PartEnum.RightArm:
-
-                Setting(ReplaceMesh, so,RightArmBone, ref RightEquip,ref Right, RightArmMesh);
+                Right = Setting(ReplaceMesh, so, RightArmBone,ref RightEquip, Right, RightArmMesh);
 
 
                 break;
             case PartEnum.LeftArm:
-
-                Setting(ReplaceMesh, so,LeftArmBone, ref LeftEquip, ref Left, LeftArmMesh);
+                Debug.Log(LeftArmMesh);
+                Left = Setting(ReplaceMesh, so, LeftArmBone,ref LeftEquip, Left, LeftArmMesh);
                 break;
 
             case PartEnum.Legs:
-                Setting(ReplaceMesh, so, LegBone, ref LegEquip, ref Leg, LegMesh);
+
+
+                Leg = Setting(ReplaceMesh, so, LegBone, ref  LegEquip, Leg, LegMesh);
 
                 break;
 
 
             case PartEnum.Head:
-                Setting(ReplaceMesh, so, HeadBone, ref HeadEquip, ref Head);
+
+                Head = Setting(ReplaceMesh, so, HeadBone,ref HeadEquip,Head);
 
 
                 break;
             case PartEnum.Body:
-                Setting(ReplaceMesh, so, BodyBone, ref BodyEquip, ref Body);
+
+
+                Body = Setting(ReplaceMesh, so, BodyBone,ref BodyEquip, Body);
 
                 break;
         }
@@ -126,9 +176,13 @@ public class RobotSettingAndSOList : MonoBehaviour
     /// </summary>
     public void VSSet()
     {
-        gameObject.AddComponent<VSPlayer>();
+        gameObject.AddComponent<VSPlayer>().team = team;
 
-        for(int i =0; i< 5; i++)
+
+        gameObject.GetComponent<VSPlayer>().AI = AI;
+
+
+        for (int i =0; i< 5; i++)
         {
             switch (i)
             {
@@ -153,20 +207,32 @@ public class RobotSettingAndSOList : MonoBehaviour
     public void SkillInput(PartSO ps = null, SkillScriptBase sk = null)
     {
         VSPlayer vs = GetComponent<VSPlayer>();
+
+        GameObject obj = Instantiate(new GameObject());
+        obj.transform.parent = transform;
+
         if (ps == null)
         {
             if(sk == null)
             {
-                vs.SkillAdd(new NoneAttack());
+                obj.AddComponent<NoneAttack>();
+                vs.SkillAdd(obj.GetComponent<NoneAttack>());
             }
             else
             {
-                vs.SkillAdd(new NoneAttack()); // Head¿œ∂ß ¡§«ÿ¡‡æﬂµ 
+                obj.AddComponent<NoneAttack>();
+                vs.SkillAdd(obj.GetComponent<NoneAttack>());
             }
         }
         else
         {
-            vs.SkillAdd(ps.Skill);
+            if (sk == null)
+            {
+                obj.AddComponent<NoneAttack>();
+                vs.SkillAdd(obj.GetComponent<NoneAttack>());
+            }
+            else
+                vs.SkillAdd(ps.Skill);
         }
     }
 }

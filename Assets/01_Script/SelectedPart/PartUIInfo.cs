@@ -15,7 +15,6 @@ public class PartUIInfo : MonoBehaviour
     public void Seleted(PartSO _partSO = null, PartEnum part = PartEnum.None)
     {
         if(_partSO !=null)
-
             _robot.EquipPart(_partSO.Type, _partSO, _partSO.RepalceMesh);
         else
         {

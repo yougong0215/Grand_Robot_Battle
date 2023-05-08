@@ -21,9 +21,9 @@ public class LobbyCamaraManager : MonoBehaviour
         {
             ListCam[i].lc = this;
         }
-        yield return new WaitForSeconds(0.2f);
-        CamTurning(LobbyScene.MainLobby);
         yield return new WaitForSeconds(2f);
+        CamTurning(LobbyScene.MainLobby);
+        yield return new WaitForSeconds(0.2f);
         canvas.SetActive(false);
     }
 

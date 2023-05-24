@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class UISlotManager : MonoBehaviour
 {
-
+    RobotSettingAndSOList _robot;
 
     public UnitPart Prefabs;
+
+
+    [SerializeField] TextMeshProUGUI ATK;
+    [SerializeField] TextMeshProUGUI DEF;
+    [SerializeField] TextMeshProUGUI HP;
+    [SerializeField] TextMeshProUGUI SPEED;
 
 
     static UISlotManager instance = null;
@@ -25,6 +32,7 @@ public class UISlotManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
     }
     private void OnEnable()
     {
@@ -35,6 +43,14 @@ public class UISlotManager : MonoBehaviour
     public UISlot SoltUI;
 
     public List<PartTypeSelect> CategorySelected;
+
+    void Update()
+    {
+        ATK.text = $"ATK : { _robot._statues.ATK}";
+            DEF.text = $"DEF : { _robot._statues.DEF}";
+        SPEED.text = $"SPEED : { _robot._statues.SPEED}";
+        HP.text = $"HP : {_robot._statues.HP}";
+    }
 
 
     public void NullUIS()

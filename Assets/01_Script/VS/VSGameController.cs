@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class VSGameController : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class VSGameController : MonoBehaviour
     [Header("POS")]
     [SerializeField] List<Transform> RedTeamPos;
     [SerializeField] List<Transform> BlueTeamPos;
+    [SerializeField] public GameObject TextPanel;
+    [SerializeField] public TextMeshProUGUI TMPPanel;
 
     static VSGameController _ins;
 
@@ -28,11 +33,15 @@ public class VSGameController : MonoBehaviour
     void Awake()
     {
         _ins = this;
+
     }
 
     IEnumerator Start()
     {
         GameObject[] t = GameObject.FindGameObjectsWithTag("Unit");
+        TextPanel = GameObject.Find("TextPanel");
+        TMPPanel = TextPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        TextPanel.SetActive(false);
 
         //Debug.LogWarning(t.Count());
 
@@ -75,29 +84,23 @@ public class VSGameController : MonoBehaviour
         StartCoroutine(Sycle());
     }
     
-    public int TeamCount(Team t)
+    public int TeamSelected(Team t)
     {
-        if(t == Team.Red)
+        int x;
+        if (t == Team.Red)
         {
-            return TeamBluePlayer.Count;
+            x = UnityEngine.Random.Range(0, TeamBluePlayer.Count);
+
+            return TeamBluePlayer[x].GameNumber;
         }
         else
         {
-            return TeamRedPlayer.Count;
+
+            x = UnityEngine.Random.Range(0, TeamRedPlayer.Count);
+            return TeamRedPlayer[x].GameNumber;
         }
     }
 
-    public int TeamSelect(Team t)
-    {
-        if (t == Team.Red)
-        {
-            return TeamBluePlayer[0].GameNumber;
-        }
-        else
-        {
-            return TeamRedPlayer[0].GameNumber;
-        }
-    }
 
     IEnumerator Sycle()
     {
@@ -122,13 +125,15 @@ public class VSGameController : MonoBehaviour
         {
 
             _players[i].Turn();
-            yield return new WaitForSeconds(1f);
+            Debug.Log($"{_players[i].name} : 스킬 고르른중");
             yield return new WaitUntil(() => _players[i].GetSkillNum() != -1 && _players[i].GetEnemyNum() != -1);
-
+            Debug.Log($"{_players[i].name} : {_players[i].GetSkillNum()}, {_players[i].GetEnemyNum()}");
+            yield return new WaitForSeconds(2.5f);
 
         }
 
         PlayerSpeedSort();
+
 
 
         int selected = 0;
@@ -142,7 +147,12 @@ public class VSGameController : MonoBehaviour
                 if (_players[j].GameNumber == _players[i].GetEnemyNum())
                 {
                     selected = j;
+                    Debug.Log($"{_players[i].name} 턴 {_players[selected]}공격"); 
+
                     yield return StartCoroutine(_players[i].DoSkill(_players[selected]));
+                  
+
+                    TextPanel.SetActive(false);
                     break;
                 }
             }
@@ -154,13 +164,17 @@ public class VSGameController : MonoBehaviour
 
         for(int i =0; i < _players.Count; i++)
         {
-            _players[i].OnDead(ref Red, ref Blue);
             Debug.Log($"{_players[i].name} : {_players[i].CurrentStat.HP}");
             _players[i].SetEnemyNum(-1);
             _players[i].SetSkillNum(-1);
+
         }
 
-        if(Red != 0 && Blue != 0)
+        for (int i = 0; i < _players.Count; i++)
+            _players[i].OnDead(ref Red, ref Blue);
+
+
+        if (Red != 0 && Blue != 0)
         {
             StartCoroutine(Sycle());
         }
@@ -173,7 +187,7 @@ public class VSGameController : MonoBehaviour
 
     void GameEnd()
     {
-
+        SceneManager.LoadScene("MakeRobotScene");
     }
 
 

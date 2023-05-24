@@ -36,9 +36,8 @@ public class RobotSettingAndSOList : MonoBehaviour
     [SerializeField] PartSO Leg;
 
 
-    Stat _statues = new Stat();
+    public Stat _statues = new Stat();
 
-    public Stat Stat => _statues;
 
     private void Awake()
     {
@@ -204,35 +203,34 @@ public class RobotSettingAndSOList : MonoBehaviour
             }
         }
     }
-    public void SkillInput(PartSO ps = null, SkillScriptBase sk = null)
+    public void SkillInput(PartSO ps = null)
     {
         VSPlayer vs = GetComponent<VSPlayer>();
 
-        GameObject obj = Instantiate(new GameObject());
-        obj.transform.parent = transform;
+
 
         if (ps == null)
         {
-            if(sk == null)
-            {
-                obj.AddComponent<NoneAttack>();
-                vs.SkillAdd(obj.GetComponent<NoneAttack>());
-            }
-            else
-            {
-                obj.AddComponent<NoneAttack>();
-                vs.SkillAdd(obj.GetComponent<NoneAttack>());
-            }
+            GameObject obj = new GameObject();
+            obj.transform.parent = transform;
+            obj.AddComponent<NoneAttack>();
+
+            vs.SkillAdd(obj.GetComponent<NoneAttack>(), null);
         }
         else
         {
-            if (sk == null)
+            if (ps.Skill == null)
             {
+                GameObject obj = new GameObject();
+                obj.transform.parent = transform;
                 obj.AddComponent<NoneAttack>();
-                vs.SkillAdd(obj.GetComponent<NoneAttack>());
+                vs.SkillAdd(obj.GetComponent<NoneAttack>(), ps);
             }
             else
-                vs.SkillAdd(ps.Skill);
+            {
+                SkillScriptBase a =  Instantiate(ps.Skill, transform);
+                vs.SkillAdd(a, ps);
+            }
         }
     }
 }

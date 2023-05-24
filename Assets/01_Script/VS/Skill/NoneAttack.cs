@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class NoneAttack : SkillScriptBase
 {
-    public override Stat Skill(ref VSPlayer Enemy)
+    
+    public override int Skill(ref Stat st, ref VSPlayer Enemy)
     {
-        Debug.Log(transform.parent.gameObject.name);
-        Debug.Log(Enemy);
-        Enemy.GetDamage(SkillValue.ATK);
-        _skillMotionEnd = true;
+        Debug.Log($":공격 :=>{ Enemy} | {st.ATK + SkillValue.ATK}");
 
-        return SkillValue;
+        Enemy.GetDamage(st.ATK + SkillValue.ATK);
+        Enemy.StartCoroutine(corutine(st, Enemy));
+
+        return st.ATK + SkillValue.ATK;
+    }
+
+    public override IEnumerator corutine(Stat st, VSPlayer Enemy)
+    {
+        VSGameController.Instance.TextPanel.SetActive(true);
+        VSGameController.Instance.TMPPanel.text = $"{transform.parent.name}의턴! 메가펀치 메가펀치!";
+        yield return new WaitForSeconds(1.5f);
+        VSGameController.Instance.TMPPanel.text = $"{st.ATK + SkillValue.ATK}데미지를 {Enemy.gameObject.name}에게 입혔다!";
+        yield return new WaitForSeconds(1.5f);
+
+        _skillMotionEnd = true;
     }
 }

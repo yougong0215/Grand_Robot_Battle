@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: DrilRightSO
   m_EditorClassIdentifier: 
   Type: 1
-  PartAsset: {fileID: 9062173955027456951, guid: fb56a50322c84c643b76d1f2980f5a11,
+  PartAsset: {fileID: 9062173955027456951, guid: 13392105ff0da0e43ba45400f9cc6127,
     type: 3}
   Sprite: {fileID: 21300000, guid: 6f81e0c8e210b414e92b6c77e5468677, type: 3}
   Statues:
-    HP: 0
-    ATK: 0
-    DEF: 0
-    SPEED: 0
-  Explain: AASDF
+    HP: 20
+    ATK: 15
+    DEF: 5
+    SPEED: 10
+    Barrier: 0
+  Explain: "\uAC04\uB2E4! \uAE30\uAC00\uB4DC\uB9B4 \uBE0C\uB808\uC774\uCEE4!!!"
   RepalceMesh: 1
+  EquipPart: 0
+  SkillImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}
+  Skill: {fileID: 5460758543305945626, guid: a835e34b10d6730458141434a8fc5fa6, type: 3}

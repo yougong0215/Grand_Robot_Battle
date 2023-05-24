@@ -36,6 +36,7 @@ public class VSPlayer : MonoBehaviour
 
     [SerializeField] public bool AI;
     [SerializeField] List<SkillScriptBase> _skill = new List<SkillScriptBase>();
+    [SerializeField] List<PartSO> _part = new List<PartSO>();
 
     [SerializeField] int SelectedSkillPanel = -1;
     [SerializeField] int SelectedEnemyPanel = -1;
@@ -81,12 +82,13 @@ public class VSPlayer : MonoBehaviour
 
     public void BattleInit()
     {
-        _myStat = _info.Stat;
+        _myStat = _info._statues;
     }
 
-    public void SkillAdd(SkillScriptBase skill)
+    public void SkillAdd(SkillScriptBase skill, PartSO part)
     {
         _skill.Add(skill);
+        _part.Add(part);
     }
 
     public IEnumerator BuffTurn(Statues enums, int value, int turn, int currentTurn, Action action = null)
@@ -152,7 +154,7 @@ public class VSPlayer : MonoBehaviour
         if(AI)
         {
             SetSkillNum(UnityEngine.Random.Range(1, 5));
-            SetEnemyNum(UnityEngine.Random.Range(0, VSGameController.Instance.TeamCount(team)));
+            SetEnemyNum(VSGameController.Instance.TeamSelected(team));
         }
         else
         {
@@ -167,14 +169,19 @@ public class VSPlayer : MonoBehaviour
         for(int i =0; i< SelectedSkill.transform.childCount; i++)
         {
             SelectedSkill.transform.GetChild(i).GetComponent<VSSkillButton>().CurrentPlayer = this;
-            SelectedSkill.transform.GetChild(i).GetComponent<VSSkillButton>().SetSkillUI();
+            if(_part[i] != null)
+            SelectedSkill.transform.GetChild(i).GetComponent<VSSkillButton>().SetSkillUI(this, _part[i].SkillImage);
+            else
+            {
+                SelectedSkill.transform.GetChild(i).GetComponent<VSSkillButton>().SetSkillUI(this);
+            }
         }
     }
 
     public void OpenSelectEnemy()
     {
         // 그냥 1로 고정함
-       SetEnemyNum(VSGameController.Instance.TeamSelect(team));
+        SetEnemyNum(VSGameController.Instance.TeamSelected(team));
         Debug.Log(GetEnemyNum());
         ClossAllUI();
     }
@@ -187,7 +194,7 @@ public class VSPlayer : MonoBehaviour
     public IEnumerator DoSkill(VSPlayer vs)
     {
         // 0은 Head 이기 때문에 항상 +1 해줘야됨
-        Stat stat = _skill[GetSkillNum()].Skill(ref vs); // 애니메이션도 보여줌
+        _skill[GetSkillNum()].Skill(ref _myStat, ref vs); // 애니메이션도 보여줌
         yield return new WaitUntil(() => _skill[GetSkillNum()].SkillMotionEnd());
         _skill[GetSkillNum()].Set();
     }
@@ -206,7 +213,7 @@ public class VSPlayer : MonoBehaviour
                 return;
             }
         }
-
+        Debug.Log(transform.gameObject.name + " : 데미지 받음");
         CurrentStat.HP -= value;
     }
 

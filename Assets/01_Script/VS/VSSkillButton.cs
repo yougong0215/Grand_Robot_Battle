@@ -2,17 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VSSkillButton : MonoBehaviour
 {
     public VSPlayer CurrentPlayer;
     [SerializeField] int number = 0;
 
-    public void SetSkillUI(GameObject obj = null)
+    public void SetSkillUI(VSPlayer vs, Sprite obj = null)
     {
+        CurrentPlayer = vs;
         if(obj != null)
         {
-            Instantiate(obj, transform);
+            GetComponent<Image>().sprite = obj;
         }
 
     }

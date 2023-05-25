@@ -1,0 +1,49 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/Loby.uss?fileID=7433441132597879392&amp;guid=ecf2315aa5c90494eb40d32e5835c14a&amp;type=3#Loby" />
+    <ui:VisualElement name="Root" style="flex-direction: column;">
+        <ui:VisualElement name="BtnGroup">
+            <ui:Button display-tooltip-when-elided="true" name="StoreBtn" class="Lobybtn" style="left: 1545px; top: 150px; position: absolute;">
+                <ui:Label text="상점" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="GongBtn" class="Lobybtn" style="left: 1545px; top: 390px; position: absolute;">
+                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="GarageBtn" class="Lobybtn" style="left: 1545px; top: 630px; position: absolute;">
+                <ui:Label text="창고" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="StoryBtn" class="Lobybtn" style="left: 1085px; top: 105px; position: absolute;">
+                <ui:Label text="스토리" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="BattleBtn" class="Lobybtn" style="left: 1085px; top: 345px; position: absolute;">
+                <ui:Label text="배틀" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="MakeBtn" class="Lobybtn" style="left: 1085px; top: 585px; position: absolute;">
+                <ui:Label text="제작" display-tooltip-when-elided="true" name="txt" class="Btnname" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="SettingBtn" class="UpBtn" style="top: 0; left: 1820px;" />
+            <ui:Button display-tooltip-when-elided="true" name="Postbtn" class="UpBtn" style="top: 0; left: 1640px;" />
+            <ui:Button display-tooltip-when-elided="true" name="DayQbtn" class="UpBtn" style="top: 0; left: 1460px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="GoodsGroup">
+            <ui:VisualElement name="GemBar" style="width: 300px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 1115px; flex-direction: row-reverse;">
+                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
+                <ui:VisualElement name="Geminage" style="background-color: rgb(255, 255, 255); width: 40px; height: 40px; flex-direction: column; position: absolute; top: 6px; left: 7px;" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 189px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GoldBar" style="width: 450px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 620px; flex-direction: row-reverse;">
+                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
+                <ui:VisualElement name="Goldinage" style="background-color: rgb(255, 255, 255); width: 40px; height: 40px; flex-direction: column; position: absolute; top: 6px; left: 7px;" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 339px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Profile">
+            <ui:VisualElement name="panel" style="background-color: rgba(0, 0, 0, 0.41); width: 500px; height: 170px; position: absolute; top: 357px; left: -4px;">
+                <ui:VisualElement name="Frame" style="width: 130px; height: 130px; position: absolute; top: 20px; left: 35px; background-color: rgb(255, 255, 255); align-items: center; justify-content: space-around;">
+                    <ui:VisualElement name="Image" style="width: 115px; height: 115px; background-color: rgb(147, 147, 147);" />
+                </ui:VisualElement>
+                <ui:Label text="Nick" display-tooltip-when-elided="true" name="Name" style="position: absolute; font-size: 30px; top: 41px; left: 186px; width: 187px; color: rgb(255, 255, 255);" />
+                <ui:Label text="Nick" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 20px; top: 84px; left: 214px; width: 187px; color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

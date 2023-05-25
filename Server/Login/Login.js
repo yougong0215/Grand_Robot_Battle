@@ -1,0 +1,48 @@
+const Encrypt = require("../utils/Encrypt.js");
+const sqlUtil = require("../utils/sqlite.js");
+
+module.exports = async function(req, res) {
+    const ID = req.body.ID;
+    const password = req.body.password;
+
+    if (typeof(ID) !== "string" || typeof(password) !== "string") {
+        res.sendStatus(400);
+        return;   
+    }
+
+    const sql = sqlUtil.GetObject();
+    const Account = await sql.Aget("SELECT * FROM users WHERE id = ?", ID);
+
+    // 계정이 없음
+    if (Account === undefined) {
+        res.json({
+            success: false,
+            why: "아이디, 비밀번호를 확인하세요.",
+        });
+        return;
+    }
+    
+    const [salt, passHash] = Account.password.split(":");
+    if (salt === undefined || passHash === undefined) {
+        res.json({
+            success: false,
+            why: "무결성 검사 실패 (1)",
+        });
+        return;
+    }
+
+    // 비번이 일치하지 않음
+    if (!await Encrypt.verifyPassword(password, salt, passHash)) {
+        res.json({
+            success: false,
+            why: "아이디, 비밀번호를 확인하세요.",
+        });
+        return;
+    }
+    
+    const Session_Token = Encrypt.randomString(30);
+    console.log(Session_Token);
+
+    // sql 소켓 닫자
+    sql.close();
+}

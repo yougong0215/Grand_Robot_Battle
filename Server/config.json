@@ -1,0 +1,5 @@
+{
+    "DBfile":"./data/data.db",
+    "LoginPort":3001,
+    "TCPport":3000
+}

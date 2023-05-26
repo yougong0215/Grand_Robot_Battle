@@ -41,8 +41,21 @@ module.exports = async function(req, res) {
     }
     
     const Session_Token = Encrypt.randomString(30);
-    console.log(Session_Token);
+    const result = await sql.Arun("INSERT INTO sessions(id, token, Create_At) VALUES(?,?,?)", [Account.id, Session_Token, Number(new Date())]);
+    if (!result) {
+        res.json({
+            success: false,
+            why: "SQL 오류",
+        });
+        return;
+    }
 
     // sql 소켓 닫자
     sql.close();
+    
+    // 끗
+    res.json({
+        success: true,
+        name: Account.name
+    });
 }

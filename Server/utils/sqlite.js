@@ -35,6 +35,8 @@ exports.GetObject = function() {
     db.Arun = function(query, data) {
         return new Promise(reslove => {
             db.run(query, data, function(err) {
+                if (err)
+                    console.error(err);
                 reslove(err ? undefined : true);
             });
         });

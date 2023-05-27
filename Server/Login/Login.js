@@ -2,8 +2,18 @@ const Encrypt = require("../utils/Encrypt.js");
 const sqlUtil = require("../utils/sqlite.js");
 
 module.exports = async function(req, res) {
-    const ID = req.body.ID;
-    const password = req.body.password;
+    
+    let body;
+    try {
+        body = JSON.parse(req.body.domi);
+    } catch {
+        return;
+    }
+    
+    const ID = body.ID;
+    const password = body.password;
+
+    console.log(body);
 
     if (typeof(ID) !== "string" || typeof(password) !== "string") {
         res.sendStatus(400);

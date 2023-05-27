@@ -11,7 +11,18 @@ public class HTTP_manager : MonoBehaviour
     [SerializeField, Tooltip("서버 아이피")] string Endpoint = "127.0.0.1";
     [SerializeField, Tooltip("서버 포트")] int Port = 3001;
 
-    void RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => StartCoroutine(StartPOST(path, data, callback));
+    static HTTP_manager instance;
+    private void Awake() {
+        if (instance == null) instance = this;
+        else Debug.LogError("[domiHTTP Manager] HTTP 매니저는 1개만 사용해야 합니다.");
+    }
+
+    // 신기한 도미방법??? 일요일이 소중하기 때문에 HTTP_manager.instance.RequestPOST 보다 HTTP_manager.RequestPOST 로 하는게 좋음
+    static void RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => instance._RequestPOST(path, data, callback);
+    void _RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => StartCoroutine(StartPOST(path, data, callback));
+
+    public static void RequestGET(string uri, UnityAction<int, JsonData> callback) => instance._RequestGET(uri, callback);
+    void _RequestGET(string uri, UnityAction<int, JsonData> callback) => StartCoroutine(StartGET(uri, callback));
 
     IEnumerator StartPOST(string path, object data, UnityAction<int, JsonData> callback) {
         // 데이터
@@ -31,20 +42,18 @@ public class HTTP_manager : MonoBehaviour
         }
     }
 
-    class dodmidomdidksd {
-        public string ID;
-        public string password;
+    // url은 전체 경로고 uri 는 주소 뒤메 있는거지롱
+    IEnumerator StartGET(string uri, UnityAction<int, JsonData> callback) {
+        using (var request = UnityWebRequest.Get($"http://{Endpoint}:{Port}/{uri}")) {
+            yield return request.SendWebRequest(); // 기달..
 
-        public dodmidomdidksd(string _id, string _password) {
-            ID = _id;
-            password = _password;
+            // JSON 이 안풀리면 null로 보내는 방식
+            JsonData json_decode = null;
+            try {
+                json_decode = JsonMapper.ToObject(request.downloadHandler.text);
+            } catch {};
+
+            callback.Invoke((int)request.responseCode, json_decode);
         }
-    }
-    private void Start() {
-        print("Test HTTP");
-        RequestPOST("login", new dodmidomdidksd("domi", "asdasd"), (int statusCode, JsonData data) => {
-            print(statusCode);
-            print(data["why"]);
-        });
     }
 }

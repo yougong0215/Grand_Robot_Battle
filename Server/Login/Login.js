@@ -56,6 +56,7 @@ module.exports = async function(req, res) {
     // 끗
     res.json({
         success: true,
+        token: Session_Token,
         name: Account.name
     });
 }

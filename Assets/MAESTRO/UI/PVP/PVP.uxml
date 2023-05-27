@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
+    <ui:VisualElement name="Root">
+        <ui:VisualElement name="BtnGroup">
+            <ui:VisualElement name="PartsBtnGroup">
+                <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn off RL" />
+                <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn off LL" />
+                <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn off RA" />
+                <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn off LA" style="top: 385px;" />
+                <ui:Button display-tooltip-when-elided="true" name="Hbtn" class="Partsbtn off H" />
+            </ui:VisualElement>
+            <ui:Button display-tooltip-when-elided="true" name="AttackBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgba(255, 255, 255, 255); left: 1700px; transition-duration: 0.5s;" />
+            <ui:Button display-tooltip-when-elided="true" name="SkipBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1400px;" />
+            <ui:Button display-tooltip-when-elided="true" name="SurrenderBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1100px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

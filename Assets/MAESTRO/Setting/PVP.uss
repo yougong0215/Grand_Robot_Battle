@@ -1,0 +1,57 @@
+.Partsbtn {
+    width: 250px;
+    height: 130px;
+    background-color: rgba(125, 125, 125, 255);
+    position: absolute;
+    color: rgba(255, 255, 255, 255);
+}
+
+.Menubtn {
+    margin-top: 220px;
+    position: absolute;
+    top: 730px;
+    transition-property: margin-top;
+    transition-duration: 0.3s;
+}
+
+.Menubtn.on {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.Partsbtn.off {
+    position: absolute;
+    left: 1700px;
+    top: 730px;
+    transition-property: top, left;
+    transition-duration: 0.5s, 0.5s;
+}
+
+.Partsbtn.LA {
+    position: absolute;
+    left: 1435px;
+}
+
+.Partsbtn.RA {
+    position: absolute;
+    left: 1700px;
+    top: 385px;
+}
+
+.Partsbtn.LL {
+    position: absolute;
+    left: 1435px;
+    top: 530px;
+}
+
+.Partsbtn.RL {
+    position: absolute;
+    left: 1700px;
+    top: 530px;
+}
+
+.Partsbtn.H {
+    position: absolute;
+    left: 1567.5px;
+    top: 240px;
+}

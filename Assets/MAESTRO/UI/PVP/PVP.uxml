@@ -3,15 +3,18 @@
     <ui:VisualElement name="Root">
         <ui:VisualElement name="BtnGroup">
             <ui:VisualElement name="PartsBtnGroup">
-                <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn off RL" />
-                <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn off LL" />
-                <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn off RA" />
-                <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn off LA" style="top: 385px;" />
-                <ui:Button display-tooltip-when-elided="true" name="Hbtn" class="Partsbtn off H" />
+                <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn off" />
+                <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn off" />
+                <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn off" />
+                <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn off" />
+                <ui:Button display-tooltip-when-elided="true" name="Hbtn" class="Partsbtn off" />
             </ui:VisualElement>
-            <ui:Button display-tooltip-when-elided="true" name="AttackBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgba(255, 255, 255, 255); left: 1700px; transition-duration: 0.5s;" />
-            <ui:Button display-tooltip-when-elided="true" name="SkipBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1400px;" />
-            <ui:Button display-tooltip-when-elided="true" name="SurrenderBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1100px;" />
+            <ui:Button display-tooltip-when-elided="true" name="AttackBtn" class="Menubtn" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1700px; transition-duration: 0.5s;" />
+            <ui:Button display-tooltip-when-elided="true" name="SkipBtn" class="Menubtn" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1400px;" />
+            <ui:Button display-tooltip-when-elided="true" name="SurrenderBtn" class="Menubtn" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1100px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Panel" class="panel off" style="align-items: center; justify-content: center;">
+            <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

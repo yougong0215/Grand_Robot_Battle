@@ -18,7 +18,7 @@ public class HTTP_manager : MonoBehaviour
     }
 
     // 신기한 도미방법??? 일요일이 소중하기 때문에 HTTP_manager.instance.RequestPOST 보다 HTTP_manager.RequestPOST 로 하는게 좋음
-    static void RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => instance._RequestPOST(path, data, callback);
+    public static void RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => instance._RequestPOST(path, data, callback);
     void _RequestPOST(string path, object data, UnityAction<int, JsonData> callback) => StartCoroutine(StartPOST(path, data, callback));
 
     public static void RequestGET(string uri, UnityAction<int, JsonData> callback) => instance._RequestGET(uri, callback);

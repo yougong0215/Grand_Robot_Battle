@@ -64,6 +64,7 @@ module.exports = async function(req, res) {
     res.json({
         success: true,
         token: Session_Token,
-        name: Account.name
+        name: Account.name,
+        id: Account.id
     });
 }

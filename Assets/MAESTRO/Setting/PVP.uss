@@ -4,6 +4,10 @@
     background-color: rgb(125, 125, 125);
     position: absolute;
     color: rgb(255, 255, 255);
+    left: 1700px;
+    top: 950px;
+    transition-property: top, left;
+    transition-duration: 0.5s, 0.5s;
 }
 
 .Menubtn {
@@ -17,14 +21,6 @@
 .Menubtn.on {
     padding-top: 0;
     margin-top: 0;
-}
-
-.Partsbtn.off {
-    position: absolute;
-    left: 1700px;
-    top: 950px;
-    transition-property: top, left;
-    transition-duration: 0.5s, 0.5s;
 }
 
 .Partsbtn.LA {

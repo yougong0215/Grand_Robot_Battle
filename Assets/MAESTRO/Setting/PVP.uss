@@ -69,3 +69,21 @@
     position: absolute;
     top: 950px;
 }
+
+.warning {
+    position: absolute;
+    width: 1000px;
+    height: 450px;
+    left: 500px;
+    top: 230px;
+    background-color: rgba(0, 0, 0, 0.54);
+    align-items: center;
+    justify-content: center;
+    transition-property: top;
+    transition-duration: 0.5s;
+}
+
+.warning.off {
+    position: absolute;
+    top: 950px;
+}

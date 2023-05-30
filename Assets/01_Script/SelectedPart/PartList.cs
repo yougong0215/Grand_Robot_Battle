@@ -49,10 +49,10 @@ public class PartList : MonoBehaviour
                 case PartEnum.None:
                     Debug.LogError($"{l.SOList[i]} : 파츠 enum 미지정");
                     break;
-                case PartEnum.RightArm:
+                case PartEnum.RightUpperArm:
                     RightArm.Add(l.SOList[i]);
                     break;
-                case PartEnum.LeftArm:
+                case PartEnum.LeftUpperArm:
                     LeftArm.Add(l.SOList[i]);
                     break;
                 case PartEnum.Legs:
@@ -75,10 +75,10 @@ public class PartList : MonoBehaviour
             case PartEnum.None:
                 Debug.LogError($"{pt} : 파츠 enum 미지정");
                 break;
-            case PartEnum.RightArm:
+            case PartEnum.RightUpperArm:
                 return RightArm;
 
-            case PartEnum.LeftArm:
+            case PartEnum.LeftUpperArm:
                 return LeftArm;
 
             case PartEnum.Legs:

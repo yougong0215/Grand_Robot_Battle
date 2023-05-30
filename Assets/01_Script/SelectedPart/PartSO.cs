@@ -4,14 +4,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Right/Left | Upper/Middle/Lower | Arm/Leg
+/// </summary>
 public enum PartEnum
 {
+    
+
     None,
-    RightArm,
-    LeftArm,
-    Legs,
+    ALU,
+    ALM,
+    ALL,
+    ARU,
+    ARM,
+    ARL,
+    LLU,
+    LLM,
+    LLL,
+    LRU,
+    LRM,
+    LRL,
     Head,
-    Body,
+    UpperBody,
+    MiddleBody,
+    LowerBody
 }
 
 

@@ -1,0 +1,90 @@
+.Partsbtn {
+    width: 250px;
+    height: 130px;
+    background-color: rgb(125, 125, 125);
+    position: absolute;
+    color: rgb(255, 255, 255);
+    left: 1700px;
+    top: 950px;
+    transition-property: top, left;
+    transition-duration: 0.5s, 0.5s;
+}
+
+.Menubtn {
+    margin-top: 220px;
+    position: absolute;
+    top: 730px;
+    transition-property: margin-top;
+    transition-duration: 0.3s;
+}
+
+.Menubtn.on {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.Partsbtn.LA {
+    position: absolute;
+    left: 1435px;
+    top: 385px;
+}
+
+.Partsbtn.RA {
+    position: absolute;
+    left: 1700px;
+    top: 385px;
+}
+
+.Partsbtn.LL {
+    position: absolute;
+    left: 1435px;
+    top: 530px;
+}
+
+.Partsbtn.RL {
+    position: absolute;
+    left: 1700px;
+    top: 530px;
+}
+
+.Partsbtn.H {
+    position: absolute;
+    left: 1567.5px;
+    top: 240px;
+}
+
+.panel {
+    width: 90%;
+    justify-content: center;
+    height: 200px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.56);
+    top: 640px;
+    left: 100px;
+    transition-property: top;
+    transition-duration: 0.5s;
+    align-items: center;
+}
+
+.panel.off {
+    position: absolute;
+    top: 950px;
+}
+
+.warning {
+    position: absolute;
+    width: 1000px;
+    height: 450px;
+    left: 500px;
+    top: 230px;
+    background-color: rgba(0, 0, 0, 0.54);
+    align-items: center;
+    justify-content: center;
+    transition-property: top;
+    transition-duration: 0.5s;
+}
+
+.warning.off {
+    position: absolute;
+    top: 950px;
+}

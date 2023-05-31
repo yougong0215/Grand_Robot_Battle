@@ -8,7 +8,7 @@ public class PVPUI : MonoBehaviour
     #region 컴포넌트
     private UIDocument _uiDoc;
     private VisualElement _root;
-    private VisualElement _panel;
+    private Button _panel;
     private VisualElement _warning;
 
     private Button _atkBtn;
@@ -38,7 +38,7 @@ public class PVPUI : MonoBehaviour
     {
         #region 영수증
         _root = _uiDoc.rootVisualElement;
-        _panel = _root.Q<VisualElement>("Panel");
+        _panel = _root.Q<Button>("Panel");
         _atkBtn = _root.Q<Button>("AttackBtn");
         _skipBtn = _root.Q<Button>("SkipBtn");
         _surrenBtn = _root.Q<Button>("SurrenderBtn");
@@ -96,15 +96,20 @@ public class PVPUI : MonoBehaviour
         _wText.text = "정말 항복하시겠습니까?";
     }
 
+    public void SetText(string txt)
+    {
+        _text.text = txt;
+    }
+
     private void SetPanel()
     {
         if(!onPanel)
         {
-            _panel.RemoveFromClassList("on");
+            _panel.RemoveFromClassList("off");
         }
         else
         {
-            _panel.AddToClassList("on");
+            _panel.AddToClassList("off");
         }
 
         onPanel = !onPanel;

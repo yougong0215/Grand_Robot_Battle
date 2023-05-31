@@ -13,13 +13,13 @@
             <ui:Button display-tooltip-when-elided="true" name="SkipBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1400px;" />
             <ui:Button display-tooltip-when-elided="true" name="SurrenderBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1100px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="Panel" class="panel off" style="align-items: center; justify-content: center;">
-            <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px;" />
-        </ui:VisualElement>
         <ui:VisualElement name="WarningPanel" class="warning off">
             <ui:Label text="text" display-tooltip-when-elided="true" name="warningText" style="font-size: 60px;" />
             <ui:Button text="YES" display-tooltip-when-elided="true" name="Yesbtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 189px;" />
             <ui:Button text="NO" display-tooltip-when-elided="true" name="Nobtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 606px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">
+        <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px; -unity-text-align: middle-left;" />
+    </ui:Button>
 </ui:UXML>

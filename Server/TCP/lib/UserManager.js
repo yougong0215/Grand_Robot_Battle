@@ -32,3 +32,12 @@ exports.AddPlayer = async function(id, socket) {
 
     console.log(UserList);
 }
+
+exports.RemovePlayer = async function(id) {
+    const CachePlayer = UserList[id];
+    if (UserList[id] === undefined) return;
+
+    delete UserList[id];
+
+    console.log(CachePlayer.name, UserList);
+}

@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/Make.uss?fileID=7433441132597879392&amp;guid=b3036b00ad241c94f9f8a64f18a8b956&amp;type=3#Make" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%; align-items: center;">
+        <ui:VisualElement name="BG" style="width: 100%; height: 100%;" />
+        <ui:VisualElement name="BackPanel" style="width: 90%; height: 250%; background-color: rgba(0, 0, 0, 0.45);">
+            <ui:VisualElement name="Image" style="width: 900px; height: 450px; position: absolute; top: 71px; left: 72px; background-color: rgba(255, 255, 255, 255);" />
+            <ui:VisualElement name="InfoPanel" style="width: 700px; height: 250px; position: absolute; top: 71px; left: 1030px; background-color: rgb(255, 255, 255);">
+                <ui:Label text="SampleText" display-tooltip-when-elided="true" name="DateTxt" style="height: 60px; color: rgba(58, 58, 58, 255); font-size: 25px; -unity-text-align: middle-left; padding-left: 20px;" />
+                <ui:Label text="픽업 모집!" display-tooltip-when-elided="true" name="PickUp" style="color: rgba(0, 0, 0, 255); position: absolute; font-size: 40px; top: 75px; left: 55px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="BtnPanel" style="width: 700px; height: 165px; position: absolute; top: 353px; left: 1030px; background-color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

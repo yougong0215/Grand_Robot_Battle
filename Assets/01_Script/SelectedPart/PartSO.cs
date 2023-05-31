@@ -42,15 +42,24 @@ public class Stat
     public int Barrier = 0;
 }
 
+
+
+[System.Serializable]
+public class Parts
+{
+    public GameObject part;
+    public PartEnum enums;
+
+}
+
 [CreateAssetMenu(menuName =("SO/PartUI"))]
 public class PartSO : ScriptableObject
 {
-    [SerializeField] public PartEnum Type;
-    [SerializeField] public GameObject PartAsset;
+    [SerializeField] public List<Parts> _part;
     [SerializeField] public Sprite Sprite;
     [SerializeField] public Stat Statues;
     [SerializeField] [TextArea] public string Explain;
-    [SerializeField] public bool RepalceMesh = false;
+    [SerializeField] public bool ReplaceMesh = false;
     [SerializeField] public bool EquipPart = false;
     [SerializeField] public Sprite SkillImage;
     [SerializeField] public SkillScriptBase Skill;

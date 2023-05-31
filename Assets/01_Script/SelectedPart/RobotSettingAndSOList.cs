@@ -84,20 +84,20 @@ public class RobotSettingAndSOList : MonoBehaviour
     [Header("Head")]
     [SerializeField] GameObject         HeadBone;
     [SerializeField] GameObject         HeadEquip;
-    [SerializeField] PartSO             Head;
+    [SerializeField] PartSO             HeadSO;
 
     [Header("Body")]
     [SerializeField] GameObject         B_UBone;
     [SerializeField] GameObject         B_UEquip;
-    [SerializeField] PartSO             B_UBody;
+    [SerializeField] PartSO             B_UBodySO;
 
     [SerializeField] GameObject         B_MBone;
     [SerializeField] GameObject         B_MEquip;
-    [SerializeField] PartSO             B_MBody;
+    [SerializeField] PartSO             B_MBodySO;
 
     [SerializeField] GameObject         B_LBone;
     [SerializeField] GameObject         B_LEquip;
-    [SerializeField] PartSO             B_LBody;
+    [SerializeField] PartSO             B_LBodySO;
 
 
 
@@ -116,61 +116,72 @@ public class RobotSettingAndSOList : MonoBehaviour
         {
             if (A_L_USO)
             {
-                EquipPart(PartEnum.ALU, A_L_USO, A_L_USO.RepalceMesh);
+                EquipPart(PartEnum.ALU, A_L_USO);
             }
             if (A_L_MSO)
             {
-                EquipPart(PartEnum.ALM, A_L_MSO, A_L_MSO.RepalceMesh);
+                EquipPart(PartEnum.ALM, A_L_MSO);
             }
             if (A_L_LSO)
             {
-                EquipPart(PartEnum.ALL, A_L_LSO, A_L_LSO.RepalceMesh);
+                EquipPart(PartEnum.ALL, A_L_LSO);
             }
 
             if (A_R_USO)
             {
-                EquipPart(PartEnum.ARU, A_R_USO, A_R_USO.RepalceMesh);
+                EquipPart(PartEnum.ARU, A_R_USO);
             }
             if (A_R_MSO)
             {
-                EquipPart(PartEnum.ARM, A_R_MSO, A_R_MSO.RepalceMesh);
+                EquipPart(PartEnum.ARM, A_R_MSO);
             }
             if (A_R_LSO)
             {
-                EquipPart(PartEnum.ARL, A_R_LSO, A_R_LSO.RepalceMesh);
+                EquipPart(PartEnum.ARL, A_R_LSO);
             }
 
             if (L_L_USO)
             {
-                EquipPart(PartEnum.LLU, L_L_USO, L_L_USO.RepalceMesh);
+                EquipPart(PartEnum.LLU, L_L_USO);
             }
             if (L_L_MSO)
             {
-                EquipPart(PartEnum.LLM, L_L_MSO, L_L_MSO.RepalceMesh);
+                EquipPart(PartEnum.LLM, L_L_MSO);
             }
             if (L_L_LSO)
             {
-                EquipPart(PartEnum.LLL, L_L_LSO, L_L_LSO.RepalceMesh);
+                EquipPart(PartEnum.LLL, L_L_LSO);
             }
 
             if (L_R_USO)
             {
-                EquipPart(PartEnum.LRU, L_R_USO, L_R_USO.RepalceMesh);
+                EquipPart(PartEnum.LRU, L_R_USO);
             }
             if (L_R_MSO)
             {
-                EquipPart(PartEnum.LRM, L_R_MSO, L_R_MSO.RepalceMesh);
+                EquipPart(PartEnum.LRM, L_R_MSO);
             }
             if (L_R_LSO)
             {
-                EquipPart(PartEnum.LRL, L_R_LSO, L_R_LSO.RepalceMesh);
+                EquipPart(PartEnum.LRL, L_R_LSO);
             }
 
-            
-
-            if (Head)
+            if (B_UBodySO)
             {
-                EquipPart(PartEnum.Head, Head);
+                EquipPart(PartEnum.UpperBody, B_UBodySO);
+            }
+            if (B_MBodySO)
+            {
+                EquipPart(PartEnum.MiddleBody, B_MBodySO);
+            }
+            if (B_LBodySO)
+            {
+                EquipPart(PartEnum.LowerBody, B_LBodySO);
+            }
+
+            if (HeadSO)
+            {
+                EquipPart(PartEnum.Head, HeadSO);
             }
 
             //if (Body)
@@ -183,9 +194,10 @@ public class RobotSettingAndSOList : MonoBehaviour
 
 
 
-    PartSO Setting(bool ReplaceMesh, PartSO input,GameObject bone, GameObject Equip, PartSO MYSO, GameObject mesh = null)
+    void Setting(PartSO input,GameObject bone,ref GameObject Equip, ref PartSO MYSO, PartEnum enums, GameObject mesh = null)
     {
-        if (ReplaceMesh)
+        if(input != null)
+        if (input.ReplaceMesh)
         {
             if(mesh != null)
                 mesh.SetActive(false);
@@ -209,8 +221,6 @@ public class RobotSettingAndSOList : MonoBehaviour
                 _statues.SPEED -= MYSO.Statues.SPEED;
             }
 
-            MYSO = null;
-
         }
         else
         {
@@ -219,64 +229,85 @@ public class RobotSettingAndSOList : MonoBehaviour
                 Destroy(Equip);
             }
 
-            MYSO = input;
 
             _statues.HP += MYSO.Statues.HP;
             _statues.ATK += MYSO.Statues.ATK;
             _statues.DEF += MYSO.Statues.DEF;
             _statues.SPEED += MYSO.Statues.SPEED;
 
-            Equip = Instantiate(input.PartAsset, bone.transform);
+            GameObject objed = null;
+            for(int i =0;  i< input._part.Count; i++)
+            {
+                if(input._part[i].enums == enums)
+                {
+                    objed = input._part[i].part;
+                    break;
+                }
+            }
+
+            if (objed != null)
+                Equip = Instantiate(objed, bone.transform);
+            else
+                Debug.LogError("∆ƒ√˜ æ¯¿Ω");
         }
-
-
-        return MYSO;
     }
 
 
 
 
-    public void EquipPart(PartEnum enums, PartSO so = null, bool ReplaceMesh = false)
+    public void EquipPart(PartEnum enums, PartSO so = null)
     {
         switch (enums)
         {
             case PartEnum.None:
                 break;
             case PartEnum.ALU:
-                A_L_USO = Setting(ReplaceMesh, so, A_L_UBone, A_L_UEquip, A_L_USO, A_L_UMesh);
+                Setting( so, A_L_UBone,ref A_L_UEquip, ref A_L_USO,enums, A_L_UMesh);
                 break;
             case PartEnum.ALM:
-                A_L_MSO = Setting(ReplaceMesh, so, A_L_MBone, A_L_MEquip, A_L_MSO);
+               Setting( so, A_L_MBone,ref A_L_MEquip, ref A_L_MSO, enums);
                 break;
             case PartEnum.ALL:
-                A_L_LSO = Setting(ReplaceMesh, so, A_L_LBone, A_L_LEquip, A_L_LSO, A_L_LMesh);
+                Setting( so, A_L_LBone,ref A_L_LEquip, ref A_L_LSO, enums, A_L_LMesh);
                 break;
             case PartEnum.ARU:
-                A_R_USO = Setting(ReplaceMesh, so, A_R_UBone, A_R_UEquip, A_R_USO, A_R_UMesh);
+                Setting( so, A_R_UBone, ref A_R_UEquip, ref A_R_USO, enums, A_R_UMesh);
                 break;
             case PartEnum.ARM:
+               Setting( so, A_R_MBone, ref A_R_MEquip, ref A_R_MSO, enums, A_R_UMesh);
                 break;
             case PartEnum.ARL:
+               Setting( so, A_R_LBone, ref A_R_LEquip, ref A_R_LSO, enums, A_R_LMesh);
                 break;
             case PartEnum.LLU:
+                Setting( so, L_L_UBone, ref L_L_LEquip, ref L_L_USO, enums, L_L_UMesh);
                 break;
             case PartEnum.LLM:
+                Setting( so, L_L_MBone, ref L_L_MEquip, ref L_L_MSO, enums);
                 break;
             case PartEnum.LLL:
+                Setting( so, L_L_LBone, ref L_L_LEquip, ref L_L_LSO, enums, L_L_LMesh);
                 break;
             case PartEnum.LRU:
+                Setting( so, L_R_UBone, ref L_R_UEquip, ref L_R_USO, enums, L_R_UMesh);
                 break;
             case PartEnum.LRM:
+                Setting( so, L_R_MBone, ref L_R_MEquip, ref L_R_MSO, enums);
                 break;
             case PartEnum.LRL:
+                Setting( so, L_R_LBone, ref L_R_LEquip, ref L_R_LSO, enums, L_R_LMesh);
                 break;
             case PartEnum.Head:
+                Setting(so, HeadBone, ref HeadEquip, ref HeadSO, enums);
                 break;
             case PartEnum.UpperBody:
+                Setting(so, B_UBone, ref B_UEquip, ref B_UBodySO, enums);
                 break;
             case PartEnum.MiddleBody:
+                Setting(so, B_MBone, ref B_MEquip, ref B_MBodySO, enums);
                 break;
             case PartEnum.LowerBody:
+                Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, enums);
                 break;
         }
 
@@ -285,36 +316,6 @@ public class RobotSettingAndSOList : MonoBehaviour
     /// <summary>
     /// æ¿≥—æÓ∞°∏È º“»Ø«ÿ¡‡æﬂµ 
     /// </summary>
-    public void VSSet()
-    {
-        gameObject.AddComponent<VSPlayer>().team = team;
-
-
-        gameObject.GetComponent<VSPlayer>().AI = AI;
-
-
-        for (int i =0; i< 5; i++)
-        {
-            switch (i)
-            {
-                case 0:
-                    SkillInput(Head);
-                    break;
-                case 1:
-                    SkillInput(LeftUpperArmSO);
-                    break;
-                case 2:
-                    SkillInput(RightUpperArmSO);
-                    break;
-                case 3:
-                    SkillInput(Leg);
-                    break;
-                case 4:
-                    SkillInput(B_Uody);
-                    break;
-            }
-        }
-    }
     public void SkillInput(PartSO ps = null)
     {
         VSPlayer vs = GetComponent<VSPlayer>();

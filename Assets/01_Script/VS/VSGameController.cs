@@ -48,7 +48,7 @@ public class VSGameController : MonoBehaviour
         for(int i=0; i < t.Length; i++)
         {
             t[i].transform.parent = transform;
-            t[i].GetComponent<RobotSettingAndSOList>().VSSet();
+            //t[i].GetComponent<RobotSettingAndSOList>().VSSet();
 
             yield return null;
             _players.Add(transform.GetChild(i).GetComponent<VSPlayer>());

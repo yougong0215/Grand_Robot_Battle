@@ -15,6 +15,11 @@ class Player {
 
 const sqlite = require("../../utils/sqlite.js");
 exports.AddPlayer = async function(id, socket) {
+    if (UserList[id] !== undefined) { // 이미 접속해있다!!
+        // 나중에 이미 접속한거 처리 해야함
+        return;
+    }
+
     const sql = sqlite.GetObject();
     const UserData = await sql.Aget("SELECT name FROM users WHERE id = ?", id);
     if (UserData === undefined || UserData.name === undefined) {
@@ -22,7 +27,6 @@ exports.AddPlayer = async function(id, socket) {
         sql.close();
         return;
     }
-
 
     UserList[id] = new Player(UserData.name, socket);
 

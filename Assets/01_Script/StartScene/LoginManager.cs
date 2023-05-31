@@ -24,9 +24,16 @@ public class LoginManager : MonoBehaviour
 
     public static LoginManager instance;
 
+    // 선택한 토큰
+    string SelectToken = null;
+
     private void Awake() {
         if (instance == null)
             instance = this;
+
+        // 서버 리스너 연결
+        NetworkCore.EventConnect += ConnectOK;
+        NetworkCore.EventDisconnect += ConnectFailed;
 
         for (int i = 0; i < Account_List.childCount; i++)
             Destroy(Account_List.GetChild(i).gameObject);
@@ -35,6 +42,11 @@ public class LoginManager : MonoBehaviour
 
         foreach (var Account in Accounts)
             ButtonAdd(Account.name, Account.id, Account.token);
+    }
+    private void OnDestroy() {
+        SelectToken = null;
+        NetworkCore.EventConnect -= ConnectOK;
+        NetworkCore.EventDisconnect -= ConnectFailed;
     }
 
     public void ButtonAdd(string name, string id, string token) {
@@ -61,6 +73,24 @@ public class LoginManager : MonoBehaviour
         // 버튼 추가
         ButtonAdd(name, id, token);
     }
+    public void RemoveAccount(int index) {
+        var Accounts = GetSaveAccount();
+
+        // 인덱스 범위 벗어남!!
+        if (Accounts.Count <= index) return;
+
+        // 계정 삭제
+        Accounts.RemoveAt(index);
+        
+        // 계정 저장
+        PlayerPrefs.SetString("Accounts", LitJson.JsonMapper.ToJson(Accounts));
+
+        // 버튼 인덱스 범위 벗어남
+        if (Account_List.childCount <= index) return;
+
+        // 버튼 삭제
+        Destroy(Account_List.GetChild(index).gameObject);
+    }
 
     // 저장된 계정들 불러옴
     List<AccountForm> GetSaveAccount() {
@@ -83,5 +113,30 @@ public class LoginManager : MonoBehaviour
 
     public void TryLogin(string token) {
         print("로그인! : "+token);
+
+        SelectToken = token;
+        
+        // 서버 로그인!!!
+        NetworkCore.instance.ServerConnect();
+    }
+
+    //////////////////// 서버 리스너 ////////////////////
+    void ConnectOK() {
+        NetworkCore.Send("domiServer.Login", SelectToken);
+    }
+    void ConnectFailed(string why) {
+        print("[LoginManager] 서버 로그인 실패 : "+why);
+
+        // 서버에서 세션이 만료되었으니 토큰을 삭제하라는 요청함
+        if (why == "domi.session_remove") {
+            why = "세션이 만료되었습니다.";
+
+            // 토큰 삭제
+            var Accounts = GetSaveAccount();
+            for (int index = 0; index < Accounts.Count; index++)
+                RemoveAccount(index);
+        }
+
+        // 처리 할거....
     }
 }

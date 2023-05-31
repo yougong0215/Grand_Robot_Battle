@@ -14,4 +14,4 @@ app.get("/nameCompare/:name", function(req, res) {
     console.log(name);
 });
 
-app.listen(Config.LoginPort, () => console.info("로그인 시스템이 준비되었습니다. Port: "+ Config.LoginPort));
+app.listen(Config.LoginPort, () => console.info("[HTTP] 로그인 시스템이 준비되었습니다. Port: "+ Config.LoginPort));

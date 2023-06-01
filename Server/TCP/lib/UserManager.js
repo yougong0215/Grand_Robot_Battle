@@ -1,9 +1,10 @@
 global.UserList = {};
 
-class Player {
+class PlayerForm {
     name = undefined;
     socket = undefined;
     coin = 0;
+    crystal = 0;
     level = 0;
     exp = 0;
 
@@ -28,15 +29,23 @@ exports.AddPlayer = async function(id, socket) {
         return;
     }
 
-    UserList[id] = new Player(UserData.name, socket);
+    const Player = UserList[id] = new PlayerForm(UserData.name, socket);
 
-    console.log(UserList);
+    // 플레이어 정보들을 불러오자
+    const PlayerStats = await sql.Aget("SELECT * FROM stats WHERE id = ?", id);
+    if (PlayerStats) { // 정보들이 있으면 (만약 없다면 다 0임)
+        Player.coin = PlayerStats.coin;
+        Player.crystal = PlayerStats.crystal;
+        Player.level = PlayerStats.level;
+        Player.exp = PlayerStats.exp;
+    }
+
+    console.log(UserList[id]);
 }
 
 exports.RemovePlayer = async function(id) {
     const CachePlayer = UserList[id];
-    if (UserList[id] === undefined) return;
-
+    if (CachePlayer === undefined) return;
     delete UserList[id];
 
     console.log(CachePlayer.name, UserList);

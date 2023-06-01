@@ -38,7 +38,7 @@ public class UIDragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     IEnumerator DelayOBJ()
     {
         yield return new WaitUntil(()=>UISlotManager.Instance.SoltUI);
-        UISlotManager.Instance.SoltUI.GetComponent<PartUIInfo>().Seleted(null, GetComponent<UnitPart>().PartSO.Type);
+        //UISlotManager.Instance.SoltUI.GetComponent<PartUIInfo>().Seleted(null, GetComponent<UnitPart>().PartSO.Type);
         UISlotManager.Instance.SoltUI.obj = null;
     }
 

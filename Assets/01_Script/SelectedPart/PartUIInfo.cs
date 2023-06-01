@@ -22,11 +22,14 @@ public class PartUIInfo : MonoBehaviour
     public void Seleted(PartSO _partSO = null, PartEnum part = PartEnum.None)
     {
         pat = _partSO;
-        if(_partSO !=null)
-            _robot.EquipPart(_partSO.Type, _partSO, _partSO.RepalceMesh);
-        else
+        if (_partSO != null)
         {
-            _robot.EquipPart(part);
+            for(int i =0; i < _partSO._part.Count; i++)
+            {
+                _robot.EquipPart(_partSO._part[i].enums, _partSO);
+            }
+
+
         }
 
 

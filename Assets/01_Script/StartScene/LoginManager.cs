@@ -43,6 +43,7 @@ public class LoginManager : MonoBehaviour
         foreach (var Account in Accounts)
             ButtonAdd(Account.name, Account.id, Account.token);
     }
+
     private void OnDestroy() {
         SelectToken = null;
         NetworkCore.EventConnect -= ConnectOK;
@@ -121,6 +122,23 @@ public class LoginManager : MonoBehaviour
         
         // 서버 로그인!!!
         NetworkCore.instance.ServerConnect();
+    }
+
+    ///////////////////////////////// 자동 로그인 /////////////////////////////////
+    private void Start() {
+        var Accounts = GetSaveAccount();
+        if (Accounts.Count == 1) { // 만약 계정이 하나밖에 추가가 되어있지 않음.
+            LoginLoadingSystem.ShowUI("로그인 초기화하고 있습니다.");
+            StartCoroutine(AutoLoginWait());
+        }
+    }
+
+    IEnumerator AutoLoginWait() {
+        // 버튼이 1개가 될때까지 기다림..
+        yield return new WaitUntil(() => Account_List.childCount == 1);
+
+        // 이제 로그인 하자! (자동으로 버튼 눌리게 함)
+        Account_List.GetChild(0).GetComponent<Button>().onClick.Invoke();
     }
 
     //////////////////// 서버 리스너 ////////////////////

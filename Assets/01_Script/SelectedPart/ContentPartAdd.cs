@@ -22,7 +22,8 @@ public class ContentPartAdd : MonoBehaviour
 
         if (_contentObj.transform.childCount == 0 && _seletedObj.transform.childCount == 0)
         {
-            part = PartList.Instance.ReturnInfo(pt);
+            //part = PartList.Instance.ReturnInfo(pt); 원래 있던거 가져오는거
+            Debug.LogWarning("여기 바꿔줘야됨");
 
             if (part != null)
             {

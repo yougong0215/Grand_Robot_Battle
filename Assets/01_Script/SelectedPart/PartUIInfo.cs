@@ -16,7 +16,7 @@ public class PartUIInfo : MonoBehaviour
 
     private void Awake()
     {
-        _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
+        //_robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
     }
 
     public void Seleted(PartSO _partSO = null, PartEnum part = PartEnum.None)

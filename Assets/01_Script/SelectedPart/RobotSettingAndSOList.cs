@@ -91,13 +91,13 @@ public class RobotSettingAndSOList : MonoBehaviour
     [SerializeField] GameObject         B_UEquip;
     [SerializeField] PartSO             B_UBodySO;
 
-    [SerializeField] GameObject         B_MBone;
-    [SerializeField] GameObject         B_MEquip;
-    [SerializeField] PartSO             B_MBodySO;
+    //[SerializeField] GameObject         B_MBone;
+    //[SerializeField] GameObject         B_MEquip;
+    //[SerializeField] PartSO             B_MBodySO;
 
-    [SerializeField] GameObject         B_LBone;
-    [SerializeField] GameObject         B_LEquip;
-    [SerializeField] PartSO             B_LBodySO;
+    //[SerializeField] GameObject         B_LBone;
+    //[SerializeField] GameObject         B_LEquip;
+    //[SerializeField] PartSO             B_LBodySO;
 
 
 
@@ -170,14 +170,14 @@ public class RobotSettingAndSOList : MonoBehaviour
             {
                 EquipPart(PartEnum.UpperBody, B_UBodySO);
             }
-            if (B_MBodySO)
-            {
-                EquipPart(PartEnum.MiddleBody, B_MBodySO);
-            }
-            if (B_LBodySO)
-            {
-                EquipPart(PartEnum.LowerBody, B_LBodySO);
-            }
+            //if (B_MBodySO)
+            //{
+            //    EquipPart(PartEnum.MiddleBody, B_MBodySO);
+            //}
+            //if (B_LBodySO)
+            //{
+            //    EquipPart(PartEnum.LowerBody, B_LBodySO);
+            //}
 
             if (HeadSO)
             {
@@ -242,12 +242,12 @@ public class RobotSettingAndSOList : MonoBehaviour
                 case PartEnum.UpperBody:
                     Setting(so, B_UBone, ref B_UEquip, ref B_UBodySO, so._part[i].enums, null, true);
                     break;
-                case PartEnum.MiddleBody:
-                    Setting(so, B_MBone, ref B_MEquip, ref B_MBodySO, so._part[i].enums, null ,true);
-                    break;
-                case PartEnum.LowerBody:
-                    Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, so._part[i].enums, null, true);
-                    break;
+                //case PartEnum.MiddleBody:
+                //    Setting(so, B_MBone, ref B_MEquip, ref B_MBodySO, so._part[i].enums, null ,true);
+                //    break;
+                //case PartEnum.LowerBody:
+                //    Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, so._part[i].enums, null, true);
+                //    break;
             }
         }
     }
@@ -394,12 +394,12 @@ public class RobotSettingAndSOList : MonoBehaviour
             case PartEnum.UpperBody:
                 Setting(so, B_UBone, ref B_UEquip, ref B_UBodySO, enums);
                 break;
-            case PartEnum.MiddleBody:
-                Setting(so, B_MBone, ref B_MEquip, ref B_MBodySO, enums);
-                break;
-            case PartEnum.LowerBody:
-                Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, enums);
-                break;
+            //case PartEnum.MiddleBody:
+            //    Setting(so, B_MBone, ref B_MEquip, ref B_MBodySO, enums);
+            //    break;
+            //case PartEnum.LowerBody:
+            //    Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, enums);
+            //    break;
         }
 
     }

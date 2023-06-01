@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContentPartAdd : MonoBehaviour
 {
@@ -43,7 +44,6 @@ public class ContentPartAdd : MonoBehaviour
                         _seletedObj.Seleted(ui.PartSO);
                         ui.transform.parent = _seletedObj.transform;
                         ui.transform.position = _seletedObj.transform.position;
-                        ui.GetComponent<UIDragAndDrop>()._oldParent = _contentObj.transform;
                         ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
@@ -56,8 +56,6 @@ public class ContentPartAdd : MonoBehaviour
 
 
                         ui.SettingSO(part[i]);
-                        ui.GetComponent<UIDragAndDrop>()._oldParent = _contentObj.transform;
-                        ui.GetComponent<UIDragAndDrop>().ReturnParent();
                         ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 

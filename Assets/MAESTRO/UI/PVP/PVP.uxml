@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
+    <ui:VisualElement name="Root">
+        <ui:VisualElement name="BtnGroup">
+            <ui:VisualElement name="PartsBtnGroup">
+                <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn" />
+                <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn" />
+                <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn" />
+                <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn" />
+                <ui:Button display-tooltip-when-elided="true" name="Hbtn" class="Partsbtn" />
+            </ui:VisualElement>
+            <ui:Button display-tooltip-when-elided="true" name="AttackBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1700px; transition-duration: 0.5s;" />
+            <ui:Button display-tooltip-when-elided="true" name="SkipBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1400px;" />
+            <ui:Button display-tooltip-when-elided="true" name="SurrenderBtn" class="Menubtn on" style="width: 250px; height: 130px; background-color: rgb(255, 255, 255); left: 1100px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="WarningPanel" class="warning off">
+            <ui:Label text="text" display-tooltip-when-elided="true" name="warningText" style="font-size: 60px;" />
+            <ui:Button text="YES" display-tooltip-when-elided="true" name="Yesbtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 189px;" />
+            <ui:Button text="NO" display-tooltip-when-elided="true" name="Nobtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 606px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">
+        <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px; -unity-text-align: middle-left;" />
+    </ui:Button>
+</ui:UXML>

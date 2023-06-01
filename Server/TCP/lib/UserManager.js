@@ -40,7 +40,13 @@ exports.AddPlayer = async function(id, socket) {
         Player.exp = PlayerStats.exp;
     }
 
-    console.log(UserList[id]);
+    // 로비로 바꾸라고 요청해야지
+    Player.socket.send("Lobby.Init", {
+        ID: id,
+        Name: Player.name,
+        Coin: Player.coin,
+        Crystal: Player.crystal
+    });
 }
 
 exports.RemovePlayer = async function(id) {

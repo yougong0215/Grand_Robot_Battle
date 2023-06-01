@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 class AccountForm {
@@ -34,6 +35,7 @@ public class LoginManager : MonoBehaviour
         // 서버 리스너 연결
         NetworkCore.EventConnect += ConnectOK;
         NetworkCore.EventDisconnect += ConnectFailed;
+        NetworkCore.EventListener["Lobby.Init"] = LobbyStart;
 
         for (int i = 0; i < Account_List.childCount; i++)
             Destroy(Account_List.GetChild(i).gameObject);
@@ -48,6 +50,7 @@ public class LoginManager : MonoBehaviour
         SelectToken = null;
         NetworkCore.EventConnect -= ConnectOK;
         NetworkCore.EventDisconnect -= ConnectFailed;
+        NetworkCore.EventListener.Remove("Lobby.Init");
     }
 
     public void ButtonAdd(string name, string id, string token) {
@@ -161,5 +164,11 @@ public class LoginManager : MonoBehaviour
         }
 
         // 처리 할거....
+    }
+    void LobbyStart(LitJson.JsonData data) {
+        print("로비 불러오자");
+        print(data.ToJson());
+
+        SceneManager.LoadScene(0);
     }
 }

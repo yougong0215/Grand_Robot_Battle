@@ -115,6 +115,9 @@ public class LoginManager : MonoBehaviour
         print("로그인! : "+token);
 
         SelectToken = token;
+
+        // 로딩 띄움
+        LoginLoadingSystem.ShowUI("서버와 연결중 입니다.");
         
         // 서버 로그인!!!
         NetworkCore.instance.ServerConnect();
@@ -122,10 +125,12 @@ public class LoginManager : MonoBehaviour
 
     //////////////////// 서버 리스너 ////////////////////
     void ConnectOK() {
+        LoginLoadingSystem.ShowUI("계정정보를 불러오는 중입니다.");
         NetworkCore.Send("domiServer.Login", SelectToken);
     }
     void ConnectFailed(string why) {
         print("[LoginManager] 서버 로그인 실패 : "+why);
+        LoginLoadingSystem.HideUI();
 
         // 서버에서 세션이 만료되었으니 토큰을 삭제하라는 요청함
         if (why == "domi.session_remove") {

@@ -6,17 +6,11 @@ using TMPro;
 public class PartUIInfo : MonoBehaviour
 {
     RobotSettingAndSOList _robot;
-    [SerializeField] GameObject TextPanel;
-    [SerializeField] TextMeshProUGUI ATK;
-    [SerializeField] TextMeshProUGUI DEF;
-    [SerializeField] TextMeshProUGUI HP;
-    [SerializeField] TextMeshProUGUI SPEED;
-    [SerializeField] TextMeshProUGUI TMPPanel;
     PartSO pat;
 
     private void Awake()
     {
-        //_robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
+        _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
     }
 
     public void Seleted(PartSO _partSO = null, PartEnum part = PartEnum.None)
@@ -35,18 +29,7 @@ public class PartUIInfo : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (pat != null)
-        {
-            TextPanel.SetActive(true);
-            TMPPanel.text = pat.Explain;
-            ATK.text = $"ATK : {pat.Statues.ATK}";
-            DEF.text = $"DEF : {pat.Statues.DEF}";
-            SPEED.text = $"SPEED : {pat.Statues.SPEED}";
-            HP.text = $"HP : {pat.Statues.HP}";
-        }
 
-    }
+    
 
 }

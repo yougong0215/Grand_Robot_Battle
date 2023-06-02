@@ -44,7 +44,7 @@ public class ContentPartAdd : MonoBehaviour
                         _seletedObj.Seleted(ui.PartSO);
                         ui.transform.parent = _seletedObj.transform;
                         ui.transform.position = _seletedObj.transform.position;
-                        ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                        //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
                     }
@@ -56,7 +56,7 @@ public class ContentPartAdd : MonoBehaviour
 
 
                         ui.SettingSO(part[i]);
-                        ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                        //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
 

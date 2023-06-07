@@ -101,7 +101,7 @@ public class PVPUI : MonoBehaviour
     public IEnumerator Corutine(PartSO so)
     {
         // 이거 다 서버로 바꿔야됨
-        SetPanel(); // 꺼짐
+        SetPanel(); // 켜짐
         SetPartsBtn();
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
@@ -149,9 +149,28 @@ public class PVPUI : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             _paneltxt.text = so.Daesa;
             _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
-            yield return new WaitForSeconds(1.5f);
+
+
+            yield return new WaitForSeconds(1f);
+            if(so.clips != null)
+            {
+                SetPanel(); // 켜짐
+                _robot.GetComponent<AnimationBind>().AnimationChange(so.clips);
+
+
+
+                yield return new WaitUntil(() => _robot.GetComponent<AnimationBind>().EndAnim());
+
+                SetPanel();
+            }
+            else
+            {
+                _paneltxt.text = $"지정된 에니메이션이 없습니다";
+                yield return new WaitForSeconds(1f);
+            }
+           
             _paneltxt.text =
-                $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다.";
+                $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다. ( 적HP : { _enemyRobot._statues.HP} )";
 
             if (_enemyRobot._statues.HP <= 0)
             {
@@ -169,9 +188,28 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 _paneltxt.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
-                yield return new WaitForSeconds(1.5f);
+
+                yield return new WaitForSeconds(1f);
+                if (so.clips != null)
+                {
+                    SetPanel(); // 켜짐
+                    _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
+
+
+
+                    yield return new WaitUntil(() => _enemyRobot.GetComponent<AnimationBind>().EndAnim());
+
+                    SetPanel();
+                }
+                else
+                {
+                    _paneltxt.text = $"지정된 에니메이션이 없습니다";
+                    yield return new WaitForSeconds(1f);
+                }
+
+
                 _paneltxt.text =
-                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다.";
+                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
             }
             else
             {
@@ -179,9 +217,28 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 _panel.text = "적이 아직 데이터를 가지고 있지 않습니다.";
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(1f);
+                if (so.clips != null)
+                {
+                    SetPanel(); // 켜짐
+                    _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
+
+
+
+                    yield return new WaitUntil(() => _enemyRobot.GetComponent<AnimationBind>().EndAnim());
+
+                    SetPanel();
+
+                }
+                else
+                {
+                    _paneltxt.text = $"지정된 에니메이션이 없습니다";
+                    yield return new WaitForSeconds(1f);
+                }
+
+
                 _paneltxt.text =
-                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다.";
+                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
             }
 
             if (_robot._statues.HP <= 0)
@@ -233,6 +290,7 @@ public class PVPUI : MonoBehaviour
 
     IEnumerator Skip()
     {
+        OnWarning();
         SetPanel(); // 꺼짐
         SetPartsBtn();
         _atkBtn.RemoveFromClassList("on");
@@ -248,7 +306,7 @@ public class PVPUI : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         _paneltxt.text = "로딩중......";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "나의 턴은 스킵되었다";
+        _paneltxt.text = $"나의 턴은 스킵되었다  ( 적HP : { _enemyRobot._statues.HP} )";
         yield return new WaitForSeconds(2f);
         yield return StartCoroutine(Fight(false, null, rand));
 

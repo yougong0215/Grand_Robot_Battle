@@ -147,11 +147,13 @@ public class PVPUI : MonoBehaviour
         }
         else
         {
-            if(_enemyRobot.ReturnParts((PartBaseEnum)rand) != null)
+            if (_enemyRobot.ReturnParts((PartBaseEnum)rand) != null)
             {
-                _panel.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
+                _paneltxt.text = $"적의 턴!!!";
+                yield return new WaitForSeconds(0.5f);
+                _paneltxt.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1.5f);
                 _paneltxt.text =
                     $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다.";
             }
@@ -166,7 +168,7 @@ public class PVPUI : MonoBehaviour
                     $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다.";
             }
 
-            
+
         }
 
         yield return new WaitForSeconds(2.5f);
@@ -175,7 +177,7 @@ public class PVPUI : MonoBehaviour
 
     public bool SpeedReturn()
     {
-        if(_robot._statues.SPEED >= _enemyRobot._statues.SPEED)
+        if (_robot._statues.SPEED >= _enemyRobot._statues.SPEED)
         {
             return true;
         }
@@ -187,7 +189,7 @@ public class PVPUI : MonoBehaviour
 
     private void OnWarning()
     {
-        if(onwarning)
+        if (onwarning)
         {
             _warning.AddToClassList("on");
         }
@@ -201,8 +203,44 @@ public class PVPUI : MonoBehaviour
     private void YesLogic()
     {
         // 스킵
+        StartCoroutine(Skip());
     }
-    
+
+    IEnumerator Skip()
+    {
+        SetPanel(); // 꺼짐
+        SetPartsBtn();
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        yield return new WaitForSeconds(0.1f);
+
+        int rand = UnityEngine.Random.Range(0, 5);
+
+        _paneltxt.text = "로딩중..";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중......";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "나의 턴은 스킵되었다";
+        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(Fight(false, null, rand));
+
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중..";
+        yield return new WaitForSeconds(0.3f);
+        SetPanel();
+        _atkBtn.AddToClassList("on");
+        _surrenBtn.AddToClassList("on");
+        _skipBtn.AddToClassList("on");
+
+
+    }
+
     private void SkipLogic()
     {
         _wText.text = "정말 스킵하시겠습니까?";
@@ -220,7 +258,7 @@ public class PVPUI : MonoBehaviour
 
     private void SetPanel()
     {
-        if(!onPanel)
+        if (!onPanel)
         {
             _panel.RemoveFromClassList("off");
         }
@@ -234,9 +272,9 @@ public class PVPUI : MonoBehaviour
 
     private void SetPartsBtn()
     {
-        if(!onPartsPanel)
+        if (!onPartsPanel)
         {
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 partsbtns[i].AddToClassList($"{partsClass[i]}");
             }

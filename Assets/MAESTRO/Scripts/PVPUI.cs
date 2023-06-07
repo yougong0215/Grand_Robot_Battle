@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PVPUI : MonoBehaviour
 {
@@ -131,7 +132,14 @@ public class PVPUI : MonoBehaviour
         _surrenBtn.AddToClassList("on");
         _skipBtn.AddToClassList("on");
 
+        
+
+        
+
     }
+
+
+    
 
     public IEnumerator Fight(bool t, PartSO so, int rand)
     {
@@ -144,6 +152,14 @@ public class PVPUI : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             _paneltxt.text =
                 $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다.";
+
+            if (_enemyRobot._statues.HP <= 0)
+            {
+                yield return new WaitForSeconds(1.5f);
+                _paneltxt.text = $"HP : {_robot._statues.HP} 나의 승리..!";
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("Menu");
+            }
         }
         else
         {
@@ -166,6 +182,15 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _paneltxt.text =
                     $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다.";
+            }
+
+            if (_robot._statues.HP <= 0)
+            {
+                yield return new WaitForSeconds(1.5f);
+                _paneltxt.text = $"HP : {_robot._statues.HP} 적의 승리..";
+                yield return new WaitForSeconds(1.5f);
+                SceneManager.LoadScene("Menu");
+
             }
 
 

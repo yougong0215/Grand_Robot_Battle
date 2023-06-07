@@ -52,6 +52,15 @@ public class Parts
 
 }
 
+public enum PartBaseEnum
+{
+    Left,
+    Right,
+    Head,
+    Body,
+    Leg
+}
+
 [CreateAssetMenu(menuName =("SO/PartUI"))]
 public class PartSO : ScriptableObject
 {
@@ -63,5 +72,7 @@ public class PartSO : ScriptableObject
     [SerializeField] public bool EquipPart = false;
     [SerializeField] public Sprite SkillImage;
     [SerializeField] public SkillScriptBase Skill;
+    [SerializeField] public PartBaseEnum PartBase;
+    [SerializeField] public Sprite EquipImage;
     
 }

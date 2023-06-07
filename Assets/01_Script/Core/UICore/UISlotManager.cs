@@ -33,7 +33,7 @@ public class UISlotManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //_robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
+        _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
     }
     private void OnEnable()
     {
@@ -44,10 +44,10 @@ public class UISlotManager : MonoBehaviour
 
     void Update()
     {
-        //ATK.text = $"ATK : { _robot._statues.ATK}";
-        //DEF.text = $"DEF : { _robot._statues.DEF}";
-        //SPEED.text = $"SPEED : { _robot._statues.SPEED}";
-        //HP.text = $"HP : {_robot._statues.HP}";
+        ATK.text = $"ATK : {_robot._statues.ATK}";
+        DEF.text = $"DEF : {_robot._statues.DEF}";
+        SPEED.text = $"SPEED : {_robot._statues.SPEED}";
+        HP.text = $"HP : {_robot._statues.HP}";
     }
 
 

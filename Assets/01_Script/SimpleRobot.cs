@@ -5,11 +5,11 @@ using UnityEngine;
 public class SimpleRobot : Singleton<SimpleRobot>
 {
     RobotSettingAndSOList _robot;
-    PartSO Left;
-    PartSO Right;
-    PartSO Head;
-    PartSO Body;
-    PartSO Leg;
+    [SerializeField] PartSO Left;
+    [SerializeField] PartSO Right;
+    [SerializeField] PartSO Head;
+    [SerializeField] PartSO Body;
+    [SerializeField] PartSO Leg;
 
     public void Setting(PartSO so, PartBaseEnum b)
     {

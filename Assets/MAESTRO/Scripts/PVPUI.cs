@@ -68,6 +68,7 @@ public class PVPUI : MonoBehaviour
             {
                 so = new PartSO();
                 so.PartBase = (PartBaseEnum)i;
+                partsbtns[i].style.backgroundImage = new StyleBackground( so.SkillImage);
             }
             partsbtns[i].clicked += () => OnButton(so);
 

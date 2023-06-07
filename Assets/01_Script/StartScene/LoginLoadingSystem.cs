@@ -19,13 +19,13 @@ public class LoginLoadingSystem : MonoBehaviour
         CanVa = ScreenUI.GetComponent<CanvasGroup>();
     }
 
-    static void ShowUI(string text) {
+    public static void ShowUI(string text) {
         instance.TextUI.text = text;
         instance.ScreenUI.SetActive(true);
         instance.CanVa.DOFade(1, .2f);
     }
 
-    static void HideUI() {
+    public static void HideUI() {
         instance.CanVa.DOFade(0, .2f).OnComplete(() => instance.ScreenUI.SetActive(false));
     }
 }

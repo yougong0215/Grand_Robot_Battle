@@ -60,12 +60,13 @@ public class LoginWindowSystem : MonoBehaviour
         if (LoginManager.instance.FindID_Login(ID_Input.text)) return;
 
         // 로딩 표시할 코드 넣을껑미
-
+        LoginLoadingSystem.ShowUI("잠시만 기다려주세요.");
 
         HTTP_manager.RequestPOST("login", new LoginPacketForm(ID_Input.text, Pass_Input.text), HTTPLoginResult);
     }
 
     void HTTPLoginResult(int statusCode, LitJson.JsonData data) {
+        LoginLoadingSystem.HideUI(); // 로딩 해제
         if (statusCode != 200) {
             ErrorText.text = (statusCode == 0 ? "네트워크 상태를 확인하세요." : "로그인에 실패하였습니다. ("+statusCode+")");
             return;
@@ -76,6 +77,7 @@ public class LoginWindowSystem : MonoBehaviour
             return;
         }
 
+        OpenLoginUI(true); // 로그인에 성공했으면 창 닫기
         LoginManager.instance.SaveAccount((string)data["name"], (string)data["id"], (string)data["token"]);
     }
 }

@@ -109,8 +109,6 @@ module.exports = function(socket) {
         }
 
         // 오케이! 로그인 했다
-        console.log(result.id);
-
         // 마지막 로그인 시간을 저장하자
         sql.run("UPDATE sessions SET Last_Login = ? WHERE token = ?", [Number(new Date()), result.token], () => sql.close());
 

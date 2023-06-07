@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 class AccountForm {
@@ -34,6 +35,7 @@ public class LoginManager : MonoBehaviour
         // 서버 리스너 연결
         NetworkCore.EventConnect += ConnectOK;
         NetworkCore.EventDisconnect += ConnectFailed;
+        NetworkCore.EventListener["Lobby.Init"] = LobbyStart;
 
         for (int i = 0; i < Account_List.childCount; i++)
             Destroy(Account_List.GetChild(i).gameObject);
@@ -43,10 +45,12 @@ public class LoginManager : MonoBehaviour
         foreach (var Account in Accounts)
             ButtonAdd(Account.name, Account.id, Account.token);
     }
+
     private void OnDestroy() {
         SelectToken = null;
         NetworkCore.EventConnect -= ConnectOK;
         NetworkCore.EventDisconnect -= ConnectFailed;
+        NetworkCore.EventListener.Remove("Lobby.Init");
     }
 
     public void ButtonAdd(string name, string id, string token) {
@@ -115,17 +119,39 @@ public class LoginManager : MonoBehaviour
         print("로그인! : "+token);
 
         SelectToken = token;
+
+        // 로딩 띄움
+        LoginLoadingSystem.ShowUI("서버와 연결중 입니다.");
         
         // 서버 로그인!!!
         NetworkCore.instance.ServerConnect();
     }
 
+    ///////////////////////////////// 자동 로그인 /////////////////////////////////
+    private void Start() {
+        var Accounts = GetSaveAccount();
+        if (Accounts.Count == 1) { // 만약 계정이 하나밖에 추가가 되어있지 않음.
+            LoginLoadingSystem.ShowUI("로그인 초기화하고 있습니다.");
+            StartCoroutine(AutoLoginWait());
+        }
+    }
+
+    IEnumerator AutoLoginWait() {
+        // 버튼이 1개가 될때까지 기다림..
+        yield return new WaitUntil(() => Account_List.childCount == 1);
+
+        // 이제 로그인 하자! (자동으로 버튼 눌리게 함)
+        Account_List.GetChild(0).GetComponent<Button>().onClick.Invoke();
+    }
+
     //////////////////// 서버 리스너 ////////////////////
     void ConnectOK() {
+        LoginLoadingSystem.ShowUI("계정정보를 불러오는 중입니다.");
         NetworkCore.Send("domiServer.Login", SelectToken);
     }
     void ConnectFailed(string why) {
         print("[LoginManager] 서버 로그인 실패 : "+why);
+        LoginLoadingSystem.HideUI();
 
         // 서버에서 세션이 만료되었으니 토큰을 삭제하라는 요청함
         if (why == "domi.session_remove") {
@@ -138,5 +164,11 @@ public class LoginManager : MonoBehaviour
         }
 
         // 처리 할거....
+    }
+    void LobbyStart(LitJson.JsonData data) {
+        print("로비 불러오자");
+        print(data.ToJson());
+
+        SceneManager.LoadScene(0);
     }
 }

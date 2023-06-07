@@ -13,6 +13,12 @@ public class PVPUI : MonoBehaviour
     private Label _paneltxt;
     private VisualElement _warning;
 
+    private VisualElement _playerHpBar;
+    private Label _playerHpText;
+
+    private VisualElement _enemyHpBar;
+    private Label _enemyHpText;
+
     private Button _atkBtn;
     private Button _skipBtn;
     private Button _surrenBtn;
@@ -54,11 +60,14 @@ public class PVPUI : MonoBehaviour
         _wText = _root.Q<Label>("warningText");
         _yesBtn = _root.Q<Button>("Yesbtn");
         _noBtn = _root.Q<Button>("Nobtn");
+        _playerHpBar = _root.Q<VisualElement>("PlayerHPBar");
+        _playerHpText = _root.Q<Label>("PlayerCurrentHP");
+        _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
+        _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
         #endregion
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
-
 
             PartSO so;
             if (_robot.ReturnParts((PartBaseEnum)i) != null)

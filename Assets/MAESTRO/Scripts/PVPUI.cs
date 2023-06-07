@@ -86,6 +86,7 @@ public class PVPUI : MonoBehaviour
 
         _noBtn.clicked += OnWarning;
         #endregion
+
     }
 
 
@@ -98,6 +99,10 @@ public class PVPUI : MonoBehaviour
     {
         // 이거 다 서버로 바꿔야됨
         SetPanel(); // 꺼짐
+        SetPartsBtn();
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
         yield return new WaitForSeconds(0.1f);
 
         int rand = UnityEngine.Random.Range(0, 5);
@@ -120,7 +125,9 @@ public class PVPUI : MonoBehaviour
         _paneltxt.text = "로딩중..";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
-
+        _atkBtn.AddToClassList("on");
+        _surrenBtn.AddToClassList("on");
+        _skipBtn.AddToClassList("on");
 
     }
 
@@ -128,9 +135,11 @@ public class PVPUI : MonoBehaviour
     {
         if (t == true)
         {
+            _paneltxt.text = $"나의 턴!!!";
+            yield return new WaitForSeconds(0.5f);
             _paneltxt.text = so.Daesa;
             _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
             _paneltxt.text =
                 $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다.";
         }
@@ -146,9 +155,11 @@ public class PVPUI : MonoBehaviour
             }
             else
             {
+                _paneltxt.text = $"적의 턴!!!";
+                yield return new WaitForSeconds(0.5f);
                 _panel.text = "적이 아직 데이터를 가지고 있지 않습니다.";
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1.5f);
                 _paneltxt.text =
                     $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다.";
             }
@@ -156,7 +167,7 @@ public class PVPUI : MonoBehaviour
             
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
     }
 
 

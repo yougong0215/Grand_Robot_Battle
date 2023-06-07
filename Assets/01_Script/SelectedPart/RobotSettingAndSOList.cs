@@ -161,7 +161,13 @@ public class RobotSettingAndSOList : MonoBehaviour
     public Stat _statues = new Stat();
 
 
-
+    private void Awake()
+    {
+        if(gameObject.name == "MyRobot")
+        {
+            SimpleRobot.Instance.FindAndSet();
+        }
+    }
 
     private void Init()
     {

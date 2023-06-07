@@ -9,7 +9,7 @@ public class ContentPartAdd : MonoBehaviour
     [SerializeField] public GameObject _contentObj;
     [SerializeField] public PartUIInfo _seletedObj;
     [SerializeField] List<PartSO> part;
-    [SerializeField] PartEnum pt;
+
 
     bool bFirst = true;
 

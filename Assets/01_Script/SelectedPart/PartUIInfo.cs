@@ -32,6 +32,8 @@ public class PartUIInfo : MonoBehaviour
         pat = _partSO;
         _robot.InitSet();
 
+        _robot.SetingRealPart(pat.PartBase, pat);
+
         if(_partSO != null)
         for (int i = 0; i < _partSO._part.Count; i++)
         {

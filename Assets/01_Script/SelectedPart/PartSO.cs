@@ -74,5 +74,11 @@ public class PartSO : ScriptableObject
     [SerializeField] public SkillScriptBase Skill;
     [SerializeField] public PartBaseEnum PartBase;
     [SerializeField] public Sprite EquipImage;
-    
+
+
+    [Header("스킬 계수")]
+    [SerializeField] public string names = "";
+    [SerializeField] public float Count = 1;
+    [SerializeField] [TextArea] public string Daesa = "아직 스킬 대사가 없습니다";
+
 }

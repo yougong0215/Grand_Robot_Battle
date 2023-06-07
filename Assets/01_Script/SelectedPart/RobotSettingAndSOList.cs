@@ -9,6 +9,60 @@ public class RobotSettingAndSOList : MonoBehaviour
     [SerializeField] bool AI = false;
     public Team team;
 
+
+    PartSO Left;
+    PartSO Right;
+    PartSO Head;
+    PartSO Body;
+    PartSO Leg;
+
+    public void SetingRealPart(PartBaseEnum e, PartSO p = null)
+    {
+        switch (e)
+        {
+            case PartBaseEnum.Left:
+                Left = p;
+                break;
+            case PartBaseEnum.Right:
+                Right = p;
+                break;
+            case PartBaseEnum.Head:
+                Head = p;
+                break;
+            case PartBaseEnum.Body:
+                Body = p;
+                break;
+            case PartBaseEnum.Leg:
+                Leg = p;
+                break;
+        }
+    }
+
+        public PartSO ReturnParts(PartBaseEnum e)
+    {
+        switch (e)
+        {
+            case PartBaseEnum.Left:
+                return Left;
+                break;
+            case PartBaseEnum.Right:
+                return Right;
+                break;
+            case PartBaseEnum.Head:
+                return Head;
+                break;
+            case PartBaseEnum.Body:
+                return Body;
+                break;
+            case PartBaseEnum.Leg:
+                return Leg;
+                break;
+
+        }
+        return null;
+    }
+
+
     [Header("Left Upper Arm")]
     [SerializeField] GameObject A_L_UBone;
     [SerializeField] GameObject A_L_UMesh;
@@ -92,6 +146,7 @@ public class RobotSettingAndSOList : MonoBehaviour
     [SerializeField] GameObject B_UEquip;
     
     [SerializeField] PartSO B_UBodySO;
+    
 
     //[SerializeField] GameObject         B_MBone;
     //[SerializeField] GameObject         B_MEquip;
@@ -106,13 +161,9 @@ public class RobotSettingAndSOList : MonoBehaviour
     public Stat _statues = new Stat();
 
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
 
 
-    private void Start()
+    private void Init()
     {
         if (team == Team.Blue)
         {

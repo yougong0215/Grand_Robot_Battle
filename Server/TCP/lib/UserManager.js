@@ -32,6 +32,16 @@ exports.AddPlayer = async function(id, socket) {
     const Player = UserList[id] = new PlayerForm(UserData.name, socket);
     console.log(`[UserManager] ${Player.name}(${id})님이 서버를 접속하였습니다.`);
 
+    //////// 문제 ////////
+    /*
+        플레이어 정보를 불러올때 만약 데베오류로 불러오지못하는 상황이라면
+        플레이어 정보가 다 초기화 되는 현상이 발생함
+
+        --------------------------------
+        로비에 Init과 동시에 데이터를 주면
+        다음에 로비를 불러올때는 어떻게 데이터를 줘야할지 문제가 발생함
+    */
+
     // 플레이어 정보들을 불러오자
     const PlayerStats = await sql.Aget("SELECT * FROM stats WHERE id = ?", id);
     if (PlayerStats) { // 정보들이 있으면 (만약 없다면 다 0임)

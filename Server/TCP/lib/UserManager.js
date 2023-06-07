@@ -30,6 +30,7 @@ exports.AddPlayer = async function(id, socket) {
     }
 
     const Player = UserList[id] = new PlayerForm(UserData.name, socket);
+    console.log(`[UserManager] ${Player.name}(${id})님이 서버를 접속하였습니다.`);
 
     // 플레이어 정보들을 불러오자
     const PlayerStats = await sql.Aget("SELECT * FROM stats WHERE id = ?", id);
@@ -39,6 +40,7 @@ exports.AddPlayer = async function(id, socket) {
         Player.level = PlayerStats.level;
         Player.exp = PlayerStats.exp;
     }
+    sql.close(); // 데베 사용 끝남
 
     // 로비로 바꾸라고 요청해야지
     Player.socket.send("Lobby.Init", {
@@ -54,5 +56,5 @@ exports.RemovePlayer = async function(id) {
     if (CachePlayer === undefined) return;
     delete UserList[id];
 
-    console.log(CachePlayer.name, UserList);
+    console.log(`[UserManager] ${CachePlayer.name}(${id})님이 서버를 나갔습니다.`);
 }

@@ -9,6 +9,7 @@ public class MenuUI : MonoBehaviour
     private UIDocument _doc;
     private VisualElement _root;
     private Button _battleBtn;
+    private Button _gongBtn;
 
     private void Awake()
     {
@@ -19,7 +20,9 @@ public class MenuUI : MonoBehaviour
     {
         _root = _doc.rootVisualElement;
         _battleBtn = _root.Q<Button>("BattleBtn");
+        _gongBtn = _root.Q<Button>("GongBtn");
         _battleBtn.clicked += () => SceneLoad("PVP");
+        _gongBtn.clicked += () => SceneLoad("MakeRobot");
     }
 
     void SceneLoad(string sceneString)

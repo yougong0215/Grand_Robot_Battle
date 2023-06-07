@@ -63,12 +63,13 @@ public class PVPUI : MonoBehaviour
             if (_robot.ReturnParts((PartBaseEnum)i) != null)
             {
                 so = _robot.ReturnParts((PartBaseEnum)i);
+                partsbtns[i].style.backgroundImage = new StyleBackground(so.SkillImage);
             }
             else
             {
                 so = new PartSO();
                 so.PartBase = (PartBaseEnum)i;
-                partsbtns[i].style.backgroundImage = new StyleBackground( so.SkillImage);
+
             }
             partsbtns[i].clicked += () => OnButton(so);
 

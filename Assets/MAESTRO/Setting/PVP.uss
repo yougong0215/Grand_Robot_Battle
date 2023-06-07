@@ -1,10 +1,10 @@
 .Partsbtn {
-    width: 250px;
-    height: 130px;
+    width: 300px;
+    height: 100px;
     background-color: rgb(125, 125, 125);
     position: absolute;
     color: rgb(255, 255, 255);
-    left: 1700px;
+    left: 1650px;
     top: 950px;
     transition-property: top, left;
     transition-duration: 0.5s, 0.5s;
@@ -25,32 +25,32 @@
 
 .Partsbtn.LA {
     position: absolute;
-    left: 1435px;
-    top: 385px;
+    left: 1650px;
+    top: 270px;
 }
 
 .Partsbtn.RA {
     position: absolute;
-    left: 1700px;
-    top: 385px;
+    left: 1650px;
+    top: 380px;
 }
 
 .Partsbtn.LL {
     position: absolute;
-    left: 1435px;
-    top: 530px;
+    left: 1650px;
+    top: 490px;
 }
 
 .Partsbtn.RL {
     position: absolute;
-    left: 1700px;
-    top: 530px;
+    left: 1650px;
+    top: 600px;
 }
 
 .Partsbtn.H {
     position: absolute;
-    left: 1567.5px;
-    top: 240px;
+    left: 1650px;
+    top: 160px;
 }
 
 .panel {

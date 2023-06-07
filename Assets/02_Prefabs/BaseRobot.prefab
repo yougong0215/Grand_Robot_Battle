@@ -3615,25 +3615,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6706a29f2bfb8194db0640cbd43b8d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AI: 0
   team: 0
-  LeftArmBone: {fileID: 811008042906744161}
-  LeftArmMesh: {fileID: 6930207804976478085}
-  LeftEquip: {fileID: 0}
-  Left: {fileID: 0}
-  RightArmBone: {fileID: 5389076247027985406}
-  RightArmMesh: {fileID: 4716511756024286642}
-  RightEquip: {fileID: 0}
-  Right: {fileID: 0}
+  A_L_UBone: {fileID: 8103708140516656326}
+  A_L_UMesh: {fileID: 4419030798818017753}
+  A_L_UEquip: {fileID: 0}
+  A_L_USO: {fileID: 0}
+  A_L_MBone: {fileID: 2109601435571824362}
+  A_L_MEquip: {fileID: 0}
+  A_L_MSO: {fileID: 0}
+  A_L_LBone: {fileID: 3115346491627881694}
+  A_L_LMesh: {fileID: 6930207804976478085}
+  A_L_LEquip: {fileID: 0}
+  A_L_LSO: {fileID: 0}
+  A_R_UBone: {fileID: 978165354347199422}
+  A_R_UMesh: {fileID: 7077132038282376673}
+  A_R_UEquip: {fileID: 0}
+  A_R_USO: {fileID: 0}
+  A_R_MBone: {fileID: 5114574356694426042}
+  A_R_MEquip: {fileID: 0}
+  A_R_MSO: {fileID: 0}
+  A_R_LBone: {fileID: 7693453108852485522}
+  A_R_LMesh: {fileID: 4716511756024286642}
+  A_R_LEquip: {fileID: 0}
+  A_R_LSO: {fileID: 0}
+  L_L_UBone: {fileID: 871089167741652666}
+  L_L_UMesh: {fileID: 3236587398510999044}
+  L_L_UEquip: {fileID: 0}
+  L_L_USO: {fileID: 0}
+  L_L_MBone: {fileID: 226018082148506446}
+  L_L_MEquip: {fileID: 0}
+  L_L_MSO: {fileID: 0}
+  L_L_LBone: {fileID: 383198149156377913}
+  L_L_LMesh: {fileID: 3236587398510999044}
+  L_L_LEquip: {fileID: 0}
+  L_L_LSO: {fileID: 0}
+  L_R_UBone: {fileID: 7795573167106746876}
+  L_R_UMesh: {fileID: 3236587398510999044}
+  L_R_UEquip: {fileID: 0}
+  L_R_USO: {fileID: 0}
+  L_R_MBone: {fileID: 6674401026226289396}
+  L_R_MEquip: {fileID: 0}
+  L_R_MSO: {fileID: 0}
+  L_R_LBone: {fileID: 3751403083163087585}
+  L_R_LMesh: {fileID: 3236587398510999044}
+  L_R_LEquip: {fileID: 0}
+  L_R_LSO: {fileID: 0}
   HeadBone: {fileID: 5884607501831824748}
   HeadEquip: {fileID: 0}
-  Head: {fileID: 0}
-  BodyBone: {fileID: 1126798317429438976}
-  BodyEquip: {fileID: 0}
-  Body: {fileID: 0}
-  LegBone: {fileID: 7358624399620953620}
-  LegMesh: {fileID: 3236587398510999044}
-  LegEquip: {fileID: 0}
-  Leg: {fileID: 0}
+  HeadSO: {fileID: 0}
+  B_UBone: {fileID: 5448365101714509029}
+  B_UEquip: {fileID: 0}
+  B_UBodySO: {fileID: 0}
+  _statues:
+    HP: 100
+    ATK: 10
+    DEF: 10
+    SPEED: 10
+    Barrier: 0
 --- !u!1 &5478759818497059453
 GameObject:
   m_ObjectHideFlags: 0

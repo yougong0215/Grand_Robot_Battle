@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UISlotManager : MonoBehaviour
 {
@@ -32,32 +33,25 @@ public class UISlotManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
+        _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
     }
     private void OnEnable()
     {
         instance = this;
     }
 
-    public UIDragAndDrop UnitUI;
-    public UISlot SoltUI;
-
     public List<PartTypeSelect> CategorySelected;
 
     void Update()
     {
-        ATK.text = $"ATK : { _robot._statues.ATK}";
-            DEF.text = $"DEF : { _robot._statues.DEF}";
-        SPEED.text = $"SPEED : { _robot._statues.SPEED}";
+        ATK.text = $"ATK : {_robot._statues.ATK}";
+        DEF.text = $"DEF : {_robot._statues.DEF}";
+        SPEED.text = $"SPEED : {_robot._statues.SPEED}";
         HP.text = $"HP : {_robot._statues.HP}";
     }
 
 
-    public void NullUIS()
-    {
-        UnitUI = null;
-        SoltUI = null;
-    }
+
 
     public void PartSelected(PartEnum parts = PartEnum.None)
     {

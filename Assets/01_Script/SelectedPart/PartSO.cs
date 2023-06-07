@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Right/Left | Upper/Middle/Lower | Arm/Leg
@@ -52,6 +52,15 @@ public class Parts
 
 }
 
+public enum PartBaseEnum
+{
+    Left,
+    Right,
+    Head,
+    Body,
+    Leg
+}
+
 [CreateAssetMenu(menuName =("SO/PartUI"))]
 public class PartSO : ScriptableObject
 {
@@ -63,5 +72,13 @@ public class PartSO : ScriptableObject
     [SerializeField] public bool EquipPart = false;
     [SerializeField] public Sprite SkillImage;
     [SerializeField] public SkillScriptBase Skill;
-    
+    [SerializeField] public PartBaseEnum PartBase;
+    [SerializeField] public Sprite EquipImage;
+
+
+    [Header("스킬 계수")]
+    [SerializeField] public string names = "";
+    [SerializeField] public float Count = 1;
+    [SerializeField] [TextArea] public string Daesa = "아직 스킬 대사가 없습니다";
+
 }

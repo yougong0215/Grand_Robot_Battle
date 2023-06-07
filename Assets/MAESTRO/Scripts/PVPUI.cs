@@ -9,6 +9,7 @@ public class PVPUI : MonoBehaviour
     private UIDocument _uiDoc;
     private VisualElement _root;
     private Button _panel;
+    private Label _paneltxt;
     private VisualElement _warning;
 
     private Button _atkBtn;
@@ -27,11 +28,16 @@ public class PVPUI : MonoBehaviour
     private bool onPartsPanel;
     private bool onPanel;
     private bool onwarning;
+
+    private RobotSettingAndSOList _robot;       // 임시방편
+    private RobotSettingAndSOList _enemyRobot;  // 임시방편
     #endregion
 
     private void Awake()
     {
         _uiDoc = GetComponent<UIDocument>();
+        _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
+        _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
     }
 
     private void OnEnable()
@@ -43,7 +49,7 @@ public class PVPUI : MonoBehaviour
         _skipBtn = _root.Q<Button>("SkipBtn");
         _surrenBtn = _root.Q<Button>("SurrenderBtn");
         _warning = _root.Q<VisualElement>("WarningPanel");
-        _text = _root.Q<Label>("Text");
+        _paneltxt = _root.Q<Label>("Text");
         _wText = _root.Q<Label>("warningText");
         _yesBtn = _root.Q<Button>("Yesbtn");
         _noBtn = _root.Q<Button>("Nobtn");
@@ -51,6 +57,21 @@ public class PVPUI : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
+
+
+            PartSO so;
+            if (_robot.ReturnParts((PartBaseEnum)i) != null)
+            {
+                so = _robot.ReturnParts((PartBaseEnum)i);
+            }
+            else
+            {
+                so = new PartSO();
+                so.PartBase = (PartBaseEnum)i;
+                partsbtns[i].style.backgroundImage = new StyleBackground( so.SkillImage);
+            }
+            partsbtns[i].clicked += () => OnButton(so);
+
         }
         #region 구독
         _atkBtn.clicked += SetPartsBtn;
@@ -66,6 +87,101 @@ public class PVPUI : MonoBehaviour
 
         _noBtn.clicked += OnWarning;
         #endregion
+
+    }
+
+
+    public void OnButton(PartSO so)
+    {
+        StartCoroutine(Corutine(so));
+    }
+
+    public IEnumerator Corutine(PartSO so)
+    {
+        // 이거 다 서버로 바꿔야됨
+        SetPanel(); // 꺼짐
+        SetPartsBtn();
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        yield return new WaitForSeconds(0.1f);
+
+        int rand = UnityEngine.Random.Range(0, 5);
+
+        _paneltxt.text = "로딩중..";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중......";
+        yield return new WaitForSeconds(0.3f);
+        bool t = SpeedReturn();
+        yield return StartCoroutine(Fight(t, so, rand));
+        t = !t;
+        yield return StartCoroutine(Fight(t, so, rand));
+
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중....";
+        yield return new WaitForSeconds(0.3f);
+        _paneltxt.text = "로딩중..";
+        yield return new WaitForSeconds(0.3f);
+        SetPanel();
+        _atkBtn.AddToClassList("on");
+        _surrenBtn.AddToClassList("on");
+        _skipBtn.AddToClassList("on");
+
+    }
+
+    public IEnumerator Fight(bool t, PartSO so, int rand)
+    {
+        if (t == true)
+        {
+            _paneltxt.text = $"나의 턴!!!";
+            yield return new WaitForSeconds(0.5f);
+            _paneltxt.text = so.Daesa;
+            _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
+            yield return new WaitForSeconds(1.5f);
+            _paneltxt.text =
+                $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다.";
+        }
+        else
+        {
+            if(_enemyRobot.ReturnParts((PartBaseEnum)rand) != null)
+            {
+                _panel.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
+                _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
+                yield return new WaitForSeconds(2f);
+                _paneltxt.text =
+                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다.";
+            }
+            else
+            {
+                _paneltxt.text = $"적의 턴!!!";
+                yield return new WaitForSeconds(0.5f);
+                _panel.text = "적이 아직 데이터를 가지고 있지 않습니다.";
+                _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
+                yield return new WaitForSeconds(1.5f);
+                _paneltxt.text =
+                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다.";
+            }
+
+            
+        }
+
+        yield return new WaitForSeconds(2.5f);
+    }
+
+
+    public bool SpeedReturn()
+    {
+        if(_robot._statues.SPEED >= _enemyRobot._statues.SPEED)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void OnWarning()

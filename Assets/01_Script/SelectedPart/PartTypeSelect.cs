@@ -9,6 +9,7 @@ public class PartTypeSelect : MonoBehaviour
     [SerializeField] GameObject _child;
     [SerializeField] PartEnum _pe;
     [SerializeField] bool InitObj = false;
+    [SerializeField] Image cont;
     public PartEnum PartType => _pe;
 
     private void Start()
@@ -35,6 +36,7 @@ public class PartTypeSelect : MonoBehaviour
     public void Selected()
     {
         _img.color = new Color(0.6f, 0.6f, 0.6f, 1);
+        cont.color = new Color(1, 1, 1, 1f);
 
         _child.SetActive(true);
     }
@@ -42,7 +44,7 @@ public class PartTypeSelect : MonoBehaviour
     public void NotSelected()
     {
         _img.color = new Color(0.3f, 0.3f, 0.3f, 0.6f);
-
+        cont.color = new Color(1, 1, 1, 0.3f);
         _child.SetActive(false);
     }
 }

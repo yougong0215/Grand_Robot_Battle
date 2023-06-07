@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContentPartAdd : MonoBehaviour
 {
-
-    [SerializeField] GameObject _contentObj;
-    [SerializeField] PartUIInfo _seletedObj;
+    RobotSettingAndSOList _robot;
+    [SerializeField] public GameObject _contentObj;
+    [SerializeField] public PartUIInfo _seletedObj;
     [SerializeField] List<PartSO> part;
-    [SerializeField] PartEnum pt;
+
 
     bool bFirst = true;
+
 
 
     private void Start()
@@ -38,13 +40,12 @@ public class ContentPartAdd : MonoBehaviour
 
                         ui = Instantiate(UISlotManager.Instance.Prefabs, _seletedObj.transform);
 
-                        ui.SettingSO(part[i]);
+                        ui.SettingSO(this, part[i]);
 
-                        _seletedObj.Seleted(ui.PartSO);
+                        _seletedObj.Seleted(this, ui.PartSO);
                         ui.transform.parent = _seletedObj.transform;
                         ui.transform.position = _seletedObj.transform.position;
-                        ui.GetComponent<UIDragAndDrop>()._oldParent = _contentObj.transform;
-                        ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                        //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
                     }
@@ -55,10 +56,8 @@ public class ContentPartAdd : MonoBehaviour
                         ui = Instantiate(UISlotManager.Instance.Prefabs, _contentObj.transform);
 
 
-                        ui.SettingSO(part[i]);
-                        ui.GetComponent<UIDragAndDrop>()._oldParent = _contentObj.transform;
-                        ui.GetComponent<UIDragAndDrop>().ReturnParent();
-                        ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
+                        ui.SettingSO(this, part[i]);
+                        //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
 

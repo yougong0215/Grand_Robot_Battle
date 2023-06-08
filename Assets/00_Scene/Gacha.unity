@@ -332,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741045911}
   - component: {fileID: 1741045912}
+  - component: {fileID: 1741045913}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -371,3 +372,15 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 6ad9bbbbb8bf97b44be6763ce8a91fab,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &1741045913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741045910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05103af99c421c842a84a4ed1d4b5e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,0 +1,3 @@
+.panel.off {
+    margin-top: 900px;
+}

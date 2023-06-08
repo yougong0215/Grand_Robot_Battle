@@ -286,7 +286,7 @@ public class PVPUI : MonoBehaviour
     {
         if (onwarning)
         {
-            _warning.AddToClassList("on");
+            _warning.AddToClassList("off");
         }
         else
         {

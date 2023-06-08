@@ -141,7 +141,6 @@ public class PVPUI : MonoBehaviour
         _surrenBtn.AddToClassList("on");
         _skipBtn.AddToClassList("on");
 
-        
 
         
 
@@ -159,7 +158,8 @@ public class PVPUI : MonoBehaviour
             _paneltxt.text = so.Daesa;
             _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
 
-
+            _enemyHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f,1f, _enemyRobot._statues.HP/ _enemyRobot.MaxHP), 1, 0)));
+            _enemyHpText.text = $"{_enemyRobot._statues.HP} / {_enemyRobot.MaxHP}";
             yield return new WaitForSeconds(1f);
             if(so.clips != null)
             {
@@ -184,7 +184,7 @@ public class PVPUI : MonoBehaviour
             if (_enemyRobot._statues.HP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
-                _paneltxt.text = $"HP : {_robot._statues.HP} 나의 승리..!";
+                _paneltxt.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
                 SceneManager.LoadScene("Menu");
             }
@@ -197,7 +197,8 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 _paneltxt.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
-
+                _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
+                _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
                 yield return new WaitForSeconds(1f);
                 if (so.clips != null)
                 {
@@ -226,6 +227,9 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 _panel.text = "적이 아직 데이터를 가지고 있지 않습니다.";
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
+
+                _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
+                _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
                 yield return new WaitForSeconds(1f);
                 if (so.clips != null)
                 {

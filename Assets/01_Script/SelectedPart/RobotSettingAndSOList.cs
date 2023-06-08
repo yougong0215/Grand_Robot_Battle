@@ -159,13 +159,14 @@ public class RobotSettingAndSOList : MonoBehaviour
 
 
     public Stat _statues = new Stat();
-
+    public float MaxHP;
 
     private void Awake()
     {
         if(gameObject.name == "MyRobot")
         {
             SimpleRobot.Instance.FindAndSet();
+            MaxHP = _statues.HP;
         }
     }
 

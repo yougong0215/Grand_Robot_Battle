@@ -1,3 +1,12 @@
+using JetBrains.Annotations;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using TMPro;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public enum Team
 {
@@ -16,7 +25,7 @@ public enum Statues
 }
 
 
-public class VSPlayer
+public class VSPlayer : MonoBehaviour
 {
     
 }

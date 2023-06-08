@@ -3,27 +3,27 @@
     <ui:VisualElement name="Root" style="flex-direction: column;">
         <ui:VisualElement name="BtnGroup">
             <ui:Button display-tooltip-when-elided="true" name="StoreBtn" class="Lobybtn" style="left: 1545px; top: 150px; position: absolute;">
-                <ui:Label text="상점" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="상점" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="StoreIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/Coin.png?fileID=2800000&amp;guid=83604cac9cb6c7842aacee1db7553b58&amp;type=3#Coin&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="GongBtn" class="Lobybtn" style="left: 1545px; top: 390px; position: absolute;">
-                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="GongIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/LenchIcon.png?fileID=2800000&amp;guid=208b37c9c1f5eb749ad7dc2938dfdf63&amp;type=3#LenchIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="GarageBtn" class="Lobybtn" style="left: 1545px; top: 630px; position: absolute;">
-                <ui:Label text="창고" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="창고" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="GarageIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BoxIcon.png?fileID=2800000&amp;guid=035589014b0103149ab90339f977495a&amp;type=3#BoxIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="StoryBtn" class="Lobybtn" style="left: 1085px; top: 105px; position: absolute;">
-                <ui:Label text="스토리" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="스토리" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="StoryIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/StoryIcon.png?fileID=2800000&amp;guid=e86d02f467877a147899f0d9160aa4eb&amp;type=3#StoryIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="BattleBtn" class="Lobybtn" style="left: 1085px; top: 345px; position: absolute;">
-                <ui:Label text="배틀" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="배틀" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="BattleIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BattleIcon.png?fileID=2800000&amp;guid=ed92a1a38749a4a448260a39c3bdaec1&amp;type=3#BattleIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="MakeBtn" class="Lobybtn" style="left: 1085px; top: 585px; position: absolute;">
-                <ui:Label text="제작" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="제작" display-tooltip-when-elided="true" name="txt" class="Btnname" />
                 <ui:VisualElement name="MakeIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/MakeIcon.png?fileID=2800000&amp;guid=8b24fb1fe7209894c8cf185c71ec4325&amp;type=3#MakeIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="SettingBtn" class="UpBtn" style="top: 0; left: 1820px;">

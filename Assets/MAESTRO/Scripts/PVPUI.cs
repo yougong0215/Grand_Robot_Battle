@@ -15,9 +15,11 @@ public class PVPUI : MonoBehaviour
 
     private VisualElement _playerHpBar;
     private Label _playerHpText;
+    private Button _playerInfobtn;
 
     private VisualElement _enemyHpBar;
     private Label _enemyHpText;
+    private Button _enemyInfoBtn;
 
     private Button _atkBtn;
     private Button _skipBtn;
@@ -140,11 +142,6 @@ public class PVPUI : MonoBehaviour
         _atkBtn.AddToClassList("on");
         _surrenBtn.AddToClassList("on");
         _skipBtn.AddToClassList("on");
-
-        
-
-        
-
     }
 
 
@@ -282,11 +279,11 @@ public class PVPUI : MonoBehaviour
     {
         if (onwarning)
         {
-            _warning.AddToClassList("on");
+            _warning.RemoveFromClassList("off");
         }
         else
         {
-            _warning.RemoveFromClassList("off");
+            _warning.AddToClassList("off");
         }
         onwarning = !onwarning;
     }

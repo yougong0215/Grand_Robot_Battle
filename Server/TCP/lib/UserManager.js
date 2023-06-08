@@ -9,6 +9,12 @@ class PlayerForm {
     level = 0;
     exp = 0;
 
+    // 인벤토리
+    inventory = {
+        equipment: {},
+        item: []
+    }
+
     constructor(name, socket) {
         this.name = name;
         this.socket = socket;
@@ -34,6 +40,7 @@ exports.AddPlayer = async function(id, socket) {
     console.log(`[UserManager] ${Player.name}(${id})님이 서버를 접속하였습니다.`);
 
     // 플레이어 정보들을 불러오자
+    ///////////////// 코인, 레벨등 /////////////////
     const PlayerStats = await sql.Aget("SELECT * FROM stats WHERE id = ?", id);
     if (PlayerStats === false) { // 데베 오류
         socket.kick("유저 정보를 불러올 수 없습니다. (2)");
@@ -47,8 +54,24 @@ exports.AddPlayer = async function(id, socket) {
         Player.level = PlayerStats.level;
         Player.exp = PlayerStats.exp;
     }
+
+    ///////////////// 인벤토리 /////////////////
+    const PlayerInventory = await sql.Aget("SELECT equipment,item FROM inventory WHERE id = ?", id);
+    if (PlayerInventory === false) {
+        socket.kick("유저 정보를 불러올 수 없습니다. (3)");
+        sql.close();
+        return;
+    }
+
+    if (PlayerInventory) { // 정보들이 있으면 인벤 불러오고 아니면 초기화값
+        Player.inventory.equipment = JSON.parse(PlayerInventory.equipment);
+        Player.inventory.item = JSON.parse(PlayerInventory.item);
+    }
+
     sql.close(); // 데베 사용 끝남
     Player.ready = true; // 준비 완료
+
+    console.log(Player.inventory);
 
     // 클라이언트한테 준비 되었다고 알림
     Player.socket.send("Server.PlayerReady", null);

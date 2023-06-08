@@ -25,7 +25,10 @@ MonoBehaviour:
   Explain: 
   ReplaceMesh: 1
   EquipPart: 0
-  SkillImage: {fileID: 0}
-  Skill: {fileID: 0}
-  PartBase: 0
+  SkillImage: {fileID: 787114490, guid: ae838ac4d85b898449068875deaf2784, type: 3}
+  PartBase: 3
   EquipImage: {fileID: 0}
+  clips: {fileID: 0}
+  names: 
+  Count: 1
+  Daesa: "\uAC00\uC2B4\uC774 \uD0C0\uC624\uB974\uACE0\uC788\uB2E4.."

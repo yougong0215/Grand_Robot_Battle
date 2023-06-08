@@ -15,8 +15,10 @@ public class PartUIInfo : MonoBehaviour
 
     public void Seleted(ContentPartAdd pa, PartSO _partSO = null)
     {
+        PartBaseEnum ot = PartBaseEnum.Error;
         if(pat != null)
         {
+            ot = pat.PartBase;
             _robot.InitSet();
             GameObject obj = transform.GetChild(0).gameObject;
             obj.GetComponent<UnitPart>().SetPartClick(false);
@@ -27,12 +29,18 @@ public class PartUIInfo : MonoBehaviour
             }
         }
 
-
+        if(_partSO != null)
+        {
+            ot = _partSO.PartBase;
+        }
 
         pat = _partSO;
         _robot.InitSet();
-        SimpleRobot.Instance.Setting(pat, pat.PartBase);
-        _robot.SetingRealPart(pat.PartBase, pat);
+
+       SimpleRobot.Instance.Setting(pat, ot);
+        
+
+        _robot.SetingRealPart(ot, pat);
 
         if(_partSO != null)
         for (int i = 0; i < _partSO._part.Count; i++)

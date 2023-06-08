@@ -7,7 +7,7 @@
                 <ui:VisualElement name="StoreIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/Coin.png?fileID=2800000&amp;guid=83604cac9cb6c7842aacee1db7553b58&amp;type=3#Coin&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="GongBtn" class="Lobybtn" style="left: 1545px; top: 390px; position: absolute;">
-                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;); color: rgba(0, 0, 0, 255);" />
                 <ui:VisualElement name="GongIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/LenchIcon.png?fileID=2800000&amp;guid=208b37c9c1f5eb749ad7dc2938dfdf63&amp;type=3#LenchIcon&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="GarageBtn" class="Lobybtn" style="left: 1545px; top: 630px; position: absolute;">
@@ -28,23 +28,26 @@
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="SettingBtn" class="UpBtn" style="top: 0; left: 1820px;">
                 <ui:Label text="설정" display-tooltip-when-elided="true" name="Sul" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px;" />
+                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 60px; height: 80px; flex-direction: column; position: absolute; top: -13px; left: -2px; background-image: url(&apos;project://database/Assets/06_Image/170_22.png?fileID=2800000&amp;guid=83c5e2dca1e35654e9cbd07f6ed49a5a&amp;type=3#170_22&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="Postbtn" class="UpBtn" style="top: 0; left: 1640px;">
                 <ui:Label text="우편" display-tooltip-when-elided="true" name="UP" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px;" />
+                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 70px; height: 80px; flex-direction: column; position: absolute; top: -15px; left: -3px; background-image: url(&apos;project://database/Assets/06_Image/170_20.png?fileID=2800000&amp;guid=ce8eaea22fad2dc47a61d6915ce0121d&amp;type=3#170_20&apos;);" />
             </ui:Button>
             <ui:Button display-tooltip-when-elided="true" name="DayQbtn" class="UpBtn" style="top: 0; left: 1460px;">
-                <ui:Label text="일과" display-tooltip-when-elided="true" name="IlGwa" style="color: rgba(0, 0, 0, 255); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px;" />
+                <ui:Label text="일과" display-tooltip-when-elided="true" name="IlGwa" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px;" />
+                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 70px; height: 80px; flex-direction: column; position: absolute; top: -18px; left: -3px; background-image: url(&apos;project://database/Assets/06_Image/170_16.png?fileID=2800000&amp;guid=641ec81c2fb5a52458217f3334ba709b&amp;type=3#170_16&apos;);" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="GoodsGroup">
             <ui:VisualElement name="GemBar" style="width: 300px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 1115px; flex-direction: row-reverse;">
                 <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
-                <ui:VisualElement name="Geminage" style="background-color: rgb(255, 255, 255); width: 40px; height: 40px; flex-direction: column; position: absolute; top: 6px; left: 7px;" />
+                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 80px; height: 80px; flex-direction: column; position: absolute; top: -12px; left: -18px; background-image: url(&apos;project://database/Assets/06_Image/170_17.png?fileID=2800000&amp;guid=f4db64358bb93744d91dd5babf2cbb95&amp;type=3#170_17&apos;);" />
                 <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 189px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255);" />
             </ui:VisualElement>
             <ui:VisualElement name="GoldBar" style="width: 450px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 620px; flex-direction: row-reverse;">
                 <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
-                <ui:VisualElement name="Goldinage" style="background-color: rgb(255, 255, 255); width: 40px; height: 40px; flex-direction: column; position: absolute; top: 6px; left: 7px;" />
+                <ui:VisualElement name="Goldinage" style="background-color: rgba(255, 255, 255, 0); width: 80px; height: 80px; flex-direction: column; position: absolute; top: -12px; left: -19px; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
                 <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 339px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255);" />
             </ui:VisualElement>
         </ui:VisualElement>

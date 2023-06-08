@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
@@ -159,13 +158,14 @@ public class RobotSettingAndSOList : MonoBehaviour
 
 
     public Stat _statues = new Stat();
-
+    public float MaxHP;
 
     private void Awake()
     {
         if(gameObject.name == "MyRobot")
         {
             SimpleRobot.Instance.FindAndSet();
+            MaxHP = _statues.HP;
         }
     }
 

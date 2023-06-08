@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scene/PVP.unity
     guid: 64e7aed8ee648cb40a1c99bdf4b4dd80
+  - enabled: 1
+    path: Assets/00_Scene/MakeRobot.unity
+    guid: c038950291e461f4897cc8d14d5e988b
   m_configObjects: {}

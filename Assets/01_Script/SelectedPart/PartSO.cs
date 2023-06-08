@@ -58,7 +58,8 @@ public enum PartBaseEnum
     Right,
     Head,
     Body,
-    Leg
+    Leg,
+    Error
 }
 
 [CreateAssetMenu(menuName =("SO/PartUI"))]
@@ -71,9 +72,9 @@ public class PartSO : ScriptableObject
     [SerializeField] public bool ReplaceMesh = false;
     [SerializeField] public bool EquipPart = false;
     [SerializeField] public Sprite SkillImage;
-    [SerializeField] public SkillScriptBase Skill;
     [SerializeField] public PartBaseEnum PartBase;
     [SerializeField] public Sprite EquipImage;
+    [SerializeField] public AnimationClip clips;
 
 
     [Header("스킬 계수")]

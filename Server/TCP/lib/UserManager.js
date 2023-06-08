@@ -71,8 +71,6 @@ exports.AddPlayer = async function(id, socket) {
     sql.close(); // 데베 사용 끝남
     Player.ready = true; // 준비 완료
 
-    console.log(Player.inventory);
-
     // 클라이언트한테 준비 되었다고 알림
     Player.socket.send("Server.PlayerReady", null);
 }

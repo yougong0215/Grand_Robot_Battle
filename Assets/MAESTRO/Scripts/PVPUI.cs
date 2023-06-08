@@ -303,9 +303,9 @@ public class PVPUI : MonoBehaviour
 
     IEnumerator Skip()
     {
-        OnWarning();
+        //OnWarning();
         SetPanel(); // ²¨Áü
-        SetPartsBtn();
+        //SetPartsBtn();
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
         _skipBtn.RemoveFromClassList("on");

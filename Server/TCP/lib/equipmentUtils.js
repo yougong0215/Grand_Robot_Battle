@@ -17,6 +17,8 @@ exports.AddItem = function(PlayerID, itemcode, level) {
         code: itemcode,
         level: level || 0 // level이 없으면 기본값 0
     }
+
+    return ItemToken;
 }
 
 exports.RemoveItem = function(PlayerID, token) {

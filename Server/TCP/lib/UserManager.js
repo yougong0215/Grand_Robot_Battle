@@ -12,7 +12,7 @@ class PlayerForm {
     // 인벤토리
     inventory = {
         equipment: {},
-        item: []
+        item: {}
     }
     // 프로필
     profile = {

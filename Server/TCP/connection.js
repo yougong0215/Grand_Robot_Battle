@@ -29,6 +29,11 @@ module.exports = function(socket) {
         socket.destroy();
     }
 
+    // 서버 꺼짐 방지
+    socket.on("error", function(err) {
+        // console.error(err);
+    });
+
     // 이제!! 로그인을 성공했으니 데이터 받아준다.
     const SocketEvent_Init = (MyID) => {
         let PacketPlus = "";
@@ -72,9 +77,6 @@ module.exports = function(socket) {
         });
         socket.once("close", function() {
             UserManager.RemovePlayer(MyID);
-        });
-        socket.on("error", function(err) {
-            // console.error(err);
         });
     }
 

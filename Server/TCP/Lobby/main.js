@@ -1,6 +1,6 @@
 TriggerEvent["Lobby.RequestInfo"] = function(id) {
     const Player = UserList[id];
-    if (Player === undefined) return;
+    if (Player === undefined || !Player.ready) return;
 
     Player.socket.send("Lobby.ResultInfo", {
         ID: id,

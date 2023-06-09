@@ -14,6 +14,11 @@ class PlayerForm {
         equipment: {},
         item: []
     }
+    // 프로필
+    profile = {
+        prefix: null, // 칭호
+        picture: null // 프사
+    }
 
     constructor(name, socket) {
         this.name = name;

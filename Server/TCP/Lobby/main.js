@@ -6,6 +6,7 @@ TriggerEvent["Lobby.RequestInfo"] = function(id) {
         ID: id,
         Name: Player.name,
         Coin: Player.coin,
-        Crystal: Player.crystal
+        Crystal: Player.crystal,
+        Prefix: Player.profile.prefix || "Unknown" // 임시로 칭호가 설정되지 않은경우
     });
 }

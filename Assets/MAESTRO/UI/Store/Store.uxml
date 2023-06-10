@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/UI/Store/Store.uss?fileID=7433441132597879392&amp;guid=c19fdd37168aee94d98ff6e2bb17d355&amp;type=3#Store" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%; align-items: center; justify-content: center;">
+        <ui:VisualElement name="OrderPanel" class="OrderPanel" style="align-items: center; justify-content: center; flex-direction: column;">
+            <ui:VisualElement name="UP" style="width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: row;" />
+            <ui:VisualElement name="DOWN" style="width: 100%; height: 100%; flex-direction: row; align-items: center; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BG" style="width: 100%; height: 100%;" />
+        <ui:VisualElement name="BottomTab" style="width: 700px; position: absolute; height: 130px; background-color: rgb(255, 255, 255); top: 710px; left: 1200px;">
+            <ui:Label text="00:00" display-tooltip-when-elided="true" name="Time" style="width: 170px; height: 100%; -unity-text-align: middle-left; font-size: 40px; color: rgb(152, 152, 152); margin-left: 30px;" />
+            <ui:VisualElement name="Clock" style="position: absolute; width: 60px; height: 60px; top: 35px; left: 156px; background-color: rgb(164, 164, 164);" />
+            <ui:Button text="갱신" display-tooltip-when-elided="true" name="ResetBtn" style="position: absolute; top: 30px; width: 130px; height: 70px; left: 550px; font-size: 30px; -unity-text-align: middle-right; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); -unity-text-outline-width: 0; border-left-width: 1.5px; border-right-width: 1.5px; border-top-width: 1.5px; border-bottom-width: 1.5px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ResetWarnPanel" class="WarnPanel" style="flex-direction: column;">
+            <ui:Label text="젬이 소비됩니다.&#10;진열된 품목을 갱신하시겠습까?" display-tooltip-when-elided="true" name="txt" style="width: 100%; height: 70%; font-size: 35px; -unity-text-align: middle-center;" />
+            <ui:Button text="넹" display-tooltip-when-elided="true" name="YesBtn" style="width: 150px; height: 60px; position: absolute; top: 214px; left: 110px; background-color: rgb(255, 255, 255); font-size: 40px; color: rgb(0, 0, 0);" />
+            <ui:Button text="아니요" display-tooltip-when-elided="true" name="NoBtn" style="width: 150px; height: 60px; position: absolute; top: 214px; left: 332px; background-color: rgb(255, 255, 255); font-size: 40px; color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ErrorPanel" class="WarnPanel" style="flex-direction: column; align-items: center;">
+            <ui:Label text="Error" display-tooltip-when-elided="true" name="Errortxt" style="width: 100%; height: 70%; font-size: 35px; -unity-text-align: middle-center;" />
+            <ui:Button text="확인" display-tooltip-when-elided="true" name="OkBtn" style="width: 150px; height: 60px; background-color: rgb(255, 255, 255); font-size: 40px; color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

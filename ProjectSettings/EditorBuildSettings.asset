@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scene/MakeRobot.unity
     guid: c038950291e461f4897cc8d14d5e988b
+  - enabled: 1
+    path: Assets/00_Scene/Gacha.unity
+    guid: 49fa53cb53e301b4d879649f420f4503
   m_configObjects: {}

@@ -10,6 +10,8 @@ public class MenuUI : MonoBehaviour
     private VisualElement _root;
     private Button _battleBtn;
     private Button _gongBtn;
+    private Button _makeBtn;
+    private Button _storeBtn;
 
     private void Awake()
     {
@@ -21,12 +23,18 @@ public class MenuUI : MonoBehaviour
         _root = _doc.rootVisualElement;
         _battleBtn = _root.Q<Button>("BattleBtn");
         _gongBtn = _root.Q<Button>("GongBtn");
+        _makeBtn = _root.Q<Button>("MakeBtn");
+        _storeBtn = _root.Q<Button>("StoreBtn");
+
+        _makeBtn.clicked += () => SceneLoad("Gacha");
         _battleBtn.clicked += () => SceneLoad("PVP");
         _gongBtn.clicked += () => SceneLoad("MakeRobot");
+        _storeBtn.clicked += () => SceneLoad("Store");
     }
 
     void SceneLoad(string sceneString)
     {
+        //로딩창 만드세요!
         SceneManager.LoadScene(sceneString);
     }
 

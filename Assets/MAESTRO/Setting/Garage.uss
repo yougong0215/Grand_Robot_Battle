@@ -1,0 +1,29 @@
+.partsBtn {
+    width: 150px;
+    height: 70px;
+    border-left-width: 1.5px;
+    font-size: 35px;
+    color: rgba(0, 0, 0, 255);
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(176, 176, 176);
+    -unity-text-align: lower-left;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.backpanel {
+    width: 90%;
+    height: 80%;
+    color: rgb(233, 233, 233);
+    background-color: rgb(159, 159, 159);
+    justify-content: center;
+    align-items: center;
+}
+
+.backpanel.off {
+    top: 800px;
+}

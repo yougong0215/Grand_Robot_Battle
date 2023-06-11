@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/MAESTRO/Setting/Garage.uss?fileID=7433441132597879392&amp;guid=dbfb35ef8af99c244a283b8b4c3954a5&amp;type=3#Garage" />
     <ui:VisualElement name="Root" style="width: 100%; height: 100%;">
         <ui:VisualElement name="BG" class="bg">
-            <ui:VisualElement name="BackPanel" class="backpanel off">
+            <ui:VisualElement name="BackPanel" class="backpanel">
                 <ui:VisualElement name="Panel" style="align-items: center; justify-content: center; width: 95%; height: 85%; margin-top: 0; background-color: rgb(108, 108, 108);">
                     <ui:Button text="다리" display-tooltip-when-elided="true" name="LegBtn" class="partsBtn" style="position: absolute; top: 20px; left: 1530px; background-color: rgb(202, 202, 202);" />
                     <ui:Button text="오른 팔" display-tooltip-when-elided="true" name="RABtn" class="partsBtn" style="position: absolute; top: 20px; left: 1380px; background-color: rgb(202, 202, 202);" />

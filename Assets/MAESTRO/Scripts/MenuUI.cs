@@ -12,6 +12,7 @@ public class MenuUI : MonoBehaviour
     private Button _gongBtn;
     private Button _makeBtn;
     private Button _storeBtn;
+    private Button _garageBtn;
 
     private void Awake()
     {
@@ -25,11 +26,13 @@ public class MenuUI : MonoBehaviour
         _gongBtn = _root.Q<Button>("GongBtn");
         _makeBtn = _root.Q<Button>("MakeBtn");
         _storeBtn = _root.Q<Button>("StoreBtn");
+        _garageBtn = _root.Q<Button>("GarageBtn");
 
         _makeBtn.clicked += () => SceneLoad("Gacha");
         _battleBtn.clicked += () => SceneLoad("PVP");
         _gongBtn.clicked += () => SceneLoad("MakeRobot");
         _storeBtn.clicked += () => SceneLoad("Store");
+        _garageBtn.clicked += () => SceneLoad("Garage");
     }
 
     void SceneLoad(string sceneString)

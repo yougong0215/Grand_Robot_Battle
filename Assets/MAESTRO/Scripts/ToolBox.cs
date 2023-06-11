@@ -5,8 +5,14 @@ using UnityEngine.EventSystems;
 
 public class ToolBox : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private GameObject _canvas;
     [SerializeField] private GameObject _content;
+
+    private void Awake()
+    {
+        _canvas = GameObject.Find("ScrollCanvas");
+        _content = GameObject.Find("ScrollCanvas/EnforecePaZe/Scroll View/Viewport/Content");
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

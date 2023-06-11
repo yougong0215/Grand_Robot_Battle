@@ -1,0 +1,24 @@
+.OrderPanel {
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    top: 80px;
+    left: 1200px;
+    background-color: rgba(0, 0, 0, 0.47);
+    flex-direction: row;
+}
+
+.WarnPanel {
+    width: 600px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: -400px;
+    transition-property: bottom;
+    transition-duration: 0.3s;
+}
+
+.WarnPanel.on {
+    position: absolute;
+    bottom: 300px;
+}

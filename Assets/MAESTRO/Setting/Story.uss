@@ -1,0 +1,8 @@
+.Arrow {
+    position: absolute;
+    width: 100px;
+    height: 300px;
+    top: 302px;
+    left: 50px;
+    background-color: rgb(152, 152, 152);
+}

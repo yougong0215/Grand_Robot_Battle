@@ -15,6 +15,7 @@ TriggerEvent["Gacha.Start_1"] = function(id) {
 
     if (!CrystalUtils.TryPayment(id, 100)) {
         console.log(`[Gacha] ${Player.name}님이 1회 가챠뽑기 하다가 돈이 없어요.`);
+        Player.socket.send("Gacha.error", "잼이 충분하지 않습니다.");
         return;
     }
 
@@ -30,6 +31,7 @@ TriggerEvent["Gacha.Start_10"] = function(id) {
 
     if (!CrystalUtils.TryPayment(id, 100 * 10)) {
         console.log(`[Gacha] ${Player.name}님이 10회 가챠뽑기 하다가 돈이 없어요.`);
+        Player.socket.send("Gacha.error", "잼이 충분하지 않습니다.");
         return;
     }
 

@@ -28,6 +28,14 @@ public class MakeUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        NetworkCore.EventListener["Gacha.error"] = ErrorWindow;
+        NetworkCore.EventListener["Gacha.Result_1"] = Result_1;
+        NetworkCore.EventListener["Gacha.Result_10"] = Result_10;
+    }
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("Gacha.error");
+        NetworkCore.EventListener.Remove("Gacha.Result_1");
+        NetworkCore.EventListener.Remove("Gacha.Result_10");
     }
 
     private void OnEnable()
@@ -91,12 +99,14 @@ public class MakeUI : MonoBehaviour
 
     private void StartGacha_1()
     {
-        GachaCo = StartCoroutine(GachaCoroutine());
+        // GachaCo = StartCoroutine(GachaCoroutine());
+        NetworkCore.Send("Gacha.Start_1", null);
     }
 
     private void StartGacha_10()
     {
-        GachaCo = StartCoroutine(GachaCoroutine());
+        NetworkCore.Send("Gacha.Start_10", null);
+        // GachaCo = StartCoroutine(GachaCoroutine());
         _is_10 = true;
     }
 
@@ -140,5 +150,22 @@ public class MakeUI : MonoBehaviour
         _gachaPanel?.RemoveFromClassList("on");
         yield return new WaitForSeconds(2);
         GachaRender();
+    }
+
+    //////////// 서버 리스너 //////////// 
+    void ErrorWindow(LitJson.JsonData Why) {
+        Debug.LogError("가차하다가 실패했어요 : "+Why);
+    }
+    void Result_1(LitJson.JsonData ItemResult) {
+        string ItemCode = (string)ItemResult;
+        Debug.Log("와! 가챠뽀ㅃ았어요 : "+ ItemCode);
+    }
+    void Result_10(LitJson.JsonData ItemResult) {
+        string[] ItemList = LitJson.JsonMapper.ToObject<string[]>(ItemResult.ToJson());
+
+        foreach (var ItemCode in ItemList)
+        {
+            Debug.Log("와! 아이템을 뽑았어요 : "+ItemCode);
+        }
     }
 }

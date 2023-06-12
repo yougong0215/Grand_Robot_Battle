@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: GearRight
+  m_Name: CommonFireHeart
   m_EditorClassIdentifier: 
   _part:
-  - part: {fileID: 5219740372435964110, guid: d3373caeefa988e45b7132f8073a016d, type: 3}
-    enums: 6
-  Sprite: {fileID: 21300000, guid: 5e582a76c9b47c94ab1f4d9720a5d224, type: 3}
+  - part: {fileID: 1162877915502398423, guid: 15af0f01a4597eb43bd7a26b7352c69d, type: 3}
+    enums: 14
+  Sprite: {fileID: 0}
   Statues:
-    HP: 0
-    ATK: 300
+    HP: 1000
+    ATK: 0
     DEF: 0
-    SPEED: 30
+    SPEED: -30
     Barrier: 0
   Explain: 
-  ReplaceMesh: 0
+  ReplaceMesh: 1
   EquipPart: 0
-  SkillImage: {fileID: -1755161759, guid: ae838ac4d85b898449068875deaf2784, type: 3}
-  PartBase: 0
+  SkillImage: {fileID: 787114490, guid: ae838ac4d85b898449068875deaf2784, type: 3}
+  PartBase: 3
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 
   Count: 1
-  Daesa: "\uC9C0\uC774\uC774\uC774\uC789\uC774\uC774\uC774\uC789\u3147 \uADDC\uC640\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC559\u3147\u3147"
+  Daesa: "\uAC00\uC2B4\uC774 \uD0C0\uC624\uB974\uACE0\uC788\uB2E4.."

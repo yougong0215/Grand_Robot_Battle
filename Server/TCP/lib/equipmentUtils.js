@@ -44,3 +44,12 @@ exports.GetItem = function(PlayerID, token) {
     const { inventory: { equipment } } = Player;
     return equipment[token];
 }
+
+exports.GetAllItem = function(PlayerID) {
+    const Player = UserList[PlayerID];
+    if (Player === undefined || !Player.ready) return;
+
+    const { inventory: { equipment } } = Player;
+    
+    return equipment;
+}

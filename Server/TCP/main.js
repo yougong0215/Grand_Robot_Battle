@@ -3,6 +3,7 @@ const net = require("net");
 global.TriggerEvent = {};
 require("./lib/UserManager.js");
 require("./Lobby/main.js");
+require("./MakeRobot/main.js");
 require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));

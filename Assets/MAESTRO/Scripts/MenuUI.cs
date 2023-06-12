@@ -38,6 +38,7 @@ public class MenuUI : MonoBehaviour
     void SceneLoad(string sceneString)
     {
         //로딩창 만드세요!
+        SceneSave.Instance.SceneSaveLogic(sceneString);
         SceneManager.LoadScene(sceneString);
     }
 

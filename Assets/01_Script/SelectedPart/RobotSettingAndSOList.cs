@@ -44,19 +44,14 @@ public class RobotSettingAndSOList : MonoBehaviour
         {
             case PartBaseEnum.Left:
                 return Left;
-                break;
             case PartBaseEnum.Right:
                 return Right;
-                break;
             case PartBaseEnum.Head:
                 return Head;
-                break;
             case PartBaseEnum.Body:
                 return Body;
-                break;
             case PartBaseEnum.Leg:
                 return Leg;
-                break;
 
         }
         return null;

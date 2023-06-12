@@ -10,6 +10,7 @@ public class ServerSOPacket {
 
 public class GetServerToSO : MonoBehaviour
 {
+    [SerializeField] bool isMakeScene = true;
     [SerializeField] PartSOList PartSOTable;
     Dictionary<string, PartSO> SOlist = new Dictionary<string, PartSO>();
 
@@ -32,9 +33,19 @@ public class GetServerToSO : MonoBehaviour
 
         for(int i =0; i < PartSOTable.sed.Count; ++i)
         {
-            SOlist.Add(PartSOTable.sed[i].ToString(), PartSOTable.sed[i]);
+            string a = PartSOTable.sed[i].ToString();
+            a = a.Replace(" (PartSO)", "");
+            SOlist.Add(a, PartSOTable.sed[i]);
+            Debug.Log(a);
         }
-        NetworkCore.EventListener["MakeRobot.ResultSO"] = ResultSO;
+
+         NetworkCore.EventListener["MakeRobot.ResultSO"] = ResultSO;
+    }
+
+
+    public PartSO ReturnSO(string a)
+    {
+        return SOlist[a];
     }
 
     private void Start() {
@@ -45,9 +56,14 @@ public class GetServerToSO : MonoBehaviour
     }
 
     void ResultSO(JsonData data) {
+
+        if (!isMakeScene)
+            return;
+
         var SO_List = JsonMapper.ToObject<Dictionary<string, ServerSOPacket>>(data.ToJson());
         print(SO_List.Count);
 
+        
         foreach (var SOOOO in SO_List) {
             print("-------- "+SOOOO.Key+" ---------");
             print(SOOOO.Value.code);

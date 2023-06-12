@@ -6,7 +6,7 @@ using TMPro;
 public class PartUIInfo : MonoBehaviour
 {
     RobotSettingAndSOList _robot;
-    [SerializeField]PartSO pat;
+    [SerializeField] PartSO pat;
     bool bfi;
     private void Awake()
     {
@@ -51,10 +51,6 @@ public class PartUIInfo : MonoBehaviour
 
 
 
-
-    }
-    private void Update()
-    {
 
     }
 

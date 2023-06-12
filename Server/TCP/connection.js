@@ -29,6 +29,11 @@ module.exports = function(socket) {
         socket.destroy();
     }
 
+    // 서버 꺼짐 방지
+    socket.on("error", function(err) {
+        // console.error(err);
+    });
+
     // 이제!! 로그인을 성공했으니 데이터 받아준다.
     const SocketEvent_Init = (MyID) => {
         let PacketPlus = "";
@@ -73,9 +78,6 @@ module.exports = function(socket) {
         socket.once("close", function() {
             UserManager.RemovePlayer(MyID);
         });
-        socket.on("error", function(err) {
-            // console.error(err);
-        });
     }
 
     // 로그인...
@@ -96,6 +98,12 @@ module.exports = function(socket) {
         
         // 토큰찾자
         let result = await sql.Aget("SELECT id,token FROM sessions WHERE token = ?", token);
+        if (result === false) {
+            socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (1)");
+            sql.close();
+            return;
+        }
+
         if (result === undefined) {
             socket.kick("domi.session_remove");
             sql.close();
@@ -103,7 +111,7 @@ module.exports = function(socket) {
         }
         // 오잉 불러왔는데 왜 정보가 없지???
         if (result.id === undefined || result.token === undefined) {
-            socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다.");
+            socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (2)");
             sql.close();
             return;
         }

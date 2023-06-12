@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 628215180}
   - component: {fileID: 628215181}
   - component: {fileID: 628215182}
+  - component: {fileID: 628215183}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -453,52 +454,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655ab86e0bc6db14cbc90a562a24d1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &780691519
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 780691521}
-  - component: {fileID: 780691520}
-  m_Layer: 0
-  m_Name: SceneLoader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &780691520
+--- !u!114 &628215183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780691519}
+  m_GameObject: {fileID: 628215179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4078ca40b37a549b3582284cb3d344, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d9987745960298498ffcb322cc52026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backBtn: {fileID: 9197481963319205126, guid: 15189243c604ae342bb74ccd75635af1,
-    type: 3}
---- !u!4 &780691521
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780691519}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  Document: {fileID: 628215181}
 --- !u!1 &823767035
 GameObject:
   m_ObjectHideFlags: 0

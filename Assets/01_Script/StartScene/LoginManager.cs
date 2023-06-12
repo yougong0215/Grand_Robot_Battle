@@ -35,7 +35,7 @@ public class LoginManager : MonoBehaviour
         // 서버 리스너 연결
         NetworkCore.EventConnect += ConnectOK;
         NetworkCore.EventDisconnect += ConnectFailed;
-        NetworkCore.EventListener["Lobby.Init"] = LobbyStart;
+        NetworkCore.EventListener["Server.PlayerReady"] = ServerReady;
 
         for (int i = 0; i < Account_List.childCount; i++)
             Destroy(Account_List.GetChild(i).gameObject);
@@ -50,7 +50,7 @@ public class LoginManager : MonoBehaviour
         SelectToken = null;
         NetworkCore.EventConnect -= ConnectOK;
         NetworkCore.EventDisconnect -= ConnectFailed;
-        NetworkCore.EventListener.Remove("Lobby.Init");
+        NetworkCore.EventListener.Remove("Server.PlayerReady");
     }
 
     public void ButtonAdd(string name, string id, string token) {
@@ -116,7 +116,7 @@ public class LoginManager : MonoBehaviour
     }
 
     public void TryLogin(string token) {
-        print("로그인! : "+token);
+        print("[LoginManager] 로그인! : "+token);
 
         SelectToken = token;
 
@@ -165,10 +165,8 @@ public class LoginManager : MonoBehaviour
 
         // 처리 할거....
     }
-    void LobbyStart(LitJson.JsonData data) {
-        print("로비 불러오자");
-        print(data.ToJson());
-
+    void ServerReady(LitJson.JsonData data) {
+        print("[LoginManager] 계정정보 불러오기 성공! - 로비로 이동");
         SceneManager.LoadScene(0);
     }
 }

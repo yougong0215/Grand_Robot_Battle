@@ -2,6 +2,10 @@ const net = require("net");
 
 global.TriggerEvent = {};
 require("./lib/UserManager.js");
+require("./Lobby/main.js");
+require("./MakeRobot/main.js");
+require("./Gacha/main.js");
+require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));
 server.listen(Config.TCPport, () => console.log("[TCP] 서버 출항 준비 완료! Port: "+Config.TCPport));

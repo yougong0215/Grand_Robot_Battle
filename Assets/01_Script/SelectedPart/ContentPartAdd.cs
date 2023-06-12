@@ -9,14 +9,14 @@ public class ContentPartAdd : MonoBehaviour
     [SerializeField] public GameObject _contentObj;
     [SerializeField] public PartUIInfo _seletedObj;
     [SerializeField] List<PartSO> part;
-
-
-    bool bFirst = true;
+    [SerializeField] PartBaseEnum enums;
 
 
 
-    private void Start()
+    public void SetSO(List<PartSO> so)
     {
+        part.Clear();
+        part = so;
         //if (_contentObj == null)
         //    _contentObj = transform.GetChild(0).Find("Content").gameObject;
         //if (_seletedObj == null)
@@ -65,7 +65,6 @@ public class ContentPartAdd : MonoBehaviour
                 }
             }
         }
-        bFirst = false;
         gameObject.SetActive(false);
 
     }

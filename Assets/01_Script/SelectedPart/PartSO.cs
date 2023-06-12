@@ -66,6 +66,7 @@ public enum PartBaseEnum
 public class PartSO : ScriptableObject
 {
     [SerializeField] public List<Parts> _part;
+    [SerializeField] public string SOname;
     [SerializeField] public Sprite Sprite;
     [SerializeField] public Stat Statues;
     [SerializeField] [TextArea] public string Explain;

@@ -9,7 +9,7 @@ exports.GetObject = function() {
             db.get(query, data, function(err, result) {
                 if (err) {
                     console.error(err);
-                    reslove();
+                    reslove(false);
                     return;
                 }
                 
@@ -23,7 +23,7 @@ exports.GetObject = function() {
             db.all(query, data, function(err, result) {
                 if (err) {
                     console.error(err);
-                    reslove();
+                    reslove(false);
                     return;
                 }
                 
@@ -37,7 +37,7 @@ exports.GetObject = function() {
             db.run(query, data, function(err) {
                 if (err)
                     console.error(err);
-                reslove(err ? undefined : true);
+                reslove(err ? false : true);
             });
         });
     }

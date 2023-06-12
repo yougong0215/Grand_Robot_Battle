@@ -15,7 +15,7 @@ public class PartTypeSelect : MonoBehaviour
     private void Start()
     {
         _img = GetComponent<Image>();
-        Debug.Log(_pe.ToString());
+        //Debug.Log(_pe.ToString());
         if(InitObj)
         {
             Selected();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: EgnumSmasher
   m_EditorClassIdentifier: 
+  PartBase: 4
   _part: []
   SOname: "\uC774\uADF8\uB118 \uC2A4\uB9E4\uC154"
   Sprite: {fileID: 0}
@@ -27,7 +28,6 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}
-  PartBase: 0
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 

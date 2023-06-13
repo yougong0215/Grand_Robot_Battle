@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: NormalLeg
   m_EditorClassIdentifier: 
+  PartBase: 4
   _part: []
   SOname: "\uB178\uBA40 \uB808\uADF8"
   Sprite: {fileID: 0}
@@ -25,7 +26,6 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}
-  PartBase: 0
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 

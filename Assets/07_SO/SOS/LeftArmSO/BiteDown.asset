@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: BiteDown
   m_EditorClassIdentifier: 
+  PartBase: 0
   _part:
   - part: {fileID: 1162877915502398423, guid: 15af0f01a4597eb43bd7a26b7352c69d, type: 3}
     enums: 14
@@ -29,7 +30,6 @@ MonoBehaviour:
   ReplaceMesh: 1
   EquipPart: 0
   SkillImage: {fileID: 787114490, guid: ae838ac4d85b898449068875deaf2784, type: 3}
-  PartBase: 3
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: MetalFace
   m_EditorClassIdentifier: 
+  PartBase: 3
   _part: []
   SOname: "\uBA54\uD0C8 \uD398\uC774\uC2A4"
   Sprite: {fileID: 0}
@@ -27,7 +28,6 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}
-  PartBase: 0
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 

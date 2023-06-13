@@ -37,8 +37,8 @@ public class MenuUI : MonoBehaviour
 
     void SceneLoad(string sceneString)
     {
-        //·ÎµùÃ¢ ¸¸µå¼¼¿ä!
-        SceneSave.Instance.SceneSaveLogic(sceneString);
+        //ï¿½Îµï¿½Ã¢ ï¿½ï¿½ï¿½å¼¼ï¿½ï¿½!
+        //SceneSave.Instance.SceneSaveLogic(sceneString);
         SceneManager.LoadScene(sceneString);
     }
 

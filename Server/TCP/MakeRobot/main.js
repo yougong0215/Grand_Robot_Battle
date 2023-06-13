@@ -1,4 +1,5 @@
 const equipmentUtils = require("../lib/equipmentUtils.js");
+require("./Setting.js");
 
 TriggerEvent["MakeRobot.GetSO"] = function(id) {
     const Player = UserList[id];

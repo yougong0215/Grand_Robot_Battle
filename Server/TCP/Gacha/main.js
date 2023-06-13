@@ -42,5 +42,7 @@ TriggerEvent["Gacha.Start_10"] = function(id) {
         equipmentUtils.AddItem(id, RandomItem);
     }
 
+    console.log(UserList[id].inventory);
+
     Player.socket.send("Gacha.Result_10", Items);
 }

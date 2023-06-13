@@ -13,59 +13,36 @@ public class ContentPartAdd : MonoBehaviour
 
 
 
-    public void SetSO(List<PartSO> so)
+    public void SetSO(PartSO so, string token)
     {
-        part.Clear();
-        part = so;
+        //part.Clear();
+        part.Add(so);
         //if (_contentObj == null)
         //    _contentObj = transform.GetChild(0).Find("Content").gameObject;
         //if (_seletedObj == null)
         //    _seletedObj = transform.Find("Selected").gameObject.GetComponent<PartUIInfo>();
 
-        if (_contentObj.transform.childCount == 0 && _seletedObj.transform.childCount == 0)
+        //f (_contentObj.transform.childCount == 0 && _seletedObj.transform.childCount == 0)
         {
-            //part = PartList.Instance.ReturnInfo(pt); ¿ø·¡ ÀÖ´ø°Å °¡Á®¿À´Â°Å
-            Debug.LogWarning("¿©±â ¹Ù²ãÁà¾ßµÊ");
+            //part = PartList.Instance.ReturnInfo(pt); ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½
+            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ßµï¿½");
 
-            if (part != null)
-            {
+
                 UnitPart ui;
-
-                for (int i = 0; i < part.Count; i++)
-                {
-                    if (part[i].EquipPart == true)
-                    {
-
-
-
-                        ui = Instantiate(UISlotManager.Instance.Prefabs, _seletedObj.transform);
-
-                        ui.SettingSO(this, part[i]);
-
-                        _seletedObj.Seleted(this, ui.PartSO);
-                        ui.transform.parent = _seletedObj.transform;
-                        ui.transform.position = _seletedObj.transform.position;
-                        //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
-
-
-                    }
-                    else
-                    {
-
 
                         ui = Instantiate(UISlotManager.Instance.Prefabs, _contentObj.transform);
 
 
-                        ui.SettingSO(this, part[i]);
+                        ui.SettingSO(this, so, token);
                         //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
 
 
 
-                    }
-                }
-            }
+                    
+                
+            
         }
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
 

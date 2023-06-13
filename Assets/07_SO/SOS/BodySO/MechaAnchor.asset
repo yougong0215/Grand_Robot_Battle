@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: MechaAnchor
+  m_EditorClassIdentifier: 
+  _part: []
+  SOname: "\uBA54\uCE74\uC575\uCEE4"
+  Sprite: {fileID: 0}
+  Statues:
+    HP: 400
+    ATK: 0
+    DEF: 40
+    SPEED: 0
+    Barrier: 0
+  Explain: "\uBB34\uAC81\uAC8C \uB0B4\uB824\uC549\uC740 \uAC15\uCCA0 \uBAB8\uCCB4.\r\n\uAC15\uCCA0\uC0B0\uACFC
+    \uAC19\uC740 \uAC70\uAD6C\uB85C \uC801\uC744 \uC555\uB3C4\uD55C\uB2E4."
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 0}
+  PartBase: 0
+  EquipImage: {fileID: 0}
+  clips: {fileID: 0}
+  names: 
+  Count: 1
+  Daesa: "\uC790\uAC00\uC218\uB9AC!!"

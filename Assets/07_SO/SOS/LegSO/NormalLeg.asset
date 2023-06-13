@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: CommonGearRight
+  m_Name: NormalLeg
   m_EditorClassIdentifier: 
-  _part:
-  - part: {fileID: 5219740372435964110, guid: d3373caeefa988e45b7132f8073a016d, type: 3}
-    enums: 6
-  Sprite: {fileID: 21300000, guid: 5e582a76c9b47c94ab1f4d9720a5d224, type: 3}
+  _part: []
+  SOname: "\uB178\uBA40 \uB808\uADF8"
+  Sprite: {fileID: 0}
   Statues:
     HP: 0
-    ATK: 15
-    DEF: 0
-    SPEED: 30
+    ATK: 100
+    DEF: 40
+    SPEED: 0
     Barrier: 0
-  Explain: 
+  Explain: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uB2E4\uB9AC \uD30C\uCE20."
   ReplaceMesh: 0
   EquipPart: 0
-  SkillImage: {fileID: -1755161759, guid: ae838ac4d85b898449068875deaf2784, type: 3}
+  SkillImage: {fileID: 0}
   PartBase: 0
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 
   Count: 1
-  Daesa: "\uC9C0\uC774\uC774\uC774\uC789\uC774\uC774\uC774\uC789\u3147 \uADDC\uC640\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC559\u3147\u3147"
+  Daesa: "\uC720\uD134 \uD0A5!!"

@@ -10,26 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: HeroDrilLeftSO
+  m_Name: MetalBlader
   m_EditorClassIdentifier: 
   _part:
   - part: {fileID: 9062173955027456951, guid: fb56a50322c84c643b76d1f2980f5a11, type: 3}
     enums: 6
-  SOname: 
+  SOname: "\uBA54\uD0C8 \uBE14\uB808\uC774\uB354"
   Sprite: {fileID: 21300000, guid: 6f81e0c8e210b414e92b6c77e5468677, type: 3}
   Statues:
-    HP: 40
-    ATK: 20
+    HP: 0
+    ATK: 300
     DEF: 0
-    SPEED: 15
+    SPEED: 0
     Barrier: 0
-  Explain: "\uBA38\uB9AC\uC5D0 \uB4DC\uB9B4\uB97C \uC5B9\uC73C\uBA74? \n\n\uB4DC\uB9B4\uD574\uB4DC"
+  Explain: "\uAC15\uCCA0\uB85C \uC81C\uC791\uB41C \uB0A0\uCE74\uB86D\uACE0 \uC608\uB9AC\uD55C
+    \uCE7C\uB0A0.\r\n\uC77C\uB3C4\uC591\uB2E8\uC73C\uB85C \uC801\uC744 \uC644\uD30C\uC2DC\uD0A8\uB2E4."
   ReplaceMesh: 1
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}
   PartBase: 0
   EquipImage: {fileID: 21300000, guid: 149b69d564f11f64b9105cffa9f8d47b, type: 3}
-  clips: {fileID: -4304836385353429653, guid: 4ce94d2e69631fa4c9e14a7f70ac5a2e, type: 3}
+  clips: {fileID: 0}
   names: 
   Count: 1
-  Daesa: "\uAE30\uAC00\uB4DC\uB9B4 \uBE0C\uB920\uC774\uCEE4\u3153\u3153\u3153\u3153"
+  Daesa: "\uAC15\uCC38\uAC01!! "

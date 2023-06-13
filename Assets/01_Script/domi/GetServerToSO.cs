@@ -16,19 +16,14 @@ public class GetServerToSO : MonoBehaviour
 
     [Header("Left")]
     [SerializeField] ContentPartAdd Left;
-    [SerializeField] List<PartSO> _left = new List<PartSO>();
     [Header("Right")]
     [SerializeField] ContentPartAdd Right;
-    [SerializeField] List<PartSO> _right = new List<PartSO>();
     [Header("Body")]
     [SerializeField] ContentPartAdd Body;
-    [SerializeField] List<PartSO> _body = new List<PartSO>();
     [Header("Head")]
     [SerializeField] ContentPartAdd Head;
-    [SerializeField] List<PartSO> _head = new List<PartSO>();
     [Header("Leg")]
     [SerializeField] ContentPartAdd Leg;
-    [SerializeField] List<PartSO> _legs = new List<PartSO>();
     private void Awake() {
 
         for(int i =0; i < PartSOTable.sed.Count; ++i)
@@ -63,30 +58,32 @@ public class GetServerToSO : MonoBehaviour
         var SO_List = JsonMapper.ToObject<Dictionary<string, ServerSOPacket>>(data.ToJson());
         print(SO_List.Count);
 
-        
-        foreach (var SOOOO in SO_List) {
+        foreach (var SOOOO in SO_List) 
+        {
             print("-------- "+SOOOO.Key+" ---------");
             print(SOOOO.Value.code);
             print(SOOOO.Value.level);
 
-            if(SOlist.ContainsKey($"{SOOOO}"))
+
+            if(SOlist.ContainsKey($"{SOOOO.Value.code}"))
             {
-                switch (SOlist[$"{SOOOO}"].PartBase)
+                var SOS = SOlist[$"{SOOOO.Value.code}"];
+                switch (SOS.PartBase)
                 {
                     case PartBaseEnum.Left:
-                        _left.Add(SOlist[$"{SOOOO}"]);
+                        Left.SetSO(SOS, SOOOO.Key);
                         break;
                     case PartBaseEnum.Right:
-                        _right.Add(SOlist[$"{SOOOO}"]);
+                        Right.SetSO(SOS, SOOOO.Key);
                         break;
                     case PartBaseEnum.Head:
-                        _head.Add(SOlist[$"{SOOOO}"]);
+                        Head.SetSO(SOS, SOOOO.Key);
                         break;
                     case PartBaseEnum.Body:
-                        _body.Add(SOlist[$"{SOOOO}"]);
+                        Body.SetSO(SOS, SOOOO.Key);
                         break;
                     case PartBaseEnum.Leg:
-                        _legs.Add(SOlist[$"{SOOOO}"]);
+                        Leg.SetSO(SOS, SOOOO.Key);
                         break;
                     case PartBaseEnum.Error:
                         print("error");
@@ -97,14 +94,13 @@ public class GetServerToSO : MonoBehaviour
             }
             else
             {
-                print(SOOOO.Key + "ÀÌ ¾øÀ½");
+                print($"{SOOOO.Value.code}[{SOOOO.Key}] SOï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.");
             }
         }
-
-        Left.SetSO(_left);
-        Right.SetSO(_right);
-        Body.SetSO(_body);
-        Head.SetSO(_head);
-        Leg.SetSO(_legs);
+        Left.gameObject.SetActive(false);
+        Right.gameObject.SetActive(false);
+        Head.gameObject.SetActive(false);
+        Body.gameObject.SetActive(false);
+        Leg.gameObject.SetActive(false);
     }
 }

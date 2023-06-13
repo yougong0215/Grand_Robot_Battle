@@ -10,26 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: CommonGearRight
+  m_Name: DXD9
   m_EditorClassIdentifier: 
   _part:
   - part: {fileID: 5219740372435964110, guid: d3373caeefa988e45b7132f8073a016d, type: 3}
     enums: 6
-  SOname: 
+  SOname: DXD9
   Sprite: {fileID: 21300000, guid: 5e582a76c9b47c94ab1f4d9720a5d224, type: 3}
   Statues:
     HP: 0
-    ATK: 15
+    ATK: 120
     DEF: 0
-    SPEED: 30
+    SPEED: 20
     Barrier: 0
-  Explain: 
+  Explain: "\uAC15\uB825\uD55C \uD55C\uBC1C \uD55C\uBC1C\uB85C \uC801\uC744 \uAFF0\uB6AB\uB294
+    \uCD5C\uCCA8\uB2E8 \uBB34\uAD6C.\r\n\uBA4B\uC9C4 \uC678\uD615\uACFC \uC2DC\uC6D0\uD55C
+    \uACA9\uBC1C\uC74C\uC73C\uB85C \uB208\uAE38\uC744 \uB048\uB2E4."
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: -1755161759, guid: ae838ac4d85b898449068875deaf2784, type: 3}
   PartBase: 0
   EquipImage: {fileID: 0}
-  clips: {fileID: -1547200936971108984, guid: ab5eeb1d921d7194abf630df08639995, type: 3}
+  clips: {fileID: 0}
   names: 
   Count: 1
-  Daesa: "\uC9C0\uC774\uC774\uC774\uC789\uC774\uC774\uC774\uC789\u3147 \uADDC\uC640\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC559\u3147\u3147"
+  Daesa: "\uC5F0\uC1C4 \uACA9\uBC1C!!"

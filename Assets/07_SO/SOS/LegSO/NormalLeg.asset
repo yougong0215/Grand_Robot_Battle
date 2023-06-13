@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: NormalLeg
+  m_EditorClassIdentifier: 
+  _part: []
+  SOname: "\uB178\uBA40 \uB808\uADF8"
+  Sprite: {fileID: 0}
+  Statues:
+    HP: 0
+    ATK: 100
+    DEF: 40
+    SPEED: 0
+    Barrier: 0
+  Explain: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uB2E4\uB9AC \uD30C\uCE20."
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 0}
+  PartBase: 0
+  EquipImage: {fileID: 0}
+  clips: {fileID: 0}
+  names: 
+  Count: 1
+  Daesa: "\uC720\uD134 \uD0A5!!"

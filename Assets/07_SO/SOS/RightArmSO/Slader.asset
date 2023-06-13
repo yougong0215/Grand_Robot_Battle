@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: CommonFireHeart
+  m_Name: Slader
   m_EditorClassIdentifier: 
-  _part:
-  - part: {fileID: 1162877915502398423, guid: 15af0f01a4597eb43bd7a26b7352c69d, type: 3}
-    enums: 14
-  SOname: 
+  _part: []
+  SOname: "\uC2AC\uB808\uC774\uB354"
   Sprite: {fileID: 0}
   Statues:
-    HP: 1000
-    ATK: 0
+    HP: 0
+    ATK: 170
     DEF: 0
-    SPEED: -30
+    SPEED: 10
     Barrier: 0
-  Explain: 
-  ReplaceMesh: 1
+  Explain: "\uD604\uC2E4\uD310 \uBE5B\uC758 \uAC80.\r\n\uB124\uC628 \uC0AC\uC778\uC73C\uB85C
+    \uBE5B\uB098\uB294 \uB728\uAC70\uC6B4 \uAC80\uACA9\uC73C\uB85C \uC801\uC744 \uB179\uC774\uACE0
+    \uC798\uB77C\uB0B8\uB2E4."
+  ReplaceMesh: 0
   EquipPart: 0
-  SkillImage: {fileID: 787114490, guid: ae838ac4d85b898449068875deaf2784, type: 3}
-  PartBase: 3
+  SkillImage: {fileID: 0}
+  PartBase: 0
   EquipImage: {fileID: 0}
-  clips: {fileID: -4304836385353429653, guid: 4ce94d2e69631fa4c9e14a7f70ac5a2e, type: 3}
+  clips: {fileID: 0}
   names: 
   Count: 1
-  Daesa: "\uAC00\uC2B4\uC774 \uD0C0\uC624\uB974\uACE0\uC788\uB2E4.."
+  Daesa: "\uAD11\uACA9!!"

@@ -4,6 +4,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class RobotPartsPacket {
+    public string part = null;
+    public string ItemToken;
+}
+
 public class UnitPart : MonoBehaviour
 {
 
@@ -21,37 +26,47 @@ public class UnitPart : MonoBehaviour
 
     public PartSO PartSO => so;
 
+    string token;
+
     ContentPartAdd c;
 
     public void SetPartClick(bool f = true)
     {
+        print(so.PartBase.ToString()); // < 부위임
 
         if(transform.parent.name == "Content")
         {
 
-            if (f)
-                c._seletedObj.Seleted(c, so);
-            transform.parent = c._seletedObj.transform;
-            dq.gameObject.SetActive(false);
-            eq.gameObject.SetActive(true);
+            // if (f)
+            //     c._seletedObj.Seleted(c, so);
+            // transform.parent = c._seletedObj.transform;
+            // dq.gameObject.SetActive(false);
+            // eq.gameObject.SetActive(true);
             
-            transform.GetComponent<RectTransform>().position = c._seletedObj.GetComponent<RectTransform>().position;
-            eq.GetComponent<RectTransform>().sizeDelta = c._seletedObj.GetComponent<RectTransform>().sizeDelta;
+            // transform.GetComponent<RectTransform>().position = c._seletedObj.GetComponent<RectTransform>().position;
+            // eq.GetComponent<RectTransform>().sizeDelta = c._seletedObj.GetComponent<RectTransform>().sizeDelta;
+            
+            print(token);
         }
         else
         {
-            if (f)
-                c._seletedObj.Seleted(c, null);
-            transform.parent = c._contentObj.transform;
+            // if (f)
+            //     c._seletedObj.Seleted(c, null);
+            // transform.parent = c._contentObj.transform;
 
-            dq.gameObject.SetActive(true);
-            eq.gameObject.SetActive(false);
+            // dq.gameObject.SetActive(true);
+            // eq.gameObject.SetActive(false);
+
+            RobotPartsPacket SendInfo = new();
+            SendInfo.part = so.PartBase.ToString();
+            NetworkCore.Send("MakeRobot.SetSetting", SendInfo);
         }
     }
 
-    public void SettingSO(ContentPartAdd c, PartSO s)
+    public void SettingSO(ContentPartAdd c, PartSO s, string token)
     {
         so = s;
+        this.token = token;
         this.c = c;
 
         if (so.Sprite != null)

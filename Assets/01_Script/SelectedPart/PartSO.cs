@@ -65,22 +65,39 @@ public enum PartBaseEnum
 [CreateAssetMenu(menuName =("SO/PartUI"))]
 public class PartSO : ScriptableObject
 {
+    [SerializeField] public PartBaseEnum PartBase;
+
+
     [SerializeField] public List<Parts> _part;
+
     [SerializeField] public string SOname;
     [SerializeField] public Sprite Sprite;
+
     [SerializeField] public Stat Statues;
+
+
     [SerializeField] [TextArea] public string Explain;
     [SerializeField] public bool ReplaceMesh = false;
     [SerializeField] public bool EquipPart = false;
+
+
+
     [SerializeField] public Sprite SkillImage;
-    [SerializeField] public PartBaseEnum PartBase;
+    
     [SerializeField] public Sprite EquipImage;
-    [SerializeField] public AnimationClip clips;
 
 
-    [Header("스킬 계수")]
+    [Header("??? ???")]
+        [SerializeField] public AnimationClip clips;
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
-    [SerializeField] [TextArea] public string Daesa = "아직 스킬 대사가 없습니다";
+    [SerializeField] [TextArea] public string Daesa = "???? ??? ??簡 ???????";
+
+}
+
+public class PartSOSO
+{
+    [SerializeField] public string SOname;
+    [SerializeField] public Sprite Sprite;
 
 }

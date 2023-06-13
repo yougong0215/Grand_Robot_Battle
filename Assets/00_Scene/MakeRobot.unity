@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79bbf1ebbf40ace4ca48bbdb6c58d6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMakeScene: 1
   PartSOTable: {fileID: 11400000, guid: 6761f84d61732a9419f93bf73b631547, type: 2}
   Left: {fileID: 4088924300238674162}
   _left: []

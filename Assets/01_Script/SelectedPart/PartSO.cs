@@ -91,7 +91,7 @@ public class PartSO : ScriptableObject
         [SerializeField] public AnimationClip clips;
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
-    [SerializeField] [TextArea] public string Daesa = "???? ??? ??忮 ???????";
+    [SerializeField] [TextArea] public string Daesa = "渠餌 橈擠 六六予六六";
 
 }
 

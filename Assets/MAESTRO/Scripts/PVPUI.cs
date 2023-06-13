@@ -161,7 +161,7 @@ public class PVPUI : MonoBehaviour
             _enemyHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f,1f, _enemyRobot._statues.HP/ _enemyRobot.MaxHP), 1, 0)));
             _enemyHpText.text = $"{_enemyRobot._statues.HP} / {_enemyRobot.MaxHP}";
             yield return new WaitForSeconds(1f);
-            if(so.clips != null)
+            //if(so.clips != null)
             {
                 SetPanel(); // 켜짐
                 _robot.GetComponent<AnimationBind>().AnimationChange(so.clips);
@@ -172,11 +172,11 @@ public class PVPUI : MonoBehaviour
 
                 SetPanel();
             }
-            else
-            {
-                _paneltxt.text = $"지정된 에니메이션이 없습니다";
-                yield return new WaitForSeconds(1f);
-            }
+            //else
+            //{
+            //    _paneltxt.text = $"지정된 에니메이션이 없습니다";
+            //    yield return new WaitForSeconds(1f);
+            //}
            
             _paneltxt.text =
                 $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다. ( 적HP : { _enemyRobot._statues.HP} )";
@@ -200,7 +200,7 @@ public class PVPUI : MonoBehaviour
                 _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
                 _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
                 yield return new WaitForSeconds(1f);
-                if (so.clips != null)
+                //if (so.clips != null)
                 {
                     SetPanel(); // 켜짐
                     _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
@@ -211,11 +211,11 @@ public class PVPUI : MonoBehaviour
 
                     SetPanel();
                 }
-                else
-                {
-                    _paneltxt.text = $"지정된 에니메이션이 없습니다";
-                    yield return new WaitForSeconds(1f);
-                }
+                //else
+                //{
+                //    _paneltxt.text = $"지정된 에니메이션이 없습니다";
+                //    yield return new WaitForSeconds(1f);
+                //}
 
 
                 _paneltxt.text =
@@ -231,7 +231,7 @@ public class PVPUI : MonoBehaviour
                 _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
                 _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
                 yield return new WaitForSeconds(1f);
-                if (so.clips != null)
+                //if (so.clips != null)
                 {
                     SetPanel(); // 켜짐
                     _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
@@ -243,11 +243,11 @@ public class PVPUI : MonoBehaviour
                     SetPanel();
 
                 }
-                else
-                {
-                    _paneltxt.text = $"지정된 에니메이션이 없습니다";
-                    yield return new WaitForSeconds(1f);
-                }
+                //else
+                //{
+                //    _paneltxt.text = $"지정된 에니메이션이 없습니다";
+                //    yield return new WaitForSeconds(1f);
+                //}
 
 
                 _paneltxt.text =

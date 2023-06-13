@@ -5458,8 +5458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45073631505c3974299eff1cf86b1b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aoc: {fileID: 0}
-  _animator: {fileID: 0}
+  aoc: {fileID: 22100000, guid: 848f16abf8c75e144af2bd025c599708, type: 2}
+  _animator: {fileID: 823173450}
 --- !u!1001 &831667439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12431,8 +12431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45073631505c3974299eff1cf86b1b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aoc: {fileID: 0}
-  _animator: {fileID: 0}
+  aoc: {fileID: 22100000, guid: 848f16abf8c75e144af2bd025c599708, type: 2}
+  _animator: {fileID: 823173450}
 --- !u!1001 &1775032909
 PrefabInstance:
   m_ObjectHideFlags: 0

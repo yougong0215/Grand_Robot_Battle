@@ -15,8 +15,8 @@ public class ContentPartAdd : MonoBehaviour
 
     public void SetSO(List<PartSO> so)
     {
-        part.Clear();
-        part = so;
+        //part.Clear();
+        //part = so;
         //if (_contentObj == null)
         //    _contentObj = transform.GetChild(0).Find("Content").gameObject;
         //if (_seletedObj == null)
@@ -24,8 +24,8 @@ public class ContentPartAdd : MonoBehaviour
 
         if (_contentObj.transform.childCount == 0 && _seletedObj.transform.childCount == 0)
         {
-            //part = PartList.Instance.ReturnInfo(pt); ¿ø·¡ ÀÖ´ø°Å °¡Á®¿À´Â°Å
-            Debug.LogWarning("¿©±â ¹Ù²ãÁà¾ßµÊ");
+            //part = PartList.Instance.ReturnInfo(pt); ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½
+            Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ßµï¿½");
 
             if (part != null)
             {

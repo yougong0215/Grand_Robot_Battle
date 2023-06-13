@@ -15,6 +15,7 @@ MonoBehaviour:
   _part:
   - part: {fileID: 1162877915502398423, guid: 15af0f01a4597eb43bd7a26b7352c69d, type: 3}
     enums: 14
+  SOname: 
   Sprite: {fileID: 0}
   Statues:
     HP: 1000
@@ -28,7 +29,7 @@ MonoBehaviour:
   SkillImage: {fileID: 787114490, guid: ae838ac4d85b898449068875deaf2784, type: 3}
   PartBase: 3
   EquipImage: {fileID: 0}
-  clips: {fileID: 0}
+  clips: {fileID: -4304836385353429653, guid: 4ce94d2e69631fa4c9e14a7f70ac5a2e, type: 3}
   names: 
   Count: 1
   Daesa: "\uAC00\uC2B4\uC774 \uD0C0\uC624\uB974\uACE0\uC788\uB2E4.."

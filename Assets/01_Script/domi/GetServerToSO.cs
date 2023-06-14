@@ -7,6 +7,13 @@ public class ServerSOPacket {
     public string code;
     public int level;
 }
+public class ServerPresetPacket {
+    public string left;
+    public string right;
+    public string head;
+    public string body;
+    public string leg;
+}
 
 public class GetServerToSO : MonoBehaviour
 {
@@ -35,6 +42,7 @@ public class GetServerToSO : MonoBehaviour
         }
 
          NetworkCore.EventListener["MakeRobot.ResultSO"] = ResultSO;
+         NetworkCore.EventListener["MakeRobot.SendPreset"] = SetPreset;
     }
 
 
@@ -48,6 +56,7 @@ public class GetServerToSO : MonoBehaviour
     }
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("MakeRobot.ResultSO");
+        NetworkCore.EventListener.Remove("MakeRobot.SendPreset");
     }
 
     void ResultSO(JsonData data) {
@@ -97,6 +106,31 @@ public class GetServerToSO : MonoBehaviour
                 print($"{SOOOO.Value.code}[{SOOOO.Key}] SO�� ã�� �� ����.");
             }
         }
+    }
+    
+    void SetPreset(JsonData data) {
+        if (!isMakeScene)
+            return;
+
+        var Preset = JsonMapper.ToObject<ServerPresetPacket>(data.ToJson());
+        print("-------- 프리셋 -------");
+        print(Preset.left);
+        print(Preset.right);
+        print(Preset.head);
+        print(Preset.body);
+        print(Preset.leg);
+        
+        if(Preset.left != "")
+            Left.SetPart(Preset.left);
+        if(Preset.body != "")
+            Body.SetPart(Preset.body);
+        if(Preset.right != "")
+            Right.SetPart(Preset.right);
+        if(Preset.leg != "")
+            Leg.SetPart(Preset.leg);
+        if(Preset.head != "")
+            Head.SetPart(Preset.head);
+                        
         Left.gameObject.SetActive(false);
         Right.gameObject.SetActive(false);
         Head.gameObject.SetActive(false);

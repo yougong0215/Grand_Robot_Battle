@@ -19,6 +19,14 @@ class PlayerForm {
         prefix: null, // 칭호
         picture: null // 프사
     }
+    // 로봇 프리셋
+    preset = {
+        left: null,
+        right: null,
+        head: null,
+        body: null,
+        leg: null
+    }
 
     constructor(name, socket) {
         this.name = name;
@@ -72,6 +80,22 @@ exports.AddPlayer = async function(id, socket) {
     if (PlayerInventory) { // 정보들이 있으면 인벤 불러오고 아니면 초기화값
         Player.inventory.equipment = JSON.parse(PlayerInventory.equipment);
         Player.inventory.item = JSON.parse(PlayerInventory.item);
+    }
+
+    ///////////////// 프리셋 /////////////////
+    const PlayerPreset = await sql.Aget("SELECT * FROM preset WHERE id = ?", id);
+    if (PlayerPreset === false) {
+        socket.kick("유저 정보를 불러올 수 없습니다. (4)");
+        sql.close();
+        return;
+    }
+
+    if (PlayerPreset) {
+        Player.preset.left = PlayerPreset.left;
+        Player.preset.right = PlayerPreset.right;
+        Player.preset.head = PlayerPreset.head;
+        Player.preset.body = PlayerPreset.body;
+        Player.preset.leg = PlayerPreset.leg;
     }
 
     sql.close(); // 데베 사용 끝남

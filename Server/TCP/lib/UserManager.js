@@ -35,6 +35,7 @@ exports.AddPlayer = async function(id, socket) {
 
     const sql = sqlite.GetObject();
     const UserData = await sql.Aget("SELECT name FROM users WHERE id = ?", id);
+    if (socket.readyState !== "open") return; // 머야 연결이 끊겨있네
     if (UserData === false || UserData === undefined || UserData.name === undefined) {
         socket.kick("유저 정보를 불러올 수 없습니다.");
         sql.close();

@@ -8,13 +8,20 @@ public class PartUIInfo : MonoBehaviour
     RobotSettingAndSOList _robot;
     [SerializeField] PartSO pat;
     bool bfi;
+
+    public PartSO Part => pat;
+
+    public string token {get; private set;} = "";
+
     private void Awake()
     {
         _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
     }
 
-    public void Seleted(ContentPartAdd pa, PartSO _partSO = null)
+    public void Seleted(ContentPartAdd pa, PartSO _partSO = null, string token = "")
     {
+        this.token = token;
+
         PartBaseEnum ot = PartBaseEnum.Error;
         if(pat != null)
         {

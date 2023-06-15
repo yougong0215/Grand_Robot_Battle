@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MechaAnchor
   m_EditorClassIdentifier: 
   PartBase: 3
-  _part: []
+  _part:
+  - part: {fileID: 5534583535526764337, guid: 5b485b5c665c16142950d343976dac69, type: 3}
+    enums: 14
   SOname: "\uBA54\uCE74\uC575\uCEE4"
   Sprite: {fileID: 0}
   Statues:

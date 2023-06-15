@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: GadaraBooster
   m_EditorClassIdentifier: 
   PartBase: 4
-  _part: []
+  _part:
+  - part: {fileID: 0}
+    enums: 0
   SOname: "\uAC00\uB2E4\uB77C \uBD80\uC2A4\uD130"
   Sprite: {fileID: 0}
   Statues:

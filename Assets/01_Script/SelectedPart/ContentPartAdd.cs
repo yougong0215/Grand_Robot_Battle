@@ -11,9 +11,10 @@ public class ContentPartAdd : MonoBehaviour
     [SerializeField] List<PartSO> part;
     [SerializeField] PartBaseEnum enums;
 
+    [SerializeField] Dictionary<string ,UnitPart> dic = new();
 
 
-    public void SetSO(PartSO so, string token)
+    public void SetSO(PartSO so, string token, bool b = false)
     {
         //part.Clear();
         part.Add(so);
@@ -23,27 +24,31 @@ public class ContentPartAdd : MonoBehaviour
         //    _seletedObj = transform.Find("Selected").gameObject.GetComponent<PartUIInfo>();
 
         //f (_contentObj.transform.childCount == 0 && _seletedObj.transform.childCount == 0)
-        {
-            //part = PartList.Instance.ReturnInfo(pt); ���� �ִ��� �������°�
+        
+            //prt = PartList.Instance.ReturnInfo(pt); ���� �ִ��� �������°�
             Debug.LogWarning("���� �ٲ���ߵ�");
 
 
-                UnitPart ui;
-
-                        ui = Instantiate(UISlotManager.Instance.Prefabs, _contentObj.transform);
 
 
-                        ui.SettingSO(this, so, token);
+             dic.Add(token ,Instantiate(UISlotManager.Instance.Prefabs, _contentObj.transform));
+
+
+             dic[token].SettingSO(this, so, token);
                         //ui.GetComponent<RectTransform>().sizeDelta = new Vector2(120, 120);
-
 
 
                     
                 
             
-        }
+        
         //gameObject.SetActive(false);
 
+    }
+
+    public void SetPart(string toekn) 
+    {
+        dic[toekn].SetPartClick();    
     }
 
 }

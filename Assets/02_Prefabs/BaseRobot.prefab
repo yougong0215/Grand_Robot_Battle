@@ -3635,7 +3635,7 @@ MonoBehaviour:
   A_R_MBone: {fileID: 7693453108852485522}
   A_R_MEquip: {fileID: 0}
   A_R_MSO: {fileID: 0}
-  A_R_LBone: {fileID: 3643560055876351873}
+  A_R_LBone: {fileID: 6728121708191311225}
   A_R_LMesh: {fileID: 4716511756024286642}
   A_R_LEquip: {fileID: 0}
   A_R_LSO: {fileID: 0}

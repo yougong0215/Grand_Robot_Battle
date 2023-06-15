@@ -15,7 +15,7 @@ MonoBehaviour:
   PartBase: 1
   _part:
   - part: {fileID: 3902171970247935077, guid: 15ea3fa51b5e044488b91c012426ca8b, type: 3}
-    enums: 3
+    enums: 6
   SOname: "\uB178\uBA40 \uB77C\uC774\uD2B8 \uC2A4\uC6CC\uB4DC"
   Sprite: {fileID: 21300000, guid: 6f81e0c8e210b414e92b6c77e5468677, type: 3}
   Statues:
@@ -25,7 +25,7 @@ MonoBehaviour:
     SPEED: 0
     Barrier: 0
   Explain: "\uAC04\uB2E4! \uAE30\uAC00\uB4DC\uB9B4 \uBE0C\uB808\uC774\uCEE4!!!"
-  ReplaceMesh: 1
+  ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}
   EquipImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}

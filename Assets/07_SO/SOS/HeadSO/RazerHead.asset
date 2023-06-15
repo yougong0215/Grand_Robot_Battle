@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: RazerHead
   m_EditorClassIdentifier: 
   PartBase: 2
-  _part: []
+  _part:
+  - part: {fileID: 2866277380865622550, guid: 781c177738d2249418d6301f64d615be, type: 3}
+    enums: 13
   SOname: "\uB808\uC774\uC800 \uD5E4\uB4DC"
   Sprite: {fileID: 0}
   Statues:

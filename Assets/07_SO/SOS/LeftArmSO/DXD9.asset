@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: DXD9
   m_EditorClassIdentifier: 
+  PartBase: 0
   _part:
   - part: {fileID: 5219740372435964110, guid: d3373caeefa988e45b7132f8073a016d, type: 3}
-    enums: 6
+    enums: 2
   SOname: DXD9
   Sprite: {fileID: 21300000, guid: 5e582a76c9b47c94ab1f4d9720a5d224, type: 3}
   Statues:
@@ -29,7 +30,6 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: -1755161759, guid: ae838ac4d85b898449068875deaf2784, type: 3}
-  PartBase: 0
   EquipImage: {fileID: 0}
   clips: {fileID: 0}
   names: 

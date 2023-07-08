@@ -1,0 +1,35 @@
+.MetalGround {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 165px;
+    left: 860px;
+    background-color: rgb(255, 255, 255);
+}
+
+.FastAttack {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 470px;
+    left: 860px;
+    background-color: rgb(255, 255, 255);
+}
+
+.MetalHell {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 280px;
+    left: 1420px;
+    background-color: rgb(255, 255, 255);
+}
+
+.MetalMine {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    top: 585px;
+    left: 1420px;
+    background-color: rgb(255, 255, 255);
+}

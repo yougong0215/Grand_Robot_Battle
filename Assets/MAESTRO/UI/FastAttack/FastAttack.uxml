@@ -18,5 +18,9 @@
             <ui:Label text="3/3" display-tooltip-when-elided="true" name="EnterCount" style="font-size: 40px; margin-top: 20px; padding-right: 0; padding-left: 30px; -unity-text-align: middle-left; color: rgb(255, 255, 255);" />
             <ui:Label text="불법 유통 전문 M사" display-tooltip-when-elided="true" name="StagrName" style="font-size: 50px; position: absolute; top: 140px; left: 340px; -unity-text-align: upper-right; color: rgb(255, 255, 255);" />
         </ui:Button>
+        <ui:VisualElement name="Panel" class="Panel" style="transition-duration: 0.7s;">
+            <ui:Button text="확인" display-tooltip-when-elided="true" name="OkBtn" style="width: 250px; height: 80px; position: absolute; top: 270px; left: 278px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-size: 50px;" />
+            <ui:Label text="금일 도전 횟수를 전부 &#10;사용하셨습니다." display-tooltip-when-elided="true" name="ErrorTxt" style="height: 287px; -unity-text-align: middle-center; font-size: 50px; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

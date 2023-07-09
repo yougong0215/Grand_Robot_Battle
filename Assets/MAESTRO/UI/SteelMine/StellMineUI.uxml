@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/SteelMine.uss?fileID=7433441132597879392&amp;guid=5fb463a075e77ae449cd3b795a8503ac&amp;type=3#SteelMine" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%;" />
+</ui:UXML>

@@ -32,9 +32,11 @@ public class ScrapHellUI : MonoBehaviour
         else
             _enemyInfoPanel.RemoveFromClassList("off");
         onPanel = !onPanel;
+
+        // 패널 세팅
     }
 
-    private void ShffleEnemyMark()
+    private void ShffleEnemyMark() // 적 순서 셔플
     {
         for(int i = 0; i < 5; i++)
         {
@@ -67,7 +69,6 @@ public class ScrapHellUI : MonoBehaviour
     {
         _root = _doc.rootVisualElement;
         _enemyInfoPanel = _root.Q<VisualElement>("EnemyInfoPanel");
-        ShffleEnemyMark();
         _myRobotImage = _root.Q<VisualElement>("MyRobotImage");
         _nextEnemyRobotProfile = _root.Q<VisualElement>("NextEnemyRobotProfile");
         _runBtn = _root.Q<Button>("RunBtn");

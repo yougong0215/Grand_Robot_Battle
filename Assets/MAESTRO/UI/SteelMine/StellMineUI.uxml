@@ -1,4 +1,23 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/SteelMine.uss?fileID=7433441132597879392&amp;guid=5fb463a075e77ae449cd3b795a8503ac&amp;type=3#SteelMine" />
-    <ui:VisualElement name="Root" style="width: 100%; height: 100%;" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%;">
+        <ui:VisualElement name="BG" style="width: 100%; height: 100%; align-items: center; justify-content: center;">
+            <ui:VisualElement name="BasePanel" style="width: 90%; height: 90%; border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; background-color: rgba(48, 48, 48, 0.75);">
+                <ui:VisualElement name="MyRobotbase" style="width: 450px; height: 700px; position: absolute; background-color: rgb(168, 168, 168); top: 44px; left: 68px; align-items: center;">
+                    <ui:VisualElement name="__" style="background-color: rgb(195, 195, 195); position: absolute; width: 80%; height: 75%; top: 44px; left: 45px;" />
+                    <ui:Button text="변경하기" display-tooltip-when-elided="true" name="MyRobotSelectBtn" style="position: absolute; width: 80%; height: 10%; top: 600px; left: 38px; background-color: rgb(194, 194, 194); color: rgb(0, 0, 0); font-size: 40px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="EnemyRobotBase" style="width: 750px; height: 750px; position: absolute; top: 20px; left: 570px; background-color: rgb(156, 156, 156);">
+                    <ui:Label text="강철금광" display-tooltip-when-elided="true" style="color: rgb(255, 209, 0); -unity-text-align: upper-center; position: absolute; font-size: 60px; top: -26px; left: 228px; -unity-font-style: bold;" />
+                    <ui:VisualElement name="HPBase" style="background-color: rgba(0, 0, 0, 0.75); position: absolute; width: 250px; height: 100px; top: 414px; left: 230px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+                        <ui:VisualElement name="HPImage" style="position: absolute; width: 80px; height: 80px; top: 10px; left: 14px; background-color: rgb(255, 255, 255);" />
+                        <ui:Label text="?????" display-tooltip-when-elided="true" name="HPTxt" style="font-size: 40px; color: rgb(255, 255, 255); width: 100px; position: absolute; top: 26px; left: 119px; -unity-text-align: upper-center;" />
+                    </ui:VisualElement>
+                    <ui:Button text="채광하기&#10;" display-tooltip-when-elided="true" name="MiningStartBtn" style="position: absolute; width: 300px; height: 100px; top: 590px; left: 210px; background-color: rgba(147, 147, 147, 0.93); font-size: 40px; color: rgb(0, 0, 0); border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;" />
+                    <ui:Label text="3/3" display-tooltip-when-elided="true" name="EnterCount" style="font-size: 30px; position: absolute; top: 646px; left: 338px; color: rgb(0, 0, 0);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="LimitBase" style="width: 350px; height: 150px; position: absolute; top: 48px; left: 1392px; background-color: rgba(154, 154, 154, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

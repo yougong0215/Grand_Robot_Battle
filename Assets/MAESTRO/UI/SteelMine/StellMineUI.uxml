@@ -13,7 +13,7 @@
                         <ui:VisualElement name="HPImage" style="position: absolute; width: 80px; height: 80px; top: 10px; left: 14px; background-color: rgb(255, 255, 255);" />
                         <ui:Label text="?????" display-tooltip-when-elided="true" name="HPTxt" style="font-size: 40px; color: rgb(255, 255, 255); width: 100px; position: absolute; top: 26px; left: 119px; -unity-text-align: upper-center;" />
                     </ui:VisualElement>
-                    <ui:Button text="채광하기&#10;" display-tooltip-when-elided="true" name="MiningStartBtn" style="position: absolute; width: 300px; height: 100px; top: 590px; left: 210px; background-color: rgba(106, 106, 106, 0.93); font-size: 40px; color: rgb(0, 0, 0); border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;" />
+                    <ui:Button text="채광하기&#10;" display-tooltip-when-elided="true" name="MiningStartBtn" style="position: absolute; width: 300px; height: 100px; top: 590px; left: 210px; background-color: rgba(106, 106, 106, 0.93); font-size: 35px; color: rgb(0, 0, 0); border-top-left-radius: 12px; border-bottom-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; -unity-font-style: normal;" />
                     <ui:Label text="3/3" display-tooltip-when-elided="true" name="EnterCount" style="font-size: 30px; position: absolute; top: 646px; left: 338px; color: rgb(0, 0, 0);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="LimitBase" style="width: 350px; height: 150px; position: absolute; top: 48px; left: 1392px; background-color: rgb(154, 154, 154);">

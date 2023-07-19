@@ -19,7 +19,7 @@ public class MetalGroundUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
-        
+        NetworkCore.EventListener["ingame.load"] = MathFinded;
     }
 
     public void PlusWinningCount(int value)
@@ -30,7 +30,8 @@ public class MetalGroundUI : MonoBehaviour
 
     public void MatchingStart()
     {
-
+        NetworkCore.Send("Match.Add", null);
+        print("[Match] 플레이어 찾는중...");
     }
 
     private void OnEnable()
@@ -42,5 +43,9 @@ public class MetalGroundUI : MonoBehaviour
         _winningCountTxt = _root.Q<Label>("Count");
         _matchingStartBtn = _root.Q<Button>("MatchingBtn");
         _matchingStartBtn.clicked += MatchingStart;
+    }
+
+    void MathFinded(LitJson.JsonData data) {
+        print("[Match] 플레이어를 찾음. 배틀로 이동");
     }
 }

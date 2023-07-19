@@ -22,6 +22,10 @@ public class MetalGroundUI : MonoBehaviour
         NetworkCore.EventListener["ingame.load"] = MathFinded;
     }
 
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("ingame.load");
+    }
+
     public void PlusWinningCount(int value)
     {
         _winningCount += value;

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MetalBuster
   m_EditorClassIdentifier: 
   PartBase: 2
-  _part: []
+  _part:
+  - part: {fileID: 0}
+    enums: 0
   SOname: "\uBA54\uD0C8 \uBC84\uC2A4\uD130"
   Sprite: {fileID: 0}
   Statues:

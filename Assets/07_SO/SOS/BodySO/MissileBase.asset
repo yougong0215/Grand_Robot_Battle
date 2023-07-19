@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MissileBase
   m_EditorClassIdentifier: 
   PartBase: 3
-  _part: []
+  _part:
+  - part: {fileID: 2874722650199807048, guid: cf95ac178748b254bb61a1dae4db4a72, type: 3}
+    enums: 14
   SOname: "\uBBF8\uC0AC\uC77C \uBCA0\uC774\uC2A4"
   Sprite: {fileID: 0}
   Statues:

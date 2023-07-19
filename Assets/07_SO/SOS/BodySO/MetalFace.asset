@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MetalFace
   m_EditorClassIdentifier: 
   PartBase: 3
-  _part: []
+  _part:
+  - part: {fileID: 514617632305905946, guid: 8ee508d963512a84784d4ebdffd82e5b, type: 3}
+    enums: 14
   SOname: "\uBA54\uD0C8 \uD398\uC774\uC2A4"
   Sprite: {fileID: 0}
   Statues:
@@ -25,7 +27,7 @@ MonoBehaviour:
   Explain: "\uBB34\uC11C\uC6B4 \uC5BC\uAD74\uB85C \uC801\uC744 \uAC81\uBA39\uAC8C
     \uB9CC\uB4DC\uB294 \uD30C\uCE20.\r\n\uC774\uC820 \uB3C4\uAE68\uBE44\uAC00 \uC544\uB2C8\uB77C
     \uBA54\uD0C8 \uD398\uC774\uC2A4\uAC00 \uC7A1\uC544\uAC04\uB2E4\uACE0 \uB9D0\uD55C\uB2E4."
-  ReplaceMesh: 0
+  ReplaceMesh: 1
   EquipPart: 0
   SkillImage: {fileID: 0}
   EquipImage: {fileID: 0}

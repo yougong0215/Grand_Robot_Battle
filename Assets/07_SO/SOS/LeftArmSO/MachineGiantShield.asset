@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: MachineGiantShield
   m_EditorClassIdentifier: 
+  PartBase: 0
   _part:
-  - part: {fileID: 4039958033940462915, guid: d13ee3501b591c048a120ab823e47edf, type: 3}
-    enums: 6
+  - part: {fileID: 7018310006690491947, guid: 49673760ebf4a9946ada38143b8b3e93, type: 3}
+    enums: 3
   SOname: "\uAE30\uACC4 \uAC70\uC778 \uBC29\uD328"
   Sprite: {fileID: 0}
   Statues:
@@ -27,7 +28,6 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: cb9289331f5354e45bd0a78082fa609f, type: 3}
-  PartBase: 0
   EquipImage: {fileID: 21300000, guid: f444e169cabdcb847ad8b704da9a8b39, type: 3}
   clips: {fileID: 0}
   names: 

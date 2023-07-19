@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: NormalBody
   m_EditorClassIdentifier: 
   PartBase: 3
-  _part: []
+  _part:
+  - part: {fileID: 1414022353748485549, guid: 9b18c1f558d27794992126d32882b077, type: 3}
+    enums: 14
   SOname: "\uB178\uBA40\uBC14\uB514"
   Sprite: {fileID: 0}
   Statues:

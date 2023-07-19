@@ -3586,8 +3586,8 @@ Transform:
   m_GameObject: {fileID: 5473252771532026177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.260164, y: 0.0000009536743, z: -26.687855}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 11.269371, y: 11.269371, z: 11.269371}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4327928025024641893}
   - {fileID: 9142492466380015146}
@@ -3621,10 +3621,10 @@ MonoBehaviour:
   A_L_UMesh: {fileID: 4419030798818017753}
   A_L_UEquip: {fileID: 0}
   A_L_USO: {fileID: 0}
-  A_L_MBone: {fileID: 2109601435571824362}
+  A_L_MBone: {fileID: 3115346491627881694}
   A_L_MEquip: {fileID: 0}
   A_L_MSO: {fileID: 0}
-  A_L_LBone: {fileID: 3115346491627881694}
+  A_L_LBone: {fileID: 3643560055876351873}
   A_L_LMesh: {fileID: 6930207804976478085}
   A_L_LEquip: {fileID: 0}
   A_L_LSO: {fileID: 0}
@@ -3632,10 +3632,10 @@ MonoBehaviour:
   A_R_UMesh: {fileID: 7077132038282376673}
   A_R_UEquip: {fileID: 0}
   A_R_USO: {fileID: 0}
-  A_R_MBone: {fileID: 5114574356694426042}
+  A_R_MBone: {fileID: 7693453108852485522}
   A_R_MEquip: {fileID: 0}
   A_R_MSO: {fileID: 0}
-  A_R_LBone: {fileID: 7693453108852485522}
+  A_R_LBone: {fileID: 6728121708191311225}
   A_R_LMesh: {fileID: 4716511756024286642}
   A_R_LEquip: {fileID: 0}
   A_R_LSO: {fileID: 0}
@@ -3665,6 +3665,7 @@ MonoBehaviour:
   HeadEquip: {fileID: 0}
   HeadSO: {fileID: 0}
   B_UBone: {fileID: 5448365101714509029}
+  B_UMesh: {fileID: 5756836788695001208}
   B_UEquip: {fileID: 0}
   B_UBodySO: {fileID: 0}
   _statues:
@@ -3673,6 +3674,7 @@ MonoBehaviour:
     DEF: 10
     SPEED: 10
     Barrier: 0
+  MaxHP: 0
 --- !u!1 &5478759818497059453
 GameObject:
   m_ObjectHideFlags: 0

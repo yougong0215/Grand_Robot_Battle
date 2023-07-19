@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: AIBrain
   m_EditorClassIdentifier: 
   PartBase: 2
-  _part: []
+  _part:
+  - part: {fileID: 4247632209268850374, guid: 24520a96f5f90a740a06aa1fd8e9c014, type: 3}
+    enums: 13
   SOname: "AI\uBE0C\uB808\uC778"
   Sprite: {fileID: 0}
   Statues:

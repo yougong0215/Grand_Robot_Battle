@@ -2,12 +2,15 @@ const Rooms = {};
 const JoinPlayers = {};
 
 class Room {
-    players = []; // 방안에 플레이어들
-    control = 0; // 현재 누가 공격중인지
+    players = {}; // 방안에 플레이어들
+    control = null; // 현재 누가 공격중인지
     ready = false; // 모든 플레이어가 준비됨? (게임 시작됨?)
 
     Join = function(playerID) {
-        this.players.push(playerID);
+        // 플레이어 저장
+        this.players[playerID] = {
+            health: 100
+        }
         JoinPlayers[playerID] = this;
     }
     GameStart = function() {

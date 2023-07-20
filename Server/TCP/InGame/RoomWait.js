@@ -3,7 +3,7 @@ const RoomManager = require("./RoomManager.js");
 RoomManager.RoomClass.prototype.WaitForPlayer = function() {
     this.waitData = {}; // 준비 다 되면 삭제됨
 
-    this.players.forEach(playerID => {
+    Object.keys(this.players).forEach(playerID => {
         const player = UserList[playerID];
         this.waitData[playerID] = false;
 
@@ -20,8 +20,8 @@ TriggerEvent["ingame.ready"] = function(id) {
 
     room.waitData[id] = true; // 활성화
     
-    for (const iterator of room.waitData) {
-        if (iterator !== true) {
+    for (const [nplayerID, ready] of Object.entries(room.waitData)) {
+        if (ready !== true) {
             return; // 아직 다 준비가 안됨.
         }
     }

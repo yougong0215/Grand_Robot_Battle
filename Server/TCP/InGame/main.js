@@ -30,10 +30,10 @@ TriggerEvent["Match.Add"] = function(id) {
 
 
     // 매치 플레이어가 없거나 나밖에 없으면 아래 코드는 실행 안함
-    console.log(`[InGame] ${player.name}님이 매칭을 시작함.`);
+    console.log(`[InGame] ${Player.name}님이 매칭을 시작함.`);
     if (MatchPlayers.size <= 1) return;
     
-    console.log(`[InGame] ${player.name}님이랑 같이할 사람 찾는중...`);
+    console.log(`[InGame] ${Player.name}님이랑 같이할 사람 찾는중...`);
     
     const other_playerID = getRandomValueFromSet(MatchPlayers, id /* 내 아이디는 제외 */);
     const other_player = UserList[other_playerID];

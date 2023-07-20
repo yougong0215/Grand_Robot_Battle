@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MetalGroundUI : MonoBehaviour
@@ -51,5 +52,6 @@ public class MetalGroundUI : MonoBehaviour
 
     void MathFinded(LitJson.JsonData data) {
         print("[Match] 플레이어를 찾음. 배틀로 이동");
+        SceneManager.LoadScene("PVP");
     }
 }

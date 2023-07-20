@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,18 @@ public class PVPUI : MonoBehaviour
         _uiDoc = GetComponent<UIDocument>();
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
+    }
+
+    private void Start()
+    {
+        _paneltxt.text = "다른 플레이어를 기다리고 있습니다.";
+        SetPanel();
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        
+        // 서버에게 준비가 되었다고 알림
+        NetworkCore.Send("ingame.ready", null);
     }
 
     private void OnEnable()

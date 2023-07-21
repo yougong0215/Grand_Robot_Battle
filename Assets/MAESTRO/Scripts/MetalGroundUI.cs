@@ -19,7 +19,6 @@ public class MetalGroundUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
-        
     }
 
     public void PlusWinningCount(int value)

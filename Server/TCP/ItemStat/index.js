@@ -1,5 +1,3 @@
-module.exports = null; // 초기값
-
 const googleAPI = require(__rootdir+"/Config/GoogleAPI.json");
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 const { JWT } = require("google-auth-library");
@@ -18,13 +16,30 @@ const doc = new GoogleSpreadsheet(googleAPI.sheetID, serviceAccountAuth);
     await doc.loadInfo();
     console.log("[GoogleSheet] 로드 완료");
 
+    let LevelSheet = {};
     let sheetIndex = 0;
+
+    let finish_Count = 0;
+    const FinishCheck = function() {
+        finish_Count ++;
+        if (doc.sheetsByIndex.length === finish_Count) exports.itemStats = LevelSheet;
+    }
+
     doc.sheetsByIndex.forEach(async sheet => {
         const sheetID = ++sheetIndex;
         console.log("[GoogleSheet] " + sheet.title + "("+sheetID+") 시트 로드중...");
-        await sheet.loadCells("M:Q"); 
+        await sheet.loadCells("A:E"); 
         console.log("[GoogleSheet] " + sheet.title + "("+sheetID+") 시트 데이터 읽는중...");
-        const data = await sheet.getCellsInRange("M:Q");
-        console.log(data);
+        const data = await sheet.getCellsInRange("A:E");
+        LevelSheet[sheetID] = {};
+        data.forEach(itemStats => {
+            LevelSheet[sheetID][itemStats[0]] = {
+                b: itemStats[1],
+                c: itemStats[2],
+                d: itemStats[3],
+                e: itemStats[4],
+            };
+        });
+        FinishCheck();
     });
 })();

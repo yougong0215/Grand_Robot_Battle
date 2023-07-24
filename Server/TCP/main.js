@@ -5,6 +5,7 @@ require("./lib/UserManager.js");
 require("./Lobby/main.js");
 require("./MakeRobot/main.js");
 require("./Gacha/main.js");
+require("./InGame/main.js");
 require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));

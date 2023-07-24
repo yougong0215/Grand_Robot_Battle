@@ -1,0 +1,13 @@
+.Panel {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.67);
+    top: 1080px;
+    left: 600px;
+}
+
+.Panel.on {
+    position: absolute;
+    top: 300px;
+}

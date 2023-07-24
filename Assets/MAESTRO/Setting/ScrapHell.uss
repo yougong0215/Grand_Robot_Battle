@@ -1,0 +1,14 @@
+.InfoPanel {
+    position: absolute;
+    left: 1500px;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(204, 204, 204, 255);
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+}
+
+.InfoPanel.off {
+    position: absolute;
+    left: 2100px;
+}

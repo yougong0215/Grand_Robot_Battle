@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -40,6 +41,15 @@ public class Stat
     public int DEF = 10;
     public int SPEED = 10;
     public int Barrier = 0;
+    public static Stat operator +(Stat output, Stat input)
+    {
+        output.HP += input.HP;
+        output.ATK += input.ATK;
+        output.DEF += input.DEF;
+        output.SPEED+= input.SPEED;
+        output.Barrier+= input.Barrier;
+        return output;
+    }
 }
 
 
@@ -95,9 +105,3 @@ public class PartSO : ScriptableObject
 
 }
 
-public class PartSOSO
-{
-    [SerializeField] public string SOname;
-    [SerializeField] public Sprite Sprite;
-
-}

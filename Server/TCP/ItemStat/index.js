@@ -34,10 +34,10 @@ const doc = new GoogleSpreadsheet(googleAPI.sheetID, serviceAccountAuth);
         LevelSheet[sheetID] = {};
         data.forEach(itemStats => {
             LevelSheet[sheetID][itemStats[0]] = {
-                b: itemStats[1],
-                c: itemStats[2],
-                d: itemStats[3],
-                e: itemStats[4],
+                attack: Number(itemStats[1]),
+                shield: Number(itemStats[2]),
+                speed: Number(itemStats[3]),
+                health: Number(itemStats[4]),
             };
         });
         FinishCheck();

@@ -23,7 +23,7 @@ public class MenuUI : MonoBehaviour
     private void Start()
     {
         // TEST CODE
-        SceneLoad("MetalBattleGround");
+        // SceneLoad("MetalBattleGround");
     }
 
     private void OnEnable()
@@ -36,7 +36,8 @@ public class MenuUI : MonoBehaviour
         _garageBtn = _root.Q<Button>("GarageBtn");
 
         _makeBtn.clicked += () => SceneLoad("Gacha");
-        _battleBtn.clicked += () => SceneLoad("PVP");
+        // _battleBtn.clicked += () => SceneLoad("PVP");
+        _battleBtn.clicked += () => SceneLoad("MetalBattleGround");
         _gongBtn.clicked += () => SceneLoad("MakeRobot");
         _storeBtn.clicked += () => SceneLoad("Store");
         _garageBtn.clicked += () => SceneLoad("Garage");

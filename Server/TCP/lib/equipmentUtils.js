@@ -15,7 +15,7 @@ exports.AddItem = function(PlayerID, itemcode, level) {
 
     equipment[ItemToken] = {
         code: itemcode,
-        level: level || 0 // level이 없으면 기본값 0
+        level: level || 1 // level이 없으면 기본값 1
     }
 
     return ItemToken;

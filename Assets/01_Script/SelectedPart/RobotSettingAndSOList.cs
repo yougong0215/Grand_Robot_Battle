@@ -110,11 +110,11 @@ public class RobotSettingAndSOList : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet();
-        MaxHP = _statues.HP;
-    }
+    // private void Start()
+    // {
+    //     gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet();
+    //     MaxHP = _statues.HP;
+    // }
 
     int t;
     public void InitSet()
@@ -122,7 +122,7 @@ public class RobotSettingAndSOList : MonoBehaviour
         t = 0;
     }
 
-    //Æó±â
+    //ï¿½ï¿½ï¿½
     /*
     private void Init()
     {
@@ -343,7 +343,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 if (objed != null)
                     Equip = Instantiate(objed, bone.transform);
                 else
-                    Debug.LogError("ÆÄÃ÷ ¾øÀ½");
+                    Debug.LogError("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
             }
         }
         else

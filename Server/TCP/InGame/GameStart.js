@@ -18,21 +18,20 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             leg: null,
         }
         for (const [part, itemToken] of Object.entries(player.preset)) {
-            if (itemToken !== undefined) {
-                const item = player.inventory.equipment[itemToken];
-                if (item !== undefined) {
-                    const itemStat = itemStatManager.itemStats[Number(item.level)]["n_" /* 임시?? */+item.code];
-                    if (itemStat !== undefined) {
-                        playersWear[playerID][part] = item.code;
+            if (itemToken === undefined) continue;
+            const item = player.inventory.equipment[itemToken];
+            if (item === undefined) continue;
 
-                        // 스탯 추가
-                        this.players[playerID].attack += itemStat.attack;
-                        this.players[playerID].shield += itemStat.shield;
-                        this.players[playerID].speed += itemStat.speed;
-                        this.players[playerID].health += itemStat.health;
-                    }
-                }
-            }
+            const itemStat = itemStatManager.itemStats[Number(item.level)]["n_" /* 임시?? */+item.code];
+            if (itemStat === undefined) continue;
+
+            playersWear[playerID][part] = item.code;
+
+            // 스탯 추가
+            this.players[playerID].attack += itemStat.attack;
+            this.players[playerID].shield += itemStat.shield;
+            this.players[playerID].speed += itemStat.speed;
+            this.players[playerID].health += itemStat.health;
         }
     });
 

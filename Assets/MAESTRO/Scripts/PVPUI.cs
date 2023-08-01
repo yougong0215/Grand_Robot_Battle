@@ -40,6 +40,10 @@ public class PVPUI : MonoBehaviour
     private RobotSettingAndSOList _robot;       // 임시방편
     private RobotSettingAndSOList _enemyRobot;  // 임시방편
     #endregion
+    private float _playerMaxHP;
+    private float _playerCurrentHP;
+    private float _enemyMaxHP;
+    private float _enemyCurrentHP;
 
     private void Awake()
     {
@@ -112,6 +116,38 @@ public class PVPUI : MonoBehaviour
         _noBtn.clicked += OnWarning;
         #endregion
 
+    }
+
+    public void SetNameText(bool isPlayer, string name)
+    {
+        if(isPlayer)
+        {
+            _playerHpText.text = name;
+        }
+        else
+        {
+            _enemyHpText.text = name;
+        }
+    }
+
+    public void SetMaxHP(float playerHP, float enemyHP)
+    {
+        _playerMaxHP = _playerCurrentHP = playerHP;
+        _enemyMaxHP = _enemyCurrentHP = enemyHP;
+    }
+
+    public void SetHPValue(bool isPlayer, float damage)
+    {
+        if(isPlayer)
+        {
+            _playerCurrentHP -= damage;
+            _playerHpBar.style.width = _playerCurrentHP / _playerMaxHP;
+        }
+        else
+        {
+            _enemyCurrentHP -= damage;
+            _enemyHpBar.style.width = _enemyCurrentHP / _enemyMaxHP;
+        }
     }
 
 

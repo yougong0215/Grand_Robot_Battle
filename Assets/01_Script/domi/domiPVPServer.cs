@@ -21,8 +21,10 @@ public class domiPVPServer : MonoBehaviour
     [SerializeField] GameObject MyRobot;
     [SerializeField] GameObject EnemyRobot;
     GetServerToSO SO_Server;
+    PVPUI _pvpUI;
 
     private void Awake() {
+        _pvpUI = FindAnyObjectByType<PVPUI>();
         SO_Server = GetComponent<GetServerToSO>();
         NetworkCore.EventListener["ingame.playerInit"] = playerInit;
     }
@@ -31,6 +33,8 @@ public class domiPVPServer : MonoBehaviour
     }
 
     void playerInit(JsonData data) {
+        float playerMaxHP = 0;
+        float not_playerMaxHP = 0;
         foreach (JsonData player in data)
         {
             ServerPVPRobotInput serverInput;
@@ -39,7 +43,10 @@ public class domiPVPServer : MonoBehaviour
             else
                 serverInput = EnemyRobot.AddComponent<ServerPVPRobotInput>();
 
-            serverInput.Name = (string)player["name"];
+            // serverInput.Name = (string)player["name"];
+            print(player["my"]);
+            print(player["name"]);
+            _pvpUI.SetNameText((bool)player["my"], (string)player["name"]);
 
             if (player["left"] != null)
                 serverInput.Left = SO_Server.ReturnSO((string)player["left"]);
@@ -58,7 +65,15 @@ public class domiPVPServer : MonoBehaviour
             serverInput.stat.ATK = (int)player["attack"];
             serverInput.stat.DEF = (int)player["shield"];
 
+            // 최대 체력 설정
+            if ((bool)player["my"])
+                playerMaxHP = (int)player["health"];
+            else
+                not_playerMaxHP = (int)player["health"];
+
             StartCoroutine(serverInput.FindAndSet());
         }
+
+        _pvpUI.SetMaxHP(playerMaxHP, not_playerMaxHP);
     }
 }

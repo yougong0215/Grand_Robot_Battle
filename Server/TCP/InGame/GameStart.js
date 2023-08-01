@@ -43,7 +43,7 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             const wear = playersWear[id];
             packets.push({
                 my: id === playerID,
-                name: player.name,
+                name: UserList[id].name,
                 health: data.health,
                 attack: data.attack,
                 shield: data.shield,

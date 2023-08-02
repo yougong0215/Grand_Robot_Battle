@@ -11,6 +11,7 @@ public interface IState
 
 public abstract class CommonState : MonoBehaviour, IState
 {
+
     public FSMState _myState;
     protected FSM fsm;
     public FSM FSMMain => fsm;
@@ -23,17 +24,18 @@ public abstract class CommonState : MonoBehaviour, IState
     public Action EventAction = null;
     public Action EndAction = null;
 
-    protected void OnEnable() 
+
+
+    protected void Awake() 
     {
-        _parent = transform.parent.parent;
+        _parent = transform.parent;
         
         fsm = _parent.GetComponent<FSM>();
 
-        _animator = transform.parent.parent.Find("Visual").GetComponent<AnimationController>();
+        _animator = transform.parent.Find("Visual").GetComponent<AnimationController>();
 
         fsm.AddState(_myState, this);
     }
-
 
     public abstract void EnterState();
     public abstract void UpdateState();

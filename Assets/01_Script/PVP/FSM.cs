@@ -1,16 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public enum FSMState
 {
     Idle = 1,
-    Move = 2,
-    Skill = 3,
-    NuckDown =4,
-    Die = 5
+    Move = 10, // ±‚¡÷¡°
+    Skill = 11, 
+    NuckDown =12,
+    Die = 13
 }
 
 
@@ -21,7 +23,12 @@ public class FSM : MonoBehaviour
     private Dictionary<FSMState, CommonState> stateMap = new Dictionary<FSMState, CommonState>();
     [SerializeField] private CommonState currentState;
     [SerializeField] private CharacterController _chara;
+
+    public Action AnyUpdateState = null;
+    public Action AnyFixedState = null;
     public CharacterController Character => _chara;
+
+
 
     private void Awake()
     {
@@ -41,6 +48,11 @@ public class FSM : MonoBehaviour
     {
         stateMap[state] = stateObject;
         Debug.Log(stateMap[state]);
+    }
+
+    public void AddAction(FSMState state, CommonAction action)
+    {
+        Instantiate(action, stateMap[state].transform); 
     }
 
     public void SetInitialState(FSMState initialState)
@@ -72,6 +84,7 @@ public class FSM : MonoBehaviour
 
         if (stateMap.TryGetValue(newState, out CommonState stateObject))
         {
+            
             currentState = stateObject;
             currentState.EnterState();
         }
@@ -84,6 +97,15 @@ public class FSM : MonoBehaviour
     private void Update()
     {
         currentState?.UpdateState();
+        AnyUpdateState?.Invoke();
+    }
+
+    private void FixedUpdate()
+    {
+
+        AnyFixedState?.Invoke();
 
     }
+
+    
 }

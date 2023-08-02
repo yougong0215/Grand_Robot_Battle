@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
@@ -107,22 +108,19 @@ public class RobotSettingAndSOList : MonoBehaviour
     public void SetStatues(Stat st)
     {
        _statues= st;
+        MaxHP = _statues.HP;
     }
 
 
-    // private void Start()
-    // {
-    //     gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet();
-    //     MaxHP = _statues.HP;
-    // }
-
-    int t;
-    public void InitSet()
+    private IEnumerator Start()
     {
-        t = 0;
+        yield return StartCoroutine(gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet());
+
+        // ¼­¹ö ·Îµù ¿Ï·á º¸³»ÁÖ±â
     }
 
-    //ï¿½ï¿½ï¿½
+
+    //Æó±â
     /*
     private void Init()
     {
@@ -343,7 +341,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 if (objed != null)
                     Equip = Instantiate(objed, bone.transform);
                 else
-                    Debug.LogError("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+                    Debug.LogError("ÆÄÃ÷ ¾øÀ½");
             }
         }
         else
@@ -367,7 +365,7 @@ public class RobotSettingAndSOList : MonoBehaviour
 
             MYSO = null;
         }
-        t++;
+        //t++;
 
     }
 
@@ -379,7 +377,6 @@ public class RobotSettingAndSOList : MonoBehaviour
             partsDic[p.PartBase] = p;
 
 
-            InitSet();
 
             for (int i = 0; i < partsDic[p.PartBase]._part.Count; i++)
             {

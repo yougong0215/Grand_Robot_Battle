@@ -7,6 +7,8 @@ public class AnimationController : MonoBehaviour
 {
 
     private readonly int _isRunHash = Animator.StringToHash("is_move");
+    private readonly int _isRunXHash = Animator.StringToHash("MoveX");
+    private readonly int _isRunYHash = Animator.StringToHash("MoveY");
     private readonly int _RunTriggerhash = Animator.StringToHash("run");
 
     private readonly int _isAttackHash = Animator.StringToHash("is_Attack");
@@ -126,6 +128,12 @@ public class AnimationController : MonoBehaviour
     public void SetMoveAnimation(bool b)
     {
         _animator.SetBool(_isRunHash, b);
+    }
+
+    public void SetMoveDirection(Vector2 dir)
+    {
+        _animator.SetFloat(_isRunXHash, dir.x);
+        _animator.SetFloat(_isRunYHash, dir.y);
     }
 
     public void SetAttackAnimation(bool b)

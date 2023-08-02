@@ -23,8 +23,8 @@ public class ServerPVPRobotInput : MonoBehaviour
         yield return StartCoroutine(Setting(Leg));
 
         RobotSettingAndSOList _robot = GetComponent<RobotSettingAndSOList>();
-        _robot.SetStatues(stat);
-
+        //_robot.SetStatues(stat);
+        Debug.LogWarning("나중에 고쳐야됨2");
         Destroy(this);
     }
 

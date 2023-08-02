@@ -30,7 +30,7 @@ public class UISlotManager : MonoBehaviour
             return instance;
         }
     }
-    private void Awake()
+    private void Start()
     {
         instance = this;
         _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
@@ -44,10 +44,15 @@ public class UISlotManager : MonoBehaviour
 
     void Update()
     {
-        ATK.text = $"ATK : {_robot._statues.ATK}";
-        DEF.text = $"DEF : {_robot._statues.DEF}";
-        SPEED.text = $"SPEED : {_robot._statues.SPEED}";
-        HP.text = $"HP : {_robot._statues.HP}";
+        if(_robot._statues != null)
+        {
+            ATK.text = $"ATK : {_robot._statues.ATK}";
+            DEF.text = $"DEF : {_robot._statues.DEF}";
+            SPEED.text = $"SPEED : {_robot._statues.SPEED}";
+            HP.text = $"HP : {_robot._statues.HP}";
+            Debug.LogWarning("나중에 고쳐야됨");
+        }
+
     }
 
 

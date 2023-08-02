@@ -22,11 +22,8 @@ public class PartUIInfo : MonoBehaviour
     {
         this.token = token;
 
-        PartBaseEnum ot = PartBaseEnum.Error;
         if(pat != null)
         {
-            ot = pat.PartBase;
-            _robot.InitSet();
             GameObject obj = transform.GetChild(0).gameObject;
             obj.GetComponent<UnitPart>().SetPartClick(false);
 
@@ -36,15 +33,7 @@ public class PartUIInfo : MonoBehaviour
             }
         }
 
-        if(_partSO != null)
-        {
-            ot = _partSO.PartBase;
-        }
-
         pat = _partSO;
-        _robot.InitSet();
-
-        // SimpleRobot.Instance.Setting(pat, ot);
 
         _robot.SetingRealPart(pat);
 

@@ -15,14 +15,12 @@ public class ServerPVPRobotInput : MonoBehaviour
     
     public IEnumerator FindAndSet()
     {
+        stat = new Stat();
         yield return StartCoroutine(Setting(Left));
         yield return StartCoroutine(Setting(Right));
         yield return StartCoroutine(Setting(Head));
         yield return StartCoroutine(Setting(Body));
         yield return StartCoroutine(Setting(Leg));
-
-
-
         Destroy(this);
     }
 

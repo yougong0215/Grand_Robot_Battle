@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
@@ -110,17 +111,14 @@ public class RobotSettingAndSOList : MonoBehaviour
     }
 
 
-    private void Start()
+    private IEnumerator Start()
     {
-        gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet();
+        yield return StartCoroutine(gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet());
         MaxHP = _statues.HP;
+
+        // 서버 로딩 완료 보내주기
     }
 
-    int t;
-    public void InitSet()
-    {
-        t = 0;
-    }
 
     //폐기
     /*
@@ -367,7 +365,7 @@ public class RobotSettingAndSOList : MonoBehaviour
 
             MYSO = null;
         }
-        t++;
+        //t++;
 
     }
 
@@ -379,7 +377,6 @@ public class RobotSettingAndSOList : MonoBehaviour
             partsDic[p.PartBase] = p;
 
 
-            InitSet();
 
             for (int i = 0; i < partsDic[p.PartBase]._part.Count; i++)
             {

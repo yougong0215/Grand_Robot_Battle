@@ -2,6 +2,7 @@ const net = require("net");
 
 global.TriggerEvent = {};
 require("./lib/UserManager.js");
+require("./ItemStat");
 require("./Lobby/main.js");
 require("./MakeRobot/main.js");
 require("./Gacha/main.js");

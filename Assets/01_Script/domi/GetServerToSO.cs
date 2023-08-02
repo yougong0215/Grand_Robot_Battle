@@ -41,6 +41,8 @@ public class GetServerToSO : MonoBehaviour
             Debug.Log(a);
         }
 
+        if (!isMakeScene)
+            return;
          NetworkCore.EventListener["MakeRobot.ResultSO"] = ResultSO;
          NetworkCore.EventListener["MakeRobot.SendPreset"] = SetPreset;
     }
@@ -52,18 +54,17 @@ public class GetServerToSO : MonoBehaviour
     }
 
     private void Start() {
-        NetworkCore.Send("MakeRobot.GetSO", null);
+        if (isMakeScene)
+            NetworkCore.Send("MakeRobot.GetSO", null);
     }
     private void OnDestroy() {
+        if (!isMakeScene)
+            return;
         NetworkCore.EventListener.Remove("MakeRobot.ResultSO");
         NetworkCore.EventListener.Remove("MakeRobot.SendPreset");
     }
 
     void ResultSO(JsonData data) {
-
-        if (!isMakeScene)
-            return;
-
         var SO_List = JsonMapper.ToObject<Dictionary<string, ServerSOPacket>>(data.ToJson());
         print(SO_List.Count);
 

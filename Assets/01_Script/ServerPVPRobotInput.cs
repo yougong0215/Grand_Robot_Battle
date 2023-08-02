@@ -5,22 +5,26 @@ using UnityEngine.SubsystemsImplementation;
 
 public class ServerPVPRobotInput : MonoBehaviour
 {
-    [SerializeField] PartSO Left = null;
-    [SerializeField] PartSO Right = null;
-    [SerializeField] PartSO Head = null;
-    [SerializeField] PartSO Body = null;
-    [SerializeField] PartSO Leg = null;
-    [SerializeField] Stat stat;
+    public string Name = null;
+    public PartSO Left = null;
+    public PartSO Right = null;
+    public PartSO Head = null;
+    public PartSO Body = null;
+    public PartSO Leg = null;
+    public Stat stat;
 
     
     public IEnumerator FindAndSet()
     {
-        stat = new Stat();
         yield return StartCoroutine(Setting(Left));
         yield return StartCoroutine(Setting(Right));
         yield return StartCoroutine(Setting(Head));
         yield return StartCoroutine(Setting(Body));
         yield return StartCoroutine(Setting(Leg));
+
+        RobotSettingAndSOList _robot = GetComponent<RobotSettingAndSOList>();
+        _robot.SetStatues(stat);
+
         Destroy(this);
     }
 
@@ -30,10 +34,11 @@ public class ServerPVPRobotInput : MonoBehaviour
 
         yield return new WaitUntil(()=>_robot.SetingRealPart(so));
 
-        if (so)
-            stat += so.Statues;
+        /////// 이건 서버에서 다 처리할꺼
+        // if (so)
+        //     stat += so.Statues;
 
-        _robot.SetStatues(stat);
+        // _robot.SetStatues(stat);
     }
 
     

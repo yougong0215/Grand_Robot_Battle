@@ -108,13 +108,13 @@ public class RobotSettingAndSOList : MonoBehaviour
     public void SetStatues(Stat st)
     {
        _statues= st;
+        MaxHP = _statues.HP;
     }
 
 
     private IEnumerator Start()
     {
         yield return StartCoroutine(gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet());
-        MaxHP = _statues.HP;
 
         // 서버 로딩 완료 보내주기
     }

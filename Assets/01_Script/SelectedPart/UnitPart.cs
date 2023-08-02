@@ -44,7 +44,7 @@ public class UnitPart : MonoBehaviour
         {
             if (f)
                 c._seletedObj.Seleted(c, null);
-            transform.parent = c._contentObj.transform;
+            transform.SetParent( c._contentObj.transform);
 
             dq.gameObject.SetActive(true);
             eq.gameObject.SetActive(false);

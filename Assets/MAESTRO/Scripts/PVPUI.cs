@@ -52,6 +52,8 @@ public class PVPUI : MonoBehaviour
         _uiDoc = GetComponent<UIDocument>();
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
+
+        NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
     }
 
     private void Start()
@@ -439,5 +441,15 @@ public class PVPUI : MonoBehaviour
 
         }
         onPartsPanel = !onPartsPanel;
+    }
+
+    ///////////// ¼­¹ö //////////////
+    private void ActiveControl(LitJson.JsonData _) {
+        _atkBtn.AddToClassList("on");
+        _surrenBtn.AddToClassList("on");
+        _skipBtn.AddToClassList("on");
+
+        if (!onPanel) return;
+        SetPanel();
     }
 }

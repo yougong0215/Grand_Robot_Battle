@@ -54,6 +54,7 @@ public class PVPUI : MonoBehaviour
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
+        NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
     }
 
     private void Start()
@@ -446,7 +447,7 @@ public class PVPUI : MonoBehaviour
     }
 
     ///////////// 서버 //////////////
-    private void ActiveControl(LitJson.JsonData _) {
+    private void ActiveControl(LitJson.JsonData _ = null) {
         _atkBtn.AddToClassList("on");
         _surrenBtn.AddToClassList("on");
         _skipBtn.AddToClassList("on");
@@ -465,5 +466,51 @@ public class PVPUI : MonoBehaviour
         _skipBtn.RemoveFromClassList("on");
         SetPanel();
         SetPartsBtn();
+    }
+    
+    public class PVP_GameResult {
+        public bool my;
+        public string attacker;
+        public string hitter;
+        public bool answer;
+        public int power;
+        public int health;
+        public string why;
+    }
+    private void ServerGameResult(LitJson.JsonData data) {
+        StartCoroutine(ServerGameResult_Co(data));
+    }
+
+    IEnumerator ServerGameResult_Co(LitJson.JsonData data) {
+        bool disableControl = false;
+        for (int i = 0; i < 2; i++)
+        {
+            var result = LitJson.JsonMapper.ToObject<PVP_GameResult>(data[i].ToJson());
+            
+            if (result.answer == true) {
+                _paneltxt.text = result.my ? "나의 턴" : "적의 턴";
+                yield return new WaitForSeconds(1f);
+
+                SetHPValue(!result.my, result.power);
+                _paneltxt.text =
+                    $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
+                yield return new WaitForSeconds(3f);
+
+                if (result.why == "domiNotHealthEvent") {
+                    _paneltxt.text = result.my ? "나의 승리!!" : "적의 승리..";
+                    disableControl = true;
+                }
+
+            } else if (result.why == "domiNotHealthEvent") {
+                _paneltxt.text = result.my ? "적의 승리.." : "나의 승리!!";
+                disableControl = true;
+                yield return new WaitForSeconds(0.5f);
+            } else {
+                _paneltxt.text = (result.my ? "" : "적이 ") + result.why;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+
+        if (!disableControl) ActiveControl();
     }
 }

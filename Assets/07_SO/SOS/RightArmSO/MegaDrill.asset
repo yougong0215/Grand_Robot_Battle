@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: MegaDrill
   m_EditorClassIdentifier: 
   PartBase: 1
-  _part: []
+  _part:
+  - part: {fileID: 9062173955027456951, guid: fb56a50322c84c643b76d1f2980f5a11, type: 3}
+    enums: 6
   SOname: "\uBA54\uAC00\uB4DC\uB9B4"
   Sprite: {fileID: 0}
   Statues:
@@ -24,7 +26,7 @@ MonoBehaviour:
     Barrier: 0
   Explain: "\uC801\uC744 \uC7A5\uB82C\uD558\uAC8C \uB6AB\uC5B4\uB0B4\uB294 \uD30C\uCE20.\r\n\uB3CC\uD30C\uB825\uC73C\uB85C
     \uC801 \uAE30\uCCB4\uB97C \uBB34\uCC38\uD788 \uBC15\uC0B4\uB0B8\uB2E4."
-  ReplaceMesh: 0
+  ReplaceMesh: 1
   EquipPart: 0
   SkillImage: {fileID: 0}
   EquipImage: {fileID: 0}

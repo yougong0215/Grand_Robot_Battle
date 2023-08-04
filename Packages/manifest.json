@@ -1,5 +1,15 @@
 {
+  "scopedRegistries": [
+    {
+        "name": "package.openupm.com",
+        "url": "https://package.openupm.com",
+        "scopes": [
+            "com.judahperez.hsvcolorpicker"
+        ]
+    }
+],
   "dependencies": {
+    "com.judahperez.hsvcolorpicker": "3.3.0", 
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.8.9",
     "com.unity.collab-proxy": "2.0.3",

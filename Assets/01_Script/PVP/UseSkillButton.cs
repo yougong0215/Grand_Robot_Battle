@@ -30,6 +30,9 @@ public class UseSkillButton : MonoBehaviour
             if(std.Act != null)
                 fsm.AddAction(state, std.Act);
 
+            if (std.Anim != null)
+                Debug.LogWarning("ø¨∞· «ÿ¡‡æﬂµ ");
+
 
 
             fsm.ChangeState(state);

@@ -26,7 +26,7 @@ MonoBehaviour:
     Barrier: 0
   Explain: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uB808\uD504\uD2B8 \uD578\uB4DC
     \uD30C\uCE20. "
-  ReplaceMesh: 1
+  ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}
   EquipImage: {fileID: 21300000, guid: c1bba6bee6c00dc40bdfc753170b09db, type: 3}

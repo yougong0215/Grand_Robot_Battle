@@ -15,7 +15,7 @@ public class AnimationController : MonoBehaviour
     private readonly int _AttackTriggerhash = Animator.StringToHash("_attack");
 
     private readonly int _isHitHash = Animator.StringToHash("is_Hit");
-    private readonly int _hitTriggerhash = Animator.StringToHash("hit");
+    private readonly int _hitTriggerhash = Animator.StringToHash("_hit");
 
     private readonly int _isNuckHash = Animator.StringToHash("is_Nuck");
     private readonly int _nuckTriggerhash = Animator.StringToHash("nuckdown");
@@ -43,11 +43,6 @@ public class AnimationController : MonoBehaviour
     private void Awake()
     {
             _animator = GetComponent<Animator>();
-
-        if(av!=null)
-        _animator.avatar = av;
-        if(AOC!=null)
-        _animator.runtimeAnimatorController = AOC;
 
         
         _fsm = transform.parent.GetComponent<FSM>();

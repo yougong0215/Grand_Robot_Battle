@@ -27,7 +27,7 @@ MonoBehaviour:
   Explain: "\uC9C0\uC625\uC758 \uD68C\uC804\uB960\uB85C \uC801\uC744 \uBB34\uCC38\uD788
     \uAC08\uC544\uBC84\uB9AC\uB294 \uD30C\uCE20.\r\n\uC801\uC758 \uAE30\uCCB4\uB97C
     \uD754\uC801\uB3C4 \uC5C6\uC774 \uACE0\uCCA0\uB85C \uB9CC\uB4E4\uC5B4\uBC84\uB9B0\uB2E4."
-  ReplaceMesh: 1
+  ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}
   EquipImage: {fileID: 0}

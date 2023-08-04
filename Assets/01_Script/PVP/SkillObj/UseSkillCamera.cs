@@ -10,7 +10,9 @@ using UnityEngine.SubsystemsImplementation;
 public class CameraEaseing
 {
     public CinemachineVirtualCamera cam;
+    public CinemachineBlendDefinition.Style blend =CinemachineBlendDefinition.Style.EaseInOut;
     public float nextTime = 0f;
+    public float untilTIme = 0f;
 }
 
 public class UseSkillCamera : MonoBehaviour
@@ -25,9 +27,11 @@ public class UseSkillCamera : MonoBehaviour
     bool init = false;
 
     Coroutine co;
+    CinemachineBrain cam;
 
     public void Init(Quaternion rot)
     {
+        cam = FindManager.Instance.FindObject("MainCamera").gameObject.GetComponent<CinemachineBrain>();
         transform.rotation = rot;
 
         co = StartCoroutine(camsCol());
@@ -41,7 +45,9 @@ public class UseSkillCamera : MonoBehaviour
         for(int i =0; i < cams.Count; i++)
         {
             cams[i].cam.Priority = 1001;
-            yield return new WaitForSeconds(cams[i].nextTime);
+            cam.m_DefaultBlend.m_Style = cams[i].blend;
+            cam.m_DefaultBlend.m_Time = cams[i].nextTime;
+            yield return new WaitForSeconds(cams[i].untilTIme);
             cams[i].cam.Priority = -1;
         }
         

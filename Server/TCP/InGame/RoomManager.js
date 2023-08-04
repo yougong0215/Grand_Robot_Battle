@@ -22,6 +22,14 @@ class Room {
         }
         JoinPlayers[playerID] = this;
     }
+
+    Destroy = function() {
+        Object.keys(this.players).forEach(id => delete JoinPlayers[id]);
+        this.players = {};
+        this.ready = false;
+        delete Rooms[this.roomID];
+        console.log(`[RoomManager](${this.roomID}) 방 삭제됨`);
+    }
 }
 
 exports.RoomClass = Room;

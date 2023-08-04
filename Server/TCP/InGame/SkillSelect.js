@@ -8,10 +8,7 @@ function getRandomNumber(min, max) {
 
 TriggerEvent["ingame.selectSkill"] = function(id, part) {
     const room = RoomManager.getRoomToPlayer(id);
-    console.log(room.SelectSkills, room.SelectSkills[id], Number(part));
     if (room === undefined || room.SelectSkills === undefined || room.SelectSkills[id] !== false || Number(part) > 4) return;
-
-    console.log(id, part);
 
     room.SelectSkills[id] = Number(part);
     room.SkillChoiceFinish();
@@ -25,7 +22,6 @@ RoomManager.RoomClass.prototype.SkillChoice = function(disableControl) {
         this.SelectSkills[id] = false;
         if (!disableControl)
             player.socket.send("ingame.AttackControl", null);
-        console.log(this.players[id].parts);
     });
 
 
@@ -85,6 +81,7 @@ RoomManager.RoomClass.prototype.SkillChoiceFinish = function() {
     if (result_2st.why === "domiNotHealthEvent") {
         const winName = result_2st.answer ? hitter_name : attacker_name;
         console.log(`[RoomManager](${this.roomID}) 게임종료!! / ${winName} 이김!`);
+        this.Destroy(); // 방폭
         return;
     }
 
@@ -106,7 +103,7 @@ function AttackPlayer(room, attackid, hitid, partid) {
 
     // const attackerParts = attacker.parts[attack_part];
     const attackerParts = {
-        attack: 10
+        attack: 50
     };
     console.warn("[SkillSelect.js / AttackPlayer] 테스트 코드가 있습니다.");
     if (attackerParts === undefined) {

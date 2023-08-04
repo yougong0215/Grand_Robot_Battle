@@ -49,7 +49,7 @@ public class RotationRect : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
         pointID = eventData.pointerId;
 
         isTouching = true;
-
+        OnDrag(eventData);
 
 
     }

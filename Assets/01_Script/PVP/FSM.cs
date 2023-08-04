@@ -8,9 +8,10 @@ using UnityEngine.AI;
 
 public enum FSMState
 {
+    Any = 0,
     Idle = 1,
     Move = 10, // ±âÁÖÁ¡
-    Skill = 11, 
+    Attack = 11, 
     NuckDown =12,
     Die = 13
 }
@@ -27,13 +28,15 @@ public class FSM : MonoBehaviour
     public Action AnyUpdateState = null;
     public Action AnyFixedState = null;
     public CharacterController Character => _chara;
+    [SerializeField] GameObject AnyState;
+    
 
 
 
     private void Awake()
     {
         _chara = GetComponent<CharacterController>();
-
+        
     }
 
     //public void LookRotations(Vector3 dir)
@@ -52,7 +55,12 @@ public class FSM : MonoBehaviour
 
     public void AddAction(FSMState state, CommonAction action)
     {
-        Instantiate(action, stateMap[state].transform); 
+        Instantiate(action, stateMap[state].transform);
+    }
+
+    public void AnyStateAdd(AnyCommonAction any)
+    {
+        Instantiate(any, AnyState.transform);
     }
 
     public void SetInitialState(FSMState initialState)

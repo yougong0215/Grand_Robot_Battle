@@ -50,6 +50,20 @@ public class Stat
         output.Barrier+= input.Barrier;
         return output;
     }
+
+    public static Stat operator -(Stat output, Stat input)
+    {
+        output.HP -= input.HP;
+        output.ATK -= input.ATK;
+        output.DEF -= input.DEF;
+        output.SPEED -= input.SPEED;
+        output.Barrier -= input.Barrier;
+        if (output.Barrier < 0)
+        {
+            output.Barrier = 0;
+        }
+        return output;
+    }
 }
 
 

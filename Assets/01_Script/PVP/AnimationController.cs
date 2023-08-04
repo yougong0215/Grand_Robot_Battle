@@ -12,7 +12,7 @@ public class AnimationController : MonoBehaviour
     private readonly int _RunTriggerhash = Animator.StringToHash("run");
 
     private readonly int _isAttackHash = Animator.StringToHash("is_Attack");
-    private readonly int _AttackTriggerhash = Animator.StringToHash("attack");
+    private readonly int _AttackTriggerhash = Animator.StringToHash("_attack");
 
     private readonly int _isHitHash = Animator.StringToHash("is_Hit");
     private readonly int _hitTriggerhash = Animator.StringToHash("hit");

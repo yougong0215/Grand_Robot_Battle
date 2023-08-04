@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveState : CommonState
 {
+
+
     public override void EnterState()
     {
         Init?.Invoke();
@@ -19,7 +21,9 @@ public class MoveState : CommonState
         _animator.OnAnimationEndTrigger -= EndAction;
         _animator.SetMoveAnimation(false);
     }
-
+    public override void AnimationEndTRG()
+    {
+    }
     public override void UpdateState()
     {
         UpdateAction?.Invoke();

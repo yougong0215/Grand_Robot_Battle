@@ -15,9 +15,9 @@ MonoBehaviour:
   PartBase: 4
   _part:
   - part: {fileID: 2029660393320292064, guid: b1949a6a9137f684ebbe48259ceafcd5, type: 3}
-    enums: 8
+    enums: 10
   - part: {fileID: 2029660393320292064, guid: 23b063f4df23de94d969ee3e44fdac7f, type: 3}
-    enums: 11
+    enums: 7
   SOname: "\uC5B4\uC2A4 \uD018\uC774\uCEE4"
   Sprite: {fileID: 0}
   Statues:

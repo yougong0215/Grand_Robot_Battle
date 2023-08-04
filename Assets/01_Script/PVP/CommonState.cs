@@ -41,5 +41,7 @@ public abstract class CommonState : MonoBehaviour, IState
     public abstract void UpdateState();
 
     public abstract void ExitState();
+    public abstract void AnimationEndTRG();
+    
 
 }

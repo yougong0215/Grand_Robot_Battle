@@ -16,10 +16,6 @@ MonoBehaviour:
   _part:
   - part: {fileID: 8942553178788814242, guid: 83e15054b7a30594facbd3a1f4e2df9c, type: 3}
     enums: 5
-  - part: {fileID: 3352796868997682535, guid: 1b4aadc75a988e34d9d49a956a607d0e, type: 3}
-    enums: 5
-  - part: {fileID: 6101080008846592636, guid: e51dde167956ed146b7a350b17f7985c, type: 3}
-    enums: 5
   SOname: "\uBC1C\uCE78\uD3EC"
   Sprite: {fileID: 0}
   Statues:

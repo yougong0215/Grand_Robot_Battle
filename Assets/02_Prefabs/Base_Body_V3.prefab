@@ -3656,8 +3656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6706a29f2bfb8194db0640cbd43b8d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AI: 0
-  team: 0
   A_L_UBone: {fileID: 474586937329117586}
   A_L_UMesh: {fileID: 1344505450520362754}
   A_L_UEquip: {fileID: 0}
@@ -3710,7 +3708,7 @@ MonoBehaviour:
   HeadMesh: {fileID: 3288514598251687259}
   HeadEquip: {fileID: 0}
   HeadSO: {fileID: 0}
-  B_UBone: {fileID: 2371442978248198133}
+  B_UBone: {fileID: 2537437914977268829}
   B_UMesh: {fileID: 5021744594487891155}
   B_UEquip: {fileID: 0}
   B_UBodySO: {fileID: 0}

@@ -104,7 +104,9 @@ public class PVPUI : MonoBehaviour
                 so.PartBase = (PartBaseEnum)i;
 
             }
-            partsbtns[i].clicked += () => OnButton(so);
+            // partsbtns[i].clicked += () => OnButton(so);
+            print(i);
+            partsbtns[i].clicked += () => SelectSkillForServer(0);
 
         }
         #region 구독
@@ -451,5 +453,17 @@ public class PVPUI : MonoBehaviour
 
         if (!onPanel) return;
         SetPanel();
+    }
+    private void SelectSkillForServer(int part) {
+        print("part");
+        print(part);
+        NetworkCore.Send("ingame.selectSkill", part);
+
+        _paneltxt.text = "스킬을 선택했습니다. 다른 플레이어 기다리는중...";
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        SetPanel();
+        SetPartsBtn();
     }
 }

@@ -4,7 +4,7 @@ const JoinPlayers = {};
 class Room {
     roomID = undefined;
     players = {}; // 방안에 플레이어들
-    control = null; // 현재 누가 공격중인지
+    // control = null; // 현재 누가 공격중인지
     ready = false; // 모든 플레이어가 준비됨? (게임 시작됨?)
 
     constructor(id) {
@@ -17,9 +17,18 @@ class Room {
             health: 100,
             attack: 0,
             shield: 0,
-            speed: 0
+            speed: 0,
+            parts: {}
         }
         JoinPlayers[playerID] = this;
+    }
+
+    Destroy = function() {
+        Object.keys(this.players).forEach(id => delete JoinPlayers[id]);
+        this.players = {};
+        this.ready = false;
+        delete Rooms[this.roomID];
+        console.log(`[RoomManager](${this.roomID}) 방 삭제됨`);
     }
 }
 
@@ -27,6 +36,7 @@ exports.RoomClass = Room;
 // Room 스크립트 (확장)
 require("./RoomWait.js");
 require("./GameStart.js");
+require("./SkillSelect.js");
 
 // 랜덤 숫자
 function getRandom(min, max) {

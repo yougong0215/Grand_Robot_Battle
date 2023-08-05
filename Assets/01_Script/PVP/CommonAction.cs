@@ -10,7 +10,7 @@ public abstract class CommonAction : MonoBehaviour
     protected FSM FSMMain => com.FSMMain;
 
 
-    protected virtual void Start()
+    protected void OnEnable()
     {
         com = transform.parent.GetComponent<CommonState>();
 
@@ -26,7 +26,7 @@ public abstract class CommonAction : MonoBehaviour
 
 
 
-    public virtual void Destroy()
+    protected void DestroyObj()
     {
         com.Init -= Init;
 
@@ -35,9 +35,6 @@ public abstract class CommonAction : MonoBehaviour
         com.UpdateAction -= OnUpdateFunc;
 
         com.EndAction -= OnEndFunc;
-
-
-        Destroy(this.gameObject);
     }
 
     protected abstract void Init();

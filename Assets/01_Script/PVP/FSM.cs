@@ -11,9 +11,11 @@ public enum FSMState
     Any = 0,
     Idle = 1,
     Move = 10, // ±âÁÖÁ¡
-    Attack = 11, 
-    NuckDown =12,
-    Die = 13
+    Attack = 11,
+    Hit = 12,
+    NuckDown =13,
+    Die = 14,
+    WakeUP = 15
 }
 
 
@@ -29,7 +31,9 @@ public class FSM : MonoBehaviour
     public Action AnyFixedState = null;
     public CharacterController Character => _chara;
     [SerializeField] GameObject AnyState;
-    
+    Vector3 moveDirection = Vector3.zero;
+
+    bool isChangeing = false;
 
 
 
@@ -85,6 +89,10 @@ public class FSM : MonoBehaviour
 
     public void ChangeState(FSMState newState)
     {
+        if (isChangeing)
+            return;
+
+        isChangeing = true;
         if (currentState != null)
         {
             currentState.ExitState();
@@ -100,19 +108,38 @@ public class FSM : MonoBehaviour
         {
             Debug.LogError("Invalid state: " + newState);
         }
+        isChangeing = false;
     }
 
     private void Update()
     {
+        if (isChangeing)
+            return;
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            ChangeState(FSMState.Hit);
+        }
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            ChangeState(FSMState.NuckDown);
+        }
         currentState?.UpdateState();
         AnyUpdateState?.Invoke();
     }
 
+    public void Move(Vector3 vec)
+    {
+        moveDirection += vec;
+    }
+
     private void FixedUpdate()
     {
+        if (isChangeing)
+            return;
 
         AnyFixedState?.Invoke();
-
+        Character.Move(transform.TransformDirection(moveDirection * Time.deltaTime));
+        moveDirection = Vector3.zero;
     }
 
     

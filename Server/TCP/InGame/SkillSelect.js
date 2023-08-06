@@ -98,19 +98,21 @@ function AttackPlayer(room, attackid, hitid, partid) {
             answer: false,
             power: 0,
             health: 0,
+            soid: null,
             why: "domiNotHealthEvent"  
         }
 
-    // const attackerParts = attacker.parts[attack_part];
-    const attackerParts = {
-        attack: 50
-    };
+    const attackerParts = attacker.parts[attack_part];
+    // const attackerParts = {
+    //     attack: 50
+    // };
     console.warn("[SkillSelect.js / AttackPlayer] 테스트 코드가 있습니다.");
     if (attackerParts === undefined) {
         return {
             answer: false,
             power: 0,
             health: 0,
+            soid: null,
             why: "파츠가 없어 공격할 수 없습니다."  
         }
     }
@@ -122,6 +124,7 @@ function AttackPlayer(room, attackid, hitid, partid) {
         answer: true,
         power: attackerParts.attack,
         health: hitter.health,
+        soid: attackerParts.id,
         why: hitter.health === 0 ? "domiNotHealthEvent" : null
     }
 }

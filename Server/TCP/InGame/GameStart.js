@@ -32,6 +32,11 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             this.players[playerID].shield += itemStat.shield;
             this.players[playerID].speed += itemStat.speed;
             this.players[playerID].health += itemStat.health;
+
+            this.players[playerID].parts[part] = {
+                id: item.code,
+                ...itemStat
+            }
         }
     });
 
@@ -53,9 +58,8 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             });
         }
 
-        console.log(packets);
-
         player.socket.send("ingame.playerInit", packets);
     });
 
+    this.SkillChoice();
 }

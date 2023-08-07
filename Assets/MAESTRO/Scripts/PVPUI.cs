@@ -13,6 +13,7 @@ public class PVPUI : MonoBehaviour
     private Button _panel;
     private Label _paneltxt;
     private VisualElement _warning;
+    private GetServerToSO _SOserver;
 
     private Label _playerNickname;
     private VisualElement _playerHpBar;
@@ -52,6 +53,10 @@ public class PVPUI : MonoBehaviour
         _uiDoc = GetComponent<UIDocument>();
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
+        _SOserver = FindObjectOfType<GetServerToSO>();
+
+        NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
+        NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
     }
 
     private void Start()
@@ -86,6 +91,7 @@ public class PVPUI : MonoBehaviour
         _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
         _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
         #endregion
+        /* -- 서버에서 처리함
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
@@ -102,9 +108,12 @@ public class PVPUI : MonoBehaviour
                 so.PartBase = (PartBaseEnum)i;
 
             }
-            partsbtns[i].clicked += () => OnButton(so);
+            // partsbtns[i].clicked += () => OnButton(so);
+            print(i);
+            partsbtns[i].clicked += () => SelectSkillForServer(0);
 
         }
+        */
         #region 구독
         _atkBtn.clicked += SetPartsBtn;
 
@@ -439,5 +448,95 @@ public class PVPUI : MonoBehaviour
 
         }
         onPartsPanel = !onPartsPanel;
+    }
+
+    ///////////// 서버 //////////////
+    private void ActiveControl(LitJson.JsonData _ = null) {
+        _atkBtn.AddToClassList("on");
+        _surrenBtn.AddToClassList("on");
+        _skipBtn.AddToClassList("on");
+
+        if (!onPanel) return;
+        SetPanel();
+    }
+    private void SelectSkillForServer(int part) {
+        print("part");
+        print(part);
+        NetworkCore.Send("ingame.selectSkill", part);
+
+        _paneltxt.text = "스킬을 선택했습니다. 다른 플레이어 기다리는중...";
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        SetPanel();
+        SetPartsBtn();
+    }
+    
+    public class PVP_GameResult {
+        public bool my;
+        public string attacker;
+        public string hitter;
+        public string soid;
+        public bool answer;
+        public int power;
+        public int health;
+        public string why;
+    }
+    private void ServerGameResult(LitJson.JsonData data) {
+        StartCoroutine(ServerGameResult_Co(data));
+    }
+
+    IEnumerator ServerGameResult_Co(LitJson.JsonData data) {
+        bool disableControl = false;
+        for (int i = 0; i < 2; i++)
+        {
+            var result = LitJson.JsonMapper.ToObject<PVP_GameResult>(data[i].ToJson());
+            
+            if (result.answer == true) {
+                _paneltxt.text = result.my ? "나의 턴" : "적의 턴";
+                yield return new WaitForSeconds(1f);
+
+                // 애니메이션
+                SetPanel();
+                var SO = _SOserver.ReturnSO(result.soid);
+                (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
+                yield return new WaitUntil(() => (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().EndAnim());
+                SetPanel();
+
+                SetHPValue(!result.my, result.power);
+                _paneltxt.text =
+                    $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
+                yield return new WaitForSeconds(3f);
+
+                if (result.why == "domiNotHealthEvent") {
+                    _paneltxt.text = result.my ? "나의 승리!!" : "적의 승리..";
+                    disableControl = true;
+                }
+
+            } else if (result.why == "domiNotHealthEvent") {
+                _paneltxt.text = result.my ? "적의 승리.." : "나의 승리!!";
+                disableControl = true;
+            } else {
+                _paneltxt.text = (result.my ? "" : "적이 ") + result.why;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+
+        if (disableControl) {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene("Menu");
+        }
+        else ActiveControl();
+    }
+
+    public void SetSkillButton(PartSO[] parts) {
+        for (int i = 0; i < 5; i++)
+        {
+            partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
+            partsbtns[i].clicked += () => SelectSkillForServer(i);
+            
+            if (parts[i] == null) continue;
+            partsbtns[i].style.backgroundImage = new StyleBackground(parts[i].SkillImage);
+        }
     }
 }

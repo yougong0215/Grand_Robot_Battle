@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PVPUI : MonoBehaviour
 {
-    #region ÄÄÆ÷³ÍÆ®
+    #region ì»´í¬ë„ŒíŠ¸
     private UIDocument _uiDoc;
     private VisualElement _root;
     private Button _panel;
@@ -40,8 +40,8 @@ public class PVPUI : MonoBehaviour
     private bool onPanel;
     private bool onwarning;
 
-    private RobotSettingAndSOList _robot;       // ÀÓ½Ã¹æÆí
-    private RobotSettingAndSOList _enemyRobot;  // ÀÓ½Ã¹æÆí
+    private RobotSettingAndSOList _robot;       // ì„ì‹œë°©í¸
+    private RobotSettingAndSOList _enemyRobot;  // ì„ì‹œë°©í¸
     #endregion
     private float _playerMaxHP;
     private float _playerCurrentHP;
@@ -61,19 +61,19 @@ public class PVPUI : MonoBehaviour
 
     private void Start()
     {
-        _paneltxt.text = "´Ù¸¥ ÇÃ·¹ÀÌ¾î¸¦ ±â´Ù¸®°í ÀÖ½À´Ï´Ù.";
+        _paneltxt.text = "ë‹¤ë¥¸ í”Œë ˆì´ì–´ë¥¼ ê¸°ë‹¤ë¦¬ê³  ìˆìŠµë‹ˆë‹¤.";
         SetPanel();
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
         _skipBtn.RemoveFromClassList("on");
         
-        // ¼­¹ö¿¡°Ô ÁØºñ°¡ µÇ¾ú´Ù°í ¾Ë¸²
+        // ì„œë²„ì—ê²Œ ì¤€ë¹„ê°€ ë˜ì—ˆë‹¤ê³  ì•Œë¦¼
         NetworkCore.Send("ingame.ready", null);
     }
 
     private void OnEnable()
     {
-        #region ¿µ¼öÁõ
+        #region ì˜ìˆ˜ì¦
         _root = _uiDoc.rootVisualElement;
         _panel = _root.Q<Button>("Panel");
         _atkBtn = _root.Q<Button>("AttackBtn");
@@ -91,7 +91,7 @@ public class PVPUI : MonoBehaviour
         _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
         _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
         #endregion
-        /* -- ¼­¹ö¿¡¼­ Ã³¸®ÇÔ
+        /* -- ì„œë²„ì—ì„œ ì²˜ë¦¬í•¨
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
@@ -114,7 +114,7 @@ public class PVPUI : MonoBehaviour
 
         }
         */
-        #region ±¸µ¶
+        #region êµ¬ë…
         _atkBtn.clicked += SetPartsBtn;
 
         _skipBtn.clicked += OnWarning;
@@ -173,8 +173,8 @@ public class PVPUI : MonoBehaviour
 
     public IEnumerator Corutine(PartSO so)
     {
-        // ÀÌ°Å ´Ù ¼­¹ö·Î ¹Ù²ã¾ßµÊ
-        SetPanel(); // ÄÑÁü
+        // ì´ê±° ë‹¤ ì„œë²„ë¡œ ë°”ê¿”ì•¼ë¨
+        SetPanel(); // ì¼œì§
         SetPartsBtn();
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
@@ -183,22 +183,22 @@ public class PVPUI : MonoBehaviour
 
         int rand = UnityEngine.Random.Range(0, 5);
 
-        _paneltxt.text = "·ÎµùÁß..";
+        _paneltxt.text = "ë¡œë”©ì¤‘..";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß......";
+        _paneltxt.text = "ë¡œë”©ì¤‘......";
         yield return new WaitForSeconds(0.3f);
         bool t = SpeedReturn();
         yield return StartCoroutine(Fight(t, so, rand));
         t = !t;
         yield return StartCoroutine(Fight(t, so, rand));
 
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß..";
+        _paneltxt.text = "ë¡œë”©ì¤‘..";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
         _atkBtn.AddToClassList("on");
@@ -217,7 +217,7 @@ public class PVPUI : MonoBehaviour
     {
         if (t == true)
         {
-            _paneltxt.text = $"³ªÀÇ ÅÏ!!!";
+            _paneltxt.text = $"ë‚˜ì˜ í„´!!!";
             yield return new WaitForSeconds(0.5f);
             _paneltxt.text = so.Daesa;
             _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
@@ -227,7 +227,7 @@ public class PVPUI : MonoBehaviour
             yield return new WaitForSeconds(1f);
             //if(so.clips != null)
             {
-                SetPanel(); // ÄÑÁü
+                SetPanel(); // ì¼œì§
                 _robot.GetComponent<AnimationBind>().AnimationChange(so.clips);
 
 
@@ -238,17 +238,17 @@ public class PVPUI : MonoBehaviour
             }
             //else
             //{
-            //    _paneltxt.text = $"ÁöÁ¤µÈ ¿¡´Ï¸ŞÀÌ¼ÇÀÌ ¾ø½À´Ï´Ù";
+            //    _paneltxt.text = $"ì§€ì •ëœ ì—ë‹ˆë©”ì´ì…˜ì´ ì—†ìŠµë‹ˆë‹¤";
             //    yield return new WaitForSeconds(1f);
             //}
            
             _paneltxt.text =
-                $"{_robot.name}Àº {_enemyRobot.name}¿¡°Ô {_robot._statues.ATK * so.Count}ÀÇ ÇÇÇØ¸¦ ÀÔÇû´Ù. ( ÀûHP : { _enemyRobot._statues.HP} )";
+                $"{_robot.name}ì€ {_enemyRobot.name}ì—ê²Œ {_robot._statues.ATK * so.Count}ì˜ í”¼í•´ë¥¼ ì…í˜”ë‹¤. ( ì HP : { _enemyRobot._statues.HP} )";
 
             if (_enemyRobot._statues.HP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
-                _paneltxt.text = $"³ªÀÇ ½Â¸®..!";
+                _paneltxt.text = $"ë‚˜ì˜ ìŠ¹ë¦¬..!";
                 yield return new WaitForSeconds(1.5f);
                 SceneManager.LoadScene("Menu");
             }
@@ -257,7 +257,7 @@ public class PVPUI : MonoBehaviour
         {
             if (_enemyRobot.ReturnParts((PartBaseEnum)rand) != null)
             {
-                _paneltxt.text = $"ÀûÀÇ ÅÏ!!!";
+                _paneltxt.text = $"ì ì˜ í„´!!!";
                 yield return new WaitForSeconds(0.5f);
                 _paneltxt.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
@@ -266,7 +266,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 //if (so.clips != null)
                 {
-                    SetPanel(); // ÄÑÁü
+                    SetPanel(); // ì¼œì§
                     _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
 
 
@@ -277,19 +277,19 @@ public class PVPUI : MonoBehaviour
                 }
                 //else
                 //{
-                //    _paneltxt.text = $"ÁöÁ¤µÈ ¿¡´Ï¸ŞÀÌ¼ÇÀÌ ¾ø½À´Ï´Ù";
+                //    _paneltxt.text = $"ì§€ì •ëœ ì—ë‹ˆë©”ì´ì…˜ì´ ì—†ìŠµë‹ˆë‹¤";
                 //    yield return new WaitForSeconds(1f);
                 //}
 
 
                 _paneltxt.text =
-                    $"{_enemyRobot.name}Àº {_robot.name}¿¡°Ô {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}ÀÇ ÇÇÇØ¸¦ ÀÔÇû´Ù. ( ³ªÀÇHP : {_robot._statues.HP} )";
+                    $"{_enemyRobot.name}ì€ {_robot.name}ì—ê²Œ {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}ì˜ í”¼í•´ë¥¼ ì…í˜”ë‹¤. ( ë‚˜ì˜HP : {_robot._statues.HP} )";
             }
             else
             {
-                _paneltxt.text = $"ÀûÀÇ ÅÏ!!!";
+                _paneltxt.text = $"ì ì˜ í„´!!!";
                 yield return new WaitForSeconds(0.5f);
-                _panel.text = "ÀûÀÌ ¾ÆÁ÷ µ¥ÀÌÅÍ¸¦ °¡Áö°í ÀÖÁö ¾Ê½À´Ï´Ù.";
+                _panel.text = "ì ì´ ì•„ì§ ë°ì´í„°ë¥¼ ê°€ì§€ê³  ìˆì§€ ì•ŠìŠµë‹ˆë‹¤.";
                 _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
 
                 _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
@@ -297,7 +297,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 //if (so.clips != null)
                 {
-                    SetPanel(); // ÄÑÁü
+                    SetPanel(); // ì¼œì§
                     _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
 
 
@@ -309,19 +309,19 @@ public class PVPUI : MonoBehaviour
                 }
                 //else
                 //{
-                //    _paneltxt.text = $"ÁöÁ¤µÈ ¿¡´Ï¸ŞÀÌ¼ÇÀÌ ¾ø½À´Ï´Ù";
+                //    _paneltxt.text = $"ì§€ì •ëœ ì—ë‹ˆë©”ì´ì…˜ì´ ì—†ìŠµë‹ˆë‹¤";
                 //    yield return new WaitForSeconds(1f);
                 //}
 
 
                 _paneltxt.text =
-                    $"{_enemyRobot.name}Àº {_robot.name}¿¡°Ô {_enemyRobot._statues.ATK}ÀÇ ÇÇÇØ¸¦ ÀÔÇû´Ù. ( ³ªÀÇHP : {_robot._statues.HP} )";
+                    $"{_enemyRobot.name}ì€ {_robot.name}ì—ê²Œ {_enemyRobot._statues.ATK}ì˜ í”¼í•´ë¥¼ ì…í˜”ë‹¤. ( ë‚˜ì˜HP : {_robot._statues.HP} )";
             }
 
             if (_robot._statues.HP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
-                _paneltxt.text = $"HP : {_robot._statues.HP} ÀûÀÇ ½Â¸®..";
+                _paneltxt.text = $"HP : {_robot._statues.HP} ì ì˜ ìŠ¹ë¦¬..";
                 yield return new WaitForSeconds(1.5f);
                 SceneManager.LoadScene("Menu");
 
@@ -361,14 +361,14 @@ public class PVPUI : MonoBehaviour
 
     private void YesLogic()
     {
-        // ½ºÅµ
+        // ìŠ¤í‚µ
         StartCoroutine(Skip());
     }
 
     IEnumerator Skip()
     {
         //OnWarning();
-        SetPanel(); // ²¨Áü
+        SetPanel(); // êº¼ì§
         //SetPartsBtn();
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
@@ -377,21 +377,21 @@ public class PVPUI : MonoBehaviour
 
         int rand = UnityEngine.Random.Range(0, 5);
 
-        _paneltxt.text = "·ÎµùÁß..";
+        _paneltxt.text = "ë¡œë”©ì¤‘..";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß......";
+        _paneltxt.text = "ë¡œë”©ì¤‘......";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = $"³ªÀÇ ÅÏÀº ½ºÅµµÇ¾ú´Ù  ( ÀûHP : { _enemyRobot._statues.HP} )";
+        _paneltxt.text = $"ë‚˜ì˜ í„´ì€ ìŠ¤í‚µë˜ì—ˆë‹¤  ( ì HP : { _enemyRobot._statues.HP} )";
         yield return new WaitForSeconds(2f);
         yield return StartCoroutine(Fight(false, null, rand));
 
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß....";
+        _paneltxt.text = "ë¡œë”©ì¤‘....";
         yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "·ÎµùÁß..";
+        _paneltxt.text = "ë¡œë”©ì¤‘..";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
         _atkBtn.AddToClassList("on");
@@ -403,12 +403,12 @@ public class PVPUI : MonoBehaviour
 
     private void SkipLogic()
     {
-        _wText.text = "Á¤¸» ½ºÅµÇÏ½Ã°Ú½À´Ï±î?";
+        _wText.text = "ì •ë§ ìŠ¤í‚µí•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
     }
 
     private void SurrenderLogic()
     {
-        _wText.text = "Á¤¸» Ç×º¹ÇÏ½Ã°Ú½À´Ï±î?";
+        _wText.text = "ì •ë§ í•­ë³µí•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
     }
 
     public void SetText(string txt)
@@ -450,7 +450,7 @@ public class PVPUI : MonoBehaviour
         onPartsPanel = !onPartsPanel;
     }
 
-    ///////////// ¼­¹ö //////////////
+    ///////////// ì„œë²„ //////////////
     private void ActiveControl(LitJson.JsonData _ = null) {
         _atkBtn.AddToClassList("on");
         _surrenBtn.AddToClassList("on");
@@ -464,7 +464,7 @@ public class PVPUI : MonoBehaviour
         print(part);
         NetworkCore.Send("ingame.selectSkill", part);
 
-        _paneltxt.text = "½ºÅ³À» ¼±ÅÃÇß½À´Ï´Ù. ´Ù¸¥ ÇÃ·¹ÀÌ¾î ±â´Ù¸®´ÂÁß...";
+        _paneltxt.text = "ìŠ¤í‚¬ì„ ì„ íƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ë¥¸ í”Œë ˆì´ì–´ ê¸°ë‹¤ë¦¬ëŠ”ì¤‘...";
         _atkBtn.RemoveFromClassList("on");
         _surrenBtn.RemoveFromClassList("on");
         _skipBtn.RemoveFromClassList("on");
@@ -493,10 +493,10 @@ public class PVPUI : MonoBehaviour
             var result = LitJson.JsonMapper.ToObject<PVP_GameResult>(data[i].ToJson());
             
             if (result.answer == true) {
-                _paneltxt.text = result.my ? "³ªÀÇ ÅÏ" : "ÀûÀÇ ÅÏ";
+                _paneltxt.text = result.my ? "ë‚˜ì˜ í„´" : "ì ì˜ í„´";
                 yield return new WaitForSeconds(1f);
 
-                // ¾Ö´Ï¸ŞÀÌ¼Ç
+                // ì• ë‹ˆë©”ì´ì…˜
                 SetPanel();
                 var SO = _SOserver.ReturnSO(result.soid);
                 (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
@@ -505,19 +505,19 @@ public class PVPUI : MonoBehaviour
 
                 SetHPValue(!result.my, result.power);
                 _paneltxt.text =
-                    $"{result.attacker}Àº {result.hitter}¿¡°Ô {result.power}ÀÇ ÇÇÇØ¸¦ ÀÔÇû´Ù. ( {(result.my ? "Àû" : "³ª")}ÀÇHP : {result.health} )";
+                    $"{result.attacker}ì€ {result.hitter}ì—ê²Œ {result.power}ì˜ í”¼í•´ë¥¼ ì…í˜”ë‹¤. ( {(result.my ? "ì " : "ë‚˜")}ì˜HP : {result.health} )";
                 yield return new WaitForSeconds(3f);
 
                 if (result.why == "domiNotHealthEvent") {
-                    _paneltxt.text = result.my ? "³ªÀÇ ½Â¸®!!" : "ÀûÀÇ ½Â¸®..";
+                    _paneltxt.text = result.my ? "ë‚˜ì˜ ìŠ¹ë¦¬!!" : "ì ì˜ ìŠ¹ë¦¬..";
                     disableControl = true;
                 }
 
             } else if (result.why == "domiNotHealthEvent") {
-                _paneltxt.text = result.my ? "ÀûÀÇ ½Â¸®.." : "³ªÀÇ ½Â¸®!!";
+                _paneltxt.text = result.my ? "ì ì˜ ìŠ¹ë¦¬.." : "ë‚˜ì˜ ìŠ¹ë¦¬!!";
                 disableControl = true;
             } else {
-                _paneltxt.text = (result.my ? "" : "ÀûÀÌ ") + result.why;
+                _paneltxt.text = (result.my ? "" : "ì ì´ ") + result.why;
                 yield return new WaitForSeconds(1.5f);
             }
         }
@@ -533,8 +533,10 @@ public class PVPUI : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
-            partsbtns[i].clicked += () => SelectSkillForServer(i);
-            
+            int fuckCsharp = i;
+            partsbtns[i].clicked += () => {
+                SelectSkillForServer(fuckCsharp);
+            };
             if (parts[i] == null) continue;
             partsbtns[i].style.backgroundImage = new StyleBackground(parts[i].SkillImage);
         }

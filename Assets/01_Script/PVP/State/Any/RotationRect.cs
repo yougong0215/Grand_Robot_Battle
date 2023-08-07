@@ -33,13 +33,25 @@ public class RotationRect : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     {
         if(isTouching && pointID == eventData.pointerId)
         {
+            if(joy.TouchJoyStick())
+            {
+                if(Input.touchCount > 2)
+                {
+
+                }
+                else
+                {
+                    return;
+                }
+            }
             inputDirection = Input.GetTouch(pointID).position - pos;
 
-            if(Vector2.Distance( inputDirection, pos) < 0.3)
+            if (Vector2.Distance(inputDirection, pos) < 0.3)
             {
                 inputDirection = Vector2.zero;
             }
             pos = Input.GetTouch(pointID).position;
+
         }
 
     }

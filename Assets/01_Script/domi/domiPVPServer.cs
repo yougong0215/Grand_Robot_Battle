@@ -71,6 +71,11 @@ public class domiPVPServer : MonoBehaviour
             else
                 not_playerMaxHP = (int)player["health"];
 
+            if ((bool)player["my"]) // 스킬 버튼 설정
+                _pvpUI.SetSkillButton(new PartSO[] {
+                    serverInput.Left, serverInput.Right, serverInput.Head, serverInput.Body, serverInput.Leg
+                });
+            
             StartCoroutine(serverInput.FindAndSet());
         }
 

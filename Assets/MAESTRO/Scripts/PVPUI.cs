@@ -13,6 +13,7 @@ public class PVPUI : MonoBehaviour
     private Button _panel;
     private Label _paneltxt;
     private VisualElement _warning;
+    private GetServerToSO _SOserver;
 
     private Label _playerNickname;
     private VisualElement _playerHpBar;
@@ -52,6 +53,7 @@ public class PVPUI : MonoBehaviour
         _uiDoc = GetComponent<UIDocument>();
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
+        _SOserver = FindObjectOfType<GetServerToSO>();
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
@@ -89,6 +91,7 @@ public class PVPUI : MonoBehaviour
         _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
         _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
         #endregion
+        /* -- 서버에서 처리함
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
@@ -110,6 +113,7 @@ public class PVPUI : MonoBehaviour
             partsbtns[i].clicked += () => SelectSkillForServer(0);
 
         }
+        */
         #region 구독
         _atkBtn.clicked += SetPartsBtn;
 
@@ -472,6 +476,7 @@ public class PVPUI : MonoBehaviour
         public bool my;
         public string attacker;
         public string hitter;
+        public string soid;
         public bool answer;
         public int power;
         public int health;
@@ -491,6 +496,13 @@ public class PVPUI : MonoBehaviour
                 _paneltxt.text = result.my ? "나의 턴" : "적의 턴";
                 yield return new WaitForSeconds(1f);
 
+                // 애니메이션
+                SetPanel();
+                var SO = _SOserver.ReturnSO(result.soid);
+                (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
+                yield return new WaitUntil(() => (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().EndAnim());
+                SetPanel();
+
                 SetHPValue(!result.my, result.power);
                 _paneltxt.text =
                     $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
@@ -504,13 +516,27 @@ public class PVPUI : MonoBehaviour
             } else if (result.why == "domiNotHealthEvent") {
                 _paneltxt.text = result.my ? "적의 승리.." : "나의 승리!!";
                 disableControl = true;
-                yield return new WaitForSeconds(0.5f);
             } else {
                 _paneltxt.text = (result.my ? "" : "적이 ") + result.why;
                 yield return new WaitForSeconds(1.5f);
             }
         }
 
-        if (!disableControl) ActiveControl();
+        if (disableControl) {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene("Menu");
+        }
+        else ActiveControl();
+    }
+
+    public void SetSkillButton(PartSO[] parts) {
+        for (int i = 0; i < 5; i++)
+        {
+            partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
+            partsbtns[i].clicked += () => SelectSkillForServer(i);
+            
+            if (parts[i] == null) continue;
+            partsbtns[i].style.backgroundImage = new StyleBackground(parts[i].SkillImage);
+        }
     }
 }

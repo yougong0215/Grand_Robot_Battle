@@ -126,11 +126,11 @@ public class PVPUI : MonoBehaviour
     {
         if(isPlayer)
         {
-            _playerHpText.text = name;
+            _playerNickname.text = name;
         }
         else
         {
-            _enemyHpText.text = name;
+            _enemtNickname.text = name;
         }
     }
 
@@ -152,7 +152,7 @@ public class PVPUI : MonoBehaviour
         {
             _enemyCurrentHP -= damage;
             _enemyHpBar.style.width = _enemyCurrentHP / _enemyMaxHP;
-            _enemyHpText.text = $"{_enemyCurrentHP / _enemyMaxHP}";
+            _enemyHpText.text = $"{_enemyCurrentHP} / {_enemyMaxHP}";
         }
     }
 

@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum eSceneName
-{
-    None = -1,
-    Loading,
-    Logo,
-    Title,
-    Game
-}
-
 public enum SceneType
 {
-
+    MetalBattleGround = 0,
+    PVP = 1,
+    LivePVP = 2,
+    Store = 3,
+    MakeRobot = 4,
+    Garage = 5,
+    Gacha = 6,
+    StartScene = 7
 }
 
 public class SceneMG : MonoBehaviour
@@ -38,9 +36,8 @@ public class SceneMG : MonoBehaviour
             return _instance;
         }
     }
-
-    private eSceneName _currentScene, _beforeScene;
-
+    private GameObject _eCurrentScene, _eBeforeScene;
+    [SerializeField] private GameObject[] _sceneGroup;
     private void Awake()
     {
         if (_instance == null)
@@ -54,8 +51,14 @@ public class SceneMG : MonoBehaviour
         }
     }
 
-    public void SceneLoading()
+    public void SceneLoading(SceneType type)
     {
+        if(_eBeforeScene != null)
+        {
+            Destroy(_eBeforeScene);
+        }
+        _eBeforeScene = _eCurrentScene;
+        _eCurrentScene = Instantiate(_sceneGroup[(int)type]);
 
     }
 }

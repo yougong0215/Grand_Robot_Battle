@@ -153,13 +153,29 @@ public class PVPUI : MonoBehaviour
     {
         if(isPlayer)
         {
-            _playerCurrentHP -= damage;
+            if(_playerCurrentHP - damage < 0)
+            {
+                _playerCurrentHP -= damage;
+                
+            }
+            else
+            {
+                _playerCurrentHP = 0;
+            }
             _playerHpBar.style.width = _playerCurrentHP / _playerMaxHP;
             _playerHpText.text = $"{_playerCurrentHP / _playerMaxHP}";
         }
         else
         {
-            _enemyCurrentHP -= damage;
+            if(_enemyCurrentHP - damage < 0)
+            {
+                _enemyCurrentHP -= damage;
+                
+            }
+            else
+            {
+                _enemyCurrentHP = 0;
+            }
             _enemyHpBar.style.width = _enemyCurrentHP / _enemyMaxHP;
             _enemyHpText.text = $"{_enemyCurrentHP} / {_enemyMaxHP}";
         }

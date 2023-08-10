@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JoyStick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class JoyStick : MonoBehaviour
 {
+    Camera cam;
     public RectTransform joystickBackground;
     public RectTransform joystickHandle;
 
@@ -10,62 +11,51 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
 
     private Vector2 inputDirection;
     private Vector2 joystickStartPos;
-    private int pointerID = -1; // 포인터 ID를 저장하는 변수, 기본값은 -1로 설정
-    private bool isTouchingJoystick = false; // 조이스틱 배경을 터치 중인지 여부를 저장하는 변수
+    public int pointerID = -1; // 포인터 ID를 저장하는 변수, 기본값은 -1로 설정
+
+    int tch;
 
     private void Start()
     {
+        cam = FindManager.Instance.FindObject("UICam").GetComponent<Camera>();
         joystickStartPos = joystickBackground.position;
     }
 
-    public bool TouchJoyStick()
+    public bool TouchJoyStick(Touch eventData)
     {
-        // 포인터 ID가 유효하고, 조이스틱 배경을 터치 중이면 true를 반환
-        return (pointerID != -1 && isTouchingJoystick);
+        tch = eventData.fingerId;
+        
+        if (RectTransformUtility.RectangleContainsScreenPoint(joystickBackground, eventData.position, cam))
+        {
+            return true;
+        }
+        return false;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void UpdatePointer(int eventData)
     {
         // 조이스틱 핸들 이동 처리
-        if (eventData.pointerId == pointerID) // 현재 드래그하는 포인터 ID와 저장된 포인터 ID가 일치하는지 확인
+
+
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickBackground, Input.GetTouch(eventData).position, cam, out Vector2 localPoint))
         {
-            if (isTouchingJoystick && RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickBackground, eventData.position, eventData.pressEventCamera, out Vector2 localPoint))
-            {
-                localPoint.x = (localPoint.x / joystickBackground.sizeDelta.x);
-                localPoint.y = (localPoint.y / joystickBackground.sizeDelta.y);
+            localPoint.x = (localPoint.x / joystickBackground.sizeDelta.x);
+            localPoint.y = (localPoint.y / joystickBackground.sizeDelta.y);
 
-                float x = (joystickBackground.pivot.x == 1f) ? localPoint.x * 2 + 1 : localPoint.x * 2 - 1;
-                float y = (joystickBackground.pivot.y == 1f) ? localPoint.y * 2 + 1 : localPoint.y * 2 - 1;
+            float x = (joystickBackground.pivot.x == 1f) ? localPoint.x * 2 + 1 : localPoint.x * 2 - 1;
+            float y = (joystickBackground.pivot.y == 1f) ? localPoint.y * 2 + 1 : localPoint.y * 2 - 1;
 
-                inputDirection = new Vector2(x, y);
-                inputDirection = (inputDirection.magnitude > 1) ? inputDirection.normalized : inputDirection;
+            inputDirection = new Vector2(x, y);
+            inputDirection = (inputDirection.magnitude > 1) ? inputDirection.normalized : inputDirection;
 
-                // 조이스틱 핸들의 위치 설정 (최대 반지름 내에서만 이동)
-                joystickHandle.anchoredPosition = inputDirection * joystickRadius;
-            }
+            // 조이스틱 핸들의 위치 설정 (최대 반지름 내에서만 이동)
+            joystickHandle.anchoredPosition = inputDirection * joystickRadius;
         }
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        // 조이스틱 배경을 터치한 경우에만 이벤트 발생
-        if (RectTransformUtility.RectangleContainsScreenPoint(joystickBackground, eventData.position, eventData.pressEventCamera))
+        if (Input.GetTouch(eventData).phase == TouchPhase.Ended)
         {
-            pointerID = eventData.pointerId; // 포인터 ID 저장
-            isTouchingJoystick = true;
-            OnDrag(eventData);
-        }
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        // 포인터가 떼질 때 저장된 포인터 ID와 일치하는 경우에만 이벤트 처리
-        if (eventData.pointerId == pointerID)
-        {
-            pointerID = -1; // 포인터 ID 초기화
-            isTouchingJoystick = false;
-            inputDirection = Vector2.zero;
-            joystickHandle.anchoredPosition = Vector2.zero;
+            tch = -1;
+            inputDirection = new Vector2(0, 0);
         }
     }
 

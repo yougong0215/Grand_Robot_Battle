@@ -3,66 +3,48 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class RotationRect : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class RotationRect : MonoBehaviour
 {
-    private bool isTouching;
     private Vector2 inputDirection;
     Vector2 pos;
-    JoyStick joy;
-    int pointID = -1;
 
-    private void Awake()
-    {
-        joy = GetComponent<JoyStick>();
-    }
+
+
     public Vector2 GetInputDirection()
     {
         Debug.Log(inputDirection);
+        Vector2 vec = inputDirection;
+        inputDirection = new Vector2(0, 0);
 
-
-        return inputDirection.normalized * 5;
+        return vec.normalized * 5;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        inputDirection = Vector2.zero;
-        isTouching = false;
-    }
 
-    public void OnDrag(PointerEventData eventData)
+    public void UpdatePointer(int pnt)
     {
-        if(isTouching && pointID == eventData.pointerId)
+
+
+        if (Vector2.Distance(inputDirection, pos) < 0.3)
         {
-            if(joy.TouchJoyStick())
+            inputDirection = Vector2.zero;
+        }
+        try
+        {
+            inputDirection = Input.GetTouch(pnt).position - pos;
+            pos = Input.GetTouch(pnt).position;
+
+            if (Input.GetTouch(pnt).phase == TouchPhase.Ended)
             {
-                if(Input.touchCount > 2)
-                {
-
-                }
-                else
-                {
-                    return;
-                }
+                pos = new Vector2(0, 0);
+                inputDirection = Vector3.zero;
             }
-            inputDirection = Input.GetTouch(pointID).position - pos;
-
-            if (Vector2.Distance(inputDirection, pos) < 0.3)
-            {
-                inputDirection = Vector2.zero;
-            }
-            pos = Input.GetTouch(pointID).position;
-
+        }
+        catch
+        {
+            Debug.Log($"{this} : {pnt}");
         }
 
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        pointID = eventData.pointerId;
-
-        isTouching = true;
-        OnDrag(eventData);
-
 
     }
+
 }

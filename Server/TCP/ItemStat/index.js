@@ -28,9 +28,9 @@ const doc = new GoogleSpreadsheet(googleAPI.sheetID, serviceAccountAuth);
     doc.sheetsByIndex.forEach(async sheet => {
         const sheetID = ++sheetIndex;
         console.log("[GoogleSheet] " + sheet.title + "("+sheetID+") 시트 로드중...");
-        await sheet.loadCells("A:E"); 
+        await sheet.loadCells("A:F"); 
         console.log("[GoogleSheet] " + sheet.title + "("+sheetID+") 시트 데이터 읽는중...");
-        const data = await sheet.getCellsInRange("A:E");
+        const data = await sheet.getCellsInRange("A:F");
         LevelSheet[sheetID] = {};
         data.forEach(itemStats => {
             LevelSheet[sheetID][itemStats[0]] = {
@@ -38,6 +38,7 @@ const doc = new GoogleSpreadsheet(googleAPI.sheetID, serviceAccountAuth);
                 shield: Number(itemStats[2]),
                 speed: Number(itemStats[3]),
                 health: Number(itemStats[4]),
+                cooltime: Number(itemStats[5] || 0)
             };
         });
         FinishCheck();

@@ -74,6 +74,8 @@ public class domiPVPServer : MonoBehaviour
             if ((bool)player["my"]) // 스킬 버튼 설정
                 _pvpUI.SetSkillButton(new PartSO[] {
                     serverInput.Left, serverInput.Right, serverInput.Head, serverInput.Body, serverInput.Leg
+                }, new int[] {
+                    (int)player["cools"]["left"], (int)player["cools"]["right"], (int)player["cools"]["head"], (int)player["cools"]["body"], (int)player["cools"]["leg"]
                 });
             
             StartCoroutine(serverInput.FindAndSet());

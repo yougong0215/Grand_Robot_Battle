@@ -53,6 +53,14 @@ RoomManager.RoomClass.prototype.GameStart = function() {
                 attack: data.attack,
                 shield: data.shield,
                 speed: data.speed,
+                // 파츠 쿨타임
+                cools: {
+                    left: data.parts.left?.cooltime || 0,
+                    right: data.parts.right?.cooltime || 0,
+                    head: data.parts.head?.cooltime || 0,
+                    body: data.parts.body?.cooltime || 0,
+                    leg: data.parts.leg?.cooltime || 0
+                },
                 // 파츠
                 ...wear
             });

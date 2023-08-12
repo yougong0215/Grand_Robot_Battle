@@ -9,6 +9,7 @@ public class IngredientValue
     public Ingredient ig;
     public string name;
     public int count = 0;
+    public int price;
     public Sprite sprite;
 }
 

@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class Ingredient : MonoBehaviour
 {
     [SerializeField] private int idx;
-    int count;
+    int price;
     [SerializeField] Image _checkImage;
     Image _ingredientImage;
     TextMeshProUGUI _nameTxt;
     TextMeshProUGUI _countTxt;
 
     bool isChecking;
+
+    [SerializeField] private UnityEvent<int> _clickEvent = null;
 
     public void SettingInfredient(IngredientValue iv)
     {
@@ -24,6 +27,7 @@ public class Ingredient : MonoBehaviour
         Debug.Log(_checkImage);
         _checkImage.enabled = false;
 
+        price = iv.price;
         _ingredientImage.sprite = iv.sprite;
         _nameTxt.text = iv.name;
     }
@@ -36,6 +40,7 @@ public class Ingredient : MonoBehaviour
     public void ClickThisObject()
     {
         _checkImage = (Image)transform.Find("CheckImage").GetComponent("Image");
+        _clickEvent?.Invoke(price);
         _checkImage.enabled = !isChecking;
         isChecking = !isChecking;
     }

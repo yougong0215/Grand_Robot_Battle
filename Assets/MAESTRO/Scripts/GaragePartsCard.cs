@@ -14,13 +14,14 @@ public struct Info
     public string info;
     public string skillInfo;
     public string rate;
+    public int level;
 }
 
 public class GaragePartsCard : MonoBehaviour
 {
     Info infoData = new Info();
     public void InfoSet(string name, Image partsImage, float atk, float def,
-                        float hp, float speed, string info, string skillInfo, string rate)
+                        float hp, float speed, string info, string skillInfo, string rate, int level)
     {
         infoData.name = name;
         infoData.partsImage = partsImage;
@@ -31,6 +32,7 @@ public class GaragePartsCard : MonoBehaviour
         infoData.info = info;
         infoData.skillInfo = skillInfo;
         infoData.rate = rate;
+        infoData.level = level;
     }
 
     public void ClickThisCard()

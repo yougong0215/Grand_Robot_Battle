@@ -57,10 +57,10 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
-    public void SetIngredientValue(int idx, int value)
+    public void SetIngredientValue(int idx, int value, int exp)
     {
         _haveIngredientList[idx].count += value;
-        _haveIngredientList[idx].ig.SettingCountValue(value);
+        _haveIngredientList[idx].ig.SettingCountValue(value, exp);
     }
 
 }

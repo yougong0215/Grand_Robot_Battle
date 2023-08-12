@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Events;
 
 public class Ingredient : MonoBehaviour
 {
     [SerializeField] private int idx;
     int price;
+    int exp;
     [SerializeField] Image _checkImage;
     Image _ingredientImage;
     TextMeshProUGUI _nameTxt;
     TextMeshProUGUI _countTxt;
+    LevelManaging _lm;
 
     bool isChecking;
-
-    [SerializeField] private UnityEvent<int, int> _clickEvent = null;
 
     public void SettingInfredient(IngredientValue iv)
     {
@@ -24,7 +23,7 @@ public class Ingredient : MonoBehaviour
         _ingredientImage = (Image)transform.Find("IngredientImage").GetComponent("Image");
         _nameTxt = transform.Find("NameTxt").GetComponent<TextMeshProUGUI>();
         _countTxt = transform.Find("StatPanel/CountTxt").GetComponent<TextMeshProUGUI>();
-        Debug.Log(_checkImage);
+        _lm = (LevelManaging)GameObject.Find("LevelManaging").GetComponent("LevelManaging");
         _checkImage.enabled = false;
 
         price = iv.price;
@@ -32,16 +31,26 @@ public class Ingredient : MonoBehaviour
         _nameTxt.text = iv.name;
     }
 
-    public void SettingCountValue(int value)
+    public void SettingCountValue(int value, int ex)
     {
         _countTxt.text = value.ToString();
+        exp = ex;
     }
 
     public void ClickThisObject()
     {
         _checkImage = (Image)transform.Find("CheckImage").GetComponent("Image");
-        _clickEvent?.Invoke(price, 0);
         _checkImage.enabled = !isChecking;
+
+        if(isChecking)
+        {
+            _lm.BeforeUpgradeVirtual(-price, -exp);
+        }
+        else
+        {
+            _lm.BeforeUpgradeVirtual(price, exp);
+        }
+
         isChecking = !isChecking;
     }
 }

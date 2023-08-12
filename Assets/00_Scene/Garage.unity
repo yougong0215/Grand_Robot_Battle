@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028359, g: 0.22571385, b: 0.30692258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 288918405}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999654
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -663,7 +663,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 0.99999654}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2067,7 +2067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000049209884}
+  m_AnchoredPosition: {x: 0, y: 0.00018083735}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1025694397
@@ -2129,18 +2129,21 @@ MonoBehaviour:
     name: ig_1
     count: 1
     price: 500
+    exp: 0
     sprite: {fileID: 21300000, guid: 035589014b0103149ab90339f977495a, type: 3}
   - igObj: {fileID: 337654446014355610, guid: 379f460176025f54c8cc7f43b388cd70, type: 3}
     ig: {fileID: 337654446014355614, guid: 379f460176025f54c8cc7f43b388cd70, type: 3}
     name: ig_2
     count: 1
     price: 1000
+    exp: 0
     sprite: {fileID: 21300000, guid: 274ab69bd15b8404fb56791f2ddd80df, type: 3}
   - igObj: {fileID: 337654446014355610, guid: f9cdeb1111862ec4dbccde7bdee1f8ec, type: 3}
     ig: {fileID: 337654446014355614, guid: f9cdeb1111862ec4dbccde7bdee1f8ec, type: 3}
     name: ig_3
     count: 1
     price: 2000
+    exp: 0
     sprite: {fileID: 21300000, guid: e86d02f467877a147899f0d9160aa4eb, type: 3}
   _content: {fileID: 1501840390}
 --- !u!4 &1123859275
@@ -2285,6 +2288,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126652041}
   m_CullTransparentMesh: 1
+--- !u!1 &1217885158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217885160}
+  - component: {fileID: 1217885159}
+  m_Layer: 0
+  m_Name: LevelManaging
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1217885159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217885158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea00417c8b539f45b024158a051f3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUpEXPAmount: 00000000000000000000000000000000
+--- !u!4 &1217885160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217885158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1309010288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00018916512}
+  m_AnchoredPosition: {x: 0, y: 0.00033301514}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1501840392

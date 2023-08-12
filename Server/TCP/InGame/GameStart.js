@@ -1,4 +1,5 @@
 const RoomManager = require("./RoomManager.js");
+const equipmentUtils = require("../lib/equipmentUtils.js");
 const itemStatManager = require("../ItemStat");
 
 RoomManager.RoomClass.prototype.GameStart = function() {
@@ -22,7 +23,7 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             const item = player.inventory.equipment[itemToken];
             if (item === undefined) continue;
 
-            const itemStat = itemStatManager.itemStats[Number(item.level)]["n_" /* 임시?? */+item.code];
+            const itemStat = itemStatManager.itemStats[Number(item.level)][equipmentUtils.GetGradID(item.grade) + "_" + item.code];
             if (itemStat === undefined) continue;
 
             playersWear[playerID][part] = item.code;

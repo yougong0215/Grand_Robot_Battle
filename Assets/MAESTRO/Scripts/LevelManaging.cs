@@ -40,4 +40,5 @@ public class LevelManaging : MonoBehaviour
         amount += price;
         exp += ex;
     }
+
 }

@@ -15,6 +15,8 @@ public class Ingredient : MonoBehaviour
     TextMeshProUGUI _countTxt;
     LevelManaging _lm;
 
+    GameObject _counting;
+
     bool isChecking;
 
     public void SettingInfredient(IngredientValue iv)
@@ -24,6 +26,7 @@ public class Ingredient : MonoBehaviour
         _nameTxt = transform.Find("NameTxt").GetComponent<TextMeshProUGUI>();
         _countTxt = transform.Find("StatPanel/CountTxt").GetComponent<TextMeshProUGUI>();
         _lm = (LevelManaging)GameObject.Find("LevelManaging").GetComponent("LevelManaging");
+        _counting = transform.Find("CheckImage/CountImage").gameObject;
         _checkImage.enabled = false;
 
         price = iv.price;
@@ -41,6 +44,7 @@ public class Ingredient : MonoBehaviour
     {
         _checkImage = (Image)transform.Find("CheckImage").GetComponent("Image");
         _checkImage.enabled = !isChecking;
+        _counting.SetActive(!isChecking);
 
         if(isChecking)
         {

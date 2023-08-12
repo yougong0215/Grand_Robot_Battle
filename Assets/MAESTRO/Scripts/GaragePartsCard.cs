@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public struct Info
 {
+    public string token;
     public string name;
-    public Image partsImage;
+    public Sprite partsImage;
     public float atk;
     public float def;
     public float hp;
@@ -20,9 +21,10 @@ public struct Info
 public class GaragePartsCard : MonoBehaviour
 {
     Info infoData = new Info();
-    public void InfoSet(string name, Image partsImage, float atk, float def,
+    public void InfoSet(string token, string name, Sprite partsImage, float atk, float def,
                         float hp, float speed, string info, string skillInfo, string rate, int level)
     {
+        infoData.token = token;
         infoData.name = name;
         infoData.partsImage = partsImage;
         infoData.atk = atk;

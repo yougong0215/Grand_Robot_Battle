@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LevelManaging : MonoBehaviour
 {
-    private int level;
     TextMeshProUGUI _levelText;
     Slider _slider;
     [SerializeField] private int[] levelUpEXPAmount = new int[4];
@@ -17,10 +16,9 @@ public class LevelManaging : MonoBehaviour
         _slider = transform.Find("ExpressBar").GetComponent<Slider>();
     }
 
-    public void Setting(int lv)
+    public void Setting(int lv, int exp)
     {
-        level = lv;
-        _levelText.text = level.ToString();
-        //_slider.value = 
+        _levelText.text = lv.ToString();
+        _slider.value = exp / levelUpEXPAmount[lv];
     }
 }

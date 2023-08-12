@@ -16,7 +16,7 @@ public class Ingredient : MonoBehaviour
 
     bool isChecking;
 
-    [SerializeField] private UnityEvent<int> _clickEvent = null;
+    [SerializeField] private UnityEvent<int, int> _clickEvent = null;
 
     public void SettingInfredient(IngredientValue iv)
     {
@@ -40,7 +40,7 @@ public class Ingredient : MonoBehaviour
     public void ClickThisObject()
     {
         _checkImage = (Image)transform.Find("CheckImage").GetComponent("Image");
-        _clickEvent?.Invoke(price);
+        _clickEvent?.Invoke(price, 0);
         _checkImage.enabled = !isChecking;
         isChecking = !isChecking;
     }

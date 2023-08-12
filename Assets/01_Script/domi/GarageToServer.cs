@@ -9,6 +9,7 @@ class GarageItemInfo {
     public string token;
     public string code;
     public int level;
+    public int maxLevel;
     public int attack;
     public int shield;
     public int speed;
@@ -46,7 +47,7 @@ public class GarageToServer : MonoBehaviour
             box.transform.Find("PartsImageBack").Find("PartsImage").GetComponent<Image>().sprite = so.Sprite;
             box.transform.Find("PartsImageBack").Find("PartsImage").Find("NamePanel").Find("NameText").GetComponent<TextMeshProUGUI>().text = so.name;
 
-            card.InfoSet(item.token, so.names, so.SkillImage, item.attack, item.shield, item.health, item.speed, so.Explain, so.SkillExplain, "empty" /* 등급은 아직 서버에 구현이 되어있지 않음 */, item.level);
+            card.InfoSet(item.token, so.names, so.SkillImage, item.attack, item.shield, item.health, item.speed, so.Explain, so.SkillExplain, "empty" /* 등급은 아직 서버에 구현이 되어있지 않음 */, item.level, item.maxLevel);
         }
     }
 }

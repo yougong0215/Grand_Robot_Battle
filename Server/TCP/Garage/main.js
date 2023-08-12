@@ -4,6 +4,8 @@ TriggerEvent["garage.getItems"] = function(id) {
     const Player = UserList[id];
     if (Player === undefined || !Player.ready) return;
 
+    const MaxLevel = Object.keys(itemStatManager.itemStats).length;
+
     let items = [];
     for (const [token, data] of Object.entries(Player.inventory.equipment)) {
         const stat_levelsheet = itemStatManager.itemStats[data.level];
@@ -14,6 +16,7 @@ TriggerEvent["garage.getItems"] = function(id) {
             token: token,
             code: data.code,
             level: data.level,
+            maxLevel: MaxLevel,
             attack: stat.attack,
             shield: stat.shield,
             speed: stat.speed,

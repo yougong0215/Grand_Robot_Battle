@@ -381,7 +381,8 @@ public class PVPUI : MonoBehaviour
     private void YesLogic()
     {
         // 스킵
-        StartCoroutine(Skip());
+        SelectSkillForServer(-1); // -1은 스킵임
+        // StartCoroutine(Skip());
     }
 
     IEnumerator Skip()
@@ -488,7 +489,8 @@ public class PVPUI : MonoBehaviour
         _surrenBtn.RemoveFromClassList("on");
         _skipBtn.RemoveFromClassList("on");
         SetPanel();
-        SetPartsBtn();
+        if (onPartsPanel)
+            SetPartsBtn();
     }
     
     public class PVP_GameResult {
@@ -535,6 +537,9 @@ public class PVPUI : MonoBehaviour
             } else if (result.why == "domiNotHealthEvent") {
                 _paneltxt.text = result.my ? "적의 승리.." : "나의 승리!!";
                 disableControl = true;
+            } else if (result.why == "domiSkipEvent") {
+                _paneltxt.text = (result.my == true ? "나" : "적") + "의 턴은 스킵되었다.";
+                yield return new WaitForSeconds(1f);
             } else {
                 _paneltxt.text = (result.my ? "" : "적이 ") + result.why;
                 yield return new WaitForSeconds(1.5f);

@@ -23,7 +23,5 @@ public class GarageLoadSystem : MonoBehaviour
         _gui.ChangeMode();
         _partsScroll.SetActive(false);
         _enforcePage.SetActive(true);
-
-
     }
 }

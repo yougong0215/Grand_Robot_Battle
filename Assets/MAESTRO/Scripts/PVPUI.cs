@@ -34,6 +34,7 @@ public class PVPUI : MonoBehaviour
     private Button _noBtn;
 
     private Button[] partsbtns = new Button[5];
+    private float[] partbtncools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
 
     private bool onPartsPanel;
@@ -91,6 +92,8 @@ public class PVPUI : MonoBehaviour
         _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
         _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
         #endregion
+
+        partbtncools = new float[5];
         /* -- 서버에서 처리함
         for (int i = 0; i < 5; i++)
         {
@@ -545,12 +548,17 @@ public class PVPUI : MonoBehaviour
         else ActiveControl();
     }
 
-    public void SetSkillButton(PartSO[] parts) {
+    public void SetSkillButton(PartSO[] parts, int[] cools) {
         for (int i = 0; i < 5; i++)
         {
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
             int fuckCsharp = i;
             partsbtns[i].clicked += () => {
+                if (cools[fuckCsharp] > (Time.time - partbtncools[fuckCsharp])) {
+                    Debug.LogWarning( "아직 쿨타임이 지나지 않았습니다. 남은시간: "+ (cools[fuckCsharp] - (Time.time - partbtncools[fuckCsharp])) + "초" );
+                    return;
+                }
+                partbtncools[fuckCsharp] = Time.time;
                 SelectSkillForServer(fuckCsharp);
             };
             if (parts[i] == null) continue;

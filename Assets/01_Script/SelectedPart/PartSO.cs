@@ -101,6 +101,7 @@ public class PartSO : ScriptableObject
 
 
     [SerializeField] [TextArea] public string Explain;
+    [SerializeField] [TextArea] public string SkillExplain;
     [SerializeField] public bool ReplaceMesh = false;
     [SerializeField] public bool EquipPart = false;
 
@@ -115,7 +116,7 @@ public class PartSO : ScriptableObject
         [SerializeField] public AnimationClip clips;
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
-    [SerializeField] [TextArea] public string Daesa = "[ÁöÁ¤µÈ´ë»ç°¡¾ø½À´Ï´Ù]";
+    [SerializeField] [TextArea] public string Daesa = "[ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ç°¡ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½]";
 
 }
 

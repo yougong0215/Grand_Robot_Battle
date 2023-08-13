@@ -103,10 +103,6 @@ function AttackPlayer(room, attackid, hitid, partid) {
         }
 
     const attackerParts = attacker.parts[attack_part];
-    // const attackerParts = {
-    //     attack: 50
-    // };
-    console.warn("[SkillSelect.js / AttackPlayer] 테스트 코드가 있습니다.");
     if (attackerParts === undefined) {
         return {
             answer: false,
@@ -116,7 +112,18 @@ function AttackPlayer(room, attackid, hitid, partid) {
             why: "파츠가 없어 공격할 수 없습니다."  
         }
     }
+    // 쿨타임
+    if (attackerParts.activeTime !== undefined && (attackerParts.cooltime * 1000) > (new Date() - attackerParts.activeTime)) {
+        return {
+            answer: false,
+            power: 0,
+            health: 0,
+            soid: null,
+            why: "쿨타임이 지나지 않아 공격할 수 없습니다."  
+        }
+    }
     
+    attackerParts.activeTime = new Date(); // 사용시간 등록
     hitter.health -= attackerParts.attack;
     if (hitter.health < 0) hitter.health = 0;
 

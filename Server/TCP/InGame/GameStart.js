@@ -1,4 +1,5 @@
 const RoomManager = require("./RoomManager.js");
+const equipmentUtils = require("../lib/equipmentUtils.js");
 const itemStatManager = require("../ItemStat");
 
 RoomManager.RoomClass.prototype.GameStart = function() {
@@ -22,7 +23,7 @@ RoomManager.RoomClass.prototype.GameStart = function() {
             const item = player.inventory.equipment[itemToken];
             if (item === undefined) continue;
 
-            const itemStat = itemStatManager.itemStats[Number(item.level)]["n_" /* 임시?? */+item.code];
+            const itemStat = itemStatManager.itemStats[Number(item.level)][equipmentUtils.GetGradID(item.grade) + "_" + item.code];
             if (itemStat === undefined) continue;
 
             playersWear[playerID][part] = item.code;
@@ -53,6 +54,14 @@ RoomManager.RoomClass.prototype.GameStart = function() {
                 attack: data.attack,
                 shield: data.shield,
                 speed: data.speed,
+                // 파츠 쿨타임
+                cools: {
+                    left: data.parts.left?.cooltime || 0,
+                    right: data.parts.right?.cooltime || 0,
+                    head: data.parts.head?.cooltime || 0,
+                    body: data.parts.body?.cooltime || 0,
+                    leg: data.parts.leg?.cooltime || 0
+                },
                 // 파츠
                 ...wear
             });

@@ -22,6 +22,8 @@ public class UseSkillButton : MonoBehaviour
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
+
+        fsm = FindManager.Instance.FindObject("PlayerBot").GetComponent<FSM>();
     }
     public void OnClick()
     {

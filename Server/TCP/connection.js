@@ -116,6 +116,12 @@ module.exports = function(socket) {
             return;
         }
 
+        // 이미 다른 클라이언트에서 로그인 중
+        if (UserList[result.id] !== undefined) {
+            socket.kick("다른 기기에서 이미 로그인 중 입니다.");
+            return;
+        }
+
         // 오케이! 로그인 했다
         // 마지막 로그인 시간을 저장하자
         sql.run("UPDATE sessions SET Last_Login = ? WHERE token = ?", [Number(new Date()), result.token], () => sql.close());

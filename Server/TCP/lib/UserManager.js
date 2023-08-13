@@ -36,11 +36,6 @@ class PlayerForm {
 
 const sqlite = require("../../utils/sqlite.js");
 exports.AddPlayer = async function(id, socket) {
-    if (UserList[id] !== undefined) { // 이미 접속해있다!!
-        // 나중에 이미 접속한거 처리 해야함
-        return;
-    }
-
     const sql = sqlite.GetObject();
     const UserData = await sql.Aget("SELECT name FROM users WHERE id = ?", id);
     if (socket.readyState !== "open") return; // 머야 연결이 끊겨있네
@@ -105,6 +100,8 @@ exports.AddPlayer = async function(id, socket) {
     Player.socket.send("Server.PlayerReady", null);
 }
 
+const RoomManager = require("../InGame/RoomManager.js");
+const MatchManager = require("../InGame/main.js");
 exports.RemovePlayer = async function(id) {
     const CachePlayer = UserList[id];
     if (CachePlayer === undefined) return;
@@ -126,14 +123,14 @@ exports.RemovePlayer = async function(id) {
         $crystal: CachePlayer.crystal,
         $level: CachePlayer.level,
         $exp: CachePlayer.exp
-    }, err => console.error(err));
+    }, err => { if (err) console.error(err) });
 
     // 인벤
     sql.run("INSERT OR REPLACE INTO inventory (id, equipment, item) VALUES ($id, $equipment, $item)", {
         $id: id,
         $equipment: JSON.stringify(CachePlayer.inventory.equipment),
         $item: JSON.stringify(CachePlayer.inventory.item)
-    }, err => console.error(err));
+    }, err => { if (err) console.error(err) });
 
     // 프리셋
     sql.run("INSERT OR REPLACE INTO preset (id, left, right, head, body, leg) VALUES ($id, $left, $right, $head, $body, $leg)", {
@@ -143,7 +140,16 @@ exports.RemovePlayer = async function(id) {
         $head: CachePlayer.preset.head,
         $body: CachePlayer.preset.body,
         $leg: CachePlayer.preset.leg,
-    }, err => console.error(err));
+    }, err => { if (err) console.error(err) });
 
     sql.close();
+
+    // 탈주 확인
+    if (MatchManager.MatchPlayers.has(id)) // 매치 대기열 해제
+        MatchManager.MatchPlayers.delete(id);
+
+    const turnRoom = RoomManager.getRoomToPlayer(id);
+    if (turnRoom !== undefined) { // 턴제 게임중에 탈주
+        turnRoom.PlayerLeft(id, CachePlayer.name);
+    }
 }

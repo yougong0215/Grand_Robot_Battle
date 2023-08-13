@@ -16,7 +16,7 @@ public class NormalLAttack : CommonAction
 
     protected override void OnEndFunc()
     {
-        DestroyObj();
+        //DestroyObj();
     }
 
     protected override void OnEventFunc()

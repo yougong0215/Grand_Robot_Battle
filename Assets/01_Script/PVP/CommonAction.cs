@@ -26,7 +26,7 @@ public abstract class CommonAction : MonoBehaviour
 
 
 
-    protected void DestroyObj()
+    public void DestroyObj()
     {
         com.Init -= Init;
 
@@ -35,6 +35,8 @@ public abstract class CommonAction : MonoBehaviour
         com.UpdateAction -= OnUpdateFunc;
 
         com.EndAction -= OnEndFunc;
+
+        Destroy(gameObject, 1f);
     }
 
     protected abstract void Init();

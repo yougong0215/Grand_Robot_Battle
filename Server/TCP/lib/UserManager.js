@@ -111,6 +111,39 @@ exports.RemovePlayer = async function(id) {
     delete UserList[id];
 
     console.log(`[UserManager] ${CachePlayer.name}(${id})님이 서버를 나갔습니다.`);
-    if (!CachePlayer.ready)
+    if (!CachePlayer.ready) { // 비정상적으로 종료하면 데이터 손실을 방지하기 위해 저장하지 않음
         console.log(`[UserManager_Warning] ${CachePlayer.name}(${id})님이 비정상적으로 종료되었습니다.`);
+        return;
+    }
+
+    // ! 주의 ! 꼭 다 사용하면 sql.close를 해서 connection 을 끊어야 함
+    const sql = sqlite.GetObject();
+
+    // 재화 저장
+    sql.run("INSERT OR REPLACE INTO stats (id, coin, crystal, level, exp) VALUES ($id, $coin, $crystal, $level, $exp)", {
+        $id: id,
+        $coin: CachePlayer.coin,
+        $crystal: CachePlayer.crystal,
+        $level: CachePlayer.level,
+        $exp: CachePlayer.exp
+    }, err => console.error(err));
+
+    // 인벤
+    sql.run("INSERT OR REPLACE INTO inventory (id, equipment, item) VALUES ($id, $equipment, $item)", {
+        $id: id,
+        $equipment: JSON.stringify(CachePlayer.inventory.equipment),
+        $item: JSON.stringify(CachePlayer.inventory.item)
+    }, err => console.error(err));
+
+    // 프리셋
+    sql.run("INSERT OR REPLACE INTO preset (id, left, right, head, body, leg) VALUES ($id, $left, $right, $head, $body, $leg)", {
+        $id: id,
+        $left: CachePlayer.preset.left,
+        $right: CachePlayer.preset.right,
+        $head: CachePlayer.preset.head,
+        $body: CachePlayer.preset.body,
+        $leg: CachePlayer.preset.leg,
+    }, err => console.error(err));
+
+    sql.close();
 }

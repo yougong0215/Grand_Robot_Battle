@@ -518,8 +518,8 @@ public class PVPUI : MonoBehaviour
         _skipBtn.RemoveFromClassList("on");
         if (!onPanel)
             SetPanel();
-        if (onPartsPanel)
-            SetPartsBtn();
+        // if (onPartsPanel)
+        //     SetPartsBtn();
         
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("Menu");

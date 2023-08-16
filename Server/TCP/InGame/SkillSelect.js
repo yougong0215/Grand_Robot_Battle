@@ -102,6 +102,16 @@ function AttackPlayer(room, attackid, hitid, partid) {
             why: "domiNotHealthEvent"  
         }
 
+    // 스킵
+    if (partid === -1)
+        return {
+            answer: false,
+            power: 0,
+            health: 0,
+            soid: null,
+            why: "domiSkipEvent"
+        }
+
     const attackerParts = attacker.parts[attack_part];
     if (attackerParts === undefined) {
         return {

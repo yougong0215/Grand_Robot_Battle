@@ -1,35 +1,23 @@
-.MetalGround {
-    position: absolute;
-    width: 500px;
-    height: 250px;
-    top: 165px;
-    left: 860px;
+.sam {
+    width: 200px;
+    height: 200px;
     background-color: rgb(255, 255, 255);
+    transition-property: translate;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    position: absolute;
+    left: 900px;
+    top: 300px;
 }
 
-.FastAttack {
+.EIn {
+    transition-timing-function: ease-out-sine;
+    transition-duration: 1s;
     position: absolute;
-    width: 500px;
-    height: 250px;
-    top: 470px;
-    left: 860px;
-    background-color: rgb(255, 255, 255);
+    left: 1000px;
+    top: 300px;
+    transition-property: position;
 }
 
-.MetalHell {
-    position: absolute;
-    width: 500px;
-    height: 250px;
-    top: 280px;
-    left: 1420px;
-    background-color: rgb(255, 255, 255);
-}
-
-.MetalMine {
-    position: absolute;
-    width: 500px;
-    height: 250px;
-    top: 585px;
-    left: 1420px;
-    background-color: rgb(255, 255, 255);
+.sam.Eln {
 }

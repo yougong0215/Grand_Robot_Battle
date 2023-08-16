@@ -33,6 +33,9 @@ public class PVPUI : MonoBehaviour
     private Button _yesBtn;
     private Button _noBtn;
 
+    private VisualElement partsbtnGroup;
+    private VisualElement _hpPanel;
+    private VisualElement _enemyHpPanel;
     private Button[] partsbtns = new Button[5];
     private float[] partbtncools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
@@ -77,9 +80,6 @@ public class PVPUI : MonoBehaviour
         #region 영수증
         _root = _uiDoc.rootVisualElement;
         _panel = _root.Q<Button>("Panel");
-        _atkBtn = _root.Q<Button>("AttackBtn");
-        _skipBtn = _root.Q<Button>("SkipBtn");
-        _surrenBtn = _root.Q<Button>("SurrenderBtn");
         _warning = _root.Q<VisualElement>("WarningPanel");
         _paneltxt = _root.Q<Label>("Text");
         _wText = _root.Q<Label>("warningText");
@@ -91,6 +91,9 @@ public class PVPUI : MonoBehaviour
         _enemtNickname = _root.Q<Label>("EnemyNickName");
         _enemyHpBar = _root.Q<VisualElement>("EnemyHPBar");
         _enemyHpText = _root.Q<Label>("EnemyCurrentHP");
+        partsbtnGroup = _root.Q<VisualElement>("PartsBtnGroup");
+        _hpPanel = _root.Q<VisualElement>("HPPanel");
+        _enemyHpPanel = _root.Q<VisualElement>("EnemyHPPanel");
         #endregion
 
         partbtncools = new float[5];
@@ -118,13 +121,6 @@ public class PVPUI : MonoBehaviour
         }
         */
         #region 구독
-        _atkBtn.clicked += SetPartsBtn;
-
-        _skipBtn.clicked += OnWarning;
-        _skipBtn.clicked += SkipLogic;
-
-        _surrenBtn.clicked += OnWarning;
-        _surrenBtn.clicked += SurrenderLogic;
 
         _yesBtn.clicked += OnWarning;
         _yesBtn.clicked += YesLogic;
@@ -194,10 +190,7 @@ public class PVPUI : MonoBehaviour
     {
         // 이거 다 서버로 바꿔야됨
         SetPanel(); // 켜짐
-        SetPartsBtn();
-        _atkBtn.RemoveFromClassList("on");
-        _surrenBtn.RemoveFromClassList("on");
-        _skipBtn.RemoveFromClassList("on");
+        PartsBtnSetting(true);
         yield return new WaitForSeconds(0.1f);
 
         int rand = UnityEngine.Random.Range(0, 5);
@@ -223,14 +216,7 @@ public class PVPUI : MonoBehaviour
         _atkBtn.AddToClassList("on");
         _surrenBtn.AddToClassList("on");
         _skipBtn.AddToClassList("on");
-
-
-        
-
     }
-
-
-    
 
     public IEnumerator Fight(bool t, PartSO so, int rand)
     {
@@ -345,8 +331,6 @@ public class PVPUI : MonoBehaviour
                 SceneManager.LoadScene("Menu");
 
             }
-
-
         }
 
         yield return new WaitForSeconds(2.5f);
@@ -362,6 +346,34 @@ public class PVPUI : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    /**스킬이 등장해야 한다면 true 사라져야 한다면 false**/
+    public void PartsBtnSetting(bool isAppear)
+    {
+        if(isAppear)
+        {
+            partsbtnGroup.RemoveFromClassList("off");
+        }
+        else
+        {
+            partsbtnGroup.AddToClassList("off");
+        }
+    }
+
+    /**HP가 등장해야 한다면 true 사라져야 한다면 false**/
+    public void HPSetting(bool isAppear)
+    {
+        if(isAppear)
+        {
+            _hpPanel.RemoveFromClassList("off");
+            _enemyHpPanel.RemoveFromClassList("off");
+        }
+        else
+        {
+            _hpPanel.AddToClassList("off");
+            _enemyHpPanel.AddToClassList("off");
         }
     }
 
@@ -381,7 +393,8 @@ public class PVPUI : MonoBehaviour
     private void YesLogic()
     {
         // 스킵
-        StartCoroutine(Skip());
+        SelectSkillForServer(-1); // -1은 스킵임
+        // StartCoroutine(Skip());
     }
 
     IEnumerator Skip()
@@ -449,25 +462,7 @@ public class PVPUI : MonoBehaviour
         onPanel = !onPanel;
     }
 
-    private void SetPartsBtn()
-    {
-        if (!onPartsPanel)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                partsbtns[i].AddToClassList($"{partsClass[i]}");
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                partsbtns[i].RemoveFromClassList($"{partsClass[i]}");
-            }
-
-        }
-        onPartsPanel = !onPartsPanel;
-    }
+    
 
     ///////////// 서버 //////////////
     private void ActiveControl(LitJson.JsonData _ = null) {
@@ -488,7 +483,7 @@ public class PVPUI : MonoBehaviour
         _surrenBtn.RemoveFromClassList("on");
         _skipBtn.RemoveFromClassList("on");
         SetPanel();
-        SetPartsBtn();
+        PartsBtnSetting(false);
     }
     
     public class PVP_GameResult {
@@ -535,6 +530,9 @@ public class PVPUI : MonoBehaviour
             } else if (result.why == "domiNotHealthEvent") {
                 _paneltxt.text = result.my ? "적의 승리.." : "나의 승리!!";
                 disableControl = true;
+            } else if (result.why == "domiSkipEvent") {
+                _paneltxt.text = (result.my == true ? "나" : "적") + "의 턴은 스킵되었다.";
+                yield return new WaitForSeconds(1f);
             } else {
                 _paneltxt.text = (result.my ? "" : "적이 ") + result.why;
                 yield return new WaitForSeconds(1.5f);

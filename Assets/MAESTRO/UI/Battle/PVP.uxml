@@ -29,9 +29,10 @@
             <ui:Label text="100 / 100" display-tooltip-when-elided="true" name="EnemyCurrentHP" style="color: rgb(0, 0, 0); height: 40px; margin-top: 10px; padding-left: 10px; font-size: 25px; margin-left: 40px; margin-right: 40px; -unity-text-align: upper-right; padding-right: 10px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
         </ui:VisualElement>
         <ui:Button text="Setting" display-tooltip-when-elided="true" name="SettingBtn" style="position: absolute; width: 100px; height: 100px; top: 756px; left: 1850px; font-size: 20px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" />
-        <ui:VisualElement name="SettingPanel" class="SettingPanel" style="align-items: center; justify-content: center;">
+        <ui:VisualElement name="SettingPanel" class="SettingPanel off" style="align-items: center; justify-content: center;">
             <ui:Slider picking-mode="Ignore" label="볼륨" value="42" high-value="100" name="VolumeSlider" focusable="false" direction="Horizontal" style="width: 80%; font-size: 40px; -unity-text-align: middle-left; color: rgb(255, 255, 255); white-space: normal;" />
             <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingExit" style="width: 50px; height: 50px; position: absolute; top: 16px; left: 924px; background-color: rgb(255, 255, 255);" />
+            <ui:Button text="항복 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="SurrenderBtn" style="width: 150px; height: 50px; position: absolute; top: 421px; left: 40px; background-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">

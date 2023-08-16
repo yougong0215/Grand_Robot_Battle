@@ -1,6 +1,6 @@
 .Partsbtn {
-    width: 300px;
-    height: 100px;
+    width: 250px;
+    height: 80px;
     background-color: rgb(125, 125, 125);
     position: absolute;
     color: rgb(255, 255, 255);
@@ -25,32 +25,32 @@
 
 .Partsbtn.LA {
     position: absolute;
-    left: 1650px;
-    top: 270px;
+    left: 550px;
+    top: 750px;
 }
 
 .Partsbtn.RA {
     position: absolute;
-    left: 1650px;
-    top: 380px;
+    left: 850px;
+    top: 750px;
 }
 
 .Partsbtn.LL {
     position: absolute;
-    left: 1650px;
-    top: 490px;
+    left: 1150px;
+    top: 750px;
 }
 
 .Partsbtn.RL {
     position: absolute;
-    left: 1650px;
-    top: 600px;
+    left: 1450px;
+    top: 750px;
 }
 
 .Partsbtn.H {
     position: absolute;
-    left: 1650px;
-    top: 160px;
+    left: 0;
+    top: 750px;
 }
 
 .panel {
@@ -91,7 +91,52 @@
 
 .HPPanel {
     position: absolute;
-    background-color: rgba(255, 255, 255, 255);
+    background-color: rgb(255, 255, 255);
     width: 500px;
     height: 130px;
+    top: 40px;
+    transition-property: top;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.PartsBtnGroup {
+    transition-property: top;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    position: absolute;
+    top: 0;
+}
+
+.PartsBtnGroup.off {
+    top: 300px;
+    position: absolute;
+}
+
+.HPPanel.off {
+    position: absolute;
+    top: -150px;
+}
+
+.SkipBtn {
+    width: 70px;
+    height: 70px;
+    top: 750px;
+    left: 350px;
+}
+
+.SettingPanel {
+    width: 1000px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    left: 500px;
+    top: 230px;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+.SettingPanel.off {
+    position: absolute;
+    top: 1000px;
 }

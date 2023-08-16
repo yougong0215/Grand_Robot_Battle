@@ -14,6 +14,9 @@ public class LevelManaging : MonoBehaviour
     [SerializeField] private int[] levelUpEXPAmount = new int[4];
     TextMeshProUGUI _amountText;
 
+    [SerializeField] private Color _virtualExpColor;
+    [SerializeField] private Color _virtualLevelTxtColor;
+
     private void Awake()
     {
         _levelText = transform.Find("Level").GetComponent<TextMeshProUGUI>();
@@ -28,17 +31,20 @@ public class LevelManaging : MonoBehaviour
         amount = 0;
     }
 
-    public void Setting(int lv, int exp)
+    public void BeforeUpgradeVirtual(int price,int lv, int ex)
     {
-        level += lv;
-        _levelText.text = level.ToString();
-        _slider.value = exp / levelUpEXPAmount[lv];
-    }
+        exp += ex;
+        level = lv;
+        while (exp < levelUpEXPAmount[level])
+        {
+            exp -= levelUpEXPAmount[level];
+            level++;
+        }
 
-    public void BeforeUpgradeVirtual(int price, int ex)
-    {
+        _slider.value = exp / levelUpEXPAmount[level];
+
         amount += price;
+        _amountText.text = amount.ToString();
         exp += ex;
     }
-
 }

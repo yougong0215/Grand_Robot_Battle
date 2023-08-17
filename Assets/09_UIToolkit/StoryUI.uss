@@ -1,0 +1,16 @@
+.window {
+    left: 50%;
+    top: 50%;
+    justify-content: center;
+    align-items: center;
+    translate: -50% -50%;
+}
+
+.btn {
+    width: 12%;
+    height: 50%;
+}
+
+.off {
+    translate: 0 1000px;
+}

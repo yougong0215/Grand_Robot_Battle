@@ -11,6 +11,7 @@ public class BattleSetting : MonoBehaviour
     Slider _volSlider;
     Button _exitBtn;
     Button _surenderBtn;
+    Label _stageInfoTxt;
 
     private void Awake()
     {
@@ -25,15 +26,17 @@ public class BattleSetting : MonoBehaviour
         _volSlider = _root.Q<Slider>("VolumeSlider");
         _exitBtn = _root.Q<Button>("SettingExit");
         _surenderBtn = _root.Q < Button > ("SurrenderBtn");
+        _stageInfoTxt = _root.Q<Label>("StageInfoTxt");
 
-        _exitBtn.clicked += () => SetPanel(false);
+        _exitBtn.clicked += () => SetPanel(false, null);
         //_surenderBtn.clicked += 항복로직
     }
 
-    public void SetPanel(bool isActive)
+    public void SetPanel(bool isActive, string stageInfo)
     {
         if(isActive)
         {
+            _stageInfoTxt.text = stageInfo;
             _settingPanel.RemoveFromClassList("off");
         }
         else

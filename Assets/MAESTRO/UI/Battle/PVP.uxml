@@ -33,6 +33,7 @@
             <ui:Slider picking-mode="Ignore" label="볼륨" value="42" high-value="100" name="VolumeSlider" focusable="false" direction="Horizontal" style="width: 80%; font-size: 40px; -unity-text-align: middle-left; color: rgb(255, 255, 255); white-space: normal;" />
             <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingExit" style="width: 50px; height: 50px; position: absolute; top: 16px; left: 924px; background-color: rgb(255, 255, 255);" />
             <ui:Button text="항복 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="SurrenderBtn" style="width: 150px; height: 50px; position: absolute; top: 421px; left: 40px; background-color: rgb(255, 255, 255);" />
+            <ui:Label tabindex="-1" text="Stage" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageInfoTxt" style="position: absolute; color: rgb(255, 255, 255); font-size: 60px; top: 20px;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">

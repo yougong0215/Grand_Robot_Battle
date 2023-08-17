@@ -15,25 +15,22 @@ public class LoginToutchStart : MonoBehaviour
         NetworkCore.EventListener["Server.PlayerReady"] = ServerReady;
     }
 
+    public void Connect() {
+        if (_disable) return;
 
-    void Update()
-    {
-        if (Input.anyKeyDown && !_disable) {
-            SelectToken = PlayerPrefs.GetString(LoginSession.SAVE_KEY);
-            if (SelectToken.Length <= 0) return;
+        SelectToken = PlayerPrefs.GetString(LoginSession.SAVE_KEY);
+        if (SelectToken.Length <= 0) return;
 
-            _disable = true;
-            
-            // 로딩 띄움
-            LoginLoadingSystem.ShowUI("서버와 연결중 입니다.");
-            
-            // 서버 로그인!!!
-            NetworkCore.instance.ServerConnect();
-
-        }
+        _disable = true;
+        
+        // 로딩 띄움
+        LoginLoadingSystem.ShowUI("서버와 연결중 입니다.");
+        
+        // 서버 로그인!!!
+        NetworkCore.instance.ServerConnect();
     }
 
-        //////////////////// 서버 리스너 ////////////////////
+    //////////////////// 서버 리스너 ////////////////////
     void ConnectOK() {
         LoginLoadingSystem.ShowUI("계정정보를 불러오는 중입니다.");
         NetworkCore.Send("domiServer.Login", SelectToken);
@@ -44,8 +41,12 @@ public class LoginToutchStart : MonoBehaviour
 
         // 서버에서 세션이 만료되었으니 토큰을 삭제하라는 요청함
         if (why == "domi.session_remove") {
-            why = "세션이 만료되었습니다.";
+            why = "세션이 만료되었습니다.\n로그아웃 후 다시 로그인해주세요.";
+        } else if (why == "TimeOut") {
+            why = "연결시간이 초과되었습니다.";
         }
+
+        LoginAlertWindow.ShowUI("서버 연결에 실패하였습니다.", why);
 
         // 처리 할거....
         _disable = false;

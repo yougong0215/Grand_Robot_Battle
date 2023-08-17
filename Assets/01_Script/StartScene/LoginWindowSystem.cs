@@ -14,6 +14,10 @@ class LoginPacketForm {
     }
 }
 
+struct LogoutForm {
+    public string token;
+}
+
 public class LoginWindowSystem : MonoBehaviour
 {
         // 로그인 창
@@ -91,7 +95,11 @@ public class LoginWindowSystem : MonoBehaviour
     }
 
     public void LogoutAccount() {
+        string token = PlayerPrefs.GetString(LoginSession.SAVE_KEY);
+        if (token == null) return;
+
         PlayerPrefs.DeleteKey(LoginSession.SAVE_KEY);
+        HTTP_manager.RequestPOST("logout", new LogoutForm() { token = token }, (int status, LitJson.JsonData data) => {});
         _session.ChangeLayout(false);
     }
 }

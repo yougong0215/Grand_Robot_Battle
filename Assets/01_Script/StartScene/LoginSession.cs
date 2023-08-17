@@ -9,6 +9,7 @@ public class LoginSession : MonoBehaviour
     [SerializeField] GameObject PressText;
     [SerializeField] GameObject LogoutBtn;
     [SerializeField] GameObject LoginBtn;
+    [SerializeField] GameObject ToutchBtn;
     void Start()
     {
         string sessionToken = PlayerPrefs.GetString(SAVE_KEY);
@@ -18,6 +19,7 @@ public class LoginSession : MonoBehaviour
     public void ChangeLayout(bool logined) {
         PressText.SetActive(logined);
         LogoutBtn.SetActive(logined);
+        ToutchBtn.SetActive(logined);
         LoginBtn.SetActive(!logined);
     }
 }

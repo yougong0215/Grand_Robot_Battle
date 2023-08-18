@@ -17,6 +17,8 @@ public class MenuUI : MonoBehaviour
     private Button _storeBtn;
     private Button _garageBtn;
 
+    private VisualElement _charImg;
+
     
 
     VisualElement _storyElem;
@@ -53,6 +55,7 @@ public class MenuUI : MonoBehaviour
         _storyBtn = _root.Q<Button>("StoryBtn");
         _postBtn = _root.Q<Button>("Postbtn");
 
+        _charImg = _root.Q<VisualElement>("CharImg");
         //_makeBtn.clicked += () => SceneLoad("Gacha");
         // _battleBtn.clicked += () => SceneLoad("PVP");
         _battleBtn.clicked += () => SceneLoad("MetalBattleGround");

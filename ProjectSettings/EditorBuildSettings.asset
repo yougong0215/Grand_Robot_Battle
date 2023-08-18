@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scene/MetalBattleGround.unity
     guid: 62ccd0a81f442e8489960f4973e31246
+  - enabled: 1
+    path: Assets/00_Scene/SelectStoreScene.unity
+    guid: 0dc7fadcffe565640abb625eda50a17a
   m_configObjects: {}

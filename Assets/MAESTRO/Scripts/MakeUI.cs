@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MakeUI : MonoBehaviour
@@ -13,6 +14,7 @@ public class MakeUI : MonoBehaviour
     private Button _bg;
     private Button _1_button;
     private Button _10_button;
+    private Button _exitBtn;
 
     private VisualElement _gachaPanel;
     private VisualElement UP;
@@ -58,11 +60,14 @@ public class MakeUI : MonoBehaviour
         _okResult = _root.Q<Button>("OK");
         _moreResult = _root.Q<Button>("OneMore");
 
+        _exitBtn = _root.Q<Button>("ExitBtn");
+
         _bg.clicked += SkipLoading;
         _1_button.clicked += StartGacha_1;
         _10_button.clicked += StartGacha_10;
         _okResult.clicked += () => Exit(false);
         _moreResult.clicked += () => Exit(true);
+        _exitBtn.clicked += () => SceneManager.LoadScene("SelectStoreScene");
     }
 
     IEnumerator ResultTurm()
@@ -132,7 +137,7 @@ public class MakeUI : MonoBehaviour
         if (!_is_10)
         {
             VisualElement ele = _randEle.Instantiate();
-            // ele µ¥ÀÌÅÍ ³Ö±â
+            // ele ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
             string ItemCode = (string)ItemResult;
 
             PartSO so = DomiSo.ReturnSO(ItemCode);
@@ -152,7 +157,7 @@ public class MakeUI : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 VisualElement ele = _randEle.Instantiate();
-                // eleµ¥ÀÌÅÍ ³Ö±â
+                // eleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
 
                 PartSO so = DomiSo.ReturnSO(ItemList[t]);
 
@@ -169,7 +174,7 @@ public class MakeUI : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 VisualElement ele = _randEle.Instantiate();
-                //ele°ÔÀÌÅÍ ³Ö±â
+                //eleï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
                 PartSO so = DomiSo.ReturnSO(ItemList[t]);
 
 
@@ -197,15 +202,15 @@ public class MakeUI : MonoBehaviour
         GachaRender();
     }
 
-    //////////// ¼­¹ö ¸®½º³Ê //////////// 
+    //////////// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ //////////// 
     void ErrorWindow(LitJson.JsonData Why) {
-        Debug.LogError("°¡Â÷ÇÏ´Ù°¡ ½ÇÆÐÇß¾î¿ä : "+Why);
+        Debug.LogError("ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß¾ï¿½ï¿½ : "+Why);
     }
     void Result_1(LitJson.JsonData ItemResult) {
 
         this.ItemResult = ItemResult;
         string ItemCode = (string)ItemResult;
-        Debug.Log("¿Í! °¡Ã­»Ç¤³¾Ò¾î¿ä : "+ ItemCode);
+        Debug.Log("ï¿½ï¿½! ï¿½ï¿½Ã­ï¿½Ç¤ï¿½ï¿½Ò¾ï¿½ï¿½ : "+ ItemCode);
 
         GachaCo = StartCoroutine(GachaCoroutine());
     }
@@ -217,7 +222,7 @@ public class MakeUI : MonoBehaviour
 
         foreach (var ItemCode in ItemList)
         {
-            Debug.Log("¿Í! ¾ÆÀÌÅÛÀ» »Ì¾Ò¾î¿ä : "+ItemCode);
+            Debug.Log("ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾Ò¾ï¿½ï¿½ : "+ItemCode);
         }
 
         GachaCo = StartCoroutine(GachaCoroutine());

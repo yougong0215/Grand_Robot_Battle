@@ -44,5 +44,6 @@
             <ui:Button text="확인" display-tooltip-when-elided="true" name="OK" class="result" style="position: absolute; left: 300px; top: 600px;" />
             <ui:Button text="한번 더" display-tooltip-when-elided="true" name="OneMore" class="result" style="font-size: 60px; position: absolute; left: 950px; top: 600px;" />
         </ui:VisualElement>
+        <ui:Button text="돌아가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" style="left: 0; width: 8%; height: 5%; position: absolute; background-color: rgb(255, 255, 191);" />
     </ui:VisualElement>
 </ui:UXML>

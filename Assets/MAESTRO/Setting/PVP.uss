@@ -140,3 +140,19 @@
     position: absolute;
     top: 1000px;
 }
+
+.resultPanel {
+    flex-grow: 1;
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    left: 400px;
+    background-color: rgba(0, 0, 0, 0.73);
+    top: 150px;
+}
+
+.resultPanel.off {
+    position: absolute;
+    left: 400px;
+    top: 1000px;
+}

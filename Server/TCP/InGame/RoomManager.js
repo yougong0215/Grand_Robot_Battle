@@ -30,6 +30,22 @@ class Room {
         delete Rooms[this.roomID];
         console.log(`[RoomManager](${this.roomID}) 방 삭제됨`);
     }
+    
+    PlayerLeft = function(id, name) {
+        if (this.ready) { // 이미 게임이 시작된 경우
+            console.log(`[RoomManager](${this.roomID}) ${name}(${id})님이 탈주하였습니다.`);
+        } else { // 아직 게임이 시작되지 않은 경우
+            console.log(`[RoomManager](${this.roomID}) ${name}(${id})님이 나가셨습니다.`);
+        }
+
+        Object.keys(this.players).forEach(nplayerID => {
+            if (nplayerID === id) return;
+
+            const player = UserList[nplayerID];
+            player.socket.send("ingame.destory", name);
+        });
+        this.Destroy(); // 방폭
+    }
 }
 
 exports.RoomClass = Room;

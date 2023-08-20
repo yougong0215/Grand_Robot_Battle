@@ -61,6 +61,13 @@ public class PVPUI : MonoBehaviour
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
+        NetworkCore.EventListener["ingame.destory"] = ServerGameDestory;
+    }
+
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("ingame.AttackControl");
+        NetworkCore.EventListener.Remove("ingame.gameresult");
+        NetworkCore.EventListener.Remove("ingame.destory");
     }
 
     private void Start()
@@ -498,6 +505,24 @@ public class PVPUI : MonoBehaviour
     }
     private void ServerGameResult(LitJson.JsonData data) {
         StartCoroutine(ServerGameResult_Co(data));
+    }
+
+    private void ServerGameDestory(LitJson.JsonData name) {
+        StartCoroutine(nameof(ServerGameDestory_Co), (string)name);
+    }
+
+    IEnumerator ServerGameDestory_Co(string name) {
+        _paneltxt.text = name + "님이 탈주하였습니다.";
+        _atkBtn.RemoveFromClassList("on");
+        _surrenBtn.RemoveFromClassList("on");
+        _skipBtn.RemoveFromClassList("on");
+        if (!onPanel)
+            SetPanel();
+        // if (onPartsPanel)
+        //     SetPartsBtn();
+        
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Menu");
     }
 
     IEnumerator ServerGameResult_Co(LitJson.JsonData data) {

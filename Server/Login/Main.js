@@ -7,6 +7,7 @@ app.use(express.json());
 
 // 로그인 로직
 app.post("/login", require("./Login.js"));
+app.post("/logout", require("./Logout.js"));
 
 // 이름 중복확인
 app.get("/nameCompare/:name", function(req, res) {

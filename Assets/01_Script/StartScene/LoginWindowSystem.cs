@@ -14,6 +14,10 @@ class LoginPacketForm {
     }
 }
 
+struct LogoutForm {
+    public string token;
+}
+
 public class LoginWindowSystem : MonoBehaviour
 {
         // 로그인 창
@@ -22,6 +26,12 @@ public class LoginWindowSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI ErrorText;
     [SerializeField] TMP_InputField ID_Input;
     [SerializeField] TMP_InputField Pass_Input;
+
+    LoginSession _session;
+
+    private void Awake() {
+        _session = GetComponent<LoginSession>();
+    }
 
     public void OpenLoginUI(bool close) {
         var _CanvasGroup = LoginWindow.GetComponent<CanvasGroup>();
@@ -57,7 +67,7 @@ public class LoginWindowSystem : MonoBehaviour
         }
 
         // 이미 있으면 그냥 로그인해
-        if (LoginManager.instance.FindID_Login(ID_Input.text)) return;
+        // if (LoginManager.instance.FindID_Login(ID_Input.text)) return;
 
         // 로딩 표시할 코드 넣을껑미
         LoginLoadingSystem.ShowUI("잠시만 기다려주세요.");
@@ -78,6 +88,18 @@ public class LoginWindowSystem : MonoBehaviour
         }
 
         OpenLoginUI(true); // 로그인에 성공했으면 창 닫기
-        LoginManager.instance.SaveAccount((string)data["name"], (string)data["id"], (string)data["token"]);
+        PlayerPrefs.SetString(LoginSession.SAVE_KEY, (string)data["token"]);
+
+        _session.ChangeLayout(true);
+        // LoginManager.instance.SaveAccount((string)data["name"], (string)data["id"], (string)data["token"]);
+    }
+
+    public void LogoutAccount() {
+        string token = PlayerPrefs.GetString(LoginSession.SAVE_KEY);
+        if (token == null) return;
+
+        PlayerPrefs.DeleteKey(LoginSession.SAVE_KEY);
+        HTTP_manager.RequestPOST("logout", new LogoutForm() { token = token }, (int status, LitJson.JsonData data) => {});
+        _session.ChangeLayout(false);
     }
 }

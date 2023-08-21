@@ -5,10 +5,11 @@ using UnityEngine.UIElements;
 
 public class FinishBattle : MonoBehaviour
 {
-    public float MaxExpAmountValue; // EXP ≈Î ≈©±‚
-    public float CurrentExpAmountValue; // «ˆ¿Á EXP æÁ
+    public float MaxExpAmountValue; // EXP ÌÜµ ÌÅ¨Í∏∞
+    public float CurrentExpAmountValue; // ÌòÑÏû¨ EXP Ïñë
     private UIDocument _doc;
     private VisualElement _root;
+    private VisualElement _resultPanel;
     private Label _stageTxt;
     private Label _resultText;
     private Button _resultExitBtn;
@@ -27,6 +28,7 @@ public class FinishBattle : MonoBehaviour
     {
         _root = _doc.rootVisualElement;
 
+        _resultPanel = _root.Q<VisualElement>("ResultPanel");
         _stageTxt = _root.Q<Label>("StageText");
         _resultText = _root.Q<Label>("ResultText");
         _resultExitBtn = _root.Q<Button>("ResultExitbtn");
@@ -37,6 +39,18 @@ public class FinishBattle : MonoBehaviour
 
         _resultExitBtn.clicked += ExitInGame;
         _resultConnectBtn.clicked += ConnectInGame;
+    }
+
+    public void OpenPanel(bool isOpen)
+    {
+        if(isOpen)
+        {
+            _resultPanel.RemoveFromClassList("off");
+        }
+        else
+        {
+            _resultPanel.AddToClassList("off");
+        }
     }
 
     public void SetInfoText(string stageText, bool isWin, float expValue)

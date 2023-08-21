@@ -1,5 +1,4 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="GetItem" src="project://database/Assets/MAESTRO/UI/Battle/GetItem.uxml?fileID=9197481963319205126&amp;guid=6be9160a579f7374e9c371e359e5c547&amp;type=3#GetItem" />
     <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
     <ui:VisualElement name="Root" style="align-items: flex-start;">
         <ui:VisualElement name="PartsBtnGroup" class="PartsBtnGroup off">
@@ -45,9 +44,7 @@
                 <ui:VisualElement name="ExpValue" style="flex-grow: 1; background-color: rgb(0, 252, 255); width: 50%;" />
                 <ui:Label tabindex="-1" text="+120" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlusExpValue" style="position: absolute; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 25px; top: -15px; left: 610px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 250px; flex-direction: row;">
-                <ui:Instance template="GetItem" name="GetItem" />
-            </ui:VisualElement>
+            <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 250px; flex-direction: row;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">

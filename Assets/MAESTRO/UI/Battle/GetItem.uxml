@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="GetItem" style="flex-grow: 1; width: 150px; height: 150px; background-color: rgb(255, 255, 255); margin-right: 40px;" />
+</ui:UXML>

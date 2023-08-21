@@ -1,4 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="GetItem" src="project://database/Assets/MAESTRO/UI/Battle/GetItem.uxml?fileID=9197481963319205126&amp;guid=6be9160a579f7374e9c371e359e5c547&amp;type=3#GetItem" />
     <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
     <ui:VisualElement name="Root" style="align-items: flex-start;">
         <ui:VisualElement name="PartsBtnGroup" class="PartsBtnGroup off">
@@ -35,9 +36,18 @@
             <ui:Button text="항복 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="SurrenderBtn" style="width: 150px; height: 50px; position: absolute; top: 421px; left: 40px; background-color: rgb(255, 255, 255);" />
             <ui:Label tabindex="-1" text="Stage" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageInfoTxt" style="position: absolute; color: rgb(255, 255, 255); font-size: 60px; top: 20px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="ResultPanel" class="resultPanel" style="align-self: center; justify-content: center; align-items: center;">
-            <ui:Label tabindex="-1" text="Victory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultText" style="font-size: 120px; -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
-            <ui:Button text="확인" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OKbtn" style="width: 300px; height: 100px; align-items: auto; position: absolute; top: 462px; left: 432px; font-size: 50px; background-color: rgb(255, 255, 255);" />
+        <ui:VisualElement name="ResultPanel" class="resultPanel" style="align-self: center; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.89);">
+            <ui:Label tabindex="-1" text="1-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 20px;" />
+            <ui:Label tabindex="-1" text="Victory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultText" style="font-size: 80px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 60px;" />
+            <ui:Button text="나가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultExitbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 350px; font-size: 40px; background-color: rgb(255, 255, 255);" />
+            <ui:Button text="이어하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultConnectbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 600px; font-size: 40px; background-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="ExpGage" style="flex-grow: 1; position: absolute; width: 600px; height: 20px; top: 180px; background-color: rgb(135, 135, 135);">
+                <ui:VisualElement name="ExpValue" style="flex-grow: 1; background-color: rgb(0, 252, 255); width: 50%;" />
+                <ui:Label tabindex="-1" text="+120" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlusExpValue" style="position: absolute; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 25px; top: -15px; left: 610px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 250px; flex-direction: row;">
+                <ui:Instance template="GetItem" name="GetItem" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">

@@ -35,6 +35,17 @@
             <ui:Button text="항복 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="SurrenderBtn" style="width: 150px; height: 50px; position: absolute; top: 421px; left: 40px; background-color: rgb(255, 255, 255);" />
             <ui:Label tabindex="-1" text="Stage" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageInfoTxt" style="position: absolute; color: rgb(255, 255, 255); font-size: 60px; top: 20px;" />
         </ui:VisualElement>
+        <ui:VisualElement name="ResultPanel" class="resultPanel" style="align-self: center; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.89);">
+            <ui:Label tabindex="-1" text="1-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 20px;" />
+            <ui:Label tabindex="-1" text="Victory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultText" style="font-size: 80px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 60px;" />
+            <ui:Button text="나가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultExitbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 350px; font-size: 40px; background-color: rgb(255, 255, 255);" />
+            <ui:Button text="이어하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultConnectbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 600px; font-size: 40px; background-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="ExpGage" style="flex-grow: 1; position: absolute; width: 600px; height: 20px; top: 180px; background-color: rgb(135, 135, 135);">
+                <ui:VisualElement name="ExpValue" style="flex-grow: 1; background-color: rgb(0, 252, 255); width: 50%;" />
+                <ui:Label tabindex="-1" text="+120" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlusExpValue" style="position: absolute; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 25px; top: -15px; left: 610px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 250px; flex-direction: row;" />
+        </ui:VisualElement>
     </ui:VisualElement>
     <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">
         <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px; -unity-text-align: middle-left; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />

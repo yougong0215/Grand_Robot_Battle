@@ -5258,6 +5258,7 @@ GameObject:
   - component: {fileID: 1368887505}
   - component: {fileID: 1368887506}
   - component: {fileID: 1368887507}
+  - component: {fileID: 1368887508}
   m_Layer: 0
   m_Name: LoginManager
   m_TagString: Untagged
@@ -5340,6 +5341,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextUI: {fileID: 173232702}
   ScreenUI: {fileID: 267141613}
+--- !u!114 &1368887508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368887502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c08dab1636654843a0fb0fcc33c144f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GooglePlayToken: 
+  GooglePlayError: 
 --- !u!1 &1377410508
 GameObject:
   m_ObjectHideFlags: 0

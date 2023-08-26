@@ -1,5 +1,6 @@
 const sqlite = require("../utils/sqlite.js");
 const UserManager = require("./lib/UserManager.js");
+const Login_Google = require("./lib/LoginModule/google.js");
 
 module.exports = function(socket) {
     ////////// socket 초기화 //////////
@@ -89,52 +90,72 @@ module.exports = function(socket) {
         } catch {}
 
         // 무결성 검사
-        if (message === undefined || message.type !== "domiServer.Login" || typeof(message.data) !== "string" || message.data <= 0) {
+        if (message === undefined || typeof(message.data) !== "string" || message.data <= 0) {
             socket.kick("잘못된 로그인 데이터 입니다.");
             return;
         }
         const token = message.data;
-        const sql = sqlite.GetObject();
+        let login_ID = null;
         
-        // 토큰찾자
-        let result = await sql.Aget("SELECT id,token FROM sessions WHERE token = ?", token);
-        if (socket.readyState !== "open") { // 로그인 중에 나감
-            sql.close();
-            return;
-        }
+        if (message.type === "domiServer.Login") { // 가본 로그인
+            const sql = sqlite.GetObject();
+            let result = await sql.Aget("SELECT id,token FROM sessions WHERE token = ?", token);
+            if (socket.readyState !== "open") { // 로그인 중에 나감
+                sql.close();
+                return;
+            }
+    
+            if (result === false) {
+                socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (1)");
+                sql.close();
+                return;
+            }
+    
+            if (result === undefined) {
+                socket.kick("domi.session_remove");
+                sql.close();
+                return;
+            }
+            // 오잉 불러왔는데 왜 정보가 없지???
+            if (result.id === undefined || result.token === undefined) {
+                socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (2)");
+                sql.close();
+                return;
+            }
 
-        if (result === false) {
-            socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (1)");
-            sql.close();
-            return;
-        }
+            // 오케이! 로그인 했다
+            // 마지막 로그인 시간을 저장하자
+            sql.run("UPDATE sessions SET Last_Login = ? WHERE token = ?", [Number(new Date()), result.token], () => sql.close());
+        
+            login_ID = result.id;
+        } else if (message.type === "domiServer.LoginForGoogle") {
+            const result = await Login_Google(token);
 
-        if (result === undefined) {
-            socket.kick("domi.session_remove");
-            sql.close();
-            return;
-        }
-        // 오잉 불러왔는데 왜 정보가 없지???
-        if (result.id === undefined || result.token === undefined) {
-            socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (2)");
-            sql.close();
+            if (socket.readyState !== "open") { // 로그인 중에 나감
+                return;
+            }
+
+            if (!result.status) {
+                socket.kick(result.why);
+                return;
+            }
+
+            login_ID = result.id;
+        } else {
+            socket.kick("잘못된 로그인 타입 입니다.");
             return;
         }
 
         // 이미 다른 클라이언트에서 로그인 중
-        if (UserList[result.id] !== undefined) {
+        if (UserList[login_ID] !== undefined) {
             socket.kick("다른 기기에서 이미 로그인 중 입니다.");
             return;
         }
 
-        // 오케이! 로그인 했다
-        // 마지막 로그인 시간을 저장하자
-        sql.run("UPDATE sessions SET Last_Login = ? WHERE token = ?", [Number(new Date()), result.token], () => sql.close());
-
         // 문을 열어주쟈
-        SocketEvent_Init(result.id);
+        SocketEvent_Init(login_ID);
 
         // 로그인 성공!
-        UserManager.AddPlayer(result.id, socket);
+        UserManager.AddPlayer(login_ID, socket);
     });
 }

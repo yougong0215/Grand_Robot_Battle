@@ -22,11 +22,16 @@ public class GoogleLogin_domi : MonoBehaviour
             if (success == SignInStatus.Success)
             {
                 Debug.Log("Login with Google was successful.");
-                LoginAlertWindow.ShowUI("Google Login", "Login with Google was successful.");
-                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                PlayGamesPlatform.Instance.RequestServerSideAccess(false, async code =>
                 {
+                    LoginAlertWindow.ShowUI("Google Login", "Login with Google was successful.");
+                    GUIUtility.systemCopyBuffer = code;
                     Debug.Log($"Auth code is {code}");
                     GooglePlayToken = code;
+
+                    LoginAlertWindow.ShowUI("Google Login 2", Social.localUser.id+ " / "+ Social.localUser.userName);
+
+                    await AuthenticateWithUnity();
                 });
             }
             else
@@ -36,8 +41,6 @@ public class GoogleLogin_domi : MonoBehaviour
                 Debug.LogError("Login Unsuccessful");
             }
         });
-
-        await AuthenticateWithUnity();
     }
 
     private async Task AuthenticateWithUnity()
@@ -56,6 +59,7 @@ public class GoogleLogin_domi : MonoBehaviour
             Debug.LogException(ex);
             throw;
         }
+
     }
 
     private void Start() {

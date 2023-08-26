@@ -109,7 +109,7 @@ public class PartSO : ScriptableObject
 
     [SerializeField] public Sprite SkillImage;
     
-    [SerializeField] public Sprite EquipImage;
+    //[SerializeField] public Sprite EquipImage;
 
 
     [Header("??? ???")]

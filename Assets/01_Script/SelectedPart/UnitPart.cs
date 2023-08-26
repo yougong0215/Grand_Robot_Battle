@@ -67,13 +67,14 @@ public class UnitPart : MonoBehaviour
             HP.text = $"HP : {so.Statues.HP}";
         }
 
-        eq.sprite = s.EquipImage;
-
+        //eq.sprite = s.EquipImage;
+        eq.color = Color.black;
         if(s.EquipPart == true)
         {
             dq.gameObject.SetActive(false);
             eq.gameObject.SetActive(true);
             eq.GetComponent<RectTransform>().sizeDelta = c._seletedObj.GetComponent<RectTransform>().sizeDelta;
+            
         }
         else
         {

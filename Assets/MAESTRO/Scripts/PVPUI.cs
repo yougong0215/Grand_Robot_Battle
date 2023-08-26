@@ -262,7 +262,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _paneltxt.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
-                SceneManager.LoadScene("Menu");
+                LoadManager.LoadScene(SceneEnum.Menu);
             }
         }
         else
@@ -335,7 +335,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _paneltxt.text = $"HP : {_robot._statues.HP} 적의 승리..";
                 yield return new WaitForSeconds(1.5f);
-                SceneManager.LoadScene("Menu");
+                LoadManager.LoadScene(SceneEnum.Menu);
 
             }
         }
@@ -522,7 +522,7 @@ public class PVPUI : MonoBehaviour
         //     SetPartsBtn();
         
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Menu");
+        LoadManager.LoadScene(SceneEnum.Menu);
     }
 
     IEnumerator ServerGameResult_Co(LitJson.JsonData data) {
@@ -566,7 +566,7 @@ public class PVPUI : MonoBehaviour
 
         if (disableControl) {
             yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene("Menu");
+            LoadManager.LoadScene(SceneEnum.Menu);
         }
         else ActiveControl();
     }

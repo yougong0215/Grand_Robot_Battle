@@ -67,7 +67,7 @@ public class MakeUI : MonoBehaviour
         _10_button.clicked += StartGacha_10;
         _okResult.clicked += () => Exit(false);
         _moreResult.clicked += () => Exit(true);
-        _exitBtn.clicked += () => SceneManager.LoadScene("SelectStoreScene");
+        _exitBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);// SceneManager.LoadScene("SelectStoreScene");
     }
 
     IEnumerator ResultTurm()

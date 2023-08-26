@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PartUIInfo : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PartUIInfo : MonoBehaviour
     public void Seleted(ContentPartAdd pa, PartSO _partSO = null, string token = "")
     {
         this.token = token;
+        GetComponent<Image>().color = Color.white;
 
         if(pat != null)
         {
@@ -31,6 +33,7 @@ public class PartUIInfo : MonoBehaviour
             {
                 _robot.DeEquip(pat, pat._part[i].enums);
             }
+            GetComponent<Image>().color = Color.black;
         }
 
         pat = _partSO;

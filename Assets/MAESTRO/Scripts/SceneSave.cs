@@ -23,17 +23,17 @@ public class SceneSave : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(this);
-        current = SceneManager.GetActiveScene();
+        //current = SceneManager.GetActiveScene();
     }
 
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += OnAddBack;
+        //SceneManager.sceneLoaded += OnAddBack;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnAddBack;
+        //SceneManager.sceneLoaded -= OnAddBack;
     }
 
     private void OnAddBack(Scene scene, LoadSceneMode mode)
@@ -53,7 +53,7 @@ public class SceneSave : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(beforeScene);
+        //SceneManager.LoadScene(beforeScene);
     }
 
     public void SceneSaveLogic(string scene)

@@ -9,6 +9,7 @@ public class LoginSession : MonoBehaviour
     [SerializeField] GameObject PressText;
     [SerializeField] GameObject LogoutBtn;
     [SerializeField] GameObject LoginBtn;
+    [SerializeField] GameObject LoginBtn2;
     [SerializeField] GameObject ToutchBtn;
     void Start()
     {
@@ -21,5 +22,6 @@ public class LoginSession : MonoBehaviour
         LogoutBtn.SetActive(logined);
         ToutchBtn.SetActive(logined);
         LoginBtn.SetActive(!logined);
+        LoginBtn2.SetActive(!logined);
     }
 }

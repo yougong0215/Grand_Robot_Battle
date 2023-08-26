@@ -11,19 +11,17 @@ using Unity.Services.Core;
 
 public class LoginToutchStart : MonoBehaviour
 {
+    [SerializeField] LoginSession _session;
+
     string SelectToken;
     bool _disable = false;
     bool isGoogle = false;
-
-    LoginSession _session;
 
     private void Awake() {
         // 서버 리스너 연결
         NetworkCore.EventConnect += ConnectOK;
         NetworkCore.EventDisconnect += ConnectFailed;
         NetworkCore.EventListener["Server.PlayerReady"] = ServerReady;
-
-        _session = GetComponent<LoginSession>();
     }
 
     public void Connect() {

@@ -128,7 +128,7 @@ module.exports = function(socket) {
             sql.run("UPDATE sessions SET Last_Login = ? WHERE token = ?", [Number(new Date()), result.token], () => sql.close());
         
             login_ID = result.id;
-        } else if (message.type === "domiServer.LoginForGoogle") {
+        } else if (message.type === "domiServer.LoginForGoogle") { // 구글 로그인
             const result = await Login_Google(token);
 
             if (socket.readyState !== "open") { // 로그인 중에 나감

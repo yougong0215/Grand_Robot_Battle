@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09_UIToolkit/Storuy/StoryUI.uss?fileID=7433441132597879392&amp;guid=7a4e79ec473644d4683ac0544a1cdacc&amp;type=3#StoryUI" />
+    <Style src="project://database/Assets/09_UIToolkit/SelectStore/StoreUI.uss?fileID=7433441132597879392&amp;guid=0e6922f3b06adeb4680595c97082bd69&amp;type=3#StoreUI" />
+    <ui:VisualElement name="BackGround" style="flex-grow: 1; background-color: rgb(148, 155, 159); flex-direction: row;">
+        <ui:Button text="돌아가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" class="ExitBtn" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+        <ui:Button text="Store" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StoreBtn" style="width: 30%; height: 80%; position: absolute; left: 12%; top: 8%; background-color: rgb(212, 211, 123);" />
+        <ui:Button text="Gacha" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GachaBtn" style="width: 30%; height: 80%; position: absolute; left: 56%; top: 8%; background-color: rgb(127, 165, 180);" />
+    </ui:VisualElement>
+</ui:UXML>

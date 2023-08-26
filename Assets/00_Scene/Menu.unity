@@ -523,6 +523,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _storyView: {fileID: 9197481963319205126, guid: 1794643c8df8eb045ba67923257bbffc,
     type: 3}
+  _mailView: {fileID: 9197481963319205126, guid: 161af690902f58a4b9b2eece493b17ae,
+    type: 3}
 --- !u!114 &628215183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,6 +98,11 @@ module.exports = function(socket) {
         
         // 토큰찾자
         let result = await sql.Aget("SELECT id,token FROM sessions WHERE token = ?", token);
+        if (socket.readyState !== "open") { // 로그인 중에 나감
+            sql.close();
+            return;
+        }
+
         if (result === false) {
             socket.kick("DB에 오류가 발생하여 로그인을 할 수 없습니다. (1)");
             sql.close();

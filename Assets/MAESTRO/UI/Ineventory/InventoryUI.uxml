@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/Inventory.uss?fileID=7433441132597879392&amp;guid=7a87a8732b550b3458b1d789baae709f&amp;type=3#Inventory" />
+    <ui:VisualElement name="Root" style="flex-grow: 1;">
+        <ui:VisualElement name="BackGround" />
+        <ui:VisualElement name="HaveItemList" style="background-color: rgb(164, 164, 164); flex-direction: row; justify-content: center; flex-wrap: wrap; align-items: stretch; align-self: auto;">
+            <ui:VisualElement name="ItemBase" view-data-key="1" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="2" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="3" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="4" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="5" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="6" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="7" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="8" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="9" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="10" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="11" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="12" class="ItemBase" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

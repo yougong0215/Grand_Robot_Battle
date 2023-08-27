@@ -132,6 +132,7 @@ public class PVPUI : MonoBehaviour
 
         }
         */
+        _settingPanel.RemoveFromClassList("off");
         #region 구독
 
         _yesBtn.clicked += OnWarning;

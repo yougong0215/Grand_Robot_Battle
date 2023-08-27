@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum SceneEnum
 {
@@ -39,6 +40,7 @@ public static class LoadManager
         }
 
         nowScene = (int)enums;
+        SceneManager.LoadScene((int)enums);
     }
 
     public static void ReturnBack()

@@ -13,30 +13,47 @@ public class PartUIInfo : MonoBehaviour
     public PartSO Part => pat;
 
     public string token {get; private set;} = "";
+    UnitPart p;
+
 
     private void Awake()
     {
         _robot = GameObject.Find("BaseRobot").GetComponent<RobotSettingAndSOList>();
     }
 
-    public void Seleted(ContentPartAdd pa, PartSO _partSO = null, string token = "")
+    public bool GetIt()
     {
-        this.token = token;
-        GetComponent<Image>().color = Color.white;
+        return pat != null;
+    }
 
-        if(pat != null)
+    public void Seleted(UnitPart pa, PartSO _partSO = null, string token = "")
+    {
+        if(token != "")
+            this.token = token;
+
+        if (p)
+            p.SetPartClick(false);
+
+        p = pa;
+
+        if (pat != null)
         {
-            GameObject obj = transform.GetChild(0).gameObject;
-            obj.GetComponent<UnitPart>().SetPartClick(false);
+
+            //obj.GetComponent<UnitPart>().SetPartClick(false);
 
             for (int i = 0; i < pat._part.Count; i++)
             {
                 _robot.DeEquip(pat, pat._part[i].enums);
             }
-            GetComponent<Image>().color = Color.black;
+
         }
 
         pat = _partSO;
+
+        if (pat == null)
+            GetComponent<Image>().color = Color.white;
+        else
+            GetComponent<Image>().color = Color.black;
 
         _robot.SetingRealPart(pat);
 

@@ -46,4 +46,14 @@ public class AnimationBind : MonoBehaviour
         }
     }
 
+    public void OnAnimationSubEvent()
+    {
+
+    }
+
+
+    public void OnAnimationMainEvent()
+    {
+
+    }
 }

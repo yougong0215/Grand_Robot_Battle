@@ -22,6 +22,11 @@ public class LoginToutchStart : MonoBehaviour
         NetworkCore.EventConnect += ConnectOK;
         NetworkCore.EventDisconnect += ConnectFailed;
         NetworkCore.EventListener["Server.PlayerReady"] = ServerReady;
+        
+        // 폰에서는 30프레임이 기본셋팅임
+        #if UNITY_ANDROID
+        Application.targetFrameRate = 60;
+        #endif
     }
 
     public void Connect() {

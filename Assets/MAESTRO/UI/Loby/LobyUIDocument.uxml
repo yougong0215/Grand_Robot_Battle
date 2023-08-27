@@ -49,8 +49,8 @@
                 <ui:VisualElement name="Frame" style="width: 130px; height: 130px; position: absolute; top: 20px; left: 35px; background-color: rgb(255, 255, 255); align-items: center; justify-content: space-around;">
                     <ui:VisualElement name="Image" style="width: 115px; height: 115px; background-color: rgb(147, 147, 147);" />
                 </ui:VisualElement>
-                <ui:Label text="Nick" display-tooltip-when-elided="true" name="Name" style="position: absolute; font-size: 30px; top: 41px; left: 186px; width: 187px; color: rgb(255, 255, 255);" />
-                <ui:Label text="Nick" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 20px; top: 84px; left: 214px; width: 187px; color: rgb(255, 255, 255);" />
+                <ui:Label text="Nick" display-tooltip-when-elided="true" name="Name" style="position: absolute; font-size: 30px; top: 41px; left: 186px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="Nick" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 20px; top: 84px; left: 214px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="CharImg" style="flex-grow: 0; position: absolute; width: 539px; height: 711px; left: 250px; top: 189px; background-image: url(&apos;project://database/Assets/06_Image/193_8.png?fileID=21300000&amp;guid=b10abba239ac01643a8b847475911b22&amp;type=3#193_8&apos;);" />

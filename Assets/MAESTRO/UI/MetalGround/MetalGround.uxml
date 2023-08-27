@@ -4,23 +4,23 @@
         <ui:VisualElement name="BG" style="width: 100%; height: 100%; background-color: rgb(255, 255, 255);" />
         <ui:VisualElement name="MyRobotBase" style="position: absolute; width: 500px; height: 700px; top: 108px; left: 80px; background-color: rgb(164, 164, 164); align-items: center;">
             <ui:VisualElement name="MyRobotImage" style="-unity-background-image-tint-color: rgb(197, 197, 197); position: absolute; width: 80%; height: 70%; margin-top: 50px; background-color: rgb(255, 255, 255);" />
-            <ui:Button text="변경하기" display-tooltip-when-elided="true" name="MyRobotChangeBtm" enable-rich-text="false" style="position: absolute; width: 80%; height: 15%; top: 570px; left: 47px; background-color: rgb(204, 204, 204); font-size: 50px; color: rgb(0, 0, 0);" />
+            <ui:Button text="변경하기" display-tooltip-when-elided="true" name="MyRobotChangeBtm" enable-rich-text="false" style="position: absolute; width: 80%; height: 15%; top: 570px; left: 47px; background-color: rgb(204, 204, 204); font-size: 50px; color: rgb(0, 0, 0); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
         </ui:VisualElement>
         <ui:VisualElement name="PanelBase" style="position: absolute; height: 700px; width: 1300px; top: 110px; left: 640px; background-color: rgb(163, 163, 163);">
             <ui:VisualElement name="BoxBase" style="position: absolute; width: 500px; height: 600px; top: 48px; left: 42px; background-color: rgb(101, 101, 101);">
                 <ui:VisualElement name="BoxNameBase" style="width: 90%; height: 17%; position: absolute; top: 30px; left: 26px; background-color: rgb(221, 221, 221);">
-                    <ui:Label text="고철상자" display-tooltip-when-elided="true" name="BoxName" style="width: 100%; height: 100%; color: rgb(0, 0, 0); -unity-text-align: middle-center; font-size: 50px;" />
+                    <ui:Label text="고철상자" display-tooltip-when-elided="true" name="BoxName" style="width: 100%; height: 100%; color: rgb(0, 0, 0); -unity-text-align: middle-center; font-size: 50px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
                 </ui:VisualElement>
                 <ui:VisualElement name="BoxImage" style="position: absolute; width: 65%; height: 50%; top: 168px; left: 84px; background-color: rgb(255, 255, 255);" />
                 <ui:VisualElement name="FightBase" style="width: 60%; height: 10%; position: absolute; top: 506px; left: 96px; background-color: rgb(221, 221, 221);">
-                    <ui:Label text="연승 없음" display-tooltip-when-elided="true" name="Count" style="width: 100%; height: 100%; color: rgb(0, 0, 0); -unity-text-align: middle-center; font-size: 40px;" />
+                    <ui:Label text="연승 없음" display-tooltip-when-elided="true" name="Count" style="width: 100%; height: 100%; color: rgb(0, 0, 0); -unity-text-align: middle-center; font-size: 40px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="RaiderBase" style="width: 650px; height: 600px; position: absolute; background-color: rgb(142, 142, 142); top: 50px; left: 590px;">
                 <ui:VisualElement name="RaiderBaseBase" style="position: absolute; width: 400px; height: 400px; top: 48px; left: 126px; background-color: rgb(200, 200, 200); align-items: center; justify-content: center;">
                     <ui:VisualElement name="Raider" style="position: absolute; width: 300px; height: 300px; background-color: rgb(255, 255, 255);" />
                 </ui:VisualElement>
-                <ui:Button text="매칭 시작" display-tooltip-when-elided="true" name="MatchingBtn" style="position: absolute; width: 400px; height: 100px; top: 480px; left: 122px; font-size: 55px;" />
+                <ui:Button text="매칭 시작" display-tooltip-when-elided="true" name="MatchingBtn" style="position: absolute; width: 400px; height: 100px; top: 480px; left: 122px; font-size: 55px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

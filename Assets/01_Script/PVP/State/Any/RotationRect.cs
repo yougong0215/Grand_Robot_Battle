@@ -22,7 +22,7 @@ public class RotationRect : MonoBehaviour
 
     public void UpdatePointer(int pnt)
     {
-
+    
 
         if (Vector2.Distance(inputDirection, pos) < 0.3)
         {

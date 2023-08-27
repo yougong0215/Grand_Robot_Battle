@@ -58,10 +58,10 @@ public class MenuUI : MonoBehaviour
         _charImg = _root.Q<VisualElement>("CharImg");
         //_makeBtn.clicked += () => SceneLoad("Gacha");
         // _battleBtn.clicked += () => SceneLoad("PVP");
-        _battleBtn.clicked += () => SceneLoad("MetalBattleGround");
+        _battleBtn.clicked += () => LoadManager.LoadScene(SceneEnum.GameMatching);
         _storyBtn.clicked += () => LoadStroyView();
-        _gongBtn.clicked += () => SceneLoad("MakeRobot");
-        _storeBtn.clicked += () => SceneLoad("SelectStoreScene");
+        _gongBtn.clicked += () => LoadManager.LoadScene(SceneEnum.MakeRobot);// SceneLoad("MakeRobot");
+        _storeBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);//SceneLoad("SelectStoreScene");
         //_garageBtn.clicked += () => SceneLoad("Garage");
 
         _storyView.CloneTree(_root);
@@ -77,16 +77,12 @@ public class MenuUI : MonoBehaviour
         _mailElem = _root.Q<VisualElement>("MailView");
         _mailExitBtn = _mailElem.Q<Button>("ExitBtn");
 
+         _mailElem.AddToClassList("off");
         _mailExitBtn.clicked += () => _mailElem.AddToClassList("off");
         _postBtn.clicked += () => _mailElem.RemoveFromClassList("off");
     }
 
-    void SceneLoad(string sceneString)
-    {
-        //�ε�â ���弼��!
-        //SceneSave.Instance.SceneSaveLogic(sceneString);
-        SceneManager.LoadScene(sceneString);
-    }
+
 
 
     void LoadStroyView()

@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
 {
     Dictionary<PartBaseEnum, PartSO> partsDic = new();
+    AnimationBind _bd;
 
+    public AnimationBind AnimBind => _bd;
 
 
     #region public code
@@ -116,11 +119,14 @@ public class RobotSettingAndSOList : MonoBehaviour
     {
         yield return StartCoroutine(gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet());
 
-        // º≠πˆ ∑Œµ˘ øœ∑· ∫∏≥ª¡÷±‚
+        // ÏÑúÎ≤Ñ Î°úÎî© ÏôÑÎ£å Î≥¥ÎÇ¥Ï£ºÍ∏∞
+    }
+    private void Awake()
+    {
+        _bd = GetComponent<AnimationBind>();
     }
 
-
-    //∆Û±‚
+    //ÌèêÍ∏∞
     /*
     private void Init()
     {
@@ -225,7 +231,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 Setting(so, A_R_UBone, ref A_R_UEquip, ref A_R_USO, enums, A_R_UMesh, true);
                 break;
             case PartEnum.ARM:
-                Setting(so, A_R_MBone, ref A_R_MEquip, ref A_R_MSO, enums, A_R_UMesh, true);
+                Setting(so, A_R_MBone, ref A_R_MEquip, ref A_R_MSO, enums, A_R_MMesh, true);
                 break;
             case PartEnum.ARL:
                 Setting(so, A_R_LBone, ref A_R_LEquip, ref A_R_LSO, enums, A_R_LMesh, true);
@@ -341,7 +347,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 if (objed != null)
                     Equip = Instantiate(objed, bone.transform);
                 else
-                    Debug.LogError("∆ƒ√˜ æ¯¿Ω");
+                    Debug.LogError("ÌååÏ∏† ÏóÜÏùå");
             }
         }
         else
@@ -414,7 +420,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 Setting(so, A_L_UBone, ref A_L_UEquip, ref A_L_USO, enums, A_L_UMesh);
                 break;
             case PartEnum.ALM:
-                Setting(so, A_L_MBone, ref A_L_MEquip, ref A_L_MSO, enums, A_L_UMesh);
+                Setting(so, A_L_MBone, ref A_L_MEquip, ref A_L_MSO, enums, A_L_MMesh);
                 break;
             case PartEnum.ALL:
                 Setting(so, A_L_LBone, ref A_L_LEquip, ref A_L_LSO, enums, A_L_LMesh);
@@ -423,7 +429,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 Setting(so, A_R_UBone, ref A_R_UEquip, ref A_R_USO, enums, A_R_UMesh);
                 break;
             case PartEnum.ARM:
-                Setting(so, A_R_MBone, ref A_R_MEquip, ref A_R_MSO, enums, A_R_UMesh);
+                Setting(so, A_R_MBone, ref A_R_MEquip, ref A_R_MSO, enums, A_R_MMesh);
                 break;
             case PartEnum.ARL:
                 Setting(so, A_R_LBone, ref A_R_LEquip, ref A_R_LSO, enums, A_R_LMesh);

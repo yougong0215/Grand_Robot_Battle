@@ -99,7 +99,8 @@ public class LoginWindowSystem : MonoBehaviour
         if (token == null) return;
 
         PlayerPrefs.DeleteKey(LoginSession.SAVE_KEY);
-        HTTP_manager.RequestPOST("logout", new LogoutForm() { token = token }, (int status, LitJson.JsonData data) => {});
+        if (token != "google")
+            HTTP_manager.RequestPOST("logout", new LogoutForm() { token = token }, (int status, LitJson.JsonData data) => {});
         _session.ChangeLayout(false);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimationBind : MonoBehaviour
@@ -9,6 +10,8 @@ public class AnimationBind : MonoBehaviour
 
     private readonly int _isAttackHash = Animator.StringToHash("is_Attack");
     private readonly int _AttackTriggerhash = Animator.StringToHash("_attack");
+
+    private readonly int _EquipTriggerhash = Animator.StringToHash("Equip");
 
     bool ani = false;
 
@@ -31,7 +34,15 @@ public class AnimationBind : MonoBehaviour
         ani = true;
     }
 
-    public bool EndAnim()
+    public void EquipAnimationChange(AnimationClip _ac)
+    {
+        aoc["Equip"] = _ac;
+        _animator.runtimeAnimatorController = aoc;
+
+        _animator.SetTrigger(_EquipTriggerhash);
+    }
+
+        public bool EndAnim()
     {
         if(ani == false)
         {

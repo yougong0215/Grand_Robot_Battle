@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ContentPartAdd : MonoBehaviour
 {
     RobotSettingAndSOList _robot;
+        [SerializeField] public AnimationClip _ac;
+
+    public RobotSettingAndSOList Robot => _robot;
     [SerializeField] public GameObject _contentObj;
     [SerializeField] public PartUIInfo _seletedObj;
     [SerializeField] List<PartSO> part;

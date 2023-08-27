@@ -11,6 +11,7 @@ public class UnitPart : MonoBehaviour
     [SerializeField] TextMeshProUGUI DEF;
     [SerializeField] TextMeshProUGUI HP;
     [SerializeField] TextMeshProUGUI SPEED;
+    [SerializeField] TextMeshProUGUI Name;
     [SerializeField] Image img;
     [Header("SO")]
 
@@ -40,7 +41,7 @@ public class UnitPart : MonoBehaviour
          
             transform.GetComponent<RectTransform>().position = c._seletedObj.GetComponent<RectTransform>().position;
             eq.GetComponent<RectTransform>().sizeDelta = c._seletedObj.GetComponent<RectTransform>().sizeDelta;
-            
+            c.Robot.AnimBind.EquipAnimationChange(c._ac);
         }
         else
         {
@@ -68,6 +69,7 @@ public class UnitPart : MonoBehaviour
             DEF.text = $"DEF : {so.Statues.DEF}";
             SPEED.text = $"SPEED : {so.Statues.SPEED}";
             HP.text = $"HP : {so.Statues.HP}";
+            Name.text = $"{so.name}";
         }
 
         //eq.sprite = s.EquipImage;

@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class RobotSettingAndSOList : MonoBehaviour
 {
     Dictionary<PartBaseEnum, PartSO> partsDic = new();
+    AnimationBind _bd;
 
+    public AnimationBind AnimBind => _bd;
 
 
     #region public code
@@ -118,7 +121,10 @@ public class RobotSettingAndSOList : MonoBehaviour
 
         // 서버 로딩 완료 보내주기
     }
-
+    private void Awake()
+    {
+        _bd = GetComponent<AnimationBind>();
+    }
 
     //폐기
     /*

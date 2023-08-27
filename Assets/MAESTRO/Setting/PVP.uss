@@ -109,7 +109,7 @@
 }
 
 .PartsBtnGroup.off {
-    top: 300px;
+    top: 800px;
     position: absolute;
 }
 

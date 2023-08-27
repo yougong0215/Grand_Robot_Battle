@@ -17,15 +17,18 @@ public class PVPUI : MonoBehaviour
 
     private Label _playerNickname;
     private VisualElement _playerHpBar;
+    private VisualElement _settingPanel;
     private Label _playerHpText;
 
     private Label _enemtNickname;
     private VisualElement _enemyHpBar;
     private Label _enemyHpText;
 
-    private Button _atkBtn;
-    private Button _skipBtn;
-    private Button _surrenBtn;
+    //private Button _atkBtn;
+    //private Button //_skipBtn;
+    //private Button //_surrenBtn;
+
+    VisualElement _partBtnGroup;
 
     private Label _text;
     private Label _wText;
@@ -74,12 +77,13 @@ public class PVPUI : MonoBehaviour
     {
         _paneltxt.text = "다른 플레이어를 기다리고 있습니다.";
         SetPanel();
-        _atkBtn.RemoveFromClassList("on");
-        _surrenBtn.RemoveFromClassList("on");
-        _skipBtn.RemoveFromClassList("on");
+        //_atkBtn.RemoveFromClassList("on");
+        //_surrenBtn.RemoveFromClassList("on");
+        //_skipBtn.RemoveFromClassList("on");
         
         // 서버에게 준비가 되었다고 알림
         NetworkCore.Send("ingame.ready", null);
+        PartsBtnSetting(true);
     }
 
     private void OnEnable()
@@ -101,6 +105,7 @@ public class PVPUI : MonoBehaviour
         partsbtnGroup = _root.Q<VisualElement>("PartsBtnGroup");
         _hpPanel = _root.Q<VisualElement>("HPPanel");
         _enemyHpPanel = _root.Q<VisualElement>("EnemyHPPanel");
+        _settingPanel = _root.Q<VisualElement>("SettingPnanel");
         #endregion
 
         partbtncools = new float[5];
@@ -220,9 +225,9 @@ public class PVPUI : MonoBehaviour
         _paneltxt.text = "로딩중..";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
-        _atkBtn.AddToClassList("on");
-        _surrenBtn.AddToClassList("on");
-        _skipBtn.AddToClassList("on");
+        //_atkBtn.AddToClassList("on");
+        //_surrenBtn.AddToClassList("on");
+        //_skipBtn.AddToClassList("on");
     }
 
     public IEnumerator Fight(bool t, PartSO so, int rand)
@@ -361,6 +366,7 @@ public class PVPUI : MonoBehaviour
     {
         if(isAppear)
         {
+            
             partsbtnGroup.RemoveFromClassList("off");
         }
         else
@@ -409,9 +415,9 @@ public class PVPUI : MonoBehaviour
         //OnWarning();
         SetPanel(); // 꺼짐
         //SetPartsBtn();
-        _atkBtn.RemoveFromClassList("on");
-        _surrenBtn.RemoveFromClassList("on");
-        _skipBtn.RemoveFromClassList("on");
+        //_atkBtn.RemoveFromClassList("on");
+        //_surrenBtn.RemoveFromClassList("on");
+        //_skipBtn.RemoveFromClassList("on");
         yield return new WaitForSeconds(0.1f);
 
         int rand = UnityEngine.Random.Range(0, 5);
@@ -433,9 +439,9 @@ public class PVPUI : MonoBehaviour
         _paneltxt.text = "로딩중..";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
-        _atkBtn.AddToClassList("on");
-        _surrenBtn.AddToClassList("on");
-        _skipBtn.AddToClassList("on");
+        //_atkBtn.AddToClassList("on");
+        //_surrenBtn.AddToClassList("on");
+        //_skipBtn.AddToClassList("on");
 
 
     }
@@ -473,9 +479,9 @@ public class PVPUI : MonoBehaviour
 
     ///////////// 서버 //////////////
     private void ActiveControl(LitJson.JsonData _ = null) {
-        _atkBtn.AddToClassList("on");
-        _surrenBtn.AddToClassList("on");
-        _skipBtn.AddToClassList("on");
+        //_atkBtn.AddToClassList("on");
+        //_surrenBtn.AddToClassList("on");
+        //_skipBtn.AddToClassList("on");
 
         if (!onPanel) return;
         SetPanel();
@@ -486,9 +492,9 @@ public class PVPUI : MonoBehaviour
         NetworkCore.Send("ingame.selectSkill", part);
 
         _paneltxt.text = "스킬을 선택했습니다. 다른 플레이어 기다리는중...";
-        _atkBtn.RemoveFromClassList("on");
-        _surrenBtn.RemoveFromClassList("on");
-        _skipBtn.RemoveFromClassList("on");
+        //_atkBtn.RemoveFromClassList("on");
+        //_surrenBtn.RemoveFromClassList("on");
+        //_skipBtn.RemoveFromClassList("on");
         SetPanel();
         PartsBtnSetting(false);
     }
@@ -513,9 +519,9 @@ public class PVPUI : MonoBehaviour
 
     IEnumerator ServerGameDestory_Co(string name) {
         _paneltxt.text = name + "님이 탈주하였습니다.";
-        _atkBtn.RemoveFromClassList("on");
-        _surrenBtn.RemoveFromClassList("on");
-        _skipBtn.RemoveFromClassList("on");
+        //_atkBtn.RemoveFromClassList("on");
+        //_surrenBtn.RemoveFromClassList("on");
+        //_skipBtn.RemoveFromClassList("on");
         if (!onPanel)
             SetPanel();
         // if (onPartsPanel)

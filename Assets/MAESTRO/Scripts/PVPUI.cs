@@ -105,7 +105,7 @@ public class PVPUI : MonoBehaviour
         partsbtnGroup = _root.Q<VisualElement>("PartsBtnGroup");
         _hpPanel = _root.Q<VisualElement>("HPPanel");
         _enemyHpPanel = _root.Q<VisualElement>("EnemyHPPanel");
-        _settingPanel = _root.Q<VisualElement>("SettingPnanel");
+        _settingPanel = _root.Q<VisualElement>("SettingPanel");
         #endregion
 
         partbtncools = new float[5];

@@ -12,6 +12,14 @@ public class LobbyMailServer : MonoBehaviour
         public int time;
     }
 
+    struct MailContent {
+        public string title;
+        public string user;
+        public string content;
+        public string sender;
+        public int time;
+    }
+
     private void Awake() {
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
         NetworkCore.EventListener["mail.resultContent"] = ResultContent;
@@ -23,7 +31,7 @@ public class LobbyMailServer : MonoBehaviour
 
     private void Start() {
         LoadMail(0);
-        ShowContentMail(0);
+        ShowContentMail(1);
     }
 
     public void LoadMail(int page) {
@@ -53,5 +61,8 @@ public class LobbyMailServer : MonoBehaviour
         }
 
         // 파일 내용 있음 ㅁㄴㅇㄹ
+        print("ResultContent");
+        var Mail = JsonMapper.ToObject<MailContent>(data.ToJson());
+        print(Mail.content);
     }
 }

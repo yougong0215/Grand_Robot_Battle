@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/Inventory.uss?fileID=7433441132597879392&amp;guid=7a87a8732b550b3458b1d789baae709f&amp;type=3#Inventory" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; flex-direction: row; justify-content: center;">
+        <ui:VisualElement name="BackGround" />
+        <ui:VisualElement name="HaveItemList" style="background-color: rgb(164, 164, 164); flex-direction: row; justify-content: center; flex-wrap: wrap; align-items: stretch; align-self: auto;">
+            <ui:VisualElement name="ItemBase" view-data-key="1" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="2" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="3" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="4" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="5" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="6" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="7" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="8" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="9" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="10" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="11" class="ItemBase" />
+            <ui:VisualElement name="ItemBase" view-data-key="12" class="ItemBase" />
+        </ui:VisualElement>
+        <ui:VisualElement name="PartsMakePanel" style="align-items: center;">
+            <ui:VisualElement name="PartsImage" style="width: 370px; height: 370px; background-color: rgb(255, 255, 255); margin-top: 60px;" />
+            <ui:Label tabindex="-1" text="PartsName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SelectPartsName" style="-unity-text-align: upper-center; font-size: 50px; padding-top: 20px;" />
+            <ui:VisualElement name="InfoBase" style="width: 500px; height: 230px; margin-top: 20px; background-color: rgb(202, 202, 202); align-items: center; justify-content: center;">
+                <ui:Label tabindex="-1" text="Info" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PartsInfo" style="width: 90%; height: 90%; font-size: 35px; -unity-text-align: middle-center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ItemInfoPanel" style="margin-top: 40px; margin-right: 40px; margin-bottom: 40px; margin-left: 40px; align-items: center;">
+            <ui:VisualElement name="StatusPanel" style="width: 80%; height: 50%; margin-top: 40px; margin-right: 40px; margin-bottom: 40px; margin-left: 40px; background-color: rgb(125, 125, 125); align-items: center; justify-content: center;">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AtkStatus" class="statusText" />
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HPStatus" class="statusText" />
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DefStatus" class="statusText" />
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeedStatus" class="statusText" />
+            </ui:VisualElement>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="NormalSelectBtn" class="selectbtn" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="UniqueSelectBtn" class="selectbtn" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MasterPieceSelectBtn" class="selectbtn" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,4 +1,4 @@
-const sql = require("../../utils/sqlite.js");
+const sql = require(__rootdir+"/utils/sqlite.js");
 
 exports.GetMails = async function(user, MaxAmount, page) {
     const db = sql.GetObject();

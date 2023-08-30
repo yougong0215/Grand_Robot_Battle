@@ -16,7 +16,7 @@ exports.GetContent = async function(id) {
     id = Number(id);
     
     const db = sql.GetObject();
-    const result = await db.Aget("SELECT title, content, items, sender, time FROM mails WHERE id = ?", id);
+    const result = await db.Aget("SELECT title, user, content, items, sender, time FROM mails WHERE id = ?", id);
     db.close();
 
     return result;

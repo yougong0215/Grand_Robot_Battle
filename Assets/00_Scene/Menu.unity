@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 628215181}
   - component: {fileID: 628215182}
   - component: {fileID: 628215183}
+  - component: {fileID: 628215184}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -538,6 +539,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Document: {fileID: 628215181}
+--- !u!114 &628215184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628215179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cce490399bebda48bb234fde6d4544d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823767035
 GameObject:
   m_ObjectHideFlags: 0

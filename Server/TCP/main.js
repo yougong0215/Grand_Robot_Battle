@@ -8,6 +8,7 @@ require("./MakeRobot/main.js");
 require("./Gacha/main.js");
 require("./InGame/main.js");
 require("./Garage/main.js");
+require("./Mail/triggers.js");
 require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));

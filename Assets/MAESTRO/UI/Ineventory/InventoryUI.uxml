@@ -31,8 +31,8 @@
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeedStatus" class="statusText" />
             </ui:VisualElement>
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="NormalSelectBtn" class="selectbtn" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="UniqueSelectBtn" />
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MasterPieceSelectBtn" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="UniqueSelectBtn" class="selectbtn" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MasterPieceSelectBtn" class="selectbtn" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -75,6 +75,7 @@ public class LoginToutchStart : MonoBehaviour
             {
                 LoginLoadingSystem.HideUI();
                 LoginAlertWindow.ShowUI("Google 정보를 불러올 수 없습니다.", "Google 로그인을 할 수 없거나 필요한 권한이 없을 수 있습니다.");
+                _disable = false;
             }
         });
     }

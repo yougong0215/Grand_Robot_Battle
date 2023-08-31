@@ -8,6 +8,7 @@ class PlayerForm {
     crystal = 0;
     level = 0;
     exp = 0;
+    join = 0;
 
     // 인벤토리
     inventory = {
@@ -62,6 +63,7 @@ exports.AddPlayer = async function(id, socket) {
         Player.crystal = PlayerStats.crystal;
         Player.level = PlayerStats.level;
         Player.exp = PlayerStats.exp;
+        Player.join = PlayerStats.join;
     }
 
     ///////////////// 인벤토리 /////////////////
@@ -96,6 +98,9 @@ exports.AddPlayer = async function(id, socket) {
     sql.close(); // 데베 사용 끝남
     Player.ready = true; // 준비 완료
 
+    // 접속 카운트 올리기
+    Player.join ++;
+
     // 클라이언트한테 준비 되었다고 알림
     Player.socket.send("Server.PlayerReady", null);
 }
@@ -117,12 +122,13 @@ exports.RemovePlayer = async function(id) {
     const sql = sqlite.GetObject();
 
     // 재화 저장
-    sql.run("INSERT OR REPLACE INTO stats (id, coin, crystal, level, exp) VALUES ($id, $coin, $crystal, $level, $exp)", {
+    sql.run("INSERT OR REPLACE INTO stats (id, coin, crystal, level, exp, `join`) VALUES ($id, $coin, $crystal, $level, $exp, $join)", {
         $id: id,
         $coin: CachePlayer.coin,
         $crystal: CachePlayer.crystal,
         $level: CachePlayer.level,
-        $exp: CachePlayer.exp
+        $exp: CachePlayer.exp,
+        $join: CachePlayer.join
     }, err => { if (err) console.error(err) });
 
     // 인벤

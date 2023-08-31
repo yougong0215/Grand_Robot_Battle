@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/09_UIToolkit/Storuy/StoryUI.uss?fileID=7433441132597879392&amp;guid=7a4e79ec473644d4683ac0544a1cdacc&amp;type=3#StoryUI" />
-    <ui:VisualElement name="MailView" class="window" style="flex-grow: 0;">
+    <ui:VisualElement name="MailView" class="window" style="flex-grow: 0; position: absolute;">
         <ui:VisualElement name="MailBox" style="flex-grow: 0; width: 1400px; height: 700px; background-color: rgb(185, 185, 185); border-left-color: rgb(42, 42, 42); border-right-color: rgb(42, 42, 42); border-top-color: rgb(42, 42, 42); border-bottom-color: rgb(42, 42, 42); border-top-width: 12px; border-right-width: 12px; border-bottom-width: 12px; border-left-width: 12px;">
             <ui:VisualElement name="Line" style="flex-grow: 0; height: 8%; background-color: rgb(79, 79, 79); flex-direction: row-reverse;">
                 <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" style="background-color: rgb(255, 0, 0); width: 4%;" />

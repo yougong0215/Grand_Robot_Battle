@@ -1,58 +1,96 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="QuestBar" src="project://database/Assets/MAESTRO/UI/Loby/QuestBar.uxml?fileID=9197481963319205126&amp;guid=500414a27bd4fbd45be8160fc9227d76&amp;type=3#QuestBar" />
     <Style src="project://database/Assets/MAESTRO/Setting/Loby.uss?fileID=7433441132597879392&amp;guid=ecf2315aa5c90494eb40d32e5835c14a&amp;type=3#Loby" />
     <Style src="project://database/Assets/09_UIToolkit/Storuy/StoryUI.uss?fileID=7433441132597879392&amp;guid=7a4e79ec473644d4683ac0544a1cdacc&amp;type=3#StoryUI" />
-    <ui:VisualElement name="Root" style="flex-direction: column;">
-        <ui:VisualElement name="BtnGroup" style="flex-grow: 1;">
-            <ui:Button display-tooltip-when-elided="true" name="StoreBtn" class="Lobybtn" style="left: 1500px; top: 250px; position: absolute;">
-                <ui:Label text="상점" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="StoreIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/Coin.png?fileID=2800000&amp;guid=83604cac9cb6c7842aacee1db7553b58&amp;type=3#Coin&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="GongBtn" class="Lobybtn" style="left: 1500px; top: 500px; position: absolute;">
-                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;); color: rgb(0, 0, 0);" />
-                <ui:VisualElement name="GongIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/LenchIcon.png?fileID=2800000&amp;guid=208b37c9c1f5eb749ad7dc2938dfdf63&amp;type=3#LenchIcon&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="StoryBtn" class="Lobybtn" style="left: 950px; top: 250px; position: absolute;">
-                <ui:Label text="스토리" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="StoryIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/StoryIcon.png?fileID=2800000&amp;guid=e86d02f467877a147899f0d9160aa4eb&amp;type=3#StoryIcon&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="BattleBtn" class="Lobybtn" style="left: 950px; top: 500px; position: absolute;">
-                <ui:Label text="배틀" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="BattleIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 210px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BattleIcon.png?fileID=2800000&amp;guid=ed92a1a38749a4a448260a39c3bdaec1&amp;type=3#BattleIcon&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="SettingBtn" class="UpBtn" style="top: 0; left: 1820px;">
-                <ui:Label text="설정" display-tooltip-when-elided="true" name="Sul" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 60px; height: 80px; flex-direction: column; position: absolute; top: -13px; left: -2px; background-image: url(&apos;project://database/Assets/06_Image/170_22.png?fileID=2800000&amp;guid=83c5e2dca1e35654e9cbd07f6ed49a5a&amp;type=3#170_22&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="Postbtn" class="UpBtn" style="top: 0; left: 1640px;">
-                <ui:Label text="우편" display-tooltip-when-elided="true" name="UP" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 70px; height: 80px; flex-direction: column; position: absolute; top: -15px; left: -3px; background-image: url(&apos;project://database/Assets/06_Image/170_20.png?fileID=2800000&amp;guid=ce8eaea22fad2dc47a61d6915ce0121d&amp;type=3#170_20&apos;);" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="DayQbtn" class="UpBtn" style="top: 0; left: 1460px;">
-                <ui:Label text="일과" display-tooltip-when-elided="true" name="IlGwa" style="color: rgb(0, 0, 0); width: 100%; height: 100%; -unity-text-align: middle-right; padding-left: 10px; padding-right: 10px; font-size: 25px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 70px; height: 80px; flex-direction: column; position: absolute; top: -18px; left: -3px; background-image: url(&apos;project://database/Assets/06_Image/170_16.png?fileID=2800000&amp;guid=641ec81c2fb5a52458217f3334ba709b&amp;type=3#170_16&apos;);" />
-            </ui:Button>
-        </ui:VisualElement>
+    <ui:VisualElement name="Root" style="flex-direction: column; flex-grow: 1; background-image: url(&apos;project://database/Assets/MAESTRO/UI/Loby/Main_BG.png?fileID=2800000&amp;guid=9e80287a17f71cf40b7ebe9d71685017&amp;type=3#Main_BG&apos;);">
         <ui:VisualElement name="GoodsGroup">
-            <ui:VisualElement name="GemBar" style="width: 300px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 1115px; flex-direction: row-reverse;">
-                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
+            <ui:VisualElement name="BG" style="flex-grow: 0; position: absolute; width: 70%; left: 30%; height: 90px; background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Upper%20Right.png?fileID=2800000&amp;guid=83af06f658736404b8d9e149d6c39683&amp;type=3#Upper Right&apos;); background-color: rgba(0, 0, 0, 0);" />
+            <ui:VisualElement name="GemBar" style="width: 470px; height: 50px; background-color: rgba(36, 36, 36, 0); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: -5px; left: 57%; flex-direction: row-reverse; background-image: url(&apos;project://database/Assets/99_mainUI/Sub%20Panel/Upper%20Sub.png?fileID=2800000&amp;guid=a0358fbfc02adb74e800ba4d66e40d2c&amp;type=3#Upper Sub&apos;);">
+                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/99_mainUI/Icon/Plus.png?fileID=2800000&amp;guid=06776df817fa7924eb5e5a168f8adffb&amp;type=3#Plus&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
                 <ui:VisualElement name="Geminage" style="background-color: rgba(255, 255, 255, 0); width: 80px; height: 80px; flex-direction: column; position: absolute; top: -12px; left: -18px; background-image: url(&apos;project://database/Assets/06_Image/170_17.png?fileID=2800000&amp;guid=f4db64358bb93744d91dd5babf2cbb95&amp;type=3#170_17&apos;);" />
-                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 189px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 340px; font-size: 40px; padding-right: 1px; -unity-text-align: lower-right; position: absolute; top: 5px; left: 17%; height: 40px; color: rgb(215, 215, 215); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;);" />
             </ui:VisualElement>
-            <ui:VisualElement name="GoldBar" style="width: 450px; height: 50px; background-color: rgba(36, 36, 36, 0.3); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: 0; left: 620px; flex-direction: row-reverse;">
-                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" />
-                <ui:VisualElement name="Goldinage" style="background-color: rgba(255, 255, 255, 0); width: 80px; height: 80px; flex-direction: column; position: absolute; top: -12px; left: -19px; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
-                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 339px; font-size: 30px; padding-right: 1px; -unity-text-align: upper-right; position: absolute; top: 0; left: 60px; height: 26px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+            <ui:VisualElement name="GoldBar" style="width: 470px; height: 50px; background-color: rgba(36, 36, 36, 0); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; position: absolute; top: -5px; left: 32%; flex-direction: row-reverse; background-image: url(&apos;project://database/Assets/99_mainUI/Sub%20Panel/Upper%20Sub.png?fileID=2800000&amp;guid=a0358fbfc02adb74e800ba4d66e40d2c&amp;type=3#Upper Sub&apos;);">
+                <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="Gemplus" class="Plus" style="background-image: url(&apos;project://database/Assets/99_mainUI/Icon/Plus.png?fileID=2800000&amp;guid=06776df817fa7924eb5e5a168f8adffb&amp;type=3#Plus&apos;); background-color: rgba(255, 255, 255, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+                <ui:VisualElement name="Goldinage" style="background-color: rgba(255, 255, 255, 0); width: 50px; height: 50px; flex-direction: column; position: absolute; top: 1px; left: -2px; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
+                <ui:Label text="0" display-tooltip-when-elided="true" name="Gemtxt" style="margin-top: 5px; width: 340px; font-size: 40px; padding-right: 1px; -unity-text-align: lower-right; position: absolute; top: 5px; left: 17%; height: 40px; color: rgb(214, 214, 214); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); -unity-font-style: normal;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Profile">
-            <ui:VisualElement name="panel" style="background-color: rgba(0, 0, 0, 0.41); width: 500px; height: 170px; position: absolute; top: 0; left: -4px;">
-                <ui:VisualElement name="Frame" style="width: 130px; height: 130px; position: absolute; top: 20px; left: 35px; background-color: rgb(255, 255, 255); align-items: center; justify-content: space-around;">
-                    <ui:VisualElement name="Image" style="width: 115px; height: 115px; background-color: rgb(147, 147, 147);" />
+        <ui:VisualElement name="BtnGroup" style="flex-grow: 1;">
+            <ui:Button display-tooltip-when-elided="true" name="StoreBtn" class="Lobybtn" style="left: 75%; top: 350px; position: absolute;">
+                <ui:Label text="상점" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); font-size: 65px; top: 15%;" />
+                <ui:VisualElement name="StoreIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 185px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/Coin.png?fileID=2800000&amp;guid=83604cac9cb6c7842aacee1db7553b58&amp;type=3#Coin&apos;);" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="GongBtn" class="Lobybtn" style="left: 75%; top: 600px; position: absolute;">
+                <ui:Label text="공방" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); color: rgb(0, 0, 0); font-size: 65px; top: 15%;" />
+                <ui:VisualElement name="GongIcon" style="position: absolute; width: 180px; height: 100%; top: 2px; left: 195px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/LenchIcon.png?fileID=2800000&amp;guid=208b37c9c1f5eb749ad7dc2938dfdf63&amp;type=3#LenchIcon&apos;);" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="StoryBtn" class="Lobybtn" style="left: 48%; top: 350px; position: absolute;">
+                <ui:Label text="스토리" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); top: 15%; font-size: 65px; -unity-font-style: normal;" />
+                <ui:VisualElement name="StoryIcon" style="position: absolute; width: 200px; height: 120%; top: -15px; left: 197px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/StoryIcon.png?fileID=2800000&amp;guid=e86d02f467877a147899f0d9160aa4eb&amp;type=3#StoryIcon&apos;);" />
+            </ui:Button>
+            <ui:Button display-tooltip-when-elided="true" name="BattleBtn" class="Lobybtn" style="left: 48%; top: 600px; position: absolute;">
+                <ui:Label text="배틀" display-tooltip-when-elided="true" name="txt" class="Btnname" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); top: 15%; font-size: 65px;" />
+                <ui:VisualElement name="BattleIcon" style="position: absolute; width: 200px; height: 120%; top: -36px; left: 188px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BattleIcon.png?fileID=2800000&amp;guid=ed92a1a38749a4a448260a39c3bdaec1&amp;type=3#BattleIcon&apos;);" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Calinder" style="position: absolute; width: 5%; height: 10%; left: 82%; background-color: rgba(188, 188, 188, 0); background-image: none; top: -5px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/06_Image/170_16.png?fileID=2800000&amp;guid=641ec81c2fb5a52458217f3334ba709b&amp;type=3#170_16&apos;); height: 100px; position: absolute; width: 80px; top: -10px;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Mail" style="position: absolute; width: 5%; height: 10%; left: 88.5%; background-color: rgba(188, 188, 188, 0); background-image: none; top: -5px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/06_Image/170_20.png?fileID=2800000&amp;guid=ce8eaea22fad2dc47a61d6915ce0121d&amp;type=3#170_20&apos;); height: 110px; position: absolute; width: 100px; top: -10px; left: 0;" />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Mail" style="position: absolute; width: 5%; height: 10%; left: 95%; background-color: rgba(188, 188, 188, 0); background-image: none; top: -5px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: url(&apos;project://database/Assets/06_Image/170_22.png?fileID=2800000&amp;guid=83c5e2dca1e35654e9cbd07f6ed49a5a&amp;type=3#170_22&apos;); height: 110px; position: absolute; width: 100px; top: -10px; left: 0;" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="QuestBorder" style="flex-grow: 1; position: absolute; top: 35%; width: 400px; height: 500px; background-color: rgba(176, 176, 176, 0); background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Daily.png?fileID=2800000&amp;guid=7269f7a0c53e5f34d8bf0e9213e787e2&amp;type=3#Daily&apos;); padding-top: 12px; padding-right: 12px; padding-bottom: 12px; padding-left: 12px;">
+            <ui:ScrollView vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" scroll-deceleration-rate="17.71" elasticity="1" touch-scroll-type="Unrestricted" mouse-wheel-scroll-size="31.3">
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+                <ui:Instance template="QuestBar" name="QuestBar" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="Profile" style="-unity-background-image-tint-color: rgba(255, 255, 255, 0); background-color: rgba(0, 0, 0, 0); top: auto; position: absolute;">
+            <ui:VisualElement name="panel" style="background-color: rgba(0, 0, 0, 0); width: 450px; height: 140px; position: absolute; top: 0; left: -4px; background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Upper%20Left.png?fileID=2800000&amp;guid=fc7b8febebd791346b73f45140225bea&amp;type=3#Upper Left&apos;); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(255, 255, 255);">
+                <ui:VisualElement name="Image" style="width: 100px; height: 100px; background-color: rgb(255, 255, 255); left: 25px; top: 12px; background-image: none; -unity-background-image-tint-color: rgb(255, 255, 255); border-top-left-radius: 18px; border-top-right-radius: 18px; border-bottom-right-radius: 18px; border-bottom-left-radius: 18px; align-items: center; justify-content: center;">
+                    <ui:VisualElement name="ProfileImg" style="flex-grow: 0; width: 85%; height: 85%; position: relative; left: 0; translate: 0 0; right: 0;" />
                 </ui:VisualElement>
-                <ui:Label text="Nick" display-tooltip-when-elided="true" name="Name" style="position: absolute; font-size: 30px; top: 41px; left: 186px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
-                <ui:Label text="Nick" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 20px; top: 84px; left: 214px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
+                <ui:Label text="Nick" display-tooltip-when-elided="true" name="Name" style="position: absolute; font-size: 52px; top: 12px; left: 130px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;); -unity-font-style: normal;" />
+                <ui:Label text="LV 1" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 36px; top: 66px; left: 134px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=059d4c574729d014e9cd1ee8e25e298f&amp;type=2#Medium SDF&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="CharImg" style="flex-grow: 0; position: absolute; width: 539px; height: 711px; left: 250px; top: 189px; background-image: url(&apos;project://database/Assets/06_Image/193_8.png?fileID=21300000&amp;guid=b10abba239ac01643a8b847475911b22&amp;type=3#193_8&apos;);" />
     </ui:VisualElement>
+    <ui:VisualElement name="CharImg" style="flex-grow: 0; position: absolute; width: 781px; height: 1100px; left: 266px; top: 92px; background-image: url(&apos;project://database/Assets/99_mainUI/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8237%20(23).png?fileID=2800000&amp;guid=c3cec36d79c47cb4b9dffb3db38f5d13&amp;type=3#일러스트237 (23)&apos;);" />
 </ui:UXML>

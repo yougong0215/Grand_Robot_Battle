@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class MenuUI : MonoBehaviour
 {
     private UIDocument _doc;
     public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
+    public VisualTreeAsset _mailDocument;
     private VisualElement _root;
     private Button _battleBtn;
     private Button _gongBtn;
@@ -69,7 +71,7 @@ public class MenuUI : MonoBehaviour
         _storyExitBtn = _storyElem.Q<Button>("ExitBtn");
 
         _storyExitBtn.clicked += () => LoadStroyView();
-        _storyElem.Blur();
+        //_storyElem.Blur();
         _storyElem.AddToClassList("off");
 
         
@@ -99,5 +101,22 @@ public class MenuUI : MonoBehaviour
             Debug.Log("1");
         }
 
+    }
+
+    public void AddQuest()
+    {
+        // 퀘스트 보상 등등 추가 해줘야됨 ( UIDocument 자체는 있음 )
+    }
+
+    public void AddMail()
+    {
+        // 이게 메일(post)용임 내용은 추후에 예기 해야댬
+        // 멇핣걻없낣 싦싦핢닯 놂곫싮닮 앎앍앖앇앎
+        //_mailDocument.CloneTree(_mailElem);
+        VisualElement rooted = _mailDocument.Instantiate();
+        //Button GetResult = rooted.Q<Button>("")
+
+
+        //Label name = _mailElem;
     }
 }

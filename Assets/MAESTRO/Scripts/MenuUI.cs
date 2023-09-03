@@ -5,6 +5,16 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using LitJson;
+
+struct MailPreview {
+    public int id;
+    public string user;
+    public string title;
+    public string content;
+    public string sender;
+    public int time;
+}
 
 public class MenuUI : MonoBehaviour
 {
@@ -38,6 +48,11 @@ public class MenuUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        NetworkCore.EventListener["mail.resultMails"] = ResultMails;
+    }
+
+    void OnDestroy() {
+        NetworkCore.EventListener.Remove("mail.resultMails");
     }
 
     private void Start()
@@ -81,7 +96,10 @@ public class MenuUI : MonoBehaviour
 
          _mailElem.AddToClassList("off");
         _mailExitBtn.clicked += () => _mailElem.AddToClassList("off");
-        _postBtn.clicked += () => _mailElem.RemoveFromClassList("off");
+        _postBtn.clicked += () => {
+            NetworkCore.Send("mail.requestMails", 0);
+            _mailElem.RemoveFromClassList("off");
+        };
     }
 
 
@@ -118,5 +136,19 @@ public class MenuUI : MonoBehaviour
 
 
         //Label name = _mailElem;
+    }
+
+    void ResultMails(JsonData data) {
+        var mails = JsonMapper.ToObject<MailPreview[]>(data.ToJson());
+        foreach (MailPreview item in mails)
+        {
+            print("------- 메일 ---------");
+            print(item.id);
+            print(item.user);
+            print(item.title);
+            print(item.content);
+            print(item.sender);
+            print(item.time);
+        }
     }
 }

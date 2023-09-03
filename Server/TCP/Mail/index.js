@@ -6,21 +6,21 @@ exports.GetMails = async function(user, MaxAmount, page) {
     const startVal = MaxAmount * page;
     const endVal = startVal + MaxAmount;
 
-    const result = await db.Aall("SELECT id, title, sender, time FROM mails WHERE user = ? ORDER BY time DESC LIMIT ?,?", [ user, startVal, endVal ]);
+    const result = await db.Aall("SELECT * FROM mails WHERE user = ? ORDER BY time DESC LIMIT ?,?", [ user, startVal, endVal ]);
     db.close(); // 꼭 닫자
 
     return result;
 }
 
-exports.GetContent = async function(id) {
-    id = Number(id);
+// exports.GetContent = async function(id) {
+//     id = Number(id);
     
-    const db = sql.GetObject();
-    const result = await db.Aget("SELECT title, user, content, items, sender, time FROM mails WHERE id = ?", id);
-    db.close();
+//     const db = sql.GetObject();
+//     const result = await db.Aget("SELECT title, user, content, items, sender, time FROM mails WHERE id = ?", id);
+//     db.close();
 
-    return result;
-}
+//     return result;
+// }
 
 exports.AddMail = async function(user, title, content, items, sender) {
     const db = sql.GetObject();

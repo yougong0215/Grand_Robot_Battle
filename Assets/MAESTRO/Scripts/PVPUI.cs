@@ -209,21 +209,13 @@ public class PVPUI : MonoBehaviour
 
         int rand = UnityEngine.Random.Range(0, 5);
 
-        _paneltxt.text = "로딩중..";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중......";
+        _paneltxt.text = "대기중";
         yield return new WaitForSeconds(0.3f);
         bool t = SpeedReturn();
         yield return StartCoroutine(Fight(t, so, rand));
         yield return StartCoroutine(Fight(!t, so, rand));
 
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중..";
+        _paneltxt.text = "대기중";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
         //_atkBtn.AddToClassList("on");

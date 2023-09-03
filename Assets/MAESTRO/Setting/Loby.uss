@@ -39,3 +39,7 @@
     height: 70%;
     font-size: 50px;
 }
+
+.unity-label {
+    -unity-font-definition: url('project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&guid=6ee49a6dd23af614ca45fb91679fe723&type=2#Medium SDF');
+}

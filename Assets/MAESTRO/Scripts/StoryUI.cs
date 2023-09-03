@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 public class StoryUI : MonoBehaviour
@@ -24,7 +26,7 @@ public class StoryUI : MonoBehaviour
     private Label _enemyNameTxt;
     private Label _enemyInfoTxt;
 
-    int currentRound = 0;
+    [SerializeField] int currentRound = 0;
     int _maxStage;
 
 
@@ -48,16 +50,24 @@ public class StoryUI : MonoBehaviour
         _enemyNameTxt = _root.Q<Label>("EnemyName");
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
 
-        _maxStage = _storySOList.Count - 1;
-
+        _maxStage = _storySOList.Count;
+        _leftBtn.clicked += ()=> MovementStage(-1);
+        _rightbtn.clicked += () => MovementStage(1);
+        MovementStage(0);
         
     }   
 
     void MovementStage(int value)
     {
-        if(currentRound >= 0 && currentRound < _maxStage)
+        Debug.Log("눌림");
+                currentRound += value;
+        if(currentRound < 0)
         {
-            currentRound += value;
+            currentRound =0;
+        }
+        if(currentRound >= _maxStage)
+        {
+            currentRound = _maxStage - 1;
         }
         StoryUISO _so = _storySOList[currentRound];
 

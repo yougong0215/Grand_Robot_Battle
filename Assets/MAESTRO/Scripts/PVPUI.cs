@@ -41,6 +41,7 @@ public class PVPUI : MonoBehaviour
     private VisualElement _enemyHpPanel;
     private Button[] partsbtns = new Button[5];
     private float[] partbtncools;
+    private float[] maxPartcools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
 
     private bool onPartsPanel;
@@ -216,8 +217,7 @@ public class PVPUI : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         bool t = SpeedReturn();
         yield return StartCoroutine(Fight(t, so, rand));
-        t = !t;
-        yield return StartCoroutine(Fight(t, so, rand));
+        yield return StartCoroutine(Fight(!t, so, rand));
 
         _paneltxt.text = "로딩중....";
         yield return new WaitForSeconds(0.3f);

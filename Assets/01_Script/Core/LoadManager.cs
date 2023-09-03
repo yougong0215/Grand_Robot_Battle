@@ -14,7 +14,8 @@ public enum SceneEnum
     Garage,
     GameMatching,
     SelectStoreScene,
-    Size
+    Story,
+    Size,
 }
 
 
@@ -23,7 +24,7 @@ public static class LoadManager
 {
     public static Stack<int> _loadStack = new Stack<int>();
 
-    static int nowScene = 0;
+    static int nowScene = 1;
     public static void LoadScene(SceneEnum enums, bool SceneReturn = false)
     {
         // 대충 리소스 불러오고 task처리 되면 넘겨주기
@@ -31,6 +32,7 @@ public static class LoadManager
         if(enums == SceneEnum.Menu || enums == SceneEnum.StartScene)
         {
             _loadStack.Clear();
+            nowScene = 1;
         }
         else{
             if(SceneReturn== false)
@@ -51,8 +53,7 @@ public static class LoadManager
             return;
         }
 
-        int temp = _loadStack.Pop();
-
+        int temp =  _loadStack.Pop();
         LoadScene((SceneEnum)temp, true);
     }
 }

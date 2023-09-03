@@ -41,7 +41,7 @@ public class UnitPart : MonoBehaviour
          
             transform.GetComponent<RectTransform>().position = c._seletedObj.GetComponent<RectTransform>().position;
             eq.GetComponent<RectTransform>().sizeDelta = c._seletedObj.GetComponent<RectTransform>().sizeDelta;
-            c.Robot.AnimBind.EquipAnimationChange(c._ac);
+            //c.Robot.AnimBind.EquipAnimationChange(c._ac);
         }
         else
         {

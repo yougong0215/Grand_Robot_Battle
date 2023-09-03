@@ -522,8 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655ab86e0bc6db14cbc90a562a24d1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _storyView: {fileID: 9197481963319205126, guid: 1794643c8df8eb045ba67923257bbffc,
-    type: 3}
   _mailView: {fileID: 9197481963319205126, guid: 161af690902f58a4b9b2eece493b17ae,
     type: 3}
   _mailDocument: {fileID: 9197481963319205126, guid: 2a791f1fdd0123049a1682c132bfcd2b,

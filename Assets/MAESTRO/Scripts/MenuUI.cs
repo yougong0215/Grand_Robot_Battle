@@ -19,7 +19,7 @@ struct MailPreview {
 public class MenuUI : MonoBehaviour
 {
     private UIDocument _doc;
-    public VisualTreeAsset _storyView;
+    //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
     public VisualTreeAsset _mailDocument;
     private VisualElement _root;
@@ -35,7 +35,7 @@ public class MenuUI : MonoBehaviour
 
     VisualElement _storyElem;
     private Button _storyBtn;
-    Button _storyExitBtn;
+    //Button _storyExitBtn;
     //private StorySelectUI _stdUI;
 
     VisualElement _mailElem;
@@ -76,16 +76,16 @@ public class MenuUI : MonoBehaviour
         //_makeBtn.clicked += () => SceneLoad("Gacha");
         // _battleBtn.clicked += () => SceneLoad("PVP");
         _battleBtn.clicked += () => LoadManager.LoadScene(SceneEnum.GameMatching);
-        _storyBtn.clicked += () => LoadStroyView();
+        _storyBtn.clicked += () => LoadManager.LoadScene(SceneEnum.Story);
         _gongBtn.clicked += () => LoadManager.LoadScene(SceneEnum.MakeRobot);// SceneLoad("MakeRobot");
         _storeBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);//SceneLoad("SelectStoreScene");
         //_garageBtn.clicked += () => SceneLoad("Garage");
 
-        _storyView.CloneTree(_root);
-        _storyElem = _root.Q<VisualElement>("StoryBoard");
-        _storyExitBtn = _storyElem.Q<Button>("ExitBtn");
+        //_storyView.CloneTree(_root);
+        //_storyElem = _root.Q<VisualElement>("StoryBoard");
+        //_storyExitBtn = _storyElem.Q<Button>("ExitBtn");
 
-        _storyExitBtn.clicked += () => LoadStroyView();
+        //_storyExitBtn.clicked += () => LoadStroyView();
         //_storyElem.Blur();
         _storyElem.AddToClassList("off");
 

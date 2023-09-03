@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1022928109}
   - component: {fileID: 1022928108}
   - component: {fileID: 1022928110}
+  - component: {fileID: 1022928111}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -186,9 +187,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storySOList:
-  - {fileID: 11400000, guid: aa8dc1d28db65ca41bdbf8a3adad18a8, type: 2}
-  - {fileID: 11400000, guid: 1bd02fa1219bdfb4497462ec810f7d4b, type: 2}
+  - {fileID: 11400000, guid: 14aba1ffba79b404793164ac27a3e55e, type: 2}
+  - {fileID: 11400000, guid: c6ca4e279432b4a428bf570361f7d08c, type: 2}
+  - {fileID: 11400000, guid: 69749e496419ec7448535006108f0493, type: 2}
   currentRound: 0
+--- !u!114 &1022928111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022928107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6cfe345097f8d4e9359a7007e13993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1148702533
 GameObject:
   m_ObjectHideFlags: 0

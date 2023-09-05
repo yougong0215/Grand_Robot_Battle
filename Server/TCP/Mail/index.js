@@ -30,7 +30,7 @@ exports.AddMail = async function(user, title, content, items, sender) {
         content,
         JSON.stringify(items),
         sender,
-        Number(new Date())
+        Math.floor(Number(new Date()) / 1000)
     ]);
 
     db.close();

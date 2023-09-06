@@ -24,11 +24,18 @@ TriggerEvent["mail.openItem"] = async function(id, mailID) {
 
     if (!mail.ItemClear(mailID)) return; // 메일 아이템 비우기 실패
 
+    let packets = [];
+
     JSON.parse(result.items).forEach(item => {
         itemManager.Give(id, item[0], Number(item[1]));
+        packets.push({
+            code: item[0],
+            amount: Number(item[1])
+        });
     });
 
     // 보상 받았다!!
+    player.socket.send("mail.successGiveItem", packets);
 }
 
 // TriggerEvent["mail.requestContent"] = async function(id, mailID) {

@@ -50,10 +50,12 @@ public class MenuUI : MonoBehaviour
     {
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
+        NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
     }
 
     void OnDestroy() {
         NetworkCore.EventListener.Remove("mail.resultMails");
+        NetworkCore.EventListener.Remove("mail.successGiveItem");
     }
 
     private void Start()
@@ -169,6 +171,21 @@ public class MenuUI : MonoBehaviour
             print(item.sender);
             print(item.time);
             i ++;
+        }
+    }
+    
+    struct MailItem
+    {
+        public string code;
+        public int amount;
+    }
+    void successGiveItem(JsonData data) {
+        var items = JsonMapper.ToObject<MailItem[]>(data.ToJson());
+        
+        print("보상을 성공적으로 받았습니다.");
+        foreach (var item in items)
+        {
+            print("- " + item.code + " x"+item.amount);
         }
     }
 }

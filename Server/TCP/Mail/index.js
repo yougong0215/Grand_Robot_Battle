@@ -12,6 +12,25 @@ exports.GetMails = async function(user, MaxAmount, page) {
     return result;
 }
 
+exports.GetMail = async function(id) {
+    id = Number(id);
+    
+    const db = sql.GetObject();
+    const result = await db.Aget("SELECT user, items FROM mails WHERE id = ?", [ id ]);
+    db.close();
+
+    return result;
+}
+
+exports.ItemClear = async function(id) {
+    id = Number(id);
+    
+    const db = sql.GetObject();
+    const result = await db.Arun(`UPDATE mails SET items = "[]" WHERE id = ?`, [ id ])
+    db.close();
+    return result;
+}
+
 // exports.GetContent = async function(id) {
 //     id = Number(id);
     
@@ -28,7 +47,7 @@ exports.AddMail = async function(user, title, content, items, sender) {
         user,
         title,
         content,
-        JSON.stringify(items),
+        JSON.stringify(items || []),
         sender,
         Math.floor(Number(new Date()) / 1000)
     ]);

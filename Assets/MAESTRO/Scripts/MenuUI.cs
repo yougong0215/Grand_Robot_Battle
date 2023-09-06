@@ -153,11 +153,13 @@ public class MenuUI : MonoBehaviour
             _mailDocument.CloneTree(container);
             var element = container.ElementAt(i);
             var label = element.Q<VisualElement>("Label");
+            var button = element.Q<Button>("");
 
             label.Q<Label>("MailName").text = item.title;
             label.Q<Label>("MailResult").text = item.sender;
             label.Q<Label>("MailExplain").text = item.content;
-            element.Q<Button>("").SetEnabled(false);
+            // button.SetEnabled(false);
+            button.clicked += () => NetworkCore.Send("mail.openItem", item.id);
 
             print("------- 메일 ---------");
             print(item.id);

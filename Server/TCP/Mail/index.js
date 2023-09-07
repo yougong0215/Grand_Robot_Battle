@@ -6,7 +6,8 @@ exports.GetMails = async function(user, MaxAmount, page) {
     const startVal = MaxAmount * page;
     const endVal = startVal + MaxAmount;
 
-    const result = await db.Aall("SELECT * FROM mails WHERE user = ? ORDER BY time DESC LIMIT ?,?", [ user, startVal, endVal ]);
+    // const result = await db.Aall("SELECT * FROM mails WHERE user = ? ORDER BY time DESC LIMIT ?,?", [ user, startVal, endVal ]);
+    const result = await db.Aall("SELECT * FROM mails WHERE user = ? ORDER BY time DESC", [ user ]); // LIMIT 없음
     db.close(); // 꼭 닫자
 
     return result;

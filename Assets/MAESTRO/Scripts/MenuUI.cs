@@ -14,6 +14,7 @@ struct MailPreview {
     public string title;
     public string content;
     public string sender;
+    public string items;
     public int time;
 }
 
@@ -160,8 +161,13 @@ public class MenuUI : MonoBehaviour
             label.Q<Label>("MailName").text = item.title;
             label.Q<Label>("MailResult").text = item.sender;
             label.Q<Label>("MailExplain").text = item.content;
-            // button.SetEnabled(false);
-            button.clicked += () => NetworkCore.Send("mail.openItem", item.id);
+            if (item.items == "[]") // 아무것도 없는거임
+                button.SetEnabled(false);
+            else
+                button.clicked += () => {
+                    button.SetEnabled(false);
+                    NetworkCore.Send("mail.openItem", item.id);
+                };
 
             print("------- 메일 ---------");
             print(item.id);

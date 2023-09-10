@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using LitJson;
+using System.Linq;
 
 struct MailPreview {
     public int id;
@@ -13,6 +14,7 @@ struct MailPreview {
     public string title;
     public string content;
     public string sender;
+    public string items;
     public int time;
 }
 
@@ -49,10 +51,12 @@ public class MenuUI : MonoBehaviour
     {
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
+        NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
     }
 
     void OnDestroy() {
         NetworkCore.EventListener.Remove("mail.resultMails");
+        NetworkCore.EventListener.Remove("mail.successGiveItem");
     }
 
     private void Start()
@@ -87,7 +91,7 @@ public class MenuUI : MonoBehaviour
 
         //_storyExitBtn.clicked += () => LoadStroyView();
         //_storyElem.Blur();
-        _storyElem.AddToClassList("off");
+        // _storyElem.AddToClassList("off");
 
         
         _mailView.CloneTree(_root);
@@ -140,8 +144,31 @@ public class MenuUI : MonoBehaviour
 
     void ResultMails(JsonData data) {
         var mails = JsonMapper.ToObject<MailPreview[]>(data.ToJson());
+        mails = mails.OrderBy(value => value.time).Reverse().ToArray(); // 정렬
+        
+        var scrollView = _mailElem.Q<VisualElement>("MailArea");
+        var container = scrollView.Q<VisualElement>("unity-content-container");
+        container.Clear(); // 초깅화
+
+        int i = 0;
         foreach (MailPreview item in mails)
         {
+            _mailDocument.CloneTree(container);
+            var element = container.ElementAt(i);
+            var label = element.Q<VisualElement>("Label");
+            var button = element.Q<Button>("");
+
+            label.Q<Label>("MailName").text = item.title;
+            label.Q<Label>("MailResult").text = item.sender;
+            label.Q<Label>("MailExplain").text = item.content;
+            if (item.items == "[]") // 아무것도 없는거임
+                button.SetEnabled(false);
+            else
+                button.clicked += () => {
+                    button.SetEnabled(false);
+                    NetworkCore.Send("mail.openItem", item.id);
+                };
+
             print("------- 메일 ---------");
             print(item.id);
             print(item.user);
@@ -149,6 +176,22 @@ public class MenuUI : MonoBehaviour
             print(item.content);
             print(item.sender);
             print(item.time);
+            i ++;
+        }
+    }
+    
+    struct MailItem
+    {
+        public string code;
+        public int amount;
+    }
+    void successGiveItem(JsonData data) {
+        var items = JsonMapper.ToObject<MailItem[]>(data.ToJson());
+        
+        print("보상을 성공적으로 받았습니다.");
+        foreach (var item in items)
+        {
+            print("- " + item.code + " x"+item.amount);
         }
     }
 }

@@ -29,7 +29,7 @@ public class HTTP_manager : MonoBehaviour
         var FormData = new Dictionary<string, string>();
         FormData["domi"] = JsonUtility.ToJson(data);
 
-        using (var request = UnityWebRequest.Post($"http://{Endpoint}:{Port}/{path}", FormData)) {
+        using (var request = UnityWebRequest.Post($"http{(Port == 443 ? "s" : "")}://{Endpoint}:{Port}/{path}", FormData)) {
             yield return request.SendWebRequest(); // 기달..
 
             // JSON 이 안풀리면 null로 보내는 방식
@@ -44,7 +44,7 @@ public class HTTP_manager : MonoBehaviour
 
     // url은 전체 경로고 uri 는 주소 뒤메 있는거지롱
     IEnumerator StartGET(string uri, UnityAction<int, JsonData> callback) {
-        using (var request = UnityWebRequest.Get($"http://{Endpoint}:{Port}/{uri}")) {
+        using (var request = UnityWebRequest.Get($"http{(Port == 443 ? "s" : "")}://{Endpoint}:{Port}/{uri}")) {
             yield return request.SendWebRequest(); // 기달..
 
             // JSON 이 안풀리면 null로 보내는 방식

@@ -25,7 +25,7 @@ public class StoryUI : MonoBehaviour
     private VisualElement _enemyImage;
     private Label _enemyNameTxt;
     private Label _enemyInfoTxt;
-
+    private Button _gameEnter;
     [SerializeField] int currentRound = 0;
     int _maxStage;
 
@@ -63,6 +63,7 @@ public class StoryUI : MonoBehaviour
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
 
         _maxStage = _storySOList.Count;
+        _gameEnter = _root.Q<Button>("EnterBtn");
         // _leftBtn.clicked += ()=> MovementStage(-1);
         // _rightbtn.clicked += () => MovementStage(1);
         // MovementStage(0);
@@ -91,8 +92,14 @@ public class StoryUI : MonoBehaviour
             _enemyNameTxt.text = _so.EnemyName;
             _enemyInfoTxt.text =_so.EnemyInfo;
 
-            if (_so.id <= ((int)data + 1)) { // 플레이 가능
-
+            if (_so.id <= ((int)data + 1)) 
+            {
+                _gameEnter.text = "에피소드 입장"; // 플레이 가능
+                _gameEnter.SetEnabled(true);
+            }else
+            {
+                _gameEnter.text = "입장 불가";
+                _gameEnter.SetEnabled(false);
             }
         }
         _leftBtn.clicked += ()=> MovementStage(-1);

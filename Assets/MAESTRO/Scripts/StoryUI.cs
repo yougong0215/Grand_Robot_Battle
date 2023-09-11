@@ -25,7 +25,7 @@ public class StoryUI : MonoBehaviour
     private VisualElement _enemyImage;
     private Label _enemyNameTxt;
     private Label _enemyInfoTxt;
-
+    private Button _gameEnter;
     [SerializeField] int currentRound = 0;
     int _maxStage;
 
@@ -33,6 +33,18 @@ public class StoryUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        NetworkCore.EventListener["story.resultClearNum"] = ResultClearNum;
+    }
+
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("story.resultClearNum");
+    }
+
+    private void Start() {
+        // NetworkCore.Send("story.clear", 1 /* 스토리 ID (1부터) */);
+        // NetworkCore.Send("story.clear", 2);
+        // NetworkCore.Send("story.clear", 3);
+        NetworkCore.Send("story.getClearNum", null); // 불러오기 요청
     }
 
     private void OnEnable()
@@ -51,40 +63,48 @@ public class StoryUI : MonoBehaviour
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
 
         _maxStage = _storySOList.Count;
-        _leftBtn.clicked += ()=> MovementStage(-1);
-        _rightbtn.clicked += () => MovementStage(1);
-        MovementStage(0);
+        _gameEnter = _root.Q<Button>("EnterBtn");
+        // _leftBtn.clicked += ()=> MovementStage(-1);
+        // _rightbtn.clicked += () => MovementStage(1);
+        // MovementStage(0);
         
     }   
 
-    void MovementStage(int value)
-    {
-        Debug.Log("눌림");
-                currentRound += value;
-        if(currentRound < 0)
+    void ResultClearNum(LitJson.JsonData data) {
+        void MovementStage(int value)
         {
-            currentRound =0;
+            Debug.Log("눌림");
+            currentRound += value;
+            if(currentRound < 0)
+            {
+                currentRound =0;
+            }
+            if(currentRound >= _maxStage)
+            {
+                currentRound = _maxStage - 1;
+            }
+            StoryUISO _so = _storySOList[currentRound];
+
+            _titleTxt.text = _so.TitleName;
+            _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
+            _expTxt.text = _so.StageExample;
+            _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
+            _enemyNameTxt.text = _so.EnemyName;
+            _enemyInfoTxt.text =_so.EnemyInfo;
+
+            if (_so.id <= ((int)data + 1)) 
+            {
+                _gameEnter.text = "에피소드 입장"; // 플레이 가능
+                _gameEnter.SetEnabled(true);
+            }else
+            {
+                _gameEnter.text = "입장 불가";
+                _gameEnter.SetEnabled(false);
+            }
         }
-        if(currentRound >= _maxStage)
-        {
-            currentRound = _maxStage - 1;
-        }
-        StoryUISO _so = _storySOList[currentRound];
-
-        _titleTxt.text = _so.TitleName;
-        _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
-        _expTxt.text = _so.StageExample;
-        _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
-        _enemyNameTxt.text = _so.EnemyName;
-        _enemyInfoTxt.text =_so.EnemyInfo;
-        
-
-        
-
-
+        _leftBtn.clicked += ()=> MovementStage(-1);
+        _rightbtn.clicked += () => MovementStage(1);
+        MovementStage(0);
+        print("현재 꺤 스테이지까지 : "+(int)data);
     }
-
-
-
-     
 }

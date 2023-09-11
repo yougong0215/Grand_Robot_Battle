@@ -16,6 +16,7 @@ public enum SceneEnum
     SelectStoreScene,
     Story,
     Size,
+    GameEnd
 }
 
 
@@ -27,7 +28,7 @@ public static class LoadManager
     static int nowScene = 1;
     public static void LoadScene(SceneEnum enums, bool SceneReturn = false)
     {
-        // 대충 리소스 불러오고 task처리 되면 넘겨주기
+        // ?異?由ъ냼??遺덈윭?ㅺ퀬 task泥섎━ ?섎㈃ ?섍꺼二쇨린
 
         if(enums == SceneEnum.Menu || enums == SceneEnum.StartScene)
         {
@@ -49,7 +50,7 @@ public static class LoadManager
     {
         if(_loadStack.Count == 0)
         {
-            Debug.LogError("이거 불리면 안되는데 불림 ㅇㅇ : _loadStack(SceneManager) is Empty");
+            Debug.LogError("?닿굅 遺덈━硫??덈릺?붾뜲 遺덈┝ ?뉎뀋 : _loadStack(SceneManager) is Empty");
             return;
         }
 

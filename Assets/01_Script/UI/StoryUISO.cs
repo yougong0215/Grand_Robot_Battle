@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/StorySO")]
 public class StoryUISO : ScriptableObject
 {
+    public int id;
     [Header("Title")]
     public string TitleName;
     public Color TitlePanelColor;

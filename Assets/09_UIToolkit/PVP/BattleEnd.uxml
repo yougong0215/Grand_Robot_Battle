@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="GetItem" src="project://database/Assets/MAESTRO/UI/Battle/GetItem.uxml?fileID=9197481963319205126&amp;guid=6be9160a579f7374e9c371e359e5c547&amp;type=3#GetItem" />
+    <ui:VisualElement name="Root" style="flex-grow: 1; background-color: rgb(51, 50, 50); flex-direction: column;">
+        <ui:Label tabindex="-1" text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Clear" style="font-size: 100px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); top: 5%; left: 2%; background-color: rgba(255, 255, 255, 0); color: rgb(255, 255, 255);" />
+        <ui:Label tabindex="-1" text="2-1 ㅇㅇㅇㅇ" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Stage" style="font-size: 64px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); top: 6%; left: 7%; background-color: rgba(255, 255, 255, 0); color: rgb(255, 255, 255);" />
+        <ui:VisualElement name="Player" style="flex-grow: 1; position: absolute; left: 68%; top: 6%; width: 600px; height: 800px; background-image: url(&apos;project://database/Assets/99_mainUI/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8237%20(23).png?fileID=2800000&amp;guid=c3cec36d79c47cb4b9dffb3db38f5d13&amp;type=3#일러스트237 (23)&apos;); justify-content: flex-end;" />
+        <ui:VisualElement name="GetView" style="flex-grow: 1; flex-direction: row-reverse; justify-content: flex-start; align-items: flex-start;">
+            <ui:VisualElement name="Gold" style="flex-grow: 0; position: absolute; left: 26%; top: 74%; width: 800px; height: 100px; flex-direction: row;">
+                <ui:VisualElement name="Image" style="flex-grow: 0; height: 100%; width: 12%; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
+                <ui:Label tabindex="-1" text="999999999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Gold" style="font-size: 50px; -unity-font-style: bold; -unity-text-align: middle-center; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ItemPanel" style="flex-grow: 0; top: 342px; flex-direction: row; background-image: url(&apos;project://database/Assets/99_mainUI/Sub%20Panel/Event%20Banner.png?fileID=2800000&amp;guid=b8597966d0260ee49b9ef4a6b3f8bb4f&amp;type=3#Event Banner&apos;); -unity-slice-scale: -0.4px; -unity-slice-left: 5; -unity-slice-top: 5; -unity-slice-right: 5; -unity-slice-bottom: 5; right: 80px; height: 150px; width: 1400px; align-items: center; justify-content: center; -unity-background-image-tint-color: rgb(106, 106, 106);">
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+                <ui:Instance template="GetItem" name="GetItem" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row-reverse; position: absolute; left: 67%; top: 87%;">
+            <ui:Button text="나가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitBtn" style="width: 300px; height: 75px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; font-size: 45px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); background-color: rgb(255, 102, 102);" />
+            <ui:Button text="계속하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AgainBtn" style="width: 300px; height: 75px; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; font-size: 45px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); background-color: rgb(240, 255, 131);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

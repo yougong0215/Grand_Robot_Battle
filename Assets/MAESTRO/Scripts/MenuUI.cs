@@ -156,7 +156,7 @@ public class MenuUI : MonoBehaviour
             _mailDocument.CloneTree(container);
             var element = container.ElementAt(i);
             var label = element.Q<VisualElement>("Label");
-            var button = element.Q<Button>("");
+            var button = element.Q<Button>("GetBtn");
 
             label.Q<Label>("MailName").text = item.title;
             label.Q<Label>("MailResult").text = item.sender;
@@ -177,6 +177,8 @@ public class MenuUI : MonoBehaviour
             print(item.sender);
             print(item.time);
             i ++;
+
+            
         }
     }
     

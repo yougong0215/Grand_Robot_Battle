@@ -41,6 +41,7 @@ public class PVPUI : MonoBehaviour
     private VisualElement _enemyHpPanel;
     private Button[] partsbtns = new Button[5];
     private float[] partbtncools;
+    private float[] maxPartcools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
 
     private bool onPartsPanel;
@@ -105,7 +106,7 @@ public class PVPUI : MonoBehaviour
         partsbtnGroup = _root.Q<VisualElement>("PartsBtnGroup");
         _hpPanel = _root.Q<VisualElement>("HPPanel");
         _enemyHpPanel = _root.Q<VisualElement>("EnemyHPPanel");
-        _settingPanel = _root.Q<VisualElement>("SettingPnanel");
+        _settingPanel = _root.Q<VisualElement>("SettingPanel");
         #endregion
 
         partbtncools = new float[5];
@@ -208,22 +209,13 @@ public class PVPUI : MonoBehaviour
 
         int rand = UnityEngine.Random.Range(0, 5);
 
-        _paneltxt.text = "로딩중..";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중......";
+        _paneltxt.text = "대기중";
         yield return new WaitForSeconds(0.3f);
         bool t = SpeedReturn();
         yield return StartCoroutine(Fight(t, so, rand));
-        t = !t;
-        yield return StartCoroutine(Fight(t, so, rand));
+        yield return StartCoroutine(Fight(!t, so, rand));
 
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _paneltxt.text = "로딩중..";
+        _paneltxt.text = "대기중";
         yield return new WaitForSeconds(0.3f);
         SetPanel();
         //_atkBtn.AddToClassList("on");

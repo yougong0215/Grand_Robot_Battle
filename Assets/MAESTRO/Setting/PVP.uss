@@ -68,7 +68,7 @@
 
 .panel.off {
     position: absolute;
-    top: 950px;
+    top: 1500px;
 }
 
 .warning {
@@ -86,15 +86,15 @@
 
 .warning.off {
     position: absolute;
-    top: 950px;
+    top: 1500px;
 }
 
 .HPPanel {
-    position: absolute;
+    position: relative;
     background-color: rgb(255, 255, 255);
     width: 500px;
     height: 130px;
-    top: 40px;
+    top: 0;
     transition-property: top;
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
@@ -115,7 +115,8 @@
 
 .HPPanel.off {
     position: absolute;
-    top: -150px;
+    top: 1500%;
+    translate: 0 -419px;
 }
 
 .SkipBtn {
@@ -138,7 +139,7 @@
 
 .SettingPanel.off {
     position: absolute;
-    top: 1000px;
+    top: 1500px;
 }
 
 .resultPanel {
@@ -154,5 +155,9 @@
 .resultPanel.off {
     position: absolute;
     left: 400px;
-    top: 1000px;
+    top: 1500px;
+}
+
+#Root.off {
+    translate: 0 2000px;
 }

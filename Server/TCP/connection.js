@@ -7,6 +7,9 @@ module.exports = function(socket) {
     // utf-8 로 설정
     socket.setEncoding('utf8');
 
+    // 편하게 지금 연결중인가?
+    socket.isConnect = () => socket.readyState === "open";
+
     // Server -> Client 전송 메서드
     socket.send = function(type, data) {
         let Packet = {

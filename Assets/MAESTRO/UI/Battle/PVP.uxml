@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
-    <ui:VisualElement name="Root" style="align-items: flex-start;">
+    <ui:VisualElement name="Root" style="align-items: flex-start; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement name="PartsBtnGroup" class="PartsBtnGroup off">
             <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn RL" />
             <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn LL" />
@@ -14,40 +14,52 @@
             <ui:Button text="YES" display-tooltip-when-elided="true" name="Yesbtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 189px;" />
             <ui:Button text="NO" display-tooltip-when-elided="true" name="Nobtn" style="width: 200px; height: 60px; font-size: 30px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); position: absolute; top: 360px; left: 606px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="HPPanel" class="HPPanel off" style="left: 32px;">
+        <ui:VisualElement name="HPPanel" class="HPPanel" style="left: 32px;">
             <ui:Label text="NickName" display-tooltip-when-elided="true" name="NickName" style="position: absolute; width: 80%; height: 35%; color: rgb(0, 0, 0); -unity-text-align: middle-left; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; font-size: 30px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
             <ui:VisualElement name="HPBarBack" style="width: 80%; height: 25%; color: rgb(0, 0, 0); background-color: rgb(168, 168, 168); margin-top: 60px; margin-left: 50px;">
                 <ui:VisualElement name="PlayerHPBar" style="width: 100%; height: 100%; color: rgb(0, 0, 0); background-color: rgb(255, 0, 0);" />
             </ui:VisualElement>
             <ui:Label text="100 / 100" display-tooltip-when-elided="true" name="PlayerCurrentHP" style="color: rgb(0, 0, 0); height: 40px; margin-top: 10px; padding-left: 10px; font-size: 25px; margin-left: 40px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
         </ui:VisualElement>
-        <ui:VisualElement name="EnemyHPPanel" class="HPPanel off" style="left: 1480px;">
+        <ui:VisualElement name="EnemyHPPanel" class="HPPanel" style="left: 79%; top: 86%;">
             <ui:Label text="EnemyName" display-tooltip-when-elided="true" name="EnemyNickName" style="position: absolute; width: 80%; height: 35%; color: rgb(0, 0, 0); -unity-text-align: middle-left; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; font-size: 30px; padding-right: 20px; top: 4px; left: 4px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
             <ui:VisualElement name="EnemyHPBarBack" style="width: 80%; height: 25%; color: rgb(0, 0, 0); background-color: rgb(168, 168, 168); margin-top: 60px; margin-left: 50px;">
                 <ui:VisualElement name="EnemyHPBar" style="width: 100%; height: 100%; color: rgb(0, 0, 0); background-color: rgb(255, 0, 0); flex-direction: row-reverse; transform-origin: left; rotate: 180deg; position: absolute; top: 0; left: 400px;" />
             </ui:VisualElement>
             <ui:Label text="100 / 100" display-tooltip-when-elided="true" name="EnemyCurrentHP" style="color: rgb(0, 0, 0); height: 40px; margin-top: 10px; padding-left: 10px; font-size: 25px; margin-left: 40px; margin-right: 40px; -unity-text-align: upper-right; padding-right: 10px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
         </ui:VisualElement>
-        <ui:Button text="Setting" display-tooltip-when-elided="true" name="SettingBtn" style="position: relative; width: 100px; height: 100px; top: 20px; left: 95%; font-size: 20px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" />
+        <ui:Button text="Setting" display-tooltip-when-elided="true" name="SettingBtn" style="position: relative; width: 100px; height: 100px; top: -70%; left: 95%; font-size: 20px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" />
         <ui:VisualElement name="SettingPanel" class="SettingPanel off" style="align-items: center; justify-content: center;">
             <ui:Slider picking-mode="Ignore" label="볼륨" value="42" high-value="100" name="VolumeSlider" focusable="false" direction="Horizontal" style="width: 80%; font-size: 40px; -unity-text-align: middle-left; color: rgb(255, 255, 255); white-space: normal;" />
             <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingExit" style="width: 50px; height: 50px; position: absolute; top: 16px; left: 924px; background-color: rgb(255, 255, 255);" />
             <ui:Button text="항복 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="SurrenderBtn" style="width: 150px; height: 50px; position: absolute; top: 421px; left: 40px; background-color: rgb(255, 255, 255);" />
             <ui:Label tabindex="-1" text="Stage" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageInfoTxt" style="position: absolute; color: rgb(255, 255, 255); font-size: 60px; top: 20px;" />
         </ui:VisualElement>
-        <ui:VisualElement name="ResultPanel" class="resultPanel" style="align-self: center; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.89);">
-            <ui:Label tabindex="-1" text="1-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 20px;" />
-            <ui:Label tabindex="-1" text="Victory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultText" style="font-size: 80px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 60px;" />
-            <ui:Button text="나가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultExitbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 350px; font-size: 40px; background-color: rgb(255, 255, 255);" />
-            <ui:Button text="이어하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultConnectbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 462px; left: 600px; font-size: 40px; background-color: rgb(255, 255, 255);" />
-            <ui:VisualElement name="ExpGage" style="flex-grow: 1; position: absolute; width: 600px; height: 20px; top: 180px; background-color: rgb(135, 135, 135);">
-                <ui:VisualElement name="ExpValue" style="flex-grow: 1; background-color: rgb(0, 252, 255); width: 50%;" />
-                <ui:Label tabindex="-1" text="+120" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlusExpValue" style="position: absolute; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 25px; top: -15px; left: 610px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="ResultPanel" class="resultPanel" style="align-self: center; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.89); height: 100%; top: 0; width: 100%; left: 0; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);">
+        <ui:Label tabindex="-1" text="1-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StageText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 20px;" />
+        <ui:Label tabindex="-1" text="Victory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultText" style="font-size: 80px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: absolute; top: 60px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+        <ui:Button text="메뉴화면" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultExitbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 85%; left: 25%; font-size: 40px; background-color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+        <ui:Button text="이어하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResultConnectbtn" style="width: 200px; height: 80px; align-items: auto; position: absolute; top: 85%; left: 65%; font-size: 40px; background-color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+        <ui:VisualElement name="ExpGage" style="flex-grow: 1; position: absolute; width: 600px; height: 20px; top: 180px; background-color: rgb(135, 135, 135);">
+            <ui:VisualElement name="ExpValue" style="flex-grow: 1; background-color: rgb(0, 252, 255); width: 50%;" />
+            <ui:Label tabindex="-1" text="+120" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlusExpValue" style="position: absolute; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 25px; top: -15px; left: 610px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 60%; flex-direction: row; background-image: none;">
+            <ui:VisualElement name="ItemPanel" style="flex-grow: 0; width: 100px; height: 100px; background-color: rgba(255, 255, 255, 0); margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; align-items: center; justify-content: center; flex-shrink: 0; background-image: url(&apos;project://database/Assets/06_Image/Hexa_Rect.png?fileID=2800000&amp;guid=aa373749326c96644bced9ed3e27cc52&amp;type=3#Hexa_Rect&apos;);">
+                <ui:VisualElement name="ItemImg" style="flex-grow: 0; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
             </ui:VisualElement>
-            <ui:VisualElement name="GetItemList" style="flex-grow: 1; position: absolute; top: 250px; flex-direction: row;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="GoldElem" style="flex-grow: 0; position: absolute; top: 817px; left: 775px; -unity-text-align: upper-right; flex-direction: row; flex-shrink: 0; height: 65px; width: 320px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 62px; height: 62px; margin-top: 0; margin-right: 8px; margin-bottom: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
+            <ui:Label tabindex="-1" text="999999999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GoldText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: relative; top: auto; left: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="GoldElem" style="flex-grow: 0; position: absolute; top: 824px; left: 1307px; -unity-text-align: upper-right; flex-direction: row; flex-shrink: 0; height: 65px; width: 320px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; flex-shrink: 0; width: 62px; height: 62px; margin-top: 0; margin-right: 8px; margin-bottom: 8px; margin-left: 8px; background-image: url(&apos;project://database/Assets/06_Image/170_17.png?fileID=2800000&amp;guid=f4db64358bb93744d91dd5babf2cbb95&amp;type=3#170_17&apos;);" />
+            <ui:Label tabindex="-1" text="999999999" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GoldText" style="font-size: 40px; -unity-text-align: upper-center; color: rgb(255, 255, 255); margin-bottom: 60px; position: relative; top: auto; left: auto;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off">
+    <ui:Button display-tooltip-when-elided="true" name="Panel" class="panel off" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);">
         <ui:Label text="sample" display-tooltip-when-elided="true" name="Text" style="width: 95%; height: 80%; font-size: 50px; -unity-text-align: middle-left; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />
     </ui:Button>
 </ui:UXML>

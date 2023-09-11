@@ -4,12 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using LitJson;
+using System.Linq;
+
+struct MailPreview {
+    public int id;
+    public string user;
+    public string title;
+    public string content;
+    public string sender;
+    public string items;
+    public int time;
+}
 
 public class MenuUI : MonoBehaviour
 {
     private UIDocument _doc;
-    public VisualTreeAsset _storyView;
+    //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
+    public VisualTreeAsset _mailDocument;
     private VisualElement _root;
     private Button _battleBtn;
     private Button _gongBtn;
@@ -23,7 +37,7 @@ public class MenuUI : MonoBehaviour
 
     VisualElement _storyElem;
     private Button _storyBtn;
-    Button _storyExitBtn;
+    //Button _storyExitBtn;
     //private StorySelectUI _stdUI;
 
     VisualElement _mailElem;
@@ -36,6 +50,13 @@ public class MenuUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        NetworkCore.EventListener["mail.resultMails"] = ResultMails;
+        NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
+    }
+
+    void OnDestroy() {
+        NetworkCore.EventListener.Remove("mail.resultMails");
+        NetworkCore.EventListener.Remove("mail.successGiveItem");
     }
 
     private void Start()
@@ -59,18 +80,18 @@ public class MenuUI : MonoBehaviour
         //_makeBtn.clicked += () => SceneLoad("Gacha");
         // _battleBtn.clicked += () => SceneLoad("PVP");
         _battleBtn.clicked += () => LoadManager.LoadScene(SceneEnum.GameMatching);
-        _storyBtn.clicked += () => LoadStroyView();
+        _storyBtn.clicked += () => LoadManager.LoadScene(SceneEnum.Story);
         _gongBtn.clicked += () => LoadManager.LoadScene(SceneEnum.MakeRobot);// SceneLoad("MakeRobot");
         _storeBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);//SceneLoad("SelectStoreScene");
         //_garageBtn.clicked += () => SceneLoad("Garage");
 
-        _storyView.CloneTree(_root);
-        _storyElem = _root.Q<VisualElement>("StoryBoard");
-        _storyExitBtn = _storyElem.Q<Button>("ExitBtn");
+        //_storyView.CloneTree(_root);
+        //_storyElem = _root.Q<VisualElement>("StoryBoard");
+        //_storyExitBtn = _storyElem.Q<Button>("ExitBtn");
 
-        _storyExitBtn.clicked += () => LoadStroyView();
-        _storyElem.Blur();
-        _storyElem.AddToClassList("off");
+        //_storyExitBtn.clicked += () => LoadStroyView();
+        //_storyElem.Blur();
+        // _storyElem.AddToClassList("off");
 
         
         _mailView.CloneTree(_root);
@@ -79,7 +100,10 @@ public class MenuUI : MonoBehaviour
 
          _mailElem.AddToClassList("off");
         _mailExitBtn.clicked += () => _mailElem.AddToClassList("off");
-        _postBtn.clicked += () => _mailElem.RemoveFromClassList("off");
+        _postBtn.clicked += () => {
+            NetworkCore.Send("mail.requestMails", 0);
+            _mailElem.RemoveFromClassList("off");
+        };
     }
 
 
@@ -99,5 +123,75 @@ public class MenuUI : MonoBehaviour
             Debug.Log("1");
         }
 
+    }
+
+    public void AddQuest()
+    {
+        // 퀘스트 보상 등등 추가 해줘야됨 ( UIDocument 자체는 있음 )
+    }
+
+    public void AddMail()
+    {
+        // 이게 메일(post)용임 내용은 추후에 예기 해야댬
+        // 멇핣걻없낣 싦싦핢닯 놂곫싮닮 앎앍앖앇앎
+        //_mailDocument.CloneTree(_mailElem);
+        VisualElement rooted = _mailDocument.Instantiate();
+        //Button GetResult = rooted.Q<Button>("")
+
+
+        //Label name = _mailElem;
+    }
+
+    void ResultMails(JsonData data) {
+        var mails = JsonMapper.ToObject<MailPreview[]>(data.ToJson());
+        mails = mails.OrderBy(value => value.time).Reverse().ToArray(); // 정렬
+        
+        var scrollView = _mailElem.Q<VisualElement>("MailArea");
+        var container = scrollView.Q<VisualElement>("unity-content-container");
+        container.Clear(); // 초깅화
+
+        int i = 0;
+        foreach (MailPreview item in mails)
+        {
+            _mailDocument.CloneTree(container);
+            var element = container.ElementAt(i);
+            var label = element.Q<VisualElement>("Label");
+            var button = element.Q<Button>("");
+
+            label.Q<Label>("MailName").text = item.title;
+            label.Q<Label>("MailResult").text = item.sender;
+            label.Q<Label>("MailExplain").text = item.content;
+            if (item.items == "[]") // 아무것도 없는거임
+                button.SetEnabled(false);
+            else
+                button.clicked += () => {
+                    button.SetEnabled(false);
+                    NetworkCore.Send("mail.openItem", item.id);
+                };
+
+            print("------- 메일 ---------");
+            print(item.id);
+            print(item.user);
+            print(item.title);
+            print(item.content);
+            print(item.sender);
+            print(item.time);
+            i ++;
+        }
+    }
+    
+    struct MailItem
+    {
+        public string code;
+        public int amount;
+    }
+    void successGiveItem(JsonData data) {
+        var items = JsonMapper.ToObject<MailItem[]>(data.ToJson());
+        
+        print("보상을 성공적으로 받았습니다.");
+        foreach (var item in items)
+        {
+            print("- " + item.code + " x"+item.amount);
+        }
     }
 }

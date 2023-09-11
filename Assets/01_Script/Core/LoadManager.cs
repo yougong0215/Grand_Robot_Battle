@@ -28,7 +28,7 @@ public static class LoadManager
     static int nowScene = 1;
     public static void LoadScene(SceneEnum enums, bool SceneReturn = false)
     {
-        // ?異?由ъ냼??遺덈윭?ㅺ퀬 task泥섎━ ?섎㈃ ?섍꺼二쇨린
+        // ?????�ъ냼???�덈???��?task泥섎????�㈃ ??�꺼二쇨�?
 
         if(enums == SceneEnum.Menu || enums == SceneEnum.StartScene)
         {
@@ -50,7 +50,7 @@ public static class LoadManager
     {
         if(_loadStack.Count == 0)
         {
-            Debug.LogError("?닿굅 遺덈━硫??덈릺?붾뜲 遺덈┝ ?뉎뀋 : _loadStack(SceneManager) is Empty");
+            Debug.LogError("??�굅 ?�덈?�硫???�릺?붾뜲 ?�덈????��?: _loadStack(SceneManager) is Empty");
             return;
         }
 

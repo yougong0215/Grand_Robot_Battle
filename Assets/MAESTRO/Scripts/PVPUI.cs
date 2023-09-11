@@ -5,8 +5,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+
+
+
 public class PVPUI : MonoBehaviour
-{
+{   
+    
     #region 컴포넌트
     private UIDocument _uiDoc;
     private VisualElement _root;
@@ -62,6 +66,7 @@ public class PVPUI : MonoBehaviour
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
         _SOserver = FindObjectOfType<GetServerToSO>();
+        
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
@@ -72,6 +77,7 @@ public class PVPUI : MonoBehaviour
         NetworkCore.EventListener.Remove("ingame.AttackControl");
         NetworkCore.EventListener.Remove("ingame.gameresult");
         NetworkCore.EventListener.Remove("ingame.destory");
+        
     }
 
     private void Start()

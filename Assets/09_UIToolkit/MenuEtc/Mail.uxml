@@ -6,6 +6,6 @@
             <ui:Label tabindex="-1" text="우편물 : 저아세요" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MailResult" style="left: 6%; top: 63%; width: 180px; height: 20px; align-items: center; justify-content: center; -unity-text-align: middle-left; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
             <ui:Label tabindex="-1" text="심심해심심해심심심심심심심심심심\n아므이루ㅑㅐ뭉래뮤ㅐㅑㅓ메럼냐럼\nㅇ낼뭉내루ㅐㅁㅇ루ㅐㅁㄴㅇ루ㅐ\n우뭉래ㅜㅁ낼무랴ㅐㅜ" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MailExplain" style="width: auto; height: auto; left: 5%; top: -9px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); -unity-text-align: upper-left; font-size: 16px; flex-grow: 1;" />
         </ui:VisualElement>
-        <ui:Button text="보상 받기" parse-escape-sequences="true" display-tooltip-when-elided="true" focusable="true" style="height: 80px; width: 80px; top: 50%; translate: 0 -50%;" />
+        <ui:Button text="보상 받기" parse-escape-sequences="true" display-tooltip-when-elided="true" focusable="true" name="GetBtn" style="height: 80px; width: 80px; top: 50%; translate: 0 -50%;" />
     </ui:VisualElement>
 </ui:UXML>

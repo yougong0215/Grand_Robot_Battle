@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/09_UIToolkit/Storuy/StoryUI.uss?fileID=7433441132597879392&amp;guid=7a4e79ec473644d4683ac0544a1cdacc&amp;type=3#StoryUI" />
+    <ui:VisualElement class="window" style="flex-grow: 0; flex-shrink: 0;">
+        <ui:VisualElement style="flex-grow: 1; width: 80%; height: 120px; flex-wrap: wrap; top: 170%; background-color: rgba(204, 204, 204, 0); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 0; background-image: url(&apos;project://database/Assets/99_mainUI/Sub%20Panel/Event%20Banner.png?fileID=2800000&amp;guid=b8597966d0260ee49b9ef4a6b3f8bb4f&amp;type=3#Event Banner&apos;); -unity-background-scale-mode: stretch-to-fill; -unity-slice-scale: 0.4px; -unity-slice-left: 10; -unity-slice-right: 10; -unity-slice-top: 10; -unity-slice-bottom: 10;" />
+    </ui:VisualElement>
+</ui:UXML>

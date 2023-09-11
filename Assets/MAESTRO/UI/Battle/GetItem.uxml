@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="ItemPanel" style="flex-grow: 0; width: 100px; height: 100px; background-color: rgba(255, 255, 255, 0); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; align-items: center; justify-content: center; flex-shrink: 0; background-image: url(&apos;project://database/Assets/06_Image/Hexa_Rect.png?fileID=2800000&amp;guid=aa373749326c96644bced9ed3e27cc52&amp;type=3#Hexa_Rect&apos;);">
+    <ui:VisualElement name="ItemPanel" style="flex-grow: 0; width: 100px; height: 100px; background-color: rgba(255, 255, 255, 0); margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; align-items: center; justify-content: center; flex-shrink: 0; background-image: url(&apos;project://database/Assets/06_Image/Hexa_Rect.png?fileID=2800000&amp;guid=aa373749326c96644bced9ed3e27cc52&amp;type=3#Hexa_Rect&apos;);">
         <ui:VisualElement name="ItemImg" style="flex-grow: 0; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/06_Image/170_9.png?fileID=2800000&amp;guid=94cc02083eb0ca143adefae08c65f863&amp;type=3#170_9&apos;);" />
     </ui:VisualElement>
 </ui:UXML>

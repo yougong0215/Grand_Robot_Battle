@@ -583,8 +583,11 @@ public class PVPUI : MonoBehaviour
                 partbtncools[fuckCsharp] = Time.time;
                 SelectSkillForServer(fuckCsharp);
             };
-            if (parts[i] == null) continue;
-            partsbtns[i].style.backgroundImage = new StyleBackground(parts[i].SkillImage);
+            if (parts[i] != null)
+            {
+                partsbtns[i].Q<Label>("Text").text = parts[i].names;
+                partsbtns[i].Q<VisualElement>("Image").style.backgroundImage = new StyleBackground(parts[i].SkillImage);
+            }
         }
     }
 }

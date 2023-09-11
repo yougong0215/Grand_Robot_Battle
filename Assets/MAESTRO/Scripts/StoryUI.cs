@@ -63,41 +63,41 @@ public class StoryUI : MonoBehaviour
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
 
         _maxStage = _storySOList.Count;
-        _leftBtn.clicked += ()=> MovementStage(-1);
-        _rightbtn.clicked += () => MovementStage(1);
-        MovementStage(0);
+        // _leftBtn.clicked += ()=> MovementStage(-1);
+        // _rightbtn.clicked += () => MovementStage(1);
+        // MovementStage(0);
         
     }   
 
-    void MovementStage(int value)
-    {
-        Debug.Log("눌림");
-                currentRound += value;
-        if(currentRound < 0)
-        {
-            currentRound =0;
-        }
-        if(currentRound >= _maxStage)
-        {
-            currentRound = _maxStage - 1;
-        }
-        StoryUISO _so = _storySOList[currentRound];
-
-        _titleTxt.text = _so.TitleName;
-        _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
-        _expTxt.text = _so.StageExample;
-        _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
-        _enemyNameTxt.text = _so.EnemyName;
-        _enemyInfoTxt.text =_so.EnemyInfo;
-        
-
-        
-
-
-    }
-
-
     void ResultClearNum(LitJson.JsonData data) {
+        void MovementStage(int value)
+        {
+            Debug.Log("눌림");
+            currentRound += value;
+            if(currentRound < 0)
+            {
+                currentRound =0;
+            }
+            if(currentRound >= _maxStage)
+            {
+                currentRound = _maxStage - 1;
+            }
+            StoryUISO _so = _storySOList[currentRound];
+
+            _titleTxt.text = _so.TitleName;
+            _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
+            _expTxt.text = _so.StageExample;
+            _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
+            _enemyNameTxt.text = _so.EnemyName;
+            _enemyInfoTxt.text =_so.EnemyInfo;
+
+            if (_so.id <= ((int)data + 1)) { // 플레이 가능
+
+            }
+        }
+        _leftBtn.clicked += ()=> MovementStage(-1);
+        _rightbtn.clicked += () => MovementStage(1);
+        MovementStage(0);
         print("현재 꺤 스테이지까지 : "+(int)data);
     }
 }

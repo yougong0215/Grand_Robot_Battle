@@ -9,6 +9,7 @@ class PlayerForm {
     level = 0;
     exp = 0;
     join = 0;
+    clearStory = 0;
 
     // 인벤토리
     inventory = {
@@ -64,6 +65,7 @@ exports.AddPlayer = async function(id, socket) {
         Player.level = PlayerStats.level;
         Player.exp = PlayerStats.exp;
         Player.join = PlayerStats.join;
+        Player.clearStory = PlayerStats.clear_story;
     }
 
     ///////////////// 인벤토리 /////////////////
@@ -122,13 +124,14 @@ exports.RemovePlayer = async function(id) {
     const sql = sqlite.GetObject();
 
     // 재화 저장
-    sql.run("INSERT OR REPLACE INTO stats (id, coin, crystal, level, exp, `join`) VALUES ($id, $coin, $crystal, $level, $exp, $join)", {
+    sql.run("INSERT OR REPLACE INTO stats (id, coin, crystal, level, exp, `join`, clear_story) VALUES ($id, $coin, $crystal, $level, $exp, $join, $clear_story)", {
         $id: id,
         $coin: CachePlayer.coin,
         $crystal: CachePlayer.crystal,
         $level: CachePlayer.level,
         $exp: CachePlayer.exp,
-        $join: CachePlayer.join
+        $join: CachePlayer.join,
+        $clear_story: CachePlayer.clearStory
     }, err => { if (err) console.error(err) });
 
     // 인벤

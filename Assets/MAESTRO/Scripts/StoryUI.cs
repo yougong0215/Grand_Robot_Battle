@@ -33,6 +33,18 @@ public class StoryUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        NetworkCore.EventListener["story.resultClearNum"] = ResultClearNum;
+    }
+
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("story.resultClearNum");
+    }
+
+    private void Start() {
+        // NetworkCore.Send("story.clear", 1 /* 스토리 ID (1부터) */);
+        // NetworkCore.Send("story.clear", 2);
+        // NetworkCore.Send("story.clear", 3);
+        NetworkCore.Send("story.getClearNum", null); // 불러오기 요청
     }
 
     private void OnEnable()
@@ -85,6 +97,7 @@ public class StoryUI : MonoBehaviour
     }
 
 
-
-     
+    void ResultClearNum(LitJson.JsonData data) {
+        print("현재 꺤 스테이지까지 : "+(int)data);
+    }
 }

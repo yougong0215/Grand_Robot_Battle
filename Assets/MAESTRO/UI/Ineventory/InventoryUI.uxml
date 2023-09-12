@@ -4,11 +4,8 @@
         <ui:ScrollView name="HaveItemList" class="Itemlist" />
         <ui:VisualElement name="BackGround" />
         <ui:VisualElement name="PartsMakePanel" style="align-items: center;">
-            <ui:VisualElement name="PartsImage" style="width: 370px; height: 370px; background-color: rgb(255, 255, 255); margin-top: 60px;" />
+            <ui:VisualElement name="PartsImage" style="width: 450px; height: 450px; background-color: rgb(255, 255, 255); margin-top: 160px; margin-bottom: 20px;" />
             <ui:Label tabindex="-1" text="PartsName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SelectPartsName" style="-unity-text-align: upper-center; font-size: 50px; padding-top: 20px;" />
-            <ui:VisualElement name="InfoBase" style="width: 500px; height: 230px; margin-top: 20px; background-color: rgb(202, 202, 202); align-items: center; justify-content: center;">
-                <ui:Label tabindex="-1" text="Info" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PartsInfo" style="width: 90%; height: 90%; font-size: 35px; -unity-text-align: middle-center;" />
-            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ItemInfoPanel" style="margin-top: 40px; margin-right: 40px; margin-bottom: 40px; margin-left: 40px; align-items: center;">
             <ui:VisualElement name="StatusPanel" style="width: 80%; height: 50%; margin-top: 40px; margin-right: 40px; margin-bottom: 40px; margin-left: 40px; background-color: rgb(125, 125, 125); align-items: center; justify-content: center;">

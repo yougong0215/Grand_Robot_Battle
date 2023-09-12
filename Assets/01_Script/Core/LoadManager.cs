@@ -28,12 +28,13 @@ public static class LoadManager
     static int nowScene = 1;
     public static void LoadScene(SceneEnum enums, bool SceneReturn = false)
     {
-        // ?????�ъ냼???�덈???��?task泥섎????�㈃ ??�꺼二쇨�?
+        // ?????�ъ냼???�덈???��?task泥섎????�㈃ ??�꺼二쇨�?
 
         if(enums == SceneEnum.Menu || enums == SceneEnum.StartScene)
         {
             _loadStack.Clear();
             nowScene = 1;
+            _loadStack.Push(nowScene);
         }
         else{
             if(SceneReturn== false)
@@ -50,11 +51,12 @@ public static class LoadManager
     {
         if(_loadStack.Count == 0)
         {
-            Debug.LogError("??�굅 ?�덈?�硫???�릺?붾뜲 ?�덈????��?: _loadStack(SceneManager) is Empty");
+            Debug.LogError("??�굅 ?�덈?�硫???�릺?붾뜲 ?�덈????��?: _loadStack(SceneManager) is Empty");
             return;
         }
 
         int temp =  _loadStack.Pop();
+                Debug.LogError(temp);
         LoadScene((SceneEnum)temp, true);
     }
 }

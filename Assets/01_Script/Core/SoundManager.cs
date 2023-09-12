@@ -42,20 +42,33 @@ public enum BGSoundType
 
 public class SoundManager : Singleton<SoundManager>
 {
+
+
     private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _sfxList = new List<AudioClip>();
     [SerializeField] private List<AudioClip> _bgmList = new List<AudioClip>();
 
     private void Awake()
     {
+
+                DontDestroyOnLoad(this.gameObject);
         _audioSource = GetComponent<AudioSource>();
     }
 
     public void PlaySFX(SFXSoundType _soundType)
     {
-        AudioSource asource = new AudioSource();
+        AudioSource asource = SoundManager.Instance.gameObject.AddComponent<AudioSource>();
         asource.clip = _sfxList[(int)_soundType];
         asource.Play();
+        Debug.Log("되긴함");
+        StartCoroutine(Destoryed(asource));
+    }
+
+    IEnumerator Destoryed(AudioSource sd)
+    {
+        yield return null;
+        yield return new WaitUntil(() => sd.isPlaying == false);
+        Destroy(sd);
     }
 
     public void PlayBGM(BGSoundType _bgType)

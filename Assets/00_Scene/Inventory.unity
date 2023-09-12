@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690a751ec6354d74091f2e6b9e0a0c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partsPrefab: {fileID: 9197481963319205126, guid: b5eafc275c3dc0747ac98653fca1f2e4,
+    type: 3}
 --- !u!114 &1556483403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e705a43b6a2ca3f45a653bc55cf37ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HavingPartsList: []
+  SelectPPI: {fileID: 0}
+  HavingPPIList: []
 --- !u!4 &1899283735
 Transform:
   m_ObjectHideFlags: 0

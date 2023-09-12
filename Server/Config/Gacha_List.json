@@ -2,9 +2,6 @@
     "NormalHead",
     "RazerHead",
     "AIBrain",
-    "SuccesserHead",
-    "MetalBuster",
-    "NormalLHand",
     "MachineGiantShield",
     "MetalBlader",
     "DXD9",
@@ -12,17 +9,11 @@
     "NormalRSword",
     "ValcanShot",
     "MegaDrill",
-    "Slader",
     "AgnnaDown",
     "NormalBody",
     "MechaAnchor",
     "MissileBase",
-    "MagmaHeart",
-    "MetalFace",
     "MetalFace",
     "GadaraBooster",
-    "EgnumSmasher",
-    "EarthQuaker",
-    "DonanDizer",
-    "SigmaRexer"
+    "EarthQuaker"
 ]

@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using LitJson;
+using UnityEngine.Networking;
 
 public class LobbyPlayerInfoPacket {
     public string ID;
     public string Name;
     public string Prefix;
+    public string AvatarURL;
     public int Coin;
     public int Crystal;
 }
 
 public class LobbyGetInfo : MonoBehaviour
 {
+    static Dictionary<string, Texture2D> cache_Profile = new();
     [SerializeField] UIDocument Document;
 
     // 이벤트 리스너 등록
@@ -33,11 +36,33 @@ public class LobbyGetInfo : MonoBehaviour
     void SetInfo(JsonData data) {
         var PlayerInfo = JsonMapper.ToObject<LobbyPlayerInfoPacket>(data.ToJson());
         // 프로필 부분
-        Document.rootVisualElement.Q<Label>("Name").text = PlayerInfo.Name + " - " + PlayerInfo.ID;
+        Document.rootVisualElement.Q<Label>("Name").text = PlayerInfo.Name /*+ " - " + PlayerInfo.ID*/;
         Document.rootVisualElement.Q<Label>("style").text = PlayerInfo.Prefix; // element ID 가 #Style인건 수정해야될거같다ㅏㅏ
 
         // 돈 부분
         Document.rootVisualElement.Q("GoldBar").Q<Label>("Gemtxt").text = PlayerInfo.Coin.ToString();
         Document.rootVisualElement.Q("GemBar").Q<Label>("Gemtxt").text = PlayerInfo.Crystal.ToString();
+
+        if (PlayerInfo.AvatarURL != null)
+            StartCoroutine(GetProfileImage(PlayerInfo.AvatarURL));
+    }
+
+    IEnumerator GetProfileImage(string url) {
+        VisualElement profile =  Document.rootVisualElement.Q("Profile").Q("ProfileImg");
+        if (cache_Profile.TryGetValue(url, out var img)) {
+            profile.style.backgroundImage = new StyleBackground(img);
+        } else {
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                profile.style.backgroundImage = new StyleBackground(((DownloadHandlerTexture)www.downloadHandler).texture);
+                cache_Profile[url] = ((DownloadHandlerTexture)www.downloadHandler).texture;
+            }
+        }
     }
 }

@@ -13846,7 +13846,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 34beba7dd73fd1c4288500b42b26bf6e, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 01c964da955af1a47ab8d9ba480d6cef, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 2f894e86753f18a41977e6ae3207f3b3,
     type: 3}
@@ -13897,7 +13897,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859384934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8571e3555d2eefd468ebe34317637440, type: 3}
   m_Name: 

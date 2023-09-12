@@ -30,14 +30,15 @@ class PlayerForm {
         leg: null
     }
 
-    constructor(name, socket) {
+    constructor(name, socket, avatar) {
         this.name = name;
         this.socket = socket;
+        this.avatarURL = avatar || null;
     }
 }
 
 const sqlite = require("../../utils/sqlite.js");
-exports.AddPlayer = async function(id, socket) {
+exports.AddPlayer = async function(id, socket, avatar) {
     const sql = sqlite.GetObject();
     const UserData = await sql.Aget("SELECT name FROM users WHERE id = ?", id);
     if (socket.readyState !== "open") return; // 머야 연결이 끊겨있네
@@ -47,7 +48,7 @@ exports.AddPlayer = async function(id, socket) {
         return;
     }
 
-    const Player = UserList[id] = new PlayerForm(UserData.name, socket);
+    const Player = UserList[id] = new PlayerForm(UserData.name, socket, avatar);
     console.log(`[UserManager] ${Player.name}(${id})님이 서버를 접속하였습니다.`);
 
     // 플레이어 정보들을 불러오자

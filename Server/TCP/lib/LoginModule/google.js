@@ -5,7 +5,7 @@ const { OAuth2Client } = require("google-auth-library");
 const oauth = new OAuth2Client(googleAPI.OAuth2.client_id, googleAPI.OAuth2.client_secret);
 
 module.exports = function(IdToken) {
-    return new Promise((ok,fail) => loginHandler((id) => ok({status: true, id:id}), (why) => ok({status: false, why: why}), IdToken));
+    return new Promise((ok,fail) => loginHandler((id, avatar) => ok({status: true, id:id, avatar:avatar}), (why) => ok({status: false, why: why}), IdToken));
 }
 
 function loginHandler(reslove, reject, idToken) {
@@ -48,7 +48,7 @@ function loginHandler(reslove, reject, idToken) {
             }
 
             sql.close();
-            reslove(data.playerId);
+            reslove(data.playerId, data.avatarImageUrl);
         }).catch(function(error) {
             reject("Google Play Games 계정을 불러올 수 없습니다.");
         });

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LitJson;
+using Unity.VisualScripting;
 
 class PVP_PlayerInfo {
     public bool my;
@@ -24,6 +25,9 @@ public class domiPVPServer : MonoBehaviour
     PVPUI _pvpUI;
     
     private void Awake() {
+
+ 
+        
         _pvpUI = FindAnyObjectByType<PVPUI>();
         SO_Server = GetComponent<GetServerToSO>();
         NetworkCore.EventListener["ingame.playerInit"] = playerInit;

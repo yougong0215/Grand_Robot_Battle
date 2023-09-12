@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[CreateAssetMenu(menuName = "SO/Enemy")]
 public class BattleEnemySO : ScriptableObject
 {
     public PartSO Head;

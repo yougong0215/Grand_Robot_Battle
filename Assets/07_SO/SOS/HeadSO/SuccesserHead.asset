@@ -1,35 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: SuccesserHead
-  m_EditorClassIdentifier: 
-  PartBase: 2
-  _part: []
-  SOname: "\uC11D\uC138\uC11C \uD5E4\uB4DC"
-  Sprite: {fileID: 0}
-  Statues:
-    HP: 100
-    ATK: 0
-    DEF: 0
-    SPEED: 5
-    Barrier: 0
-  Explain: "\uCD5C\uC2E0 \uAE30\uC220\uB85C \uB9CC\uB4E4\uC5B4\uC9C4 \uC138\uB828\uB41C
-    \uD30C\uCE20.\r\n\uD2B9\uC720\uC758 \uC0DD\uAE40\uC0C8 \uB355\uBD84\uC5D0 \uC5B4\uB978\uC774\uB4E4\uC5D0\uAC8C
-    \uC778\uAE30\uAC00 \uB9CE\uB2E4."
-  ReplaceMesh: 0
-  EquipPart: 0
-  SkillImage: {fileID: 0}
-  EquipImage: {fileID: 0}
-  clips: {fileID: 0}
-  names: 
-  Count: 1
-  Daesa: "\uBC14\uB514 \uC11D\uC138\uC2A4"
+version https://git-lfs.github.com/spec/v1
+oid sha256:27a5642a34b15d0a93650db572f00f98aaee43cfa2a6d0225b888f54475cc363
+size 968

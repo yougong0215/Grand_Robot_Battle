@@ -594,6 +594,7 @@ public class PVPUI : MonoBehaviour
             if (parts[i] != null)
             {
                 partsbtns[i].Q<Label>("Text").text = parts[i].names;
+                Debug.Log(parts[i].names);
                 partsbtns[i].Q<VisualElement>("Image").style.backgroundImage = new StyleBackground(parts[i].SkillImage);
             }
         }

@@ -20,7 +20,6 @@ public class HavingItemList : MonoBehaviour
 {
     public PartsPieceItem SelectPPI;
     public List<PartsPieceItem> HavingPPIList = new List<PartsPieceItem>();
-    public List<PartSO> HavingPartsList = new List<PartSO>();
 
     private int[] _needToRate = { 20, 50, 100 };
 
@@ -29,7 +28,7 @@ public class HavingItemList : MonoBehaviour
         if (SelectPPI.count > _needToRate[(int)rt])
         {
             SelectPPI.count -= _needToRate[(int)rt];
-            HavingPartsList.Add(SelectPPI.PartSo);
+            // 파츠 리스트에 넣기
             if(SelectPPI.count == 0)
             {
                 HavingPPIList.Remove(SelectPPI);

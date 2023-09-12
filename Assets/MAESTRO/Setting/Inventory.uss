@@ -62,12 +62,16 @@
 }
 
 #ItemInfoPanel {
-    position: relative;
-    left: 600px;
     transition-duration: 0.5s;
 }
 
-#ItemInfoPanel.on {
-    position: relative;
-    left: 0;
+.Itemlist {
+    background-color: rgb(164, 164, 164);
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-self: auto;
+    width: 600px;
+    height: 90%;
 }

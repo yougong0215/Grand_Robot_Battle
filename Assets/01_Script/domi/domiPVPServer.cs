@@ -22,7 +22,7 @@ public class domiPVPServer : MonoBehaviour
     [SerializeField] GameObject EnemyRobot;
     GetServerToSO SO_Server;
     PVPUI _pvpUI;
-
+    
     private void Awake() {
         _pvpUI = FindAnyObjectByType<PVPUI>();
         SO_Server = GetComponent<GetServerToSO>();

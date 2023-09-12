@@ -20,6 +20,7 @@ public class ExitBtnUI : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Eeee");
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             LoadManager.ReturnBack();

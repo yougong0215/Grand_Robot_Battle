@@ -3668,7 +3668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000015259, y: 14.6}
+  m_AnchoredPosition: {x: 0.000015259, y: 14.599976}
   m_SizeDelta: {x: 335.85, y: 70.8}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &846975844
@@ -5757,8 +5757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed15248a73c5e6640bf5f296b5850743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Endpoint: 127.0.0.1
-  Port: 3001
+  Endpoint: stack.domi.kr
+  Port: 443
 --- !u!114 &1368887505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,7 +6519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 450, y: 15.434}
+  m_AnchoredPosition: {x: 450, y: 15.434021}
   m_SizeDelta: {x: 180, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1506197345
@@ -7673,8 +7673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f073d97d283573744b92bbc9803fdcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ServerIP: 127.0.0.1
-  ServerPort: 3000
+  ServerIP: play.domi.kr
+  ServerPort: 25565
   BufferSize: 1024
 --- !u!1 &1846734078
 GameObject:

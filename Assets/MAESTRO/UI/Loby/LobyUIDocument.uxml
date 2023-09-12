@@ -44,7 +44,7 @@
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement name="QuestBorder" style="flex-grow: 1; position: absolute; top: 35%; width: 400px; height: 500px; background-color: rgba(176, 176, 176, 0); background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Daily.png?fileID=2800000&amp;guid=7269f7a0c53e5f34d8bf0e9213e787e2&amp;type=3#Daily&apos;); padding-top: 12px; padding-right: 12px; padding-bottom: 12px; padding-left: 12px;">
-            <ui:ScrollView vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" scroll-deceleration-rate="17.71" elasticity="1" touch-scroll-type="Unrestricted" mouse-wheel-scroll-size="31.3">
+            <ui:ScrollView vertical-scroller-visibility="Hidden" horizontal-scroller-visibility="Hidden" scroll-deceleration-rate="0.025" elasticity="1" touch-scroll-type="Clamped" mouse-wheel-scroll-size="0.1">
                 <ui:Instance template="QuestBar" name="QuestBar" />
                 <ui:Instance template="QuestBar" name="QuestBar" />
                 <ui:Instance template="QuestBar" name="QuestBar" />

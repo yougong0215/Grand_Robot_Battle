@@ -9,5 +9,5 @@ public class BattleEnemySO : ScriptableObject
     public PartSO Body;
     public PartSO LeftHand;
     public PartSO RightHand;
-    public PartSO Leg;
+    public PartSO Leg;  
 }

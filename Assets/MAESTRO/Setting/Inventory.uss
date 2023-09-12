@@ -60,3 +60,14 @@
     margin-bottom: 5px;
     margin-left: 5px;
 }
+
+#ItemInfoPanel {
+    position: relative;
+    left: 600px;
+    transition-duration: 0.5s;
+}
+
+#ItemInfoPanel.on {
+    position: relative;
+    left: 0;
+}

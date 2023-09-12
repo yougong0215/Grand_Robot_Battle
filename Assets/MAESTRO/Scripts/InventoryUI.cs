@@ -25,15 +25,6 @@ public class InventoryUI : MonoBehaviour
     {
         _root = _doc.rootVisualElement;
 
-        _haveItemList = _root.Q<VisualElement>("HaveItemList");
-        for(int i = 0; i < 12; i++)
-        {
-            _itemBases[i] = _haveItemList[i];
-        }
-        _selectPartsImage = _root.Q<VisualElement>("PartsImage");
-        _selectPartsName = _root.Q<Label>("SelectPartsName");
-        _partsInfo = _root.Q<Label>("PartsInfo");
-
         for(int i = 0; i < _statuses.Length; i++)
         {
             if(i < 4)

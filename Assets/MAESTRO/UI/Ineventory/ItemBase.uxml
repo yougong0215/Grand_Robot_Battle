@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="ItemBase" view-data-key="1" class="ItemBase" style="flex-direction: column-reverse;">
+        <ui:Label tabindex="-1" text="count" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Count" style="font-size: 30px; padding-bottom: 10px; padding-left: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>

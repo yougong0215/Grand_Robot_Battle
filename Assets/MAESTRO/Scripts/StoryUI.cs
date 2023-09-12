@@ -61,6 +61,8 @@ public class StoryUI : MonoBehaviour
         _enemyImage = _root.Q<VisualElement>("EnemyImage");
         _enemyNameTxt = _root.Q<Label>("EnemyName");
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
+        
+        
 
         _maxStage = _storySOList.Count;
         _gameEnter = _root.Q<Button>("EnterBtn");
@@ -85,6 +87,7 @@ public class StoryUI : MonoBehaviour
             }
             StoryUISO _so = _storySOList[currentRound];
 
+            _roundTxt.text = $"Round {_so.id}.";
             _titleTxt.text = _so.TitleName;
             _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
             _expTxt.text = _so.StageExample;

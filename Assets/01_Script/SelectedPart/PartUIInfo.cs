@@ -31,8 +31,11 @@ public class PartUIInfo : MonoBehaviour
         if(token != "")
             this.token = token;
 
-        if (p)
-            p.SetPartClick(false);
+        foreach (var a in transform.GetComponentsInChildren<UnitPart>())
+        {
+            if(a != pa)
+                a.SetPartClick((false));
+        }
 
         p = pa;
 

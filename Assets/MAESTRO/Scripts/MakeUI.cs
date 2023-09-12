@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
-
+using LitJson;
 public class MakeUI : MonoBehaviour
 {
     private List<VisualElement> _randEleList = new List<VisualElement>();
@@ -37,12 +37,14 @@ public class MakeUI : MonoBehaviour
         NetworkCore.EventListener["Gacha.error"] = ErrorWindow;
         NetworkCore.EventListener["Gacha.Result_1"] = Result_1;
         NetworkCore.EventListener["Gacha.Result_10"] = Result_10;
+        NetworkCore.EventListener["Lobby.ResultInfo"] = SetInfo;
         DomiSo = GetComponent<GetServerToSO>();
     }
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("Gacha.error");
         NetworkCore.EventListener.Remove("Gacha.Result_1");
         NetworkCore.EventListener.Remove("Gacha.Result_10");
+        NetworkCore.EventListener.Remove("Lobby.ResultInfo");
     }
 
     private void OnEnable()
@@ -67,11 +69,18 @@ public class MakeUI : MonoBehaviour
         _10_button.clicked += StartGacha_10;
         _okResult.clicked += () => Exit(false);
         _moreResult.clicked += () => Exit(true);
-        _exitBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);// SceneManager.LoadScene("SelectStoreScene");
+        //_exitBtn.clicked += () => LoadManager.LoadScene(SceneEnum.SelectStoreScene);// SceneManager.LoadScene("SelectStoreScene");
+        NetworkCore.Send("Lobby.RequestInfo", null); // 서버에게 정보 달라고 요청함
     }
-
+    void SetInfo(JsonData data) {
+        var PlayerInfo = JsonMapper.ToObject<LobbyPlayerInfoPacket>(data.ToJson());
+        // 돈 부분
+        _doc.rootVisualElement.Q("GoldBar").Q<Label>("Gemtxt").text = PlayerInfo.Coin.ToString();
+        _doc.rootVisualElement.Q("GemBar").Q<Label>("Gemtxt").text = PlayerInfo.Crystal.ToString();
+    }
     IEnumerator ResultTurm()
     {
+        
         
         yield return new WaitForSeconds(1);
         _okResult.AddToClassList("on");

@@ -5,15 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Gacha.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Gacha.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/MakeRobot.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/MakeRobot.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/PVP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/PVP.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01_Script/BattleEnemySO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/BattleEnemySO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/UI/StoryUISO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/UI/StoryUISO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/ExitBtnUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/ExitBtnUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartUIInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartUIInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/RobotSettingAndSOList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/RobotSettingAndSOList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/UnitPart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/UnitPart.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/BiteDown.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/BiteDown.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MagmaHeart.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MagmaHeart.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MechaAnchor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MechaAnchor.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MetalFace.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MetalFace.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MissileBase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MissileBase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBody.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBody.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/AIBrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/AIBrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/NormalHead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/NormalHead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/RazerHead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/RazerHead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/SuccesserHead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/SuccesserHead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MachineGiantShield.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MachineGiantShield.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MetalBlader.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MetalBlader.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalLHand.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalLHand.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/EarthQuaker.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/EarthQuaker.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/AgnnaDown.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/AgnnaDown.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/ValcanShot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/ValcanShot.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JsonSave/RightSword01.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JsonSave/RightSword01.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MakeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MakeUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/BackBtn.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/BackBtn.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Battle/PVP.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Battle/PVP.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Make/MakeUIDocument.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Make/MakeUIDocument.uxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +60,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/05/27db7a15/IStyle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/34/9f15213a/StyleLength.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/65/b1ee311a/IResolvedStyle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/e1/4612c112/Length.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/ff/c4137643/StyleScale.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -108,6 +149,7 @@
       <workItem from="1689844716072" duration="129000" />
       <workItem from="1689844886689" duration="1959000" />
       <workItem from="1694445762632" duration="1562000" />
+      <workItem from="1694528014156" duration="5960000" />
     </task>
     <servers />
   </component>

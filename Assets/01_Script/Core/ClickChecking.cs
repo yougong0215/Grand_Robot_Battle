@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class ClickChecking : MonoBehaviour
@@ -14,20 +15,40 @@ public class ClickChecking : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        SceneManager.sceneLoaded += Reset;
+    }
+
+    void Reset(Scene scene, LoadSceneMode mode)
+    {
+        if(GameObject.Find("UITOOLKIT"))
+        {
+            _doc = GameObject.Find("UITOOLKIT").GetComponent<UIDocument>();
+
+        }
+
+        if(GameObject.Find("Canvas"))
+                _can = GameObject.Find("Canvas").GetComponent<Canvas>();
     }
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            _doc = GameObject.Find("UITOOLKIT").GetComponent<UIDocument>();
-            _can = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+            if(_doc == null && _can == null)
+            {
+                return;
+            }
+
             if (_doc != null)
             {
                 _root = _doc.rootVisualElement;
                 _root.RegisterCallback<ClickEvent>(OnClickChecking);
             }
-            else if (_can != null)
+            
+
+
+            if (_can != null)
             {
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
                 {

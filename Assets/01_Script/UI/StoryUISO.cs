@@ -18,5 +18,7 @@ public class StoryUISO : ScriptableObject
     public Texture2D EnemySprite;
     [TextArea] public string EnemyInfo;
 
+    public BattleEnemySO _enemy;
+
 
 }

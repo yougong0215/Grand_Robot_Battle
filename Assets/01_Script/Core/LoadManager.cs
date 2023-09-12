@@ -15,8 +15,8 @@ public enum SceneEnum
     GameMatching,
     SelectStoreScene,
     Story,
+    GameEnd,
     Size,
-    GameEnd
 }
 
 

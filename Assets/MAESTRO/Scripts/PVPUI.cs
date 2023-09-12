@@ -66,10 +66,7 @@ public class PVPUI : MonoBehaviour
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
         _SOserver = FindObjectOfType<GetServerToSO>();
-        if (StoryLoadResource.Instance.isIthave())
-        {
-            return;
-        }
+
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
@@ -77,10 +74,7 @@ public class PVPUI : MonoBehaviour
     }
 
     private void OnDestroy() {
-        if (StoryLoadResource.Instance.isIthave())
-        {
-            return;
-        }
+
         
         NetworkCore.EventListener.Remove("ingame.AttackControl");
         NetworkCore.EventListener.Remove("ingame.gameresult");
@@ -91,10 +85,7 @@ public class PVPUI : MonoBehaviour
     private void Start()
     {
         
-        if (StoryLoadResource.Instance.isIthave())
-        {
-            return;
-        }
+
         _panel.text = "다른 플레이어를 기다리고 있습니다.";
         SetPanel();
         //_atkBtn.RemoveFromClassList("on");

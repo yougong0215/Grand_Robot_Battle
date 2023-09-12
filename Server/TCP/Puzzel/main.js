@@ -18,6 +18,8 @@ TriggerEvent["puzzel.getList"] = function(id) {
             amount: amount
         });
     }
+
+    player.socket.send("puzzel.resultList", packet);
 }
 
 TriggerEvent["puzzel.createParts"] = function(id, data) {

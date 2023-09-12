@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class StoryLoadResource : Singleton<StoryLoadResource>
 {
-    public StoryUISO _info;
+    private StoryUISO _info;
     //public BattleEnemySO _enemy;
 
+    public bool isIthave()
+    {
+        return _info != null;
+    }
+    
     public void Save(StoryUISO _so)
     {
         _info = _so;

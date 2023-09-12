@@ -378,6 +378,7 @@ public class RobotSettingAndSOList : MonoBehaviour
 
     public bool SetingRealPart(PartSO p = null)
     {
+        
         if (p != null)
         {
             partsDic[p.PartBase] = p;

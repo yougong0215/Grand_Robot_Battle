@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 /// <summary>
@@ -117,6 +118,7 @@ public class PartSO : ScriptableObject
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
     [SerializeField] [TextArea] public string Daesa = "[�����ȴ�簡�����ϴ�]";
+    [FormerlySerializedAs("_skill")] [SerializeField] private PartSkillSO skillSo;
 
 }
 

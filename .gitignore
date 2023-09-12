@@ -71,3 +71,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/07_SO/SOS/RightArmSO/AgnnaDown.asset
+Assets/07_SO/SOS/LeftArmSO/NormalLHand.asset
+Assets/07_SO/SOS/HeadSO/SuccesserHead.asset
+Assets/07_SO/SOS/HeadSO/NormalHead.asset
+Assets/07_SO/SOS/BodySO/MagmaHeart.asset

@@ -16,6 +16,7 @@ public class LobbyPlayerInfoPacket {
 
 public class LobbyGetInfo : MonoBehaviour
 {
+    static Dictionary<string, Texture2D> cache_Profile = new();
     [SerializeField] UIDocument Document;
 
     // 이벤트 리스너 등록
@@ -47,16 +48,21 @@ public class LobbyGetInfo : MonoBehaviour
     }
 
     IEnumerator GetProfileImage(string url) {
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
-        yield return www.SendWebRequest();
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            VisualElement profile =  Document.rootVisualElement.Q("Profile").Q("ProfileImg");
-            profile.style.backgroundImage = new StyleBackground(((DownloadHandlerTexture)www.downloadHandler).texture);
+        VisualElement profile =  Document.rootVisualElement.Q("Profile").Q("ProfileImg");
+        if (cache_Profile.TryGetValue(url, out var img)) {
+            profile.style.backgroundImage = new StyleBackground(img);
+        } else {
+            UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                profile.style.backgroundImage = new StyleBackground(((DownloadHandlerTexture)www.downloadHandler).texture);
+                cache_Profile[url] = ((DownloadHandlerTexture)www.downloadHandler).texture;
+            }
         }
     }
 }

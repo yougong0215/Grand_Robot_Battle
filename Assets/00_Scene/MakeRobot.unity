@@ -3068,11 +3068,7 @@ MonoBehaviour:
   _ac: {fileID: 7400000, guid: 2709ad82793c8e84ca7355086d19d465, type: 2}
   _contentObj: {fileID: 4088924299841619420}
   _seletedObj: {fileID: 4088924300101163413}
-  part:
-  - {fileID: 11400000, guid: b82b0a0a348825644a032d9d0b6c2c7e, type: 2}
-  - {fileID: 11400000, guid: 58ad937b7c445674ba9604882bf7be68, type: 2}
-  - {fileID: 11400000, guid: 0afa08a5a2b38e946867fb5deeb5609d, type: 2}
-  - {fileID: 11400000, guid: d34e27613866c274b862e37814e7aa85, type: 2}
+  part: []
   enums: 0
 --- !u!222 &4088924299563007929
 CanvasRenderer:
@@ -3137,9 +3133,9 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
+  m_DecelerationRate: 1
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 4088924299513226376}
   m_HorizontalScrollbar: {fileID: 0}
@@ -3620,7 +3616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391634d5741f7dc45a627fe86242b1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ac: {fileID: 0}
+  _ac: {fileID: 7400000, guid: b4df2171e08f9c74181155a77c332072, type: 2}
   _contentObj: {fileID: 4088924299576086784}
   _seletedObj: {fileID: 4088924300188963298}
   part: []
@@ -3641,9 +3637,9 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
+  m_DecelerationRate: 1
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 4088924301309497429}
   m_HorizontalScrollbar: {fileID: 0}
@@ -5008,9 +5004,9 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
+  m_DecelerationRate: 1
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 4088924300939176437}
   m_HorizontalScrollbar: {fileID: 0}
@@ -5037,8 +5033,7 @@ MonoBehaviour:
   _ac: {fileID: 7400000, guid: e6bb2c8a83b425745a86e5a2b3f889ae, type: 2}
   _contentObj: {fileID: 4088924300202471918}
   _seletedObj: {fileID: 4088924299725172736}
-  part:
-  - {fileID: 11400000, guid: 36b55e492ff2ade47bf392ed5e05cc4a, type: 2}
+  part: []
   enums: 0
 --- !u!222 &4088924300238674163
 CanvasRenderer:
@@ -5508,11 +5503,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391634d5741f7dc45a627fe86242b1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ac: {fileID: 0}
+  _ac: {fileID: 7400000, guid: 86a03d6d9398b094daa9ab35aaf4dff3, type: 2}
   _contentObj: {fileID: 4088924300234770036}
   _seletedObj: {fileID: 4088924300018002121}
-  part:
-  - {fileID: 11400000, guid: 016d1b0a3115ad84685617152117a98d, type: 2}
+  part: []
   enums: 0
 --- !u!1 &4088924300440015596
 GameObject:
@@ -5549,9 +5543,9 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
+  m_DecelerationRate: 1
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 4088924300997427372}
   m_HorizontalScrollbar: {fileID: 0}
@@ -5603,7 +5597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391634d5741f7dc45a627fe86242b1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ac: {fileID: 0}
+  _ac: {fileID: 7400000, guid: 5a90c545141d6c14095fd7426f24b366, type: 2}
   _contentObj: {fileID: 4088924299859394530}
   _seletedObj: {fileID: 4088924301204966720}
   part: []
@@ -5643,9 +5637,9 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
+  m_DecelerationRate: 1
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 4088924299593863614}
   m_HorizontalScrollbar: {fileID: 0}

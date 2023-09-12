@@ -99,6 +99,7 @@ module.exports = function(socket) {
         }
         const token = message.data;
         let login_ID = null;
+        let login_Avatar;
         
         if (message.type === "domiServer.Login") { // 가본 로그인
             const sql = sqlite.GetObject();
@@ -144,6 +145,7 @@ module.exports = function(socket) {
             }
 
             login_ID = result.id;
+            login_Avatar = result.avatar;
         } else {
             socket.kick("잘못된 로그인 타입 입니다.");
             return;
@@ -159,6 +161,6 @@ module.exports = function(socket) {
         SocketEvent_Init(login_ID);
 
         // 로그인 성공!
-        UserManager.AddPlayer(login_ID, socket);
+        UserManager.AddPlayer(login_ID, socket, login_Avatar);
     });
 }

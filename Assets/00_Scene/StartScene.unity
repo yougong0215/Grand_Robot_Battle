@@ -450,7 +450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Toutch To Start
+  m_text: Touch To Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3a5d30278cdd774d9296293e36e98c2, type: 2}
   m_sharedMaterial: {fileID: -1680277802106050507, guid: a3a5d30278cdd774d9296293e36e98c2,
@@ -1128,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 30.3}
+  m_AnchoredPosition: {x: 0, y: 30.300049}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &262215658
@@ -3323,7 +3323,7 @@ GameObject:
   - component: {fileID: 782011684}
   - component: {fileID: 782011683}
   m_Layer: 5
-  m_Name: ToutchEvent
+  m_Name: TouchEvent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6519,7 +6519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 450, y: 15.434021}
+  m_AnchoredPosition: {x: 450, y: 15.434082}
   m_SizeDelta: {x: 180, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1506197345
@@ -7803,7 +7803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e4b26328816b0f4e93d8586f95a742e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd85c5d9f0c38e0408c7b9f280756d3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

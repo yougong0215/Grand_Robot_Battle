@@ -86,3 +86,10 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-in;
 }
+
+#unity-content-container {
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f0f2519378ab83610832b977f6e7952e719e479833ebed979dc208f9ed08e408
-size 1055
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: NormalRSword
+  m_EditorClassIdentifier: 
+  PartBase: 1
+  _part:
+  - part: {fileID: 3902171970247935077, guid: 15ea3fa51b5e044488b91c012426ca8b, type: 3}
+    enums: 6
+  SOname: "\uB178\uBA40 \uB77C\uC774\uD2B8 \uC2A4\uC6CC\uB4DC"
+  Sprite: {fileID: 21300000, guid: 626c3f30f3da3fa4b864e25df7c9c67d, type: 3}
+  Statues:
+    HP: 0
+    ATK: 250
+    DEF: 5
+    SPEED: 0
+    Barrier: 0
+  Explain: "\uAC04\uB2E4! \uAE30\uAC00\uB4DC\uB9B4 \uBE0C\uB808\uC774\uCEE4!!!"
+  SkillExplain: 
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 21300000, guid: 1cb220d7b7fdd384c8ff0fcc4ed1485c, type: 3}
+  clips: {fileID: 0}
+  names: "\uCC38\uACA9"
+  Count: 1
+  Daesa: "\uCC38\uACA9!"
+  skillSo: {fileID: 0}

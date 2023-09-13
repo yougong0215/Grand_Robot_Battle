@@ -1,0 +1,20 @@
+#ImagePanel {
+    width: 1600px;
+    height: 500px;
+}
+
+.arrowbtn {
+}
+
+.btnmaster {
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-image: url('project://database/Assets/MAESTRO/UI/Tutorial/TryangleArrow.png?fileID=2800000&guid=3c55d18c8c0e51342a1b52785c575d30&type=3#TryangleArrow');
+    width: 200px;
+    height: 400px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    rotate: 180deg;
+}

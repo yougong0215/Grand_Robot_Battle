@@ -45,22 +45,28 @@ public class InventoryUI : MonoBehaviour
     private Button _errorAcceptBtn;
 
     private PartSO _selectPartItem;
+    GetServerToSO _SO;
 
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        _SO = GetComponent<GetServerToSO>();
     }
 
     public void AddPuzzleItem(string id, int count)
     {
         Texture2D tex = new Texture2D(0, 0);
-        string path = $"Assets/MAESTRO/PartsPuzzleItem/{id}";
+        string path = $"Assets/MAESTRO/PartsPuzzleItem/{id}.png";
         byte[] byteTex = File.ReadAllBytes(path);
         tex.LoadImage(byteTex);
         PuzzleItem pz = new PuzzleItem(tex, count, id);
         _puzzleItemList.Add(pz);
 
         RefreshList();
+    }
+
+    public void ClearList() {
+        _puzzleItemList.Clear();
     }
 
     public void RefreshList()
@@ -85,20 +91,15 @@ public class InventoryUI : MonoBehaviour
         VisualElement ve = evt.target as VisualElement;
         string id = ve.name;
 
-        for(int i = 0; i < _partsItemList.Count; i++)
-        {
-            if(_partsItemList[i].name == id)
-            {
-                _selectPartItem = _partsItemList[i];
-                _partsImage.style.backgroundImage = _selectPartItem.Sprite.texture;
-                _partsName.text = _selectPartItem.SOname;
-                _statusTxt[0].text = _selectPartItem.Statues.ATK.ToString();
-                _statusTxt[1].text = _selectPartItem.Statues.HP.ToString();
-                _statusTxt[2].text = _selectPartItem.Statues.DEF.ToString();
-                _statusTxt[3].text = _selectPartItem.Statues.SPEED.ToString();
-            }
-            break;
-        }
+        PartSO SO_data = _SO.ReturnSO(id);
+        
+        _selectPartItem = SO_data;
+        _partsImage.style.backgroundImage = _selectPartItem.Sprite.texture;
+        _partsName.text = _selectPartItem.SOname;
+        _statusTxt[0].text = _selectPartItem.Statues.ATK.ToString();
+        _statusTxt[1].text = _selectPartItem.Statues.HP.ToString();
+        _statusTxt[2].text = _selectPartItem.Statues.DEF.ToString();
+        _statusTxt[3].text = _selectPartItem.Statues.SPEED.ToString();
     }
 
     private void OnEnable()
@@ -130,7 +131,7 @@ public class InventoryUI : MonoBehaviour
         _selectbtn[2].clicked += () => ClickMakeBtn(RatingType.MasterPiece);
     }
 
-    private void ActiveErrorPanel(bool active, string errorInfo)
+    public void ActiveErrorPanel(bool active, string errorInfo)
     {
         _errorTxt.text = errorInfo;
         if(active)
@@ -143,8 +144,15 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    struct MakePuzzel {
+        public string part;
+        public int grade;
+    }
     private void ClickMakeBtn(RatingType ratingType)
     {
-
+        NetworkCore.Send("puzzel.createParts", new MakePuzzel() {
+            part = _selectPartItem.ToString().Replace(" (PartSO)", ""),
+            grade = (int)ratingType
+        });
     }
 }

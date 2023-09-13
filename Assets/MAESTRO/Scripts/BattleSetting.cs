@@ -12,6 +12,7 @@ public class BattleSetting : MonoBehaviour
     Button _exitBtn;
     Button _surenderBtn;
     Label _stageInfoTxt;
+    Button _settingBtn;
 
     private void Awake()
     {
@@ -27,16 +28,36 @@ public class BattleSetting : MonoBehaviour
         _exitBtn = _root.Q<Button>("SettingExit");
         _surenderBtn = _root.Q < Button > ("SurrenderBtn");
         _stageInfoTxt = _root.Q<Label>("StageInfoTxt");
+        _settingBtn = _root.Q<Button>("SettingBtn");
 
-        _exitBtn.clicked += () => SetPanel(false, null);
-        //_surenderBtn.clicked += Ç×º¹·ÎÁ÷
+        StoryUISO h = StoryLoadResource.Instance.Loading();
+
+        if(h != null)
+        {
+            _settingBtn.clicked += () => SetPanel(true, h.TitleName);
+            _exitBtn.clicked += () => SetPanel(false, h.TitleName);
+
+        }
+        else{
+             _settingBtn.clicked += () => SetPanel(true,null);
+            _exitBtn.clicked += () => SetPanel(false, null);
+        }
+        //_surenderBtn.clicked += ï¿½×ºï¿½ï¿½ï¿½ï¿½ï¿½
+        
+
+
     }
 
     public void SetPanel(bool isActive, string stageInfo)
     {
         if(isActive)
         {
+            if(stageInfo == "" || stageInfo == null)
+            {
+                stageInfo = "PVP ëŒ€ì „";
+            }
             _stageInfoTxt.text = stageInfo;
+            
             _settingPanel.RemoveFromClassList("off");
         }
         else

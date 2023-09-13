@@ -1,20 +1,20 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/PVP.uss?fileID=7433441132597879392&amp;guid=5bc0b3edc18c9884d84710494dc5c455&amp;type=3#PVP" />
     <ui:VisualElement name="Root" style="align-items: flex-start; background-color: rgba(0, 0, 0, 0);">
-        <ui:VisualElement name="PartsBtnGroup" class="PartsBtnGroup off">
-            <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn RL" style="flex-direction: row;">
+        <ui:VisualElement name="PartsBtnGroup" class="PartsBtnGroup">
+            <ui:Button display-tooltip-when-elided="true" name="RLbtn" class="Partsbtn RL" style="flex-direction: row; top: 800px; left: 1225px;">
                 <ui:VisualElement name="Image" style="flex-grow: 0; width: 25%; height: 100%; background-image: url(&apos;project://database/Assets/99_mainUI/SkillIcon/EarthQuaker%20(1).png?fileID=21300000&amp;guid=d82339f4371603249bc58c0d1c8939b9&amp;type=3#EarthQuaker (1)&apos;);" />
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); flex-grow: 1; font-size: 33px; -unity-font-style: bold;" />
             </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn LL" style="flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" name="LLbtn" class="Partsbtn LL" style="flex-direction: row; top: 800px; left: 925px;">
                 <ui:VisualElement name="Image" style="flex-grow: 0; width: 25%; height: 100%; background-image: url(&apos;project://database/Assets/99_mainUI/SkillIcon/EarthQuaker%20(1).png?fileID=21300000&amp;guid=d82339f4371603249bc58c0d1c8939b9&amp;type=3#EarthQuaker (1)&apos;);" />
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); flex-grow: 1; font-size: 33px; -unity-font-style: bold;" />
             </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn RA" style="flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" name="RAbtn" class="Partsbtn RA" style="flex-direction: row; top: 800px; left: 625px;">
                 <ui:VisualElement name="Image" style="flex-grow: 0; width: 25%; height: 100%; background-image: url(&apos;project://database/Assets/99_mainUI/SkillIcon/EarthQuaker%20(1).png?fileID=21300000&amp;guid=d82339f4371603249bc58c0d1c8939b9&amp;type=3#EarthQuaker (1)&apos;);" />
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); flex-grow: 1; font-size: 33px; -unity-font-style: bold;" />
             </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn LA" style="flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" name="LAbtn" class="Partsbtn LA" style="flex-direction: row; top: 800px; left: 325px;">
                 <ui:VisualElement name="Image" style="flex-grow: 0; width: 25%; height: 100%; background-image: url(&apos;project://database/Assets/99_mainUI/SkillIcon/EarthQuaker%20(1).png?fileID=21300000&amp;guid=d82339f4371603249bc58c0d1c8939b9&amp;type=3#EarthQuaker (1)&apos;);" />
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); flex-grow: 1; font-size: 33px; -unity-font-style: bold;" />
             </ui:Button>
@@ -22,7 +22,7 @@
                 <ui:VisualElement name="Image" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/99_mainUI/SkillIcon/Ai%20Brain%20Head.png?fileID=2800000&amp;guid=a41f81bd70b02df4a9f5bcb2b3c6a160&amp;type=3#Ai Brain Head&apos;);" />
                 <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" style="font-size: 20px; -unity-font-style: bold; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
             </ui:Button>
-            <ui:Button text="Skip" display-tooltip-when-elided="true" name="SkipBtn" class="SkipBtn" style="font-size: 30px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+            <ui:Button text="Skip" display-tooltip-when-elided="true" name="SkipBtn" class="SkipBtn" style="font-size: 30px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); left: 250px; top: 650px;" />
         </ui:VisualElement>
         <ui:VisualElement name="WarningPanel" class="warning off">
             <ui:Label text="text" display-tooltip-when-elided="true" name="warningText" style="font-size: 60px; -unity-font-definition: url(&apos;project://database/Assets/MAESTRO/Font/SpoqaHanSansNeo-Regular%20SDF.asset?fileID=11400000&amp;guid=888e29be6c825d14384e9a6e76b59e9d&amp;type=2#SpoqaHanSansNeo-Regular SDF&apos;);" />

@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-
-
-
+using System.Linq;
 
 public class PVPUI : MonoBehaviour
 {   
@@ -47,7 +45,7 @@ public class PVPUI : MonoBehaviour
     private float[] partbtncools;
     private float[] maxPartcools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
-
+    int[] _playerCools;
     private bool onPartsPanel;
     private bool onPanel;
     private bool onwarning;
@@ -85,7 +83,7 @@ public class PVPUI : MonoBehaviour
     private void Start()
     {
         
-
+        
         _panel.text = "다른 플레이어를 기다리고 있습니다.";
         SetPanel();
         //_atkBtn.RemoveFromClassList("on");
@@ -94,7 +92,11 @@ public class PVPUI : MonoBehaviour
         
         // 서버에게 준비가 되었다고 알림
         NetworkCore.Send("ingame.ready", StoryLoadResource.Instance.isIthave());
-        PartsBtnSetting(true);
+        if(!StoryLoadResource.Instance.isIthave())
+        {
+           
+            PartsBtnSetting(true);
+        }
     }
 
     private void OnEnable()
@@ -312,7 +314,7 @@ public class PVPUI : MonoBehaviour
 
 
                 _panel.text =
-                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
+                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK + _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
             }
             else
             {
@@ -505,6 +507,8 @@ public class PVPUI : MonoBehaviour
         NetworkCore.Send("ingame.selectSkill", part);
 
         _panel.text = "스킬을 선택했습니다. 다른 플레이어 기다리는중...";
+
+        _playerCools.ToList().ForEach((a)=> {if(a>0) a--;});
         //_atkBtn.RemoveFromClassList("on");
         //_surrenBtn.RemoveFromClassList("on");
         //_skipBtn.RemoveFromClassList("on");
@@ -591,16 +595,19 @@ public class PVPUI : MonoBehaviour
     }
 
     public void SetSkillButton(PartSO[] parts, int[] cools) {
+        
+        _playerCools = cools;
         for (int i = 0; i < 5; i++)
         {
+            
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
             int fuckCsharp = i;
             partsbtns[i].clicked += () => {
-                if (cools[fuckCsharp] > (Time.time - partbtncools[fuckCsharp])) {
-                    Debug.LogWarning( "아직 쿨타임이 지나지 않았습니다. 남은시간: "+ (cools[fuckCsharp] - (Time.time - partbtncools[fuckCsharp])) + "초" );
+                if (_playerCools[fuckCsharp] > 0) {
+                    Debug.LogWarning( $"아직 쿨타임이 지나지 않았습니다. 남은턴: {_playerCools[fuckCsharp]}" );
                     return;
                 }
-                partbtncools[fuckCsharp] = Time.time;
+                partbtncools[fuckCsharp] = parts[fuckCsharp].Count;
                 SelectSkillForServer(fuckCsharp);
             };
             if (parts[i] != null)
@@ -608,6 +615,9 @@ public class PVPUI : MonoBehaviour
                 partsbtns[i].Q<Label>("Text").text = parts[i].names;
                 Debug.Log(parts[i].names);
                 partsbtns[i].Q<VisualElement>("Image").style.backgroundImage = new StyleBackground(parts[i].SkillImage);
+            }
+            else{
+                partsbtns[i].Q<Label>("미장착").text = parts[i].names;
             }
         }
     }

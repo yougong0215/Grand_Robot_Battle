@@ -79,9 +79,9 @@ public class domiPVPServer : MonoBehaviour
 
             if ((bool)player["my"]) // 스킬 버튼 설정
                 _pvpUI.SetSkillButton(new PartSO[] {
-                    serverInput.Left, serverInput.Right, serverInput.Head, serverInput.Body, serverInput.Leg
+                     serverInput.Left, serverInput.Right, serverInput.Body, serverInput.Leg,serverInput.Head
                 }, new int[] {
-                    (int)player["cools"]["left"], (int)player["cools"]["right"], (int)player["cools"]["head"], (int)player["cools"]["body"], (int)player["cools"]["leg"]
+                     (int)player["cools"]["left"], (int)player["cools"]["right"],  (int)player["cools"]["body"], (int)player["cools"]["leg"],(int)player["cools"]["head"]
                 });
             
             StartCoroutine(serverInput.FindAndSet());
@@ -127,6 +127,13 @@ public class domiPVPServer : MonoBehaviour
         } catch {};
 
         StartCoroutine(serverInput.FindAndSet());
+
+        _pvpUI.SetSkillButton(new PartSO[] {
+                    serverInput.Left, serverInput.Right,  serverInput.Body, serverInput.Leg,serverInput.Head
+                }, new int[] {
+                    (int)serverInput.Left.Count, (int)serverInput.Right.Count
+                    ,  (int)serverInput.Body.Count, (int)serverInput.Leg.Count,(int)serverInput.Head.Count
+                });
 
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력

@@ -105,11 +105,11 @@
     transition-duration: 0.5s;
     transition-timing-function: ease-in;
     position: absolute;
-    top: 0;
+    top: 100%;
 }
 
 .PartsBtnGroup.off {
-    top: 800px;
+    top: 200%;
     position: absolute;
 }
 

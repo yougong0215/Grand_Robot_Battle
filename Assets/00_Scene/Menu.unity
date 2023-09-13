@@ -621,7 +621,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: c2c9dc4cb24b49f4ea35a96d12aa2974,
     type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!4 &843340474
 Transform:
   m_ObjectHideFlags: 0
@@ -649,6 +649,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbbf86a65ef98941ad1ca28e223bb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _guides:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1134558907
 GameObject:
   m_ObjectHideFlags: 0

@@ -95,26 +95,36 @@ public class domiPVPServer : MonoBehaviour
 
         int myMaxHealth = 0;
 
-        if (data["left"] != null) {
-            serverInput.Left = SO_Server.ReturnSO((string)data["left"]["id"]);
-            myMaxHealth += (int)data["left"]["health"];
-        }
-        if (data["right"] != null) {
-            serverInput.Right = SO_Server.ReturnSO((string)data["right"]["id"]);
-            myMaxHealth += (int)data["right"]["health"];
-        }
-        if (data["head"] != null) {
-            serverInput.Head = SO_Server.ReturnSO((string)data["head"]["id"]);
-            myMaxHealth += (int)data["head"]["health"];
-        }
-        if (data["body"] != null) {
-            serverInput.Body = SO_Server.ReturnSO((string)data["body"]["id"]);
-            myMaxHealth += (int)data["body"]["health"];
-        }
-        if (data["leg"] != null) {
-            serverInput.Leg = SO_Server.ReturnSO((string)data["leg"]["id"]);
-            myMaxHealth += (int)data["leg"]["health"];
-        }
+        try {
+            if (data["left"] != null) {
+                serverInput.Left = SO_Server.ReturnSO((string)data["left"]["id"]);
+                myMaxHealth += (int)data["left"]["health"];
+            }
+        } catch {};
+        try {
+            if (data["right"] != null) {
+                serverInput.Right = SO_Server.ReturnSO((string)data["right"]["id"]);
+                myMaxHealth += (int)data["right"]["health"];
+            }
+        } catch {};
+        try {
+            if (data["head"] != null) {
+                serverInput.Head = SO_Server.ReturnSO((string)data["head"]["id"]);
+                myMaxHealth += (int)data["head"]["health"];
+            }
+        } catch {};
+        try {
+            if (data["body"] != null) {
+                serverInput.Body = SO_Server.ReturnSO((string)data["body"]["id"]);
+                myMaxHealth += (int)data["body"]["health"];
+            }
+        } catch {};
+        try {
+            if (data["leg"] != null) {
+                serverInput.Leg = SO_Server.ReturnSO((string)data["leg"]["id"]);
+                myMaxHealth += (int)data["leg"]["health"];
+            }
+        } catch {};
 
         StartCoroutine(serverInput.FindAndSet());
 

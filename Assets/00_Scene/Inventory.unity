@@ -396,6 +396,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _partsPrefab: {fileID: 9197481963319205126, guid: b5eafc275c3dc0747ac98653fca1f2e4,
     type: 3}
+  _partsItemList:
+  - {fileID: 11400000, guid: 38d79240a7ac5fb47b8127bfe29eb4cd, type: 2}
+  - {fileID: 11400000, guid: b9592b660b91dde4b8665062a9abd1f4, type: 2}
+  - {fileID: 11400000, guid: 27fa74b23a1735c4ca883b433dd41f8e, type: 2}
+  - {fileID: 11400000, guid: b82b0a0a348825644a032d9d0b6c2c7e, type: 2}
+  - {fileID: 11400000, guid: d34e27613866c274b862e37814e7aa85, type: 2}
+  - {fileID: 11400000, guid: 58ad937b7c445674ba9604882bf7be68, type: 2}
+  - {fileID: 11400000, guid: 016d1b0a3115ad84685617152117a98d, type: 2}
+  - {fileID: 11400000, guid: 36b55e492ff2ade47bf392ed5e05cc4a, type: 2}
+  - {fileID: 11400000, guid: b40e89ab07060bd48894c6a4e7480130, type: 2}
+  - {fileID: 11400000, guid: f1c1ae66fdacd4b4aab8a58bcd50c2e3, type: 2}
+  - {fileID: 11400000, guid: 4bc703dee7322ba4b8a92d22222f90b0, type: 2}
+  - {fileID: 11400000, guid: d0be537c1ecabc84793a6f592ea7e212, type: 2}
+  - {fileID: 11400000, guid: 50bb105c9355b89479c06e8319a7751c, type: 2}
+  - {fileID: 11400000, guid: 4e17a5084634e084b8d2d55c981aa32f, type: 2}
+  - {fileID: 11400000, guid: 3ef8f572276ce604aae59a10ee50e884, type: 2}
+  - {fileID: 11400000, guid: 8344b70766d06ac4bb0da340214d47f4, type: 2}
+  - {fileID: 11400000, guid: 7c9e08225afe9694fa3c43ddbf6b9e97, type: 2}
+  - {fileID: 11400000, guid: 1aa3e91c3c5ebec42ae200f97da5da41, type: 2}
 --- !u!114 &1556483403
 MonoBehaviour:
   m_ObjectHideFlags: 0

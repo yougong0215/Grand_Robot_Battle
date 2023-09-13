@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e1d68563740576a31f1a534cdc67b3853a1fbfcd626942e6c688eea5eb46eed
-size 1286
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: EarthQuaker
+  m_EditorClassIdentifier: 
+  PartBase: 4
+  _part:
+  - part: {fileID: 2029660393320292064, guid: b1949a6a9137f684ebbe48259ceafcd5, type: 3}
+    enums: 10
+  - part: {fileID: 2029660393320292064, guid: 23b063f4df23de94d969ee3e44fdac7f, type: 3}
+    enums: 7
+  SOname: "\uC5B4\uC2A4 \uD018\uC774\uCEE4"
+  Sprite: {fileID: 0}
+  Statues:
+    HP: 0
+    ATK: 0
+    DEF: 150
+    SPEED: 0
+    Barrier: 0
+  Explain: "\uD55C \uBC1C \uD55C \uBC1C \uB0B4\uB51B\uC744 \uB54C \uB9C8\uB2E4 \uC9C0\uC9C4\uC774
+    \uC6B8\uB9AC\uB294 \uD30C\uCE20.\r\n\uB450\uAECD\uACE0 \uD2BC\uD2BC\uD55C \uB2E4\uB9AC\uB85C
+    \uC11C\uC788\uB294 \uC790\uB9AC\uB97C \uC9C0\uD0A8\uB2E4."
+  SkillExplain: 
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 21300000, guid: d82339f4371603249bc58c0d1c8939b9, type: 3}
+  clips: {fileID: 0}
+  names: "\uADF8\uB79C\uB4DC \uD018\uC774\uD0B9"
+  Count: 1
+  Daesa: "\uADF8\uB79C\uB4DC \uD018\uC774\uD0B9"

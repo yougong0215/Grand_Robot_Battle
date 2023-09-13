@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:676dc9da2e56798ffe89f366eae501cbe8f4d2c2b683b672fcf042583621abd9
-size 789
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aa124516f0f1647b4847a98fbb47a6, type: 3}
+  m_Name: Stage2_Enemy
+  m_EditorClassIdentifier: 
+  Head: {fileID: 11400000, guid: 27fa74b23a1735c4ca883b433dd41f8e, type: 2}
+  Body: {fileID: 11400000, guid: 3ef8f572276ce604aae59a10ee50e884, type: 2}
+  LeftHand: {fileID: 11400000, guid: 016d1b0a3115ad84685617152117a98d, type: 2}
+  RightHand: {fileID: 11400000, guid: b40e89ab07060bd48894c6a4e7480130, type: 2}
+  Leg: {fileID: 11400000, guid: 61b7f1ed07726f645b6a199b12ba6c16, type: 2}

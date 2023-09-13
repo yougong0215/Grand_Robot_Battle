@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:168dda64b1fad0848a00359144d3a8a91f7d723db5631fb2a9ccd4620031aa75
-size 833
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9402db2bd42ad43b46b8d7703aaa26, type: 3}
+  m_Name: Stage2
+  m_EditorClassIdentifier: 
+  id: 2
+  TitleName: "\uC5EC\uAE34\uC219\uC0AC\uC774"
+  TitlePanelColor: {r: 0, g: 0, b: 0, a: 0}
+  StageSprite: {fileID: 2800000, guid: 9e80287a17f71cf40b7ebe9d71685017, type: 3}
+  StageExample: "\uC548\uB155\uD558\uC138\uC694"
+  EnemyName: AA
+  EnemySprite: {fileID: -1304905567622442630, guid: 1e45b110e5190484a99928ba9c307c8b,
+    type: 3}
+  EnemyInfo: AA
+  _enemy: {fileID: 11400000, guid: 4a36e39aacb63bb4bb0dd016547cfc37, type: 2}

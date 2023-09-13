@@ -375,6 +375,8 @@ GameObject:
   - component: {fileID: 1556483404}
   - component: {fileID: 1556483403}
   - component: {fileID: 1556483402}
+  - component: {fileID: 1556483406}
+  - component: {fileID: 1556483405}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -447,6 +449,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1556483405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556483401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79bbf1ebbf40ace4ca48bbdb6c58d6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMakeScene: 0
+  PartSOTable: {fileID: 11400000, guid: 6761f84d61732a9419f93bf73b631547, type: 2}
+  Left: {fileID: 0}
+  Right: {fileID: 0}
+  Body: {fileID: 0}
+  Head: {fileID: 0}
+  Leg: {fileID: 0}
+--- !u!114 &1556483406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556483401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa10275468ebd0e48b2637671681424c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

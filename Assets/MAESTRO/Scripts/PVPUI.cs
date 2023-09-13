@@ -93,7 +93,7 @@ public class PVPUI : MonoBehaviour
         //_skipBtn.RemoveFromClassList("on");
         
         // 서버에게 준비가 되었다고 알림
-        NetworkCore.Send("ingame.ready", null);
+        NetworkCore.Send("ingame.ready", StoryLoadResource.Instance.isIthave());
         PartsBtnSetting(true);
     }
 

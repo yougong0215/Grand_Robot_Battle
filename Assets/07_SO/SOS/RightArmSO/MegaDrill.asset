@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:349c851bcb35cd4bfa7d3e6d3920b454e25410781d3644372c3a7bea98679e1c
-size 1123
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: MegaDrill
+  m_EditorClassIdentifier: 
+  PartBase: 1
+  _part:
+  - part: {fileID: 9062173955027456951, guid: fb56a50322c84c643b76d1f2980f5a11, type: 3}
+    enums: 6
+  SOname: "\uBA54\uAC00\uB4DC\uB9B4"
+  Sprite: {fileID: 21300000, guid: 90546449829647a4a920a091bdd13267, type: 3}
+  Statues:
+    HP: 0
+    ATK: 150
+    DEF: 0
+    SPEED: 10
+    Barrier: 0
+  Explain: "\uC801\uC744 \uC7A5\uB82C\uD558\uAC8C \uB6AB\uC5B4\uB0B4\uB294 \uD30C\uCE20.\r\n\uB3CC\uD30C\uB825\uC73C\uB85C
+    \uC801 \uAE30\uCCB4\uB97C \uBB34\uCC38\uD788 \uBC15\uC0B4\uB0B8\uB2E4."
+  SkillExplain: 
+  ReplaceMesh: 1
+  EquipPart: 0
+  SkillImage: {fileID: 21300000, guid: 4ce37ae660ea4754a90ebfc337dbf9c2, type: 3}
+  clips: {fileID: 0}
+  names: 
+  Count: 1
+  Daesa: "\uB4DC\uB9B4 \uB7EC\uC26C!!"

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f2d1d033d8c632ae2b8313005bf60ec731d0cd0d590b171567515c31f07e77d
-size 1005
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: MetalBuster
+  m_EditorClassIdentifier: 
+  PartBase: 2
+  _part:
+  - part: {fileID: 0}
+    enums: 0
+  SOname: "\uBA54\uD0C8 \uBC84\uC2A4\uD130"
+  Sprite: {fileID: 0}
+  Statues:
+    HP: 50
+    ATK: 0
+    DEF: 40
+    SPEED: 5
+    Barrier: 0
+  Explain: "\uD749\uC545\uD55C \uC0DD\uAE40\uC0C8\uC640 \uC131\uB2A5\uC744 \uC790\uB791\uD558\uB294
+    \uD30C\uCE20.\r\n\uBB34\uC11C\uC6B4 \uC0DD\uAE40\uC0C8 \uB54C\uBB38\uC5D0 \uACBD\uCC30\uC5D0\uC11C
+    \uC790\uC8FC \uC0AC\uC6A9\uD55C\uB2E4."
+  SkillExplain: 
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 0}
+  clips: {fileID: 0}
+  names: 
+  Count: 1
+  Daesa: "\uC0AC\uC774\uB80C \uD328\uB2C9!"

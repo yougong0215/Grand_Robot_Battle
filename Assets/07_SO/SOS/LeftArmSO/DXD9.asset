@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10d21270c5ae7d0de3ce6fc34bccdbeb565b8bd8cf40dc7b1c150f6d3d017c91
-size 1178
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
+  m_Name: DXD9
+  m_EditorClassIdentifier: 
+  PartBase: 0
+  _part:
+  - part: {fileID: 5219740372435964110, guid: d3373caeefa988e45b7132f8073a016d, type: 3}
+    enums: 2
+  SOname: DXD9
+  Sprite: {fileID: 21300000, guid: 81c8f9066697e94408f4f2bddd5c2770, type: 3}
+  Statues:
+    HP: 0
+    ATK: 120
+    DEF: 0
+    SPEED: 20
+    Barrier: 0
+  Explain: "\uAC15\uB825\uD55C \uD55C\uBC1C \uD55C\uBC1C\uB85C \uC801\uC744 \uAFF0\uB6AB\uB294
+    \uCD5C\uCCA8\uB2E8 \uBB34\uAD6C.\r\n\uBA4B\uC9C4 \uC678\uD615\uACFC \uC2DC\uC6D0\uD55C
+    \uACA9\uBC1C\uC74C\uC73C\uB85C \uB208\uAE38\uC744 \uB048\uB2E4."
+  SkillExplain: 
+  ReplaceMesh: 0
+  EquipPart: 0
+  SkillImage: {fileID: 21300000, guid: 3e5b252d1367ddf4cb2c25fcc104e0dd, type: 3}
+  clips: {fileID: 0}
+  names: "\uC5F0\uC1C4\uACA9\uBC1C"
+  Count: 3
+  Daesa: "\uC5F0\uC1C4 \uACA9\uBC1C!!"
+  skillSo: {fileID: 0}

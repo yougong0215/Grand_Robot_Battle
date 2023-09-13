@@ -7,6 +7,8 @@ public class StoryLoadResource : Singleton<StoryLoadResource>
     private StoryUISO _info;
     //public BattleEnemySO _enemy;
 
+    public bool clear = false;
+
     public bool isIthave()
     {
         return _info != null;

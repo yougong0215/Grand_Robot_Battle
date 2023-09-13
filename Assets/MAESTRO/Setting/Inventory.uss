@@ -43,7 +43,6 @@
 
 .statusText {
     color: rgb(255, 255, 255);
-    width: 90%;
     -unity-text-align: upper-center;
     font-size: 40px;
     margin-top: 20px;
@@ -74,4 +73,16 @@
     align-self: auto;
     width: 600px;
     height: 90%;
+}
+
+#ErrorPanel.off {
+    position: absolute;
+    bottom: -500px;
+}
+
+#ErrorPanel {
+    position: absolute;
+    bottom: 250px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
 }

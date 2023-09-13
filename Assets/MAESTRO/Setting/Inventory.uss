@@ -74,3 +74,15 @@
     width: 600px;
     height: 90%;
 }
+
+#ErrorPanel.off {
+    position: absolute;
+    bottom: -500px;
+}
+
+#ErrorPanel {
+    position: absolute;
+    bottom: 250px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+}

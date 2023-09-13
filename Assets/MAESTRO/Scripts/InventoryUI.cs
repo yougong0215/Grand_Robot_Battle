@@ -40,6 +40,10 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private List<PuzzleItem> _puzzleItemList = new List<PuzzleItem>();
     [SerializeField] private List<PartSO> _partsItemList = new List<PartSO>();
 
+    private VisualElement _errorPanel;
+    private Label _errorTxt;
+    private Button _errorAcceptBtn;
+
     private PartSO _selectPartItem;
 
     private void Awake()
@@ -47,7 +51,7 @@ public class InventoryUI : MonoBehaviour
         _doc = GetComponent<UIDocument>();
     }
 
-    public void SetPuzzleList(string id, int count)
+    public void AddPuzzleItem(string id, int count)
     {
         Texture2D tex = new Texture2D(0, 0);
         string path = $"Assets/MAESTRO/PartsPuzzleItem/{id}";
@@ -103,6 +107,12 @@ public class InventoryUI : MonoBehaviour
         _haveItemListElement = _root.Q<ScrollView>("HaveItemList");
         _partsImage = _root.Q<VisualElement>("PartsImage");
         _partsName = _root.Q<Label>("SelectPartsName");
+
+        _errorPanel = _root.Q<VisualElement>("ErrorPanel");
+        _errorAcceptBtn = _root.Q<Button>("ErrorAcceptBtn");
+        _errorTxt = _root.Q<Label>("ErrorTxt");
+        _errorAcceptBtn.clicked += () => ActiveErrorPanel(false, null);
+
         for(int i = 0; i < _statuses.Length; i++)
         {
             if(i < 4)
@@ -118,6 +128,19 @@ public class InventoryUI : MonoBehaviour
         _selectbtn[0].clicked += () => ClickMakeBtn(RatingType.Normal);
         _selectbtn[1].clicked += () => ClickMakeBtn(RatingType.Unique);
         _selectbtn[2].clicked += () => ClickMakeBtn(RatingType.MasterPiece);
+    }
+
+    private void ActiveErrorPanel(bool active, string errorInfo)
+    {
+        _errorTxt.text = errorInfo;
+        if(active)
+        {
+            _errorPanel.RemoveFromClassList("off");
+        }
+        else
+        {
+            _errorPanel.AddToClassList("off");
+        }
     }
 
     private void ClickMakeBtn(RatingType ratingType)

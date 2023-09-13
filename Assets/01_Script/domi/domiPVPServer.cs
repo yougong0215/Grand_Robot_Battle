@@ -31,9 +31,11 @@ public class domiPVPServer : MonoBehaviour
         _pvpUI = FindAnyObjectByType<PVPUI>();
         SO_Server = GetComponent<GetServerToSO>();
         NetworkCore.EventListener["ingame.playerInit"] = playerInit;
+        NetworkCore.EventListener["ingame.AIinit"] = AI_Init;
     }
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("ingame.playerInit");
+        NetworkCore.EventListener.Remove("ingame.AIinit");
     }
 
     void playerInit(JsonData data) {
@@ -86,5 +88,39 @@ public class domiPVPServer : MonoBehaviour
         }
 
         _pvpUI.SetMaxHP(playerMaxHP, not_playerMaxHP);
+    }
+
+    void AI_Init(JsonData data) {
+        var serverInput = MyRobot.AddComponent<ServerPVPRobotInput>();
+
+        int myMaxHealth = 0;
+
+        if (data["left"] != null) {
+            serverInput.Left = SO_Server.ReturnSO((string)data["left"]["id"]);
+            myMaxHealth += (int)data["left"]["health"];
+        }
+        if (data["right"] != null) {
+            serverInput.Right = SO_Server.ReturnSO((string)data["right"]["id"]);
+            myMaxHealth += (int)data["right"]["health"];
+        }
+        if (data["head"] != null) {
+            serverInput.Head = SO_Server.ReturnSO((string)data["head"]["id"]);
+            myMaxHealth += (int)data["head"]["health"];
+        }
+        if (data["body"] != null) {
+            serverInput.Body = SO_Server.ReturnSO((string)data["body"]["id"]);
+            myMaxHealth += (int)data["body"]["health"];
+        }
+        if (data["leg"] != null) {
+            serverInput.Leg = SO_Server.ReturnSO((string)data["leg"]["id"]);
+            myMaxHealth += (int)data["leg"]["health"];
+        }
+
+        StartCoroutine(serverInput.FindAndSet());
+
+        print(data["name"]); // 이름
+        print(myMaxHealth); // 최대 체력
+
+        // 이어서...
     }
 }

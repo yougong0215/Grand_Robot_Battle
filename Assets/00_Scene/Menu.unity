@@ -716,6 +716,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc01c4fb0fb0de49bfc093789982add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _checkMark: {fileID: 0}
+  rewardItems:
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
+  - ItemID: 
+    Count: 0
 --- !u!1 &1134558907
 GameObject:
   m_ObjectHideFlags: 0

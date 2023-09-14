@@ -4,6 +4,7 @@
 }
 
 .arrowbtn {
+    transition-duration: 0.2s;
 }
 
 .btnmaster {
@@ -22,4 +23,8 @@
 #bg-panel.off {
     position: absolute;
     bottom: 1000px;
+}
+
+.arrowbtn:hover {
+    -unity-background-image-tint-color: rgb(173, 173, 173);
 }

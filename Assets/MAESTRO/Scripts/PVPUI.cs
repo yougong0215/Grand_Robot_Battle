@@ -168,9 +168,7 @@ public class PVPUI : MonoBehaviour
             _enemtNickname.text = name;
         }
     }
-
     float _playerWid, _enemyWid;
-
     public void SetMaxHP(float playerHP, float enemyHP)
     {
         _playerMaxHP = _playerCurrentHP = playerHP;
@@ -216,150 +214,95 @@ public class PVPUI : MonoBehaviour
     }
 
 
-    public void OnButton(PartSO so)
-    {
-        StartCoroutine(Corutine(so));
-    }
 
-    public IEnumerator Corutine(PartSO so)
+    public IEnumerator AIGameLogic(PartSO so)
     {
         // 이거 다 서버로 바꿔야됨
-        SetPanel(); // 켜짐
-        PartsBtnSetting(true);
-        yield return new WaitForSeconds(0.1f);
 
-        int rand = UnityEngine.Random.Range(0, 5);
-
-        _panel.text = "대기중";
         yield return new WaitForSeconds(0.3f);
         bool t = SpeedReturn();
-        yield return StartCoroutine(Fight(t, so, rand));
-        yield return StartCoroutine(Fight(!t, so, rand));
-
-        _panel.text = "대기중";
+        yield return StartCoroutine(Fight(t, so));
+        yield return StartCoroutine(Fight(!t, so));
         yield return new WaitForSeconds(0.3f);
         SetPanel();
         //_atkBtn.AddToClassList("on");
         //_surrenBtn.AddToClassList("on");
         //_skipBtn.AddToClassList("on");
+        
+        PartsBtnSetting(false);
     }
 
-    public IEnumerator Fight(bool t, PartSO so, int rand)
+    public IEnumerator Fight(bool t, PartSO so = null)
     {
+        SetPanel(); // 켜짐
+
         if (t == true)
         {
             _panel.text = $"나의 턴!!!";
             yield return new WaitForSeconds(0.5f);
             _panel.text = so.Daesa;
-            _enemyRobot._statues.HP -= (int)(_robot._statues.ATK * so.Count);
-
-            _enemyHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f,1f, _enemyRobot._statues.HP/ _enemyRobot.MaxHP), 1, 0)));
-            _enemyHpText.text = $"{_enemyRobot._statues.HP} / {_enemyRobot.MaxHP}";
             yield return new WaitForSeconds(1f);
+            SetPanel(); // 꺼짐
             //if(so.clips != null)
             {
-                SetPanel(); // 켜짐
-                _robot.GetComponent<AnimationBind>().AnimationChange(so.clips);
+                //SetPanel(); // 꺼짐
+                
 
+                so.skillSo.Init(_panel, _robot, _enemyRobot, so, _robot.GetComponent<AnimationBind>());
+                
+                so.skillSo._act?.Invoke();
+                yield return new WaitUntil(() => so.skillSo.IsEnd());
 
-
-                yield return new WaitUntil(() => _robot.GetComponent<AnimationBind>().EndAnim());
-
-                SetPanel();
             }
-            //else
-            //{
-            //    _panel.text = $"지정된 에니메이션이 없습니다";
-            //    yield return new WaitForSeconds(1f);
-            //}
-           
-            _panel.text =
-                $"{_robot.name}은 {_enemyRobot.name}에게 {_robot._statues.ATK * so.Count}의 피해를 입혔다. ( 적HP : { _enemyRobot._statues.HP} )";
 
+            
+            yield return new WaitForSeconds(0.3f);
             if (_enemyRobot._statues.HP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
-                LoadManager.LoadScene(SceneEnum.Menu);
+                SceneManager.LoadScene((int)SceneEnum.GameEnd);
             }
         }
         else
         {
+            int rand = UnityEngine.Random.Range(0, 5);
+
             if (_enemyRobot.ReturnParts((PartBaseEnum)rand) != null)
             {
+                PartSO _part = _enemyRobot.ReturnParts((PartBaseEnum)rand);
                 _panel.text = $"적의 턴!!!";
-                yield return new WaitForSeconds(0.5f);
-                _panel.text = _enemyRobot.ReturnParts((PartBaseEnum)rand).Daesa;
-                _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * _enemyRobot.ReturnParts((PartBaseEnum)rand).Count);
-                _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
-                _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
+                yield return new WaitForSeconds(0.3f);
+                _panel.text = _part.Daesa;
+
                 yield return new WaitForSeconds(1f);
-                //if (so.clips != null)
-                {
+                
                     SetPanel(); // 켜짐
-                    _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
 
+                    _part.skillSo.Init(_panel, _enemyRobot, _robot, _part, _enemyRobot.GetComponent<AnimationBind>());
 
-
-                    yield return new WaitUntil(() => _enemyRobot.GetComponent<AnimationBind>().EndAnim());
+                    yield return new WaitUntil(() => _part.skillSo.IsEnd());
 
                     SetPanel();
-                }
-                //else
-                //{
-                //    _panel.text = $"지정된 에니메이션이 없습니다";
-                //    yield return new WaitForSeconds(1f);
-                //}
-
-
-                _panel.text =
-                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK + _enemyRobot.ReturnParts((PartBaseEnum)rand).Count}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
             }
             else
             {
-                _panel.text = $"적의 턴!!!";
-                yield return new WaitForSeconds(0.5f);
-                _panel.text = "적이 아직 데이터를 가지고 있지 않습니다.";
-                _robot._statues.HP -= (int)(_enemyRobot._statues.ATK * 1);
+                Debug.LogError("Error : NO Data");
 
-                _playerHpBar.style.scale = new StyleScale(new Scale(new Vector3(Mathf.Lerp(0f, 1f, _robot._statues.HP / _robot.MaxHP), 1, 0)));
-                _playerHpText.text = $"{_robot._statues.HP} / {_robot.MaxHP}";
-                yield return new WaitForSeconds(1f);
-                //if (so.clips != null)
-                {
-                    SetPanel(); // 켜짐
-                    _enemyRobot.GetComponent<AnimationBind>().AnimationChange(so.clips);
-
-
-
-                    yield return new WaitUntil(() => _enemyRobot.GetComponent<AnimationBind>().EndAnim());
-
-                    SetPanel();
-
-                }
-                //else
-                //{
-                //    _panel.text = $"지정된 에니메이션이 없습니다";
-                //    yield return new WaitForSeconds(1f);
-                //}
-
-
-                _panel.text =
-                    $"{_enemyRobot.name}은 {_robot.name}에게 {_enemyRobot._statues.ATK}의 피해를 입혔다. ( 나의HP : {_robot._statues.HP} )";
             }
 
             if (_robot._statues.HP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
-                _panel.text = $"HP : {_robot._statues.HP} 적의 승리..";
+                _panel.text = $"적의 승리..";
                 yield return new WaitForSeconds(1.5f);
                 LoadManager.LoadScene(SceneEnum.Menu);
 
             }
         }
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
     }
 
 
@@ -434,24 +377,10 @@ public class PVPUI : MonoBehaviour
         //_skipBtn.RemoveFromClassList("on");
         yield return new WaitForSeconds(0.1f);
 
-        int rand = UnityEngine.Random.Range(0, 5);
-
-        _panel.text = "로딩중..";
-        yield return new WaitForSeconds(0.3f);
-        _panel.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _panel.text = "로딩중......";
-        yield return new WaitForSeconds(0.3f);
+        //int rand = UnityEngine.Random.Range(0, 5);
         _panel.text = $"나의 턴은 스킵되었다  ( 적HP : { _enemyRobot._statues.HP} )";
         yield return new WaitForSeconds(2f);
-        yield return StartCoroutine(Fight(false, null, rand));
-
-        _panel.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _panel.text = "로딩중....";
-        yield return new WaitForSeconds(0.3f);
-        _panel.text = "로딩중..";
-        yield return new WaitForSeconds(0.3f);
+        yield return StartCoroutine(Fight(false));
         SetPanel();
         //_atkBtn.AddToClassList("on");
         //_surrenBtn.AddToClassList("on");
@@ -502,7 +431,6 @@ public class PVPUI : MonoBehaviour
         PartsBtnSetting(true);
     }
     private void SelectSkillForServer(int part) {
-        print("part");
         print(part);
         NetworkCore.Send("ingame.selectSkill", part);
 
@@ -554,7 +482,8 @@ public class PVPUI : MonoBehaviour
         {
             var result = LitJson.JsonMapper.ToObject<PVP_GameResult>(data[i].ToJson());
             
-            if (result.answer == true) {
+            if (result.answer == true) 
+            {
                 _panel.text = result.my ? "나의 턴" : "적의 턴";
                 yield return new WaitForSeconds(1f);
 
@@ -562,7 +491,11 @@ public class PVPUI : MonoBehaviour
                 SetPanel();
                 var SO = _SOserver.ReturnSO(result.soid);
                 (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
-                yield return new WaitUntil(() => (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().EndAnim());
+
+                SO.skillSo.Init(_panel, (result.my ? _robot : _enemyRobot)
+                , (result.my ?  _enemyRobot : _robot), SO, (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>());
+
+                yield return new WaitUntil(() => SO.skillSo.IsEnd());
                 SetPanel();
 
                 SetHPValue(!result.my, result.power);
@@ -594,8 +527,8 @@ public class PVPUI : MonoBehaviour
         else ActiveControl();
     }
 
-    public void SetSkillButton(PartSO[] parts, int[] cools) {
-        
+    public void SetSkillButton(PartSO[] parts, int[] cools) 
+    {
         _playerCools = cools;
         for (int i = 0; i < 5; i++)
         {
@@ -608,7 +541,13 @@ public class PVPUI : MonoBehaviour
                     return;
                 }
                 partbtncools[fuckCsharp] = parts[fuckCsharp].Count;
-                SelectSkillForServer(fuckCsharp);
+                if(!StoryLoadResource.Instance.isIthave())
+                {
+                    SelectSkillForServer(fuckCsharp);
+                }
+                else{
+                    StartCoroutine(AIGameLogic(parts[fuckCsharp]));
+                }
             };
             if (parts[i] != null)
             {

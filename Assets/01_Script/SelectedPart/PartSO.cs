@@ -118,7 +118,7 @@ public class PartSO : ScriptableObject
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
     [SerializeField] [TextArea] public string Daesa = "[�����ȴ�簡�����ϴ�]";
-    [FormerlySerializedAs("_skill")] [SerializeField] private PartSkillSO skillSo;
+    [FormerlySerializedAs("_skill")] [SerializeField] public PartSkillSO skillSo;
 
 }
 

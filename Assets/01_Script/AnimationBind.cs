@@ -42,7 +42,7 @@ public class AnimationBind : MonoBehaviour
         _animator.SetTrigger(_EquipTriggerhash);
     }
 
-        public bool EndAnim()
+    public bool EndAnim()
     {
         if(ani == false)
         {

@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/CkeckMark.uss?fileID=7433441132597879392&amp;guid=5b4eaba212c097c46abe81d55ba21f06&amp;type=3#CkeckMark" />
+    <ui:VisualElement name="check-mark" style="flex-grow: 0; background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/06_Image/StartScene/AccountAdd.png?fileID=2800000&amp;guid=4aebcf9f6a22111459e4f47112044b79&amp;type=3#AccountAdd&apos;); transition-duration: 0.3s; transition-timing-function: ease-in-out-sine; flex-shrink: 0;" />
+</ui:UXML>

@@ -1,0 +1,9 @@
+#check-mark {
+    width: 130%;
+    height: 130%;
+}
+
+#check-mark.down {
+    width: 100%;
+    height: 100%;
+}

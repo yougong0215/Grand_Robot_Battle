@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/Tutorial.uss?fileID=7433441132597879392&amp;guid=04fd3e49e44c87d4881b1dd899e97f87&amp;type=3#Tutorial" />
-    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center; flex-direction: row;">
-        <ui:VisualElement name="bg-panel" class="off" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-color: rgba(156, 156, 156, 0.38); flex-direction: row; align-items: center; justify-content: center;">
-            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="left-arrow-btn" class="btnmaster" style="background-color: rgba(188, 188, 188, 0); -unity-background-image-tint-color: rgb(255, 255, 255);" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center; flex-direction: row; opacity: 1; display: none; visibility: visible;">
+        <ui:VisualElement name="bg-panel" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-color: rgba(156, 156, 156, 0.38); flex-direction: row; align-items: center; justify-content: center;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="left-arrow-btn" class="btnmaster arrowbtn" style="background-color: rgba(188, 188, 188, 0);" />
             <ui:VisualElement name="image-panel" style="flex-grow: 0; width: 1500px; height: 650px; background-color: rgb(255, 255, 255); border-top-left-radius: 14px; border-top-right-radius: 14px; border-bottom-right-radius: 14px; border-bottom-left-radius: 14px;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="right-arrow-btn" class="btnmaster arrowbtn" style="background-color: rgba(188, 188, 188, 0); rotate: 0;" />
             <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-btn" style="position: absolute; width: 80px; height: 80px; top: 27px; left: 26px; font-size: 40px;" />

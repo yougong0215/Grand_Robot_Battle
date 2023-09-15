@@ -20,6 +20,7 @@ struct MailPreview {
 
 public class MenuUI : MonoBehaviour
 {
+    PurchaseUI purchaseUI;
     private UIDocument _doc;
     //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
@@ -30,6 +31,9 @@ public class MenuUI : MonoBehaviour
     private Button _makeBtn;
     private Button _storeBtn;
     private Button _garageBtn;
+
+    private Button _gemplusbtn;
+    private Button _goldplusbtn;
 
     private VisualElement _charImg;
 
@@ -52,6 +56,7 @@ public class MenuUI : MonoBehaviour
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
         NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
+        purchaseUI = GameObject.Find("PURCHASE").GetComponent<PurchaseUI>();
     }
 
     void OnDestroy() {
@@ -104,6 +109,11 @@ public class MenuUI : MonoBehaviour
             NetworkCore.Send("mail.requestMails", 0);
             _mailElem.RemoveFromClassList("off");
         };
+
+        _gemplusbtn = _root.Q<Button>("Gemplus");
+        _gemplusbtn.clicked += () => purchaseUI.ActivePanel(true);
+        _goldplusbtn = _root.Q<Button>("Goldplus");
+        //골드는 어카냐
     }
 
 

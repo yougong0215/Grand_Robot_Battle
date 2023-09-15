@@ -46,6 +46,7 @@ public class PVPUI : MonoBehaviour
     private float[] maxPartcools;
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
     int[] _playerCools;
+    int[] _originCools;
     private bool onPartsPanel;
     private bool onPanel;
     private bool onwarning;
@@ -219,12 +220,12 @@ public class PVPUI : MonoBehaviour
     {
         // 이거 다 서버로 바꿔야됨
 
-        yield return new WaitForSeconds(0.3f);
+        Debug.Log("로직 시작");
         bool t = SpeedReturn();
         yield return StartCoroutine(Fight(t, so));
         yield return StartCoroutine(Fight(!t, so));
-        yield return new WaitForSeconds(0.3f);
         SetPanel();
+             Debug.Log("끝");
         //_atkBtn.AddToClassList("on");
         //_surrenBtn.AddToClassList("on");
         //_skipBtn.AddToClassList("on");
@@ -235,7 +236,7 @@ public class PVPUI : MonoBehaviour
     public IEnumerator Fight(bool t, PartSO so = null)
     {
         SetPanel(); // 켜짐
-
+        yield return new WaitForSeconds(0.3f);
         if (t == true)
         {
             _panel.text = $"나의 턴!!!";
@@ -404,7 +405,7 @@ public class PVPUI : MonoBehaviour
         _text.text = txt;
     }
 
-    private void SetPanel()
+    public void SetPanel()
     {
         if (!onPanel)
         {
@@ -529,13 +530,15 @@ public class PVPUI : MonoBehaviour
 
     public void SetSkillButton(PartSO[] parts, int[] cools) 
     {
-        _playerCools = cools;
+        _playerCools = new int[5]{0,0,0,0,0};
+        _originCools = cools;
         for (int i = 0; i < 5; i++)
         {
             
             partsbtns[i] = _root.Q<Button>($"{partsClass[i]}btn");
             int fuckCsharp = i;
             partsbtns[i].clicked += () => {
+                Debug.Log("버튼 클릭!!!");
                 if (_playerCools[fuckCsharp] > 0) {
                     Debug.LogWarning( $"아직 쿨타임이 지나지 않았습니다. 남은턴: {_playerCools[fuckCsharp]}" );
                     return;
@@ -543,9 +546,11 @@ public class PVPUI : MonoBehaviour
                 partbtncools[fuckCsharp] = parts[fuckCsharp].Count;
                 if(!StoryLoadResource.Instance.isIthave())
                 {
+                    Debug.Log("Selected 1");
                     SelectSkillForServer(fuckCsharp);
                 }
                 else{
+                    Debug.Log("Selected 2");
                     StartCoroutine(AIGameLogic(parts[fuckCsharp]));
                 }
             };

@@ -36,7 +36,8 @@ public class MenuUI : MonoBehaviour
     private Button _goldplusbtn;
     private Button _settingbtn;
     private VisualElement _charImg;
-
+    private Button _ADbtn;
+    private Label _ADTimeCount;
     
 
     VisualElement _storyElem;
@@ -113,12 +114,18 @@ public class MenuUI : MonoBehaviour
         };
 
         _gemplusbtn = _root.Q<Button>("Gemplus");
-        _gemplusbtn.RegisterCallback<ClickEvent>(evt => { purchaseUI.ActivePanel(true); Debug.Log(1); });
+        _gemplusbtn.clicked += () => purchaseUI.ActivePanel(true);
         _goldplusbtn = _root.Q<Button>("Goldplus");
         //골드는 어카냐
+        _ADbtn = _root.Q<Button>("ADbtn");
+        _ADbtn.clicked += LookAD;
     }
 
-    
+    private void LookAD()
+    {
+        // 광고 연결
+        _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+    }
 
     void LoadStroyView()
     {

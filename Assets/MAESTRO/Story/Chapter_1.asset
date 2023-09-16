@@ -13,54 +13,158 @@ MonoBehaviour:
   m_Name: Chapter_1
   m_EditorClassIdentifier: 
   Script:
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: ......
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: "\uB4DC\uB514\uC5B4 \uB3C4\uCC29\uD588\uB2E4.."
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: "\uC138\uACC4 \uCD5C\uB300 \uADDC\uBAA8 \uB85C\uBD07 \uBC30\uD2C0 \uB300\uD68C..!!"
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: "\"\uBC84\uB2DD\uC2A4\uD2F8\"\uC5D0!!!"
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: "\uC774 \uACBD\uAE30\uC7A5, \uC774 \uC778\uD30C.. \uC815\uB9D0 \uAFC8\uC5D0\uB9CC
       \uADF8\uB9B4 \uC904 \uC54C\uC558\uB294\uB370..!!"
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
-    Ch: {fileID: 0}
+  - IsMiddle: 0
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     _faceOne: 0
     Script: "\uB0B4\uAC00 \uC800 \uACBD\uAE30\uC7A5\uC5D0\uC11C \uC9C1\uC811 \uBC30\uD2C0\uD558\uAC8C
       \uB418\uB2E4\uB2C8.. \uAFC8\uB9CC\uAC19\uC544"
     TwoCh: {fileID: 0}
     Position: 0
     _faceTwo: 0
-  - IsSay: 0
+  - IsMiddle: 1
+    IsSay: 0
     Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
     _faceOne: 0
-    Script: "\uC5B4"
+    Script: "\uD639\uC2DC \uB108\uB3C4 \uBC84\uB2DD\uC2A4\uD2F8 \uC120\uC218\uC778\uAC70\uC57C?"
     TwoCh: {fileID: 0}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uC5C7.. \uB204\uAD6C.."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uC548\uB155? \uB09C \uC720\uC2DC\uD604\uC774\uC57C. \uB108\uC640 \uB9C8\uCC2C\uAC00\uC9C0\uB85C
+      \uC774\uBC88 \uBC84\uB2DD\uC2A4\uD2F8\uC758 \uC120\uC218\uC774\uC9C0"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uBC14, \uBC18\uAC00\uC6CC! \uACBD\uAE30\uC5D0\uC120 \uC801\uC73C\uB85C
+      \uBCFC \uC218\uB3C4 \uC788\uACA0\uB124?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uC74C.. \uD655\uC2E4\uD788, \uADF8\uB7FC \uB098\uB791 \uC5F0\uC2B5
+      \uACBD\uAE30\uB9CC \uD55C \uBC88 \uD574\uBCFC\uAE4C?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uC774, \uC774\uB807\uAC8C \uAC11\uC791\uC2A4\uB7FD\uAC8C?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uD639\uC2DC \uBB38\uC81C \uC788\uB294\uAC70\uC57C? \uC544\uC9C1 \uC900\uBE44\uAC00
+      \uB35C \uB410\uB2E4\uB358\uAC00.."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uC544, \uC544\uB2C8\uC57C! \uADF8\uB7F0\uB370 \uB0B4\uAC00 \uCCAB \uCD9C\uC804\uC774\uB77C
+      \uC880 \uAE34\uC7A5\uB418\uB294\uB370.."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 1
+    Script: "\uC74C, \uC608\uBE44\uC6A9 \uB85C\uBD07\uC73C\uB85C \uD558\uB294 \uAC70\uB2C8\uAE4C
+      \uB2F9\uD669\uD560 \uD544\uC694 \uC5C6\uC5B4. \uACBD\uAE30 \uC804\uC5D0 \uC801\uC5D0\uAC8C
+      \uC790\uC2E0\uC758 \uB85C\uBD07\uC744 \uBCF4\uC5EC\uC8FC\uB294 \uBC14\uBCF4\uB294
+      \uC5C6\uC796\uC544? "
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 1
+    Script: "\uADF8, \uADF8\uB807\uC9C0! \uC544\uD558\uD558! (\uC820\uC7A5 \uB85C\uBD07\uC740
+      \uD55C \uB300 \uBC16\uC5D0 \uC5C6\uB294\uB370..)"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 1
+    Script: "\uC900\uBE44 \uB410\uC5B4? \uADF8\uB7FC.."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 1
+    Script: "\uBC30\uD2C0!!!"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
     Position: 0
     _faceTwo: 0

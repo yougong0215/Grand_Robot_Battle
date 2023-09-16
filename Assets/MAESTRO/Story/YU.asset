@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077b0503cf5b3064888645eb7dbaee7d, type: 3}
   m_Name: YU
   m_EditorClassIdentifier: 
-  names: 
-  Exname: 
-  Default: {fileID: 0}
-  Laugh: {fileID: 0}
-  Sad: {fileID: 0}
-  Angry: {fileID: 0}
-  Ridiculous: {fileID: 0}
+  names: "\uC720\uC2DC\uD604"
+  Exname: "\uC815\uCCB4\uBD88\uBA85"
+  Default: {fileID: 21300000, guid: 09fd8e92f67a259468234054da78205a, type: 3}
+  Laugh: {fileID: 21300000, guid: 09fd8e92f67a259468234054da78205a, type: 3}
+  Sad: {fileID: 21300000, guid: 84db380de2ed5f94dacfd55b72f14040, type: 3}
+  Angry: {fileID: 21300000, guid: 85445be95cdc7c04c9341d89be5e4b55, type: 3}
+  Ridiculous: {fileID: 21300000, guid: 85445be95cdc7c04c9341d89be5e4b55, type: 3}

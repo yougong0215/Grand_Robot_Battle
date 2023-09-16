@@ -37,8 +37,9 @@ public class MenuUI : MonoBehaviour
     private Button _settingbtn;
     private VisualElement _charImg;
     private Button _ADbtn;
-    private Label _ADTimeCount;
-    
+    private Button _adAcceptBtn;
+    private Button _adCancleBtn;
+    private VisualElement _adPanel;
 
     VisualElement _storyElem;
     private Button _storyBtn;
@@ -118,7 +119,20 @@ public class MenuUI : MonoBehaviour
         _goldplusbtn = _root.Q<Button>("Goldplus");
         //골드는 어카냐
         _ADbtn = _root.Q<Button>("ADbtn");
-        _ADbtn.clicked += LookAD;
+        _ADbtn.clicked += () => LookADPanel(true);
+        _adAcceptBtn = _root.Q<Button>("ad-accept-btn");
+        _adAcceptBtn.clicked += LookAD;
+        _adCancleBtn = _root.Q<Button>("ad-cancle-btn");
+        _adCancleBtn.clicked += () => LookADPanel(false);
+        _adPanel = _root.Q("ad-panel");
+    }
+
+    private void LookADPanel(bool isOk)
+    {
+        if (isOk)
+            _adPanel.AddToClassList("on");
+        else
+            _adPanel.RemoveFromClassList("on");
     }
 
     private void LookAD()

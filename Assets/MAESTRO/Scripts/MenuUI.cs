@@ -59,6 +59,7 @@ public class MenuUI : MonoBehaviour
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
         NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
+        NetworkCore.EventListener["ad.ResultTryShow"] = ADshow;
         purchaseUI = GameObject.Find("PURCHASE").GetComponent<PurchaseUI>();
         _setting = GameObject.Find("SETTING").GetComponent<Setting>();
         _AdSys = GetComponent<AdSystem>();
@@ -67,6 +68,7 @@ public class MenuUI : MonoBehaviour
     void OnDestroy() {
         NetworkCore.EventListener.Remove("mail.resultMails");
         NetworkCore.EventListener.Remove("mail.successGiveItem");
+        NetworkCore.EventListener.Remove("ad.ResultTryShow");
     }
 
     private void Start()
@@ -139,12 +141,17 @@ public class MenuUI : MonoBehaviour
 
     private void LookAD()
     {
-        // 광고 연결
-        _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
-        _AdSys.LoadRewardedAd((GoogleMobileAds.Api.Reward reward) => {
-            print("광고 다봄");
-        });
+        NetworkCore.Send("ad.TryShow", null);
         LookADPanel(false);
+    }
+
+    void ADshow(JsonData data) {
+        if ((bool)data == false) return;
+        // 광고 연결
+        _AdSys.LoadRewardedAd((GoogleMobileAds.Api.Reward reward) => {
+            _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+            NetworkCore.Send("ad.give", null);
+        });
     }
 
     void LoadStroyView()

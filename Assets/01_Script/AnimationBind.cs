@@ -7,7 +7,7 @@ using UnityEngine;
 public class AnimationBind : MonoBehaviour
 {
     [SerializeField] AnimatorOverrideController aoc;
-    [SerializeField] Animator _animator;
+    [SerializeField] public Animator _animator;
 
     private readonly int _isAttackHash = Animator.StringToHash("is_Attack");
     private readonly int _AttackTriggerhash = Animator.StringToHash("_attack");

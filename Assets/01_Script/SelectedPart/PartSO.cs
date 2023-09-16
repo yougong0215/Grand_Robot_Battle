@@ -37,13 +37,18 @@ public enum PartEnum
 [System.Serializable]
 public class Stat
 {
-    public int HP = 100;
-    public int ATK = 10;
-    public int DEF = 10;
-    public int SPEED = 10;
-    public int Barrier = 0;
+    public float HP = 0;
+    public float ATK = 0;
+    public float DEF = 0;
+    public float SPEED = 0;
+    public float Barrier = 0;
+
+    public float PercentDef = 1;
+
+
     public static Stat operator +(Stat output, Stat input)
     {
+
         output.HP += input.HP;
         output.ATK += input.ATK;
         output.DEF += input.DEF;
@@ -54,11 +59,46 @@ public class Stat
 
     public static Stat operator -(Stat output, Stat input)
     {
-        output.HP -= input.HP;
+        //output.HP -= input.HP;
         output.ATK -= input.ATK;
         output.DEF -= input.DEF;
         output.SPEED -= input.SPEED;
         output.Barrier -= input.Barrier;
+        if (output.Barrier < 0)
+        {
+            output.Barrier = 0;
+        }
+        return output;
+    }
+    public static Stat operator *(Stat output, Stat input)
+    {
+        //output.HP -= input.HP;
+        if (input.ATK != 0 || input.ATK != 0)
+            output.ATK = output.ATK * input.ATK;
+        if (input.DEF != 0 || input.DEF != 0)
+            output.DEF = output.DEF * input.DEF;
+        if (input.SPEED != 0 || input.SPEED != 0)
+            output.SPEED = output.SPEED * input.SPEED;
+        if (input.Barrier != 0 || input.Barrier != 0)
+            output.Barrier = output.Barrier * input.Barrier;
+        if (output.Barrier < 0)
+        {
+            output.Barrier = 0;
+        }
+        return output;
+    }
+
+    public static Stat operator /(Stat output, Stat input)
+    {
+        //output.HP -= input.HP;
+        if (input.ATK != 0 || input.ATK != 0)
+            output.ATK = output.ATK / input.ATK;
+        if (input.DEF != 0 || input.DEF != 0)
+            output.DEF = output.DEF / input.DEF;
+        if (input.SPEED != 0 || input.SPEED != 0)
+            output.SPEED = output.SPEED / input.SPEED;
+        if (input.Barrier != 0 || input.Barrier != 0)
+            output.Barrier = output.Barrier / input.Barrier;
         if (output.Barrier < 0)
         {
             output.Barrier = 0;

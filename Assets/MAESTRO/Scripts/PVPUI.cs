@@ -6,6 +6,18 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
+
+public class PVP_GameResult
+{
+    public bool my;
+    public string attacker;
+    public string hitter;
+    public string soid;
+    public bool answer;
+    public int power;
+    public int health;
+    public string why;
+}
 public class PVPUI : MonoBehaviour
 {   
     
@@ -47,6 +59,7 @@ public class PVPUI : MonoBehaviour
     private string[] partsClass = { "LA", "RA", "LL", "RL", "H" };
     int[] _playerCools;
     int[] _originCools;
+    private PartSO[] soList;
     private bool onPartsPanel;
     private bool onPanel;
     private bool onwarning;
@@ -158,6 +171,8 @@ public class PVPUI : MonoBehaviour
 
     }
 
+    
+
     public void SetNameText(bool isPlayer, string name)
     {
         if(isPlayer)
@@ -250,7 +265,6 @@ public class PVPUI : MonoBehaviour
                 
 
                 so.skillSo.Init(this, _robot, _enemyRobot, so, _robot.GetComponent<AnimationBind>());
-                
                 so.skillSo._act?.Invoke();
                 yield return new WaitUntil(() => so.skillSo.IsEnd());
 
@@ -306,7 +320,10 @@ public class PVPUI : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
     }
 
-
+    public void PartCoolRemove()
+    {
+        _playerCools.ToList().ForEach((a) => { if (a > 0) a = 0; });
+    }
     public bool SpeedReturn()
     {
         if (_robot._statues.SPEED >= _enemyRobot._statues.SPEED)
@@ -402,7 +419,7 @@ public class PVPUI : MonoBehaviour
 
     public void SetText(string txt)
     {
-        _text.text = txt;
+        _panel.text = txt;
     }
 
     public void SetPanel()
@@ -445,16 +462,7 @@ public class PVPUI : MonoBehaviour
         PartsBtnSetting(false);
     }
     
-    public class PVP_GameResult {
-        public bool my;
-        public string attacker;
-        public string hitter;
-        public string soid;
-        public bool answer;
-        public int power;
-        public int health;
-        public string why;
-    }
+
     private void ServerGameResult(LitJson.JsonData data) {
         StartCoroutine(ServerGameResult_Co(data));
     }
@@ -491,17 +499,17 @@ public class PVPUI : MonoBehaviour
                 // 애니메이션
                 SetPanel();
                 var SO = _SOserver.ReturnSO(result.soid);
-                (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
+                //(result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
 
                 SO.skillSo.Init(this, (result.my ? _robot : _enemyRobot)
-                , (result.my ?  _enemyRobot : _robot), SO, (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>());
+                , (result.my ?  _enemyRobot : _robot), SO, (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>(), result);
 
+                SO.skillSo._act?.Invoke();
                 yield return new WaitUntil(() => SO.skillSo.IsEnd());
                 SetPanel();
 
-                SetHPValue(!result.my, result.power);
-                _panel.text =
-                    $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
+                //SetHPValue(!result.my, result.power);
+                //_panel.text =  $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
                 yield return new WaitForSeconds(3f);
 
                 if (result.why == "domiNotHealthEvent") {
@@ -519,7 +527,16 @@ public class PVPUI : MonoBehaviour
                 _panel.text = (result.my ? "" : "적이 ") + result.why;
                 yield return new WaitForSeconds(1.5f);
             }
+
+            
         }
+
+        for(int i=0; i < soList.Count(); i++)
+        {
+            soList[i].skillSo.TurnEnd();
+
+        }
+
 
         if (disableControl) {
             yield return new WaitForSeconds(1.5f);
@@ -532,6 +549,8 @@ public class PVPUI : MonoBehaviour
     {
         _playerCools = new int[5]{0,0,0,0,0};
         _originCools = cools;
+        soList = parts;
+
         for (int i = 0; i < 5; i++)
         {
             

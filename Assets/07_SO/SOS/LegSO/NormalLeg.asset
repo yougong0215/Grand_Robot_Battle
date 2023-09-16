@@ -22,12 +22,14 @@ MonoBehaviour:
     DEF: 40
     SPEED: 0
     Barrier: 0
+    PercentDef: 1
   Explain: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uB2E4\uB9AC \uD30C\uCE20."
+  SkillExplain: 
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}
-  EquipImage: {fileID: 0}
   clips: {fileID: 0}
-  names: 
+  names: "\uC720\uD134 \uD0A5!"
   Count: 1
   Daesa: "\uC720\uD134 \uD0A5!!"
+  skillSo: {fileID: 11400000, guid: 03eba642ff0a49b4f991d22171196cea, type: 2}

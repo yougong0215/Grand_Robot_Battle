@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077b0503cf5b3064888645eb7dbaee7d, type: 3}
   m_Name: ME
   m_EditorClassIdentifier: 
-  names: 
-  Exname: 
+  names: "\uB098"
+  Exname: "\uCD08\uBCF4\uC790"
   Default: {fileID: 0}
   Laugh: {fileID: 0}
   Sad: {fileID: 0}

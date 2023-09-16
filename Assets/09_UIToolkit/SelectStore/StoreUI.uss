@@ -2,3 +2,15 @@
     width: 5%;
     height: 5%;
 }
+
+.errorpanel {
+    left: 713px;
+    position: absolute;
+    top: 1000px;
+    transition-duration: 0.5s;
+}
+
+.errorpanel.on {
+    position: absolute;
+    top: 200px;
+}

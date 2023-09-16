@@ -98,5 +98,9 @@
                 <ui:Label text="LV 1" display-tooltip-when-elided="true" name="style" style="position: absolute; font-size: 36px; top: 66px; left: 134px; width: 187px; color: rgb(255, 255, 255); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ADbtn" style="position: absolute; top: 145px; left: 1824px; width: 150px; height: 150px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/319.png?fileID=2800000&amp;guid=2c31bf13cba417345aacef6523273a38&amp;type=3#319&apos;); background-color: rgba(255, 255, 255, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; -unity-background-image-tint-color: rgb(255, 255, 255); justify-content: flex-end; align-items: center;" />
+        <ui:VisualElement name="ad-panel" class="adpanel">
+            <ui:Label tabindex="-1" text="이상하다?" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 100%; height: 60%; -unity-text-align: upper-center; font-size: 50px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

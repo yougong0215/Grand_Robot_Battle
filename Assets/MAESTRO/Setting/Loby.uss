@@ -43,3 +43,17 @@
 .unity-label {
     -unity-font-definition: url('project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&guid=6ee49a6dd23af614ca45fb91679fe723&type=2#Medium SDF');
 }
+
+.adpanel.on {
+}
+
+.adpanel {
+    flex-grow: 0;
+    top: -447px;
+    position: absolute;
+    flex-shrink: 0;
+    width: 30%;
+    height: 40%;
+    left: 675px;
+    background-color: rgb(255, 255, 255);
+}

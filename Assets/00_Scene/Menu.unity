@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 628215181}
   - component: {fileID: 628215182}
   - component: {fileID: 628215183}
+  - component: {fileID: 628215184}
   m_Layer: 0
   m_Name: UITOOLKIT
   m_TagString: Untagged
@@ -600,6 +601,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Document: {fileID: 628215181}
+--- !u!114 &628215184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628215179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0ad187ebad93e47af7edb61a620dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardedId: ca-app-pub-3940256099942544/5224354917
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

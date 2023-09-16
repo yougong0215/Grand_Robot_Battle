@@ -21,6 +21,7 @@ struct MailPreview {
 public class MenuUI : MonoBehaviour
 {
     PurchaseUI purchaseUI;
+    AdSystem _AdSys;
     private UIDocument _doc;
     //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
@@ -60,6 +61,7 @@ public class MenuUI : MonoBehaviour
         NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
         purchaseUI = GameObject.Find("PURCHASE").GetComponent<PurchaseUI>();
         _setting = GameObject.Find("SETTING").GetComponent<Setting>();
+        _AdSys = GetComponent<AdSystem>();
     }
 
     void OnDestroy() {
@@ -139,6 +141,10 @@ public class MenuUI : MonoBehaviour
     {
         // 광고 연결
         _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+        _AdSys.LoadRewardedAd((GoogleMobileAds.Api.Reward reward) => {
+            print("광고 다봄");
+        });
+        LookADPanel(false);
     }
 
     void LoadStroyView()

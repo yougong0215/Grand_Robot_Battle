@@ -23,6 +23,7 @@ public class Setting : MonoBehaviour
     private Slider _uiSlider;
     private Slider _rvSliders;
     private Label[] _percentage = new Label[4];
+    private Button _exitBtn;
 
     private void Awake()
     {
@@ -32,6 +33,9 @@ public class Setting : MonoBehaviour
     private void OnEnable()
     {
         _root = _doc.rootVisualElement;
+
+        _exitBtn = _root.Q<Button>("exit-btn");
+        _exitBtn.clicked += () => ActivePanel(false);
 
         _bgSlider = _root.Q<Slider>("bg-slider");
         _percentage[0] = _bgSlider.Q<Label>("percentage");
@@ -46,6 +50,13 @@ public class Setting : MonoBehaviour
         _sfxSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.sfx));
         _uiSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.uisound));
         _rvSliders.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.rv));
+
+        _root.style.display = DisplayStyle.None;
+    }
+
+    public void ActivePanel(bool isActive)
+    {
+        _root.style.display = isActive ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
     private void OnSliderValueChange(ChangeEvent<float> evt, SoundSetting ss)

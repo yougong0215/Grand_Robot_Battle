@@ -27,10 +27,12 @@ public class PurchaseUI : MonoBehaviour
             _purchasebtns[i] = _root.Q<VisualElement>($"{krws[i]}krw").Q<Button>("purchase-btn");
             _purchasebtns[i].clicked += () => PurchaseCrystal(krws[i]);
         }
+        _root.style.display = DisplayStyle.None;
     }
 
     public void ActivePanel(bool isActive)
     {
+        Debug.Log(1);
         _root.style.display = isActive ? DisplayStyle.Flex : DisplayStyle.None;
     }
 

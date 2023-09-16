@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/Setting.uss?fileID=7433441132597879392&amp;guid=36c08847e89bf0547b87dc02167180a0&amp;type=3#Setting" />
-    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center;">
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center; display: flex;">
         <ui:VisualElement name="setting-panel" style="flex-grow: 0; align-items: center;">
             <ui:Label tabindex="-1" text="옵션" parse-escape-sequences="true" display-tooltip-when-elided="true" name="option" />
             <ui:VisualElement name="slider-panel" style="flex-grow: 0; background-color: rgb(173, 173, 173); align-items: center; justify-content: center;">

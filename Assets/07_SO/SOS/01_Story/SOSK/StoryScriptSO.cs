@@ -21,13 +21,13 @@ public class StoryScriptSO : ScriptableObject
 [System.Serializable]
 public class StoryClass
 {
+    [Header("false : Side | true : Middle")]
+    public bool IsMiddle = false;
     [Header("false : Ch1 | true : Ch2")]
     public bool IsSay = false;
     public CharacterSO Ch;
     public Character_Face _faceOne;
     [TextArea] public string Script;
-    [Header("----- Two-----")]
-    [Header("----- Two-----")]
     [Header("----- Two-----")]
     //[Header("fale = Single | true = Dobule")]
     //public bool Value = false;

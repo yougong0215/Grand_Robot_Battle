@@ -149,8 +149,9 @@ public class MenuUI : MonoBehaviour
         if ((bool)data == false) return;
         // 광고 연결
         _AdSys.LoadRewardedAd((GoogleMobileAds.Api.Reward reward) => {
-            _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+            // _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
             NetworkCore.Send("ad.give", null);
+            GetComponent<LobbyGetInfo>().ResetWaitAD();
         });
     }
 

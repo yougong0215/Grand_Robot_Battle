@@ -54,6 +54,11 @@ public class LobbyGetInfo : MonoBehaviour
         }
     }
 
+    public void ResetWaitAD() {
+        StopCoroutine("WaitAdBtn");
+        StartCoroutine("WaitAdBtn", 60 * 10);
+    }
+
     IEnumerator GetProfileImage(string url) {
         VisualElement profile =  Document.rootVisualElement.Q("Profile").Q("ProfileImg");
         if (cache_Profile.TryGetValue(url, out var img)) {

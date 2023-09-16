@@ -20,6 +20,7 @@ struct MailPreview {
 
 public class MenuUI : MonoBehaviour
 {
+    PurchaseUI purchaseUI;
     private UIDocument _doc;
     //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
@@ -30,7 +31,10 @@ public class MenuUI : MonoBehaviour
     private Button _makeBtn;
     private Button _storeBtn;
     private Button _garageBtn;
-
+    private Setting _setting;
+    private Button _gemplusbtn;
+    private Button _goldplusbtn;
+    private Button _settingbtn;
     private VisualElement _charImg;
 
     
@@ -52,6 +56,8 @@ public class MenuUI : MonoBehaviour
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
         NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
+        purchaseUI = GameObject.Find("PURCHASE").GetComponent<PurchaseUI>();
+        _setting = GameObject.Find("SETTING").GetComponent<Setting>();
     }
 
     void OnDestroy() {
@@ -92,7 +98,8 @@ public class MenuUI : MonoBehaviour
         //_storyExitBtn.clicked += () => LoadStroyView();
         //_storyElem.Blur();
         // _storyElem.AddToClassList("off");
-
+        _settingbtn = _root.Q<Button>("Setting");
+        _settingbtn.clicked += () => _setting.ActivePanel(true);
         
         _mailView.CloneTree(_root);
         _mailElem = _root.Q<VisualElement>("MailView");
@@ -104,10 +111,14 @@ public class MenuUI : MonoBehaviour
             NetworkCore.Send("mail.requestMails", 0);
             _mailElem.RemoveFromClassList("off");
         };
+
+        _gemplusbtn = _root.Q<Button>("Gemplus");
+        _gemplusbtn.RegisterCallback<ClickEvent>(evt => { purchaseUI.ActivePanel(true); Debug.Log(1); });
+        _goldplusbtn = _root.Q<Button>("Goldplus");
+        //골드는 어카냐
     }
 
-
-
+    
 
     void LoadStroyView()
     {

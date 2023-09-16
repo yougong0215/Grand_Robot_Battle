@@ -81,6 +81,7 @@ RoomManager.RoomClass.prototype.SkillChoiceFinish = function() {
     if (result_2st.why === "domiNotHealthEvent") {
         const winName = result_2st.answer ? hitter_name : attacker_name;
         console.log(`[RoomManager](${this.roomID}) 게임종료!! / ${winName} 이김!`);
+        this.Reward(result_2st.answer ? hitid : attackid);
         this.Destroy(); // 방폭
         return;
     }

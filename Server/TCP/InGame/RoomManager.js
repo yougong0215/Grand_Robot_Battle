@@ -1,3 +1,6 @@
+const Gacha = require("../Gacha/main.js");
+const ItemUtil = require("../lib/itemUtils.js");
+
 const Rooms = {};
 const JoinPlayers = {};
 
@@ -45,6 +48,14 @@ class Room {
             player.socket.send("ingame.destory", name);
         });
         this.Destroy(); // 방폭
+    }
+
+    // 승리 보상
+    Reward = function(id) {
+        for (let i = 0; i < 5; i++) {
+            const itemID = Gacha.RandomItemCode();
+            ItemUtil.Give(id, itemID+"_puzzel", 1);
+        }
     }
 }
 

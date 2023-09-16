@@ -1,11 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/MAESTRO/Setting/Purchase.uss?fileID=7433441132597879392&amp;guid=cf57132ba9576ac4da9ffc2c253f7fa9&amp;type=3#Purchase" />
     <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center;">
-        <ui:VisualElement name="purchase-panel" style="flex-grow: 0; width: 60%;">
-            <ui:VisualElement name="purchase-text-base" style="flex-grow: 0;">
-                <ui:Label tabindex="-1" text="충전소" parse-escape-sequences="true" display-tooltip-when-elided="true" name="text" style="width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 50px;" />
+        <ui:VisualElement name="purchase-panel" style="flex-grow: 0; width: 60%; background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Purchase.png?fileID=2800000&amp;guid=cf2d2ad0ccb54f14887ce6d14a764dc8&amp;type=3#Purchase&apos;); background-color: rgba(255, 255, 255, 0);">
+            <ui:VisualElement name="purchase-text-base" style="flex-grow: 0; background-color: rgba(154, 154, 154, 0); background-image: url(&apos;project://database/Assets/99_mainUI/Sub%20Panel/Mail.png?fileID=2800000&amp;guid=415dd0e0006e9af48904da4e1c26074b&amp;type=3#Mail&apos;); -unity-background-image-tint-color: rgb(157, 166, 212);">
+                <ui:Label tabindex="-1" text="충전소" parse-escape-sequences="true" display-tooltip-when-elided="true" name="text" style="width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 80%; background-image: none; background-color: rgba(0, 0, 0, 0); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
             </ui:VisualElement>
-            <ui:ScrollView name="data-scroll" vertical-scroller-visibility="AlwaysVisible">
+            <ui:ScrollView name="data-scroll" vertical-scroller-visibility="AlwaysVisible" style="background-image: none; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgba(142, 142, 142, 0.79); border-right-color: rgba(142, 142, 142, 0.79); border-top-color: rgba(142, 142, 142, 0.79); border-bottom-color: rgba(142, 142, 142, 0.79); background-color: rgb(215, 227, 233);">
                 <ui:VisualElement name="990krw" class="element">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 90개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
@@ -27,7 +27,7 @@
                     <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
                     <ui:Button text="$9900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
-                <ui:VisualElement name="19000krw" class="element">
+                <ui:VisualElement name="19000krw" class="element" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 2000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>

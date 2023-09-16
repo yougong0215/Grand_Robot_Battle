@@ -249,7 +249,7 @@ public class PVPUI : MonoBehaviour
                 //SetPanel(); // 꺼짐
                 
 
-                so.skillSo.Init(_panel, _robot, _enemyRobot, so, _robot.GetComponent<AnimationBind>());
+                so.skillSo.Init(this, _robot, _enemyRobot, so, _robot.GetComponent<AnimationBind>());
                 
                 so.skillSo._act?.Invoke();
                 yield return new WaitUntil(() => so.skillSo.IsEnd());
@@ -281,7 +281,7 @@ public class PVPUI : MonoBehaviour
                 
                     SetPanel(); // 켜짐
 
-                    _part.skillSo.Init(_panel, _enemyRobot, _robot, _part, _enemyRobot.GetComponent<AnimationBind>());
+                    _part.skillSo.Init(this, _enemyRobot, _robot, _part, _enemyRobot.GetComponent<AnimationBind>());
 
                     yield return new WaitUntil(() => _part.skillSo.IsEnd());
 
@@ -493,7 +493,7 @@ public class PVPUI : MonoBehaviour
                 var SO = _SOserver.ReturnSO(result.soid);
                 (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>().AnimationChange(SO.clips);
 
-                SO.skillSo.Init(_panel, (result.my ? _robot : _enemyRobot)
+                SO.skillSo.Init(this, (result.my ? _robot : _enemyRobot)
                 , (result.my ?  _enemyRobot : _robot), SO, (result.my ? _robot : _enemyRobot).GetComponent<AnimationBind>());
 
                 yield return new WaitUntil(() => SO.skillSo.IsEnd());

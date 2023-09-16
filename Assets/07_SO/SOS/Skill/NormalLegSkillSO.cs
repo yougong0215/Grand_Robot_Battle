@@ -5,14 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SkillSO/NormalLeg")]
 public class NormalLegSkillSO : PartSkillSO
 {
-
-    public override bool IsEnd()
+    protected override void Start()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     protected override void UseingSKill()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

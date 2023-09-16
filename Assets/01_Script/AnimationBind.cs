@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,6 +16,8 @@ public class AnimationBind : MonoBehaviour
 
     bool ani = false;
 
+    public Action ShowEffect;
+    public Action AddDamage;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -28,6 +31,8 @@ public class AnimationBind : MonoBehaviour
         _animator.SetTrigger(_AttackTriggerhash);
         _animator.SetBool(_isAttackHash, true);
     }
+
+
 
     public void OnAnimationEnd()
     {

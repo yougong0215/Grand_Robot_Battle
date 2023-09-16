@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 //[CreateAssetMenu(menuName = "SO/Skill")]
 public abstract class PartSkillSO : ScriptableObject
 {
-    protected Label _panel;
+    protected PVPUI _pvp;
     protected PartSO _part;
     protected RobotSettingAndSOList _me;
     protected RobotSettingAndSOList _enemy;
@@ -18,20 +18,23 @@ public abstract class PartSkillSO : ScriptableObject
     public Action _act;
 
     bool bSelected = false;
-    public virtual void Init(Label _lb,RobotSettingAndSOList me, RobotSettingAndSOList Enemy, PartSO so, AnimationBind anim)
+    bool isEnd= false;
+    public virtual void Init(PVPUI pvp,RobotSettingAndSOList me, RobotSettingAndSOList Enemy, PartSO so, AnimationBind anim)
     {
-        _panel = _lb;   
+         _pvp = pvp;
         _me = me;
         _enemy = Enemy;
         _part = so;
         _anim = anim;
+        isEnd= false;
         
         if(bSelected==false)
         {
             bSelected= true;
             _act += AnimStart;
-            _act += UseingSKill;
+            _act += StartAction;
         }
+        Start();
     }
 
     public void AnimStart()
@@ -39,6 +42,15 @@ public abstract class PartSkillSO : ScriptableObject
         _me.GetComponent<AnimationBind>().AnimationChange(_part.clips);
     }
 
-    public abstract bool IsEnd();
-    protected abstract void UseingSKill();
+    public bool IsEnd()
+    {
+        return isEnd;
+    }
+
+    protected abstract void Start();
+    private void StartAction()
+    {
+        _pvp.StartCoroutine("UseingSKill");
+    }
+    protected abstract IEnumerator UseingSKill();
 }

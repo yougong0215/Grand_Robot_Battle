@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class AnimationBind : MonoBehaviour
 {
     [SerializeField] AnimatorOverrideController aoc;
-    [SerializeField] Animator _animator;
+    [SerializeField] public Animator _animator;
 
     private readonly int _isAttackHash = Animator.StringToHash("is_Attack");
     private readonly int _AttackTriggerhash = Animator.StringToHash("_attack");
@@ -15,6 +16,8 @@ public class AnimationBind : MonoBehaviour
 
     bool ani = false;
 
+    public Action ShowEffect;
+    public Action AddDamage;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -29,6 +32,8 @@ public class AnimationBind : MonoBehaviour
         _animator.SetBool(_isAttackHash, true);
     }
 
+
+
     public void OnAnimationEnd()
     {
         ani = true;
@@ -42,19 +47,14 @@ public class AnimationBind : MonoBehaviour
         _animator.SetTrigger(_EquipTriggerhash);
     }
 
-        public bool EndAnim()
+    public void EndAnim()
     {
-        if(ani == false)
-        {
-            return false;
-        }
-        else
-        {
-            _animator.ResetTrigger(_AttackTriggerhash);
-            _animator.SetBool(_isAttackHash, false);
-            ani = false;
-            return true;
-        }
+
+        _animator.ResetTrigger(_AttackTriggerhash);
+        _animator.SetBool(_isAttackHash, false);
+        //ani = false;
+        //return true;
+
     }
 
     public void OnAnimationSubEvent()

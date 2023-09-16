@@ -1,0 +1,121 @@
+#purchase-panel {
+    width: 80%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#data-scroll {
+    width: 90%;
+    height: 80%;
+    background-color: rgb(171, 171, 171);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#purchase-text-base {
+    width: 80%;
+    height: 15%;
+    background-color: rgb(154, 154, 154);
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#unity-content-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    justify-content: center;
+}
+
+.element {
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    align-self: center;
+    background-image: url('project://database/Assets/99_mainUI/Extra/Hexa%20Rect%20Tall%20Light.png?fileID=2800000&guid=1faabeddd1d3ca24c8d01674cb8cca7e&type=3#Hexa Rect Tall Light');
+}
+
+.element > .purbtn {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 15%;
+    font-size: 30px;
+    width: 80%;
+    -unity-font-definition: url('project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&guid=6ee49a6dd23af614ca45fb91679fe723&type=2#Medium SDF');
+}
+
+.element > .counttxt {
+    height: 15%;
+    border-bottom-width: 3px;
+    border-left-color: rgb(128, 128, 128);
+    border-right-color: rgb(128, 128, 128);
+    border-top-color: rgb(128, 128, 128);
+    border-bottom-color: rgb(128, 128, 128);
+    margin-bottom: 10px;
+    width: 80%;
+    -unity-font-definition: url('project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&guid=6ee49a6dd23af614ca45fb91679fe723&type=2#Medium SDF');
+}
+
+.element > .image {
+    height: 65%;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(125, 125, 125);
+    width: 90%;
+    border-bottom-width: 3px;
+    border-left-color: rgba(255, 255, 255, 0.72);
+    border-right-color: rgba(255, 255, 255, 0.72);
+    border-top-color: rgba(255, 255, 255, 0.72);
+    border-bottom-color: rgba(255, 255, 255, 0.72);
+    border-top-width: 0;
+    background-image: url('project://database/Assets/06_Image/170_17.png?fileID=2800000&guid=f4db64358bb93744d91dd5babf2cbb95&type=3#170_17');
+}

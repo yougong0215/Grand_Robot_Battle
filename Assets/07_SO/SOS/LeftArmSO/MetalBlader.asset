@@ -24,6 +24,7 @@ MonoBehaviour:
     DEF: 0
     SPEED: 0
     Barrier: 0
+    PercentDef: 1
   Explain: "\uAC15\uCCA0\uB85C \uC81C\uC791\uB41C \uB0A0\uCE74\uB86D\uACE0 \uC608\uB9AC\uD55C
     \uCE7C\uB0A0.\r\n\uC77C\uB3C4\uC591\uB2E8\uC73C\uB85C \uC801\uC744 \uC644\uD30C\uC2DC\uD0A8\uB2E4."
   SkillExplain: 
@@ -34,4 +35,4 @@ MonoBehaviour:
   names: "\uAC15\uCC38\uAC01"
   Count: 1
   Daesa: "\uAC15\uCC38\uAC01!! "
-  skillSo: {fileID: 0}
+  skillSo: {fileID: 11400000, guid: 9f531a1568e4d464591937d0b3793883, type: 2}

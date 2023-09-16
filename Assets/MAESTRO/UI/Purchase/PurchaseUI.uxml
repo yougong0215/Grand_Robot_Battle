@@ -1,0 +1,55 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MAESTRO/Setting/Purchase.uss?fileID=7433441132597879392&amp;guid=cf57132ba9576ac4da9ffc2c253f7fa9&amp;type=3#Purchase" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="purchase-panel" style="flex-grow: 0; width: 60%; background-image: url(&apos;project://database/Assets/99_mainUI/Panel/Gacha%20NonTrans%202.png?fileID=2800000&amp;guid=b4d6ef9247104904e95395083fd14da6&amp;type=3#Gacha NonTrans 2&apos;); background-color: rgba(255, 255, 255, 0); justify-content: space-between; align-items: auto;">
+            <ui:VisualElement name="Line" style="flex-grow: 1; width: 99.25%; height: 10%; position: absolute; background-color: rgb(79, 79, 79); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; flex-direction: row-reverse; justify-content: space-between; align-items: center; align-self: center; flex-wrap: nowrap; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(209, 209, 209); border-right-color: rgb(209, 209, 209); border-top-color: rgb(209, 209, 209); border-bottom-color: rgb(209, 209, 209); top: 0;">
+                <ui:Label tabindex="-1" text="충전소" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingTitle" style="align-items: stretch; position: absolute; left: 50%; right: 50%; -unity-text-align: upper-center; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); font-size: 40%; color: rgb(255, 255, 255);" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-btn" style="position: relative; width: 60px; height: 60px; top: auto; left: auto; font-size: 60px; right: auto; background-color: rgba(188, 188, 188, 0); background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=1e45b110e5190484a99928ba9c307c8b&amp;type=3#arrow-left@2x&apos;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; -unity-background-image-tint-color: rgb(255, 192, 0); align-items: stretch;" />
+            </ui:VisualElement>
+            <ui:ScrollView name="data-scroll" vertical-scroller-visibility="AlwaysVisible" style="background-image: none; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-left-color: rgba(142, 142, 142, 0.79); border-right-color: rgba(142, 142, 142, 0.79); border-top-color: rgba(142, 142, 142, 0.79); border-bottom-color: rgba(142, 142, 142, 0.79); background-color: rgb(215, 227, 233); position: absolute; top: 15%;">
+                <ui:VisualElement name="990krw" class="element">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 90개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+                <ui:VisualElement name="4900krw" class="element">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 520개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$4900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+                <ui:VisualElement name="9900krw" class="element">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 990개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$9900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+                <ui:VisualElement name="19000krw" class="element" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 2000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+                <ui:VisualElement name="29000krw" class="element">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 3000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+                <ui:VisualElement name="49000krw" class="element">
+                    <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
+                        <ui:Label tabindex="-1" text="크리스탈 5000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
+                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

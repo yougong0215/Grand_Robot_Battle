@@ -13,6 +13,7 @@ public class RobotSettingAndSOList : MonoBehaviour
     public AnimationBind AnimBind => _bd;
 
 
+
     #region public code
     [Header("Left Upper Arm")]
     [SerializeField] GameObject A_L_UBone;
@@ -466,6 +467,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 //    Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, enums);
                 //    break;
         }
+        MaxHP = _statues.HP;
 
     }
 }

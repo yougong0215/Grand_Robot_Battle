@@ -22,13 +22,14 @@ public class domiPVPServer : MonoBehaviour
     [SerializeField] GameObject MyRobot;
     [SerializeField] GameObject EnemyRobot;
     GetServerToSO SO_Server;
-    PVPUI _pvpUI;
+    [SerializeField] BattleEnemySO _listed;
+    [SerializeField] PVPUI _pvpUI;
     
     private void Awake() {
 
  
         
-        _pvpUI = FindAnyObjectByType<PVPUI>();
+        //_pvpUI = FindAnyObjectByType<PVPUI>();
         SO_Server = GetComponent<GetServerToSO>();
         NetworkCore.EventListener["ingame.playerInit"] = playerInit;
         NetworkCore.EventListener["ingame.AIinit"] = AI_Init;
@@ -49,6 +50,8 @@ public class domiPVPServer : MonoBehaviour
             else
                 serverInput = EnemyRobot.AddComponent<ServerPVPRobotInput>();
 
+
+
             // serverInput.Name = (string)player["name"];
             print(player["my"]);
             print(player["name"]);
@@ -64,6 +67,12 @@ public class domiPVPServer : MonoBehaviour
                 serverInput.Body = SO_Server.ReturnSO((string)player["body"]);
             if (player["leg"] != null)
                 serverInput.Leg = SO_Server.ReturnSO((string)player["leg"]);
+
+            serverInput.Left = serverInput.Left == null ? _listed.LeftHand : serverInput.Left;
+            serverInput.Right = serverInput.Right == null ? _listed.RightHand : serverInput.Right;
+            serverInput.Head = serverInput.Head == null ? _listed.Head : serverInput.Head;
+            serverInput.Leg = serverInput.Leg == null ? _listed.Leg : serverInput.Leg;
+            serverInput.Body = serverInput.Body == null ? _listed.Body : serverInput.Body;
 
             serverInput.stat = new();
             serverInput.stat.HP = (int)player["health"];
@@ -83,6 +92,8 @@ public class domiPVPServer : MonoBehaviour
                 }, new int[] {
                      (int)player["cools"]["left"], (int)player["cools"]["right"],  (int)player["cools"]["body"], (int)player["cools"]["leg"],(int)player["cools"]["head"]
                 });
+
+
             
             StartCoroutine(serverInput.FindAndSet());
         }
@@ -92,8 +103,11 @@ public class domiPVPServer : MonoBehaviour
 
     void AI_Init(JsonData data) {
         var serverInput = MyRobot.AddComponent<ServerPVPRobotInput>();
+        var EnemyInput = EnemyRobot.AddComponent<ServerPVPRobotInput>();
 
         int myMaxHealth = 0;
+
+
 
         try {
             if (data["left"] != null) {
@@ -128,6 +142,17 @@ public class domiPVPServer : MonoBehaviour
 
         StartCoroutine(serverInput.FindAndSet());
 
+        
+
+        serverInput.Left = serverInput.Left == null ? _listed.LeftHand : serverInput.Left;
+        serverInput.Right = serverInput.Right == null ? _listed.RightHand : serverInput.Right;
+        serverInput.Head = serverInput.Head == null ? _listed.Head : serverInput.Head;
+        serverInput.Leg = serverInput.Leg == null ? _listed.Leg : serverInput.Leg;
+        serverInput.Body = serverInput.Body == null ? _listed.Body : serverInput.Body;
+
+
+
+
         _pvpUI.SetSkillButton(new PartSO[] {
                     serverInput.Left, serverInput.Right,  serverInput.Body, serverInput.Leg,serverInput.Head
                 }, new int[] {
@@ -135,8 +160,21 @@ public class domiPVPServer : MonoBehaviour
                     ,  (int)serverInput.Body.Count, (int)serverInput.Leg.Count,(int)serverInput.Head.Count
                 });
 
+
+        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand  ? _listed.LeftHand : EnemyInput.Left;
+        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand   ? _listed.RightHand : EnemyInput.Right;
+        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head   ? _listed.Head : EnemyInput.Head;
+        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg    ? _listed.Leg : EnemyInput.Leg;
+        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body  ? _listed.Body : EnemyInput.Body;
+
+        StartCoroutine(EnemyInput.FindAndSet());
+
+
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력
+        _pvpUI.SetPanel(false);
+
+        _pvpUI.SetMaxHP(serverInput.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyInput.GetComponent<RobotSettingAndSOList>()._statues.HP);
 
         // 이어서...
     }

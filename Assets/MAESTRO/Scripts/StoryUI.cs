@@ -67,12 +67,13 @@ public class StoryUI : MonoBehaviour
         _maxStage = _storySOList.Count;
         _gameEnter = _root.Q<Button>("EnterBtn");
 
-        _gameEnter.clicked += () => StoryLoadResource.Instance.Save(_storySOList[currentRound]);
+
         _gameEnter.clicked += () => LoadManager.LoadScene(SceneEnum.PVP);
+        _gameEnter.clicked += () => StoryLoadResource.Instance.Save(_storySOList[currentRound]);
         // _leftBtn.clicked += ()=> MovementStage(-1);
         // _rightbtn.clicked += () => MovementStage(1);
         // MovementStage(0);
-        
+
     }   
 
     void ResultClearNum(LitJson.JsonData data) {
@@ -110,6 +111,7 @@ public class StoryUI : MonoBehaviour
         }
         _leftBtn.clicked += ()=> MovementStage(-1);
         _rightbtn.clicked += () => MovementStage(1);
+
         MovementStage(0);
         print("현재 꺤 스테이지까지 : "+(int)data);
     }

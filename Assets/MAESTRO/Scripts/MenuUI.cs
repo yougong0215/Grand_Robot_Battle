@@ -20,6 +20,7 @@ struct MailPreview {
 
 public class MenuUI : MonoBehaviour
 {
+    PurchaseUI purchaseUI;
     private UIDocument _doc;
     //public VisualTreeAsset _storyView;
     public VisualTreeAsset _mailView;
@@ -30,10 +31,15 @@ public class MenuUI : MonoBehaviour
     private Button _makeBtn;
     private Button _storeBtn;
     private Button _garageBtn;
-
+    private Setting _setting;
+    private Button _gemplusbtn;
+    private Button _goldplusbtn;
+    private Button _settingbtn;
     private VisualElement _charImg;
-
-    
+    private Button _ADbtn;
+    private Button _adAcceptBtn;
+    private Button _adCancleBtn;
+    private VisualElement _adPanel;
 
     VisualElement _storyElem;
     private Button _storyBtn;
@@ -52,6 +58,8 @@ public class MenuUI : MonoBehaviour
         _doc = GetComponent<UIDocument>();
         NetworkCore.EventListener["mail.resultMails"] = ResultMails;
         NetworkCore.EventListener["mail.successGiveItem"] = successGiveItem;
+        purchaseUI = GameObject.Find("PURCHASE").GetComponent<PurchaseUI>();
+        _setting = GameObject.Find("SETTING").GetComponent<Setting>();
     }
 
     void OnDestroy() {
@@ -92,7 +100,8 @@ public class MenuUI : MonoBehaviour
         //_storyExitBtn.clicked += () => LoadStroyView();
         //_storyElem.Blur();
         // _storyElem.AddToClassList("off");
-
+        _settingbtn = _root.Q<Button>("Setting");
+        _settingbtn.clicked += () => _setting.ActivePanel(true);
         
         _mailView.CloneTree(_root);
         _mailElem = _root.Q<VisualElement>("MailView");
@@ -104,10 +113,33 @@ public class MenuUI : MonoBehaviour
             NetworkCore.Send("mail.requestMails", 0);
             _mailElem.RemoveFromClassList("off");
         };
+
+        _gemplusbtn = _root.Q<Button>("Gemplus");
+        _gemplusbtn.clicked += () => purchaseUI.ActivePanel(true);
+        _goldplusbtn = _root.Q<Button>("Goldplus");
+        //골드는 어카냐
+        _ADbtn = _root.Q<Button>("ADbtn");
+        _ADbtn.clicked += () => LookADPanel(true);
+        _adAcceptBtn = _root.Q<Button>("ad-accept-btn");
+        _adAcceptBtn.clicked += LookAD;
+        _adCancleBtn = _root.Q<Button>("ad-cancle-btn");
+        _adCancleBtn.clicked += () => LookADPanel(false);
+        _adPanel = _root.Q("ad-panel");
     }
 
+    private void LookADPanel(bool isOk)
+    {
+        if (isOk)
+            _adPanel.AddToClassList("on");
+        else
+            _adPanel.RemoveFromClassList("on");
+    }
 
-
+    private void LookAD()
+    {
+        // 광고 연결
+        _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+    }
 
     void LoadStroyView()
     {

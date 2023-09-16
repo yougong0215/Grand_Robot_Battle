@@ -20,5 +20,9 @@
             <ui:VisualElement style="flex-grow: 1; position: absolute; background-image: url(&apos;project://database/Assets/06_Image/170_17.png?fileID=2800000&amp;guid=f4db64358bb93744d91dd5babf2cbb95&amp;type=3#170_17&apos;); width: 85%; height: 51%; top: 10%;" />
             <ui:Label tabindex="-1" text="충전" parse-escape-sequences="true" display-tooltip-when-elided="true" style="top: 61%; position: absolute; font-size: 75%; text-overflow: clip; -unity-text-align: middle-center; width: 24%; height: auto;" />
         </ui:Button>
+        <ui:VisualElement name="error-panel" class="errorpanel" style="flex-grow: 0; flex-shrink: 0; width: 600px; height: 400px; background-color: rgb(154, 154, 154); align-items: center; justify-content: flex-start;">
+            <ui:Label tabindex="-1" text="구현 준비 중 입니다." parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 100%; height: 70%; font-size: 60px; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/06_Image/StartScene/Fonts/SpoqaHanSansNeo-Bold.ttf?fileID=12800000&amp;guid=87591a523b0f7cd42aa0dc41aa0c4507&amp;type=3#SpoqaHanSansNeo-Bold&apos;); -unity-font-definition: initial;" />
+            <ui:Button text="확인" parse-escape-sequences="true" display-tooltip-when-elided="true" name="accept-btn" style="width: 50%; height: 20%; -unity-font: url(&apos;project://database/Assets/MAESTRO/UI/Loby/Medium.ttf?fileID=12800000&amp;guid=f769d461d8d2c0a40b3f809da2e76ea8&amp;type=3#Medium&apos;); -unity-font-definition: initial; font-size: 60px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

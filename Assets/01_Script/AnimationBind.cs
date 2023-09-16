@@ -47,19 +47,14 @@ public class AnimationBind : MonoBehaviour
         _animator.SetTrigger(_EquipTriggerhash);
     }
 
-    public bool EndAnim()
+    public void EndAnim()
     {
-        if(ani == false)
-        {
-            return false;
-        }
-        else
-        {
-            _animator.ResetTrigger(_AttackTriggerhash);
-            _animator.SetBool(_isAttackHash, false);
-            ani = false;
-            return true;
-        }
+
+        _animator.ResetTrigger(_AttackTriggerhash);
+        _animator.SetBool(_isAttackHash, false);
+        //ani = false;
+        //return true;
+
     }
 
     public void OnAnimationSubEvent()

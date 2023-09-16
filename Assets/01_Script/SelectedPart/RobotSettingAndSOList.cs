@@ -467,6 +467,7 @@ public class RobotSettingAndSOList : MonoBehaviour
                 //    Setting(so, B_LBone, ref B_LEquip, ref B_LBodySO, enums);
                 //    break;
         }
+        MaxHP = _statues.HP;
 
     }
 }

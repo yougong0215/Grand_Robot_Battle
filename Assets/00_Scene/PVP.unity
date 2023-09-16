@@ -1942,6 +1942,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyRobot: {fileID: 310442046}
   EnemyRobot: {fileID: 372955863}
+  _listed: {fileID: 11400000, guid: 33db165db57a3d742a6efa76831f3624, type: 2}
+  _pvpUI: {fileID: 1859384937}
 --- !u!114 &2092881263
 MonoBehaviour:
   m_ObjectHideFlags: 0

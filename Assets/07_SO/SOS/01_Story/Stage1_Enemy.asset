@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31aa124516f0f1647b4847a98fbb47a6, type: 3}
   m_Name: Stage1_Enemy
   m_EditorClassIdentifier: 
-  Head: {fileID: 11400000, guid: 38d79240a7ac5fb47b8127bfe29eb4cd, type: 2}
+  Head: {fileID: 11400000, guid: 696d6cffed81ebf4a836e9b0561c1422, type: 2}
   Body: {fileID: 11400000, guid: d0be537c1ecabc84793a6f592ea7e212, type: 2}
-  LeftHand: {fileID: 11400000, guid: 0afa08a5a2b38e946867fb5deeb5609d, type: 2}
+  LeftHand: {fileID: 11400000, guid: cefbbc995c90dc744972c59922204a0c, type: 2}
   RightHand: {fileID: 11400000, guid: 8ff82fc9a3ebfa047bf3a87999a2fab1, type: 2}
   Leg: {fileID: 11400000, guid: 61b7f1ed07726f645b6a199b12ba6c16, type: 2}

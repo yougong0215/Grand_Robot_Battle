@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: NormalRHand
+  m_Name: NormalLHand
   m_EditorClassIdentifier: 
-  PartBase: 1
+  PartBase: 0
   _part: []
-  SOname: "\uB178\uBA40 \uB77C\uC774\uD2B8 \uD578\uB450"
+  SOname: "\uB178\uB9D0 \uB808\uD504\uD2B8\uD578\uB4DC"
   Sprite: {fileID: 0}
   Statues:
     HP: 0
@@ -31,5 +31,5 @@ MonoBehaviour:
   clips: {fileID: 0}
   names: "\uD380\uCE58!"
   Count: 1
-  Daesa: "\uB808\uD504\uD2B8 \uD6C5!"
+  Daesa: "\uB77C\uC774\uD2B8 \uD6C5"
   skillSo: {fileID: 11400000, guid: b6127006f57b2024fa05d64ffe383909, type: 2}

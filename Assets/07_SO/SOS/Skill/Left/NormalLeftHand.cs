@@ -15,7 +15,7 @@ public class NormalLeftHand : PartSkillSO
     {
         for (int i = 0; i < EventTime.Count; i++)
         {
-            if(i < 0)
+            if(i == 0)
                 yield return new WaitForSeconds(EventTime[i]);
             else
                 yield return new WaitForSeconds(EventTime[i] - EventTime[i-1]);

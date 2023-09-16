@@ -101,16 +101,17 @@
 }
 
 .PartsBtnGroup {
-    transition-property: top;
-    transition-duration: 0.5s;
+    transition-property: bottom;
+    transition-duration: 1s;
     transition-timing-function: ease-in;
     position: absolute;
-    top: 100%;
+    top: auto;
+    bottom: 0;
 }
 
 .PartsBtnGroup.off {
-    top: 200%;
     position: absolute;
+    bottom: -100%;
 }
 
 .HPPanel.off {

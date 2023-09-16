@@ -17,14 +17,14 @@ public abstract class PartSkillSO : ScriptableObject
     [SerializeField] public int Bufftime;
     int _realTimeBuff = 0;
     
-    [SerializeField] public Stat Buff;
-    protected Stat AddingBuff;
+    [SerializeField] public Stat Buff = new Stat();
+    protected Stat AddingBuff = new Stat();
 
     [Header("Debuff")]
     [SerializeField] public int DeBufftime;
-    [SerializeField] public Stat DeBuff;
+    [SerializeField] public Stat DeBuff = new Stat();
     int _realTimeDebuff;
-    protected Stat AddingDeBuff;
+    protected Stat AddingDeBuff = new Stat();
 
     protected PVPUI _pvp;
     protected PartSO _part;

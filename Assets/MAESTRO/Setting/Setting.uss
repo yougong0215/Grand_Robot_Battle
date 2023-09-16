@@ -27,6 +27,7 @@
 .sliderblock > .innerslider {
     -unity-text-align: middle-left;
     font-size: 30px;
+    -unity-font-definition: url('project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&guid=6ee49a6dd23af614ca45fb91679fe723&type=2#Medium SDF');
 }
 
 #unity-tracker {

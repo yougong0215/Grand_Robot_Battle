@@ -10,8 +10,8 @@ public class NormalLegSkillSO : PartSkillSO
         
     }
 
-    protected override void UseingSKill()
+    protected override IEnumerator UseingSKill()
     {
-        
+        yield return null;
     }
 }

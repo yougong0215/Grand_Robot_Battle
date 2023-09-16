@@ -53,6 +53,7 @@ public class StoryScript : MonoBehaviour
         for (int i =0;i < SO.Script[index].Script.Length; i++)
         {
             ht += SO.Script[index].Script[i];
+            _panelInput.text = SO.Script[index].Script;
             yield return new WaitForSeconds(0.05f);
         }
         _touch = true;

@@ -21,8 +21,8 @@ public class StoryScriptSO : ScriptableObject
 [System.Serializable]
 public class StoryClass
 {
-
-
+    [Header("false : Ch1 | true : Ch2")]
+    public bool IsSay = false;
     public CharacterSO Ch;
     public Character_Face _faceOne;
     [TextArea] public string Script;

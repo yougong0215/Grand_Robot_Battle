@@ -1,0 +1,6 @@
+.CharacterPos {
+    left: 0;
+    top: -1%;
+    height: 1100px;
+    width: 850px;
+}

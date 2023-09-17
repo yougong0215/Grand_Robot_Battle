@@ -22,3 +22,5 @@ MonoBehaviour:
     type: 3}
   EnemyInfo: AA
   _enemy: {fileID: 11400000, guid: 4a36e39aacb63bb4bb0dd016547cfc37, type: 2}
+  Init: {fileID: 11400000, guid: 8f634510be300384d8dfd64ad4137eb0, type: 2}
+  Out: {fileID: 0}

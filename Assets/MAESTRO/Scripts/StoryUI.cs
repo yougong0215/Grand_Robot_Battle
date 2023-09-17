@@ -9,8 +9,7 @@ using UnityEngine.UIElements;
 
 public class StoryUI : MonoBehaviour
 {
-    public StoryScriptSO Init;
-    public StoryScriptSO Out;
+
 
     public List<StoryUISO> _storySOList = new List<StoryUISO>();
     private UIDocument _doc;
@@ -72,8 +71,8 @@ public class StoryUI : MonoBehaviour
         _gameEnter = _root.Q<Button>("EnterBtn");
 
 
-        _gameEnter.clicked += () => SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
         _gameEnter.clicked += () => StoryLoadResource.Instance.Save(_storySOList[currentRound]);
+        _gameEnter.clicked += () => SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
         // _leftBtn.clicked += ()=> MovementStage(-1);
         // _rightbtn.clicked += () => MovementStage(1);
         // MovementStage(0);
@@ -94,8 +93,7 @@ public class StoryUI : MonoBehaviour
                 currentRound = _maxStage - 1;
             }
             StoryUISO _so = _storySOList[currentRound];
-            StoryLoadResource.Instance.Init = Init;
-            StoryLoadResource.Instance.Out = Out;
+            //oryUISO _so = _storySOList[currentRound];
 
             _roundTxt.text = $"Round {_so.id}.";
             _titleTxt.text = _so.TitleName;
@@ -103,7 +101,10 @@ public class StoryUI : MonoBehaviour
             _expTxt.text = _so.StageExample;
             _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
             _enemyNameTxt.text = _so.EnemyName;
-            _enemyInfoTxt.text =_so.EnemyInfo;
+            _enemyInfoTxt.text = _so.EnemyInfo;
+
+            StoryLoadResource.Instance.Init = _so.Init;
+            StoryLoadResource.Instance.Out = _so.Out;
 
             if (_so.id <= ((int)data + 1)) 
             {

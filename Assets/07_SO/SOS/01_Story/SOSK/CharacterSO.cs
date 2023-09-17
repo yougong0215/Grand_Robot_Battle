@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static ShowIfAttribute;
 
 public enum Character_Face
 {
@@ -17,8 +16,8 @@ public enum Character_Face
 public class CharacterSO : ScriptableObject
 {
     [Header("Info")]
-    [SerializeField] string names;
-    [SerializeField] string Exname;
+    [SerializeField] public string names;
+    [SerializeField] public string Exname;
     [Header("Default is Very Importent")]
     [SerializeField] Sprite Default;
 

@@ -10,11 +10,14 @@ public class StoryScript : MonoBehaviour
     [SerializeField] StoryScriptSO SO;
     [SerializeField] public SceneEnum Next;
     UIDocument _doc;
+    VisualElement _root;
 
     int index = 0;
     bool _touch = false;
 
-    Button _panelInput;
+    VisualElement _panelInput;
+    Label _text;
+    Label _name;
 
     Coroutine _co;
     
@@ -24,20 +27,39 @@ public class StoryScript : MonoBehaviour
         StoryLoadResource.Instance.RemoveStory();
 
         _doc = GetComponent<UIDocument>();
+        _root = _doc.rootVisualElement;
+        _panelInput = _root.Q<VisualElement>("TextPanel");
 
+        _name = _root.Q<Label>("Name");
+        _text = _panelInput.Q<Label>("Text");
 
-
-        _panelInput.clicked += () => Input();
+        _panelInput.RegisterCallback<ClickEvent>((evt) =>
+        {
+            Input();
+        });
+        //_panelInput.clicked += () => Input();
     }
 
     void Input()
     {
+        if (SO.Script[index].IsSay == false)
+        {
+
+            _name.text = $"{SO.Script[index].Ch.names} | {SO.Script[index].Ch.Exname}";
+        }
+        else 
+        {
+            _name.text = $"{SO.Script[index].TwoCh.names} | {SO.Script[index].TwoCh.Exname}";
+        }
+
+        _text.text = "";
+
         if(_touch==false)
         {
             _touch = true;
             if (_co != null)
                 StopCoroutine(_co);
-            _panelInput.text = SO.Script[index].Script;
+            _text.text = SO.Script[index].Script;
             return;
         }
         else
@@ -65,7 +87,7 @@ public class StoryScript : MonoBehaviour
         for (int i =0;i < SO.Script[index].Script.Length; i++)
         {
             ht += SO.Script[index].Script[i];
-            _panelInput.text = SO.Script[index].Script;
+            _text.text = ht;
             yield return new WaitForSeconds(0.05f);
         }
         _touch = true;

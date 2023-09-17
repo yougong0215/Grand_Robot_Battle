@@ -20,5 +20,9 @@ public class StoryUISO : ScriptableObject
 
     public BattleEnemySO _enemy;
 
+    [Header("Story")]
+    public StoryScriptSO Init;
+    public StoryScriptSO Out;
+
 
 }

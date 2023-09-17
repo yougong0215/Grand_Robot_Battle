@@ -17,7 +17,7 @@ public class LazerHead : PartSkillSO
                 yield return new WaitForSeconds(EventTime[i]);
             else
                 yield return new WaitForSeconds(EventTime[i] - EventTime[i - 1]);
-            _pvp.SetHPValue(false, _me._statues.ATK * _enemy._statues.PercentDef * 2);
+            _pvp.SetHPValue(_enemy, _me._statues.ATK * _enemy._statues.PercentDef * 2);
             _pvp.SetText($"적에게 {_me._statues.ATK * _enemy._statues.PercentDef * 2}의 데미지를 주었다.");
         }
         isEnd = true;

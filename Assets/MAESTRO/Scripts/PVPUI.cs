@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Linq;
-
+using UnityEngine.Rendering;
 
 public class PVP_GameResult
 {
@@ -191,15 +191,15 @@ public class PVPUI : MonoBehaviour
         _enemyMaxHP = _enemyCurrentHP = enemyHP;
         _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";
         _enemyHpText.text = $"{_enemyCurrentHP} / {_enemyMaxHP}";
-        _playerWid = _playerHpBar.resolvedStyle.width;
-        _enemyWid = _enemyHpBar.resolvedStyle.width;
+        _playerWid = 400;//_playerHpBar.resolvedStyle.width;
+        _enemyWid = 400;//_enemyHpBar.resolvedStyle.width;
         Debug.Log($"WIND : {_playerHpBar.resolvedStyle.width}");
     }
 
-    public void SetHPValue(bool isPlayer, float damage)
+    public void SetHPValue(RobotSettingAndSOList _rot, float damage)
     {
         
-        if(isPlayer)
+        if(_rot == _robot)
         {
             
 
@@ -214,7 +214,12 @@ public class PVPUI : MonoBehaviour
             {
                 _playerCurrentHP = _playerMaxHP;
             }
+            float t = _playerCurrentHP / _playerMaxHP;
+            Debug.Log(t);
             _playerHpBar.style.width = Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP);
+            Debug.LogWarning(_playerWid);
+                
+
             _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";
             //Debug.Log($"DMG : {Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP)}");
         }
@@ -311,7 +316,8 @@ public class PVPUI : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Error : NO Data");
+                Debug.LogWarning("Error : NO Data");
+                yield return new WaitForSeconds(2f);
 
             }
 

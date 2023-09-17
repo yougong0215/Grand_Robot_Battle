@@ -17,9 +17,6 @@ public class MakeUI : MonoBehaviour
     private Button _exitBtn;
 
     private VisualElement _gachaPanel;
-    private VisualElement UP;
-    private VisualElement DOWN;
-    private VisualElement MIDDLE;
 
     private Button _okResult;
     private Button _moreResult;
@@ -55,9 +52,6 @@ public class MakeUI : MonoBehaviour
         _1_button = _root.Q<Button>("1_Button");
         _10_button = _root.Q<Button>("10_Button");
         _gachaPanel = _root.Q<VisualElement>("GachaPanel");
-        UP = _root.Q<VisualElement>("Up");
-        DOWN = _root.Q<VisualElement>("Down");
-        MIDDLE = _root.Q<VisualElement>("Middle");
 
         _okResult = _root.Q<Button>("OK");
         _moreResult = _root.Q<Button>("OneMore");
@@ -156,14 +150,14 @@ public class MakeUI : MonoBehaviour
             if (so.Sprite != null)
                 ele.Q<VisualElement>("Imaged").style.backgroundImage = new StyleBackground(so.Sprite);
 
-            MIDDLE.Add(ele);
+            _gachaPanel.Add(ele);
             _randEleList.Add(ele);
         }
         else
         {
             string[] ItemList = LitJson.JsonMapper.ToObject<string[]>(ItemResult.ToJson());
             int t = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
                 VisualElement ele = _randEle.Instantiate();
                 // ele������ �ֱ�
@@ -175,27 +169,12 @@ public class MakeUI : MonoBehaviour
                 if (so.Sprite != null)
                     ele.Q<VisualElement>("Imaged").style.backgroundImage = new StyleBackground(so.Sprite);
 
-                UP.Add(ele);
+                _gachaPanel.Add(ele);
                 _randEleList.Add(ele);
                 
                 t++;
             }
-            for (int i = 0; i < 5; i++)
-            {
-                VisualElement ele = _randEle.Instantiate();
-                //ele������ �ֱ�
-                PartSO so = DomiSo.ReturnSO(ItemList[t]);
-
-
-                ele.Q<Label>("RatingTxt").text = so.SOname;
-                if (so.Sprite != null)
-                    ele.Q<VisualElement>("Imaged").style.backgroundImage = new StyleBackground(so.Sprite);
-
-
-                DOWN.Add(ele);
-                _randEleList.Add(ele);
-                t++;
-            }
+            
         }
         StartCoroutine(ResultTurm());
     }

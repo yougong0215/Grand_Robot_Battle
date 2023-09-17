@@ -47,6 +47,9 @@ public class CharacterSO : ScriptableObject
 
             return _info[en];
         }
-        return Default;
+        if(Default != null)
+            return Default;
+        else
+            return null;
     }
 }

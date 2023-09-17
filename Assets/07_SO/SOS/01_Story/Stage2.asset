@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Stage2
   m_EditorClassIdentifier: 
   id: 2
-  TitleName: "\uC5EC\uAE34\uC219\uC0AC\uC774"
+  TitleName: "\uC7AC\uB3C4\uC804"
   TitlePanelColor: {r: 0, g: 0, b: 0, a: 0}
   StageSprite: {fileID: 2800000, guid: 9e80287a17f71cf40b7ebe9d71685017, type: 3}
   StageExample: "\uC548\uB155\uD558\uC138\uC694"
-  EnemyName: AA
+  EnemyName: BB001
   EnemySprite: {fileID: -1304905567622442630, guid: 1e45b110e5190484a99928ba9c307c8b,
     type: 3}
-  EnemyInfo: AA
+  EnemyInfo: "\uC2E4\uC804 \uB85C\uBD07 \uC785\uB2C8\uB2E4. \uD2B9\uD788 \uB2E8\uB2E8\uD55C
+    \uBC29\uD328\uB97C \uC7A5\uCC29\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
   _enemy: {fileID: 11400000, guid: 4a36e39aacb63bb4bb0dd016547cfc37, type: 2}

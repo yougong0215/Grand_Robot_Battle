@@ -2,25 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using static ShowIfAttribute;
-using static UnityEngine.Rendering.DebugUI;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using UnityEditor;
 
 [CreateAssetMenu(menuName = "SO/Story/StoryScript")]
 public class StoryScriptSO : ScriptableObject
 {
 
-
+    public Texture2D DefaultBackGround;
     public List<StoryClass> Script = new();
 }
 
 [System.Serializable]
 public class StoryClass
 {
+    [Header("Background")]
+    public Texture2D BG;
     [Header("false : Side | true : Middle")]
     public bool IsMiddle = false;
     [Header("false : Ch1 | true : Ch2")]
@@ -37,35 +35,6 @@ public class StoryClass
     [Header("false : Default | true : reverse")] public bool Position;
     //[ShowIf(ActionOnConditionFail.DontDraw, ConditionOperator.And, nameof(Value))]
     public Character_Face _faceTwo;
-
-}
-
-[AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
-public class ShowIfAttribute : PropertyAttribute
-{
-    public enum ConditionOperator
-    {
-        And,
-        Or,
-    }
-
-    public enum ActionOnConditionFail
-    {
-
-        DontDraw,
-        JustDisable,
-    }
-
-    public ActionOnConditionFail Action { get; private set; }
-    public ConditionOperator Operator { get; private set; }
-    public string[] Conditions { get; private set; }
-
-    public ShowIfAttribute(ActionOnConditionFail action, ConditionOperator conditionOperator, params string[] conditions)
-    {
-        Action = action;
-        Operator = conditionOperator;
-        Conditions = conditions;
-    }
-
+    
 
 }

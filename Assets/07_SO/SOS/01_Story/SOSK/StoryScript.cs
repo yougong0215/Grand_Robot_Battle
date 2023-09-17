@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class StoryScript : MonoBehaviour
@@ -19,6 +20,9 @@ public class StoryScript : MonoBehaviour
     
     void OnEnable()
     {
+        SO = StoryLoadResource.Instance.ReturnStorySO();
+        StoryLoadResource.Instance.RemoveStory();
+
         _doc = GetComponent<UIDocument>();
 
 
@@ -40,7 +44,15 @@ public class StoryScript : MonoBehaviour
         {
             _touch = false;
             index += 1;
-            _co = StartCoroutine(Scripting());
+            if (index < SO.Script.Count)
+            {
+
+                _co = StartCoroutine(Scripting());
+            }
+            else
+            {
+                SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
+            }
         }
     }
     

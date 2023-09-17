@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class StoryUI : MonoBehaviour
 {
+    public StoryScriptSO Init;
+    public StoryScriptSO Out;
+
     public List<StoryUISO> _storySOList = new List<StoryUISO>();
     private UIDocument _doc;
     private VisualElement _root;
@@ -68,7 +72,7 @@ public class StoryUI : MonoBehaviour
         _gameEnter = _root.Q<Button>("EnterBtn");
 
 
-        _gameEnter.clicked += () => LoadManager.LoadScene(SceneEnum.PVP);
+        _gameEnter.clicked += () => SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
         _gameEnter.clicked += () => StoryLoadResource.Instance.Save(_storySOList[currentRound]);
         // _leftBtn.clicked += ()=> MovementStage(-1);
         // _rightbtn.clicked += () => MovementStage(1);
@@ -90,6 +94,8 @@ public class StoryUI : MonoBehaviour
                 currentRound = _maxStage - 1;
             }
             StoryUISO _so = _storySOList[currentRound];
+            StoryLoadResource.Instance.Init = Init;
+            StoryLoadResource.Instance.Out = Out;
 
             _roundTxt.text = $"Round {_so.id}.";
             _titleTxt.text = _so.TitleName;

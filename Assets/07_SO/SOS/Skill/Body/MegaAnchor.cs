@@ -14,7 +14,7 @@ public class MegaAnchor : PartSkillSO
     {
         yield return null;
        //_me._statues.HP = (int)(_me._statues.HP + );
-        _pvp.SetHPValue(true, -(_me.MaxHP * 0.2f));
+        _pvp.SetHPValue(_me, -(_me.MaxHP * 0.2f));
         _pvp.SetText("더 단단해 졌다 ( HP 20% 회복 )");
         isEnd = true;
     }

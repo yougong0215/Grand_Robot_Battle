@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddc0192e5fe5b4498de58e701f6b9cd, type: 3}
   m_Name: Temp
   m_EditorClassIdentifier: 
-  aField: []
+  Script:
+  - Ch: {fileID: 0}
+    _faceOne: 0
+    Script: 
+    TwoCh: {fileID: 0}
+    Position: 0
+    _faceTwo: 0

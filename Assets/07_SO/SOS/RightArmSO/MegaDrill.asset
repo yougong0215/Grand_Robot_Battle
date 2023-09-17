@@ -24,13 +24,15 @@ MonoBehaviour:
     DEF: 0
     SPEED: 10
     Barrier: 0
+    PercentDef: 1
   Explain: "\uC801\uC744 \uC7A5\uB82C\uD558\uAC8C \uB6AB\uC5B4\uB0B4\uB294 \uD30C\uCE20.\r\n\uB3CC\uD30C\uB825\uC73C\uB85C
     \uC801 \uAE30\uCCB4\uB97C \uBB34\uCC38\uD788 \uBC15\uC0B4\uB0B8\uB2E4."
   SkillExplain: 
   ReplaceMesh: 1
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: 4ce37ae660ea4754a90ebfc337dbf9c2, type: 3}
-  clips: {fileID: 0}
+  clips: {fileID: 7400000, guid: fa39ca90f08a0e54d887935d228e4936, type: 2}
   names: 
   Count: 1
   Daesa: "\uB4DC\uB9B4 \uB7EC\uC26C!!"
+  skillSo: {fileID: 11400000, guid: 815a90be8b655f6439dc6830845787fe, type: 2}

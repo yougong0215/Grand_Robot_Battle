@@ -11,17 +11,25 @@ public class ServerPVPRobotInput : MonoBehaviour
     public PartSO Head = null;
     public PartSO Body = null;
     public PartSO Leg = null;
-    public Stat stat;
+    public Stat stat = new();
 
     
     public IEnumerator FindAndSet()
     {
         yield return StartCoroutine(Setting(Left));
+        if(Left != null) stat += Left?.Statues;
         yield return StartCoroutine(Setting(Right));
+        if(Right != null) stat += Right?.Statues;
         yield return StartCoroutine(Setting(Head));
+         if (Head != null)
+            stat += Head?.Statues;
         yield return StartCoroutine(Setting(Body));
+        
+        if (Body != null)
+            stat += Body?.Statues;
         yield return StartCoroutine(Setting(Leg));
-
+        if (Leg != null)
+            stat += Leg?.Statues;
         RobotSettingAndSOList _robot = GetComponent<RobotSettingAndSOList>();
         //_robot.SetStatues(stat);
         Debug.LogWarning("나중에 고쳐야됨2");

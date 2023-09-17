@@ -13,7 +13,7 @@ public class NormalBody : PartSkillSO
     protected override IEnumerator UseingSKill()
     {
         yield return null;
-        _me._statues.HP = (int)(_me._statues.HP + _me.MaxHP * 0.1f);
+        _pvp.SetHPValue(_me, -(_me.MaxHP * 0.1f));
         _pvp.SetText("단단해 졌다 ( HP 10% 회복 )");
         isEnd = true;
     }

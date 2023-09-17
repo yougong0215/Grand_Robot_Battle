@@ -7,7 +7,7 @@ public class EarthQuaker : PartSkillSO
 {
     protected override void Start()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     protected override IEnumerator UseingSKill()

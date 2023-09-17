@@ -24,6 +24,11 @@ public class Setting : MonoBehaviour
     private Slider _rvSliders;
     private Label[] _percentage = new Label[4];
     private Button _exitBtn;
+    Button RemoveAcount;
+    VisualElement RemovePanel;
+    Button NoRemoveBtn;
+    Button YesRemoveBtn;
+    TextField _input;
 
     private void Awake()
     {
@@ -46,6 +51,18 @@ public class Setting : MonoBehaviour
         _rvSliders = _root.Q<Slider>("rv-slider");
         _percentage[3] = _rvSliders.Q<Label>("percentage");
 
+        RemovePanel = _root.Q<VisualElement>("RemovePanel");
+        NoRemoveBtn = _root.Q<Button>("NoBtn");
+        YesRemoveBtn = _root.Q<Button>("RemoveBtn");
+        RemoveAcount = _root.Q<Button>("AcountRemoveBtn");
+
+        RemoveAcount.clicked += () => Debug.Log("ㅁㅁ");
+        RemoveAcount.clicked += () => RemovePanel.RemoveFromClassList("off");
+
+        NoRemoveBtn.clicked += () => RemovePanel.AddToClassList("off");
+        YesRemoveBtn.clicked += () => RemoveAcountMethod();
+
+
         _bgSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.background));
         _sfxSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.sfx));
         _uiSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.uisound));
@@ -62,5 +79,13 @@ public class Setting : MonoBehaviour
     private void OnSliderValueChange(ChangeEvent<float> evt, SoundSetting ss)
     {
         _percentage[(int)ss].text = $"{evt.newValue}%";
+    }
+
+    void RemoveAcountMethod()
+    {
+        if(_input.value == "") // 이거 추가
+        {
+            // 여서 삭제
+        }
     }
 }

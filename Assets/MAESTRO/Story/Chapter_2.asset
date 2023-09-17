@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddc0192e5fe5b4498de58e701f6b9cd, type: 3}
+  m_Name: Chapter_2
+  m_EditorClassIdentifier: 
+  DefaultBackGround: {fileID: 2800000, guid: 12f9a7fbc376b64479656469343469e6, type: 3}
+  Script:
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uAC15\uD558\uAD6C\uB098. \uC88B\uC740 \uC5F0\uC2B5\uC774 \uB410\uC5B4."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 0
+    Script: "\uD558\uD558.. \uC0AC\uC2E4\uC0C1 \uCCAB \uACBD\uAE30\uC600\uB294\uB370
+      \uB2E4\uD589\uC774\uB2E4~"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 3
+    Script: "\uBB50.. \uCC98\uC74C? \uC124\uB9C8 \uB85C\uBD07 \uBC30\uD2C0\uC774
+      \uCC98\uC74C\uC778\uAC70\uC57C?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 3
+    Script: "\uB124.. \uADF8\uAC8C \uB180\uB784 \uC77C \uC778\uAC00\uC694?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 2
+    Script: "\uB098\uB294 \uC774 \uB300\uD68C\uC5D0 \uCC38\uC11D\uD558\uAE30 \uC704\uD574\uC11C
+      \uC5BC\uB9C8\uB098 \uC5F4\uC2EC\uD788 \uC5F0\uC2B5\uD588\uB294\uB370..!"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 2
+    Script: "\uC73C\uC5B5.. \uC8C4, \uC8C4\uC1A1\uD569\uB2C8\uB2E4?"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 2
+    Script: "\uD788\uC774\uC789 \uCD08\uBCF4\uC790\uD55C\uD14C \uC9C0\uB2E4\uB2C8..!!"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 2
+    Script: "\uADF8, \uADF8\uB807\uB2E4\uBA74 \uD55C \uBC88 \uB354 \uD558\uC2DC\uB294
+      \uAC74 \uC5B4\uB54C\uC694? \uCD9C\uC804\uD558\uB294 \uB85C\uBD07\uC73C\uB85C..!"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 2
+    Script: "\uD654, \uD655\uC2E4\uD788 \uC2E4\uC804\uC6A9 \uB85C\uBD07\uC740 \uAC15\uD558\uAE34
+      \uD558\uC9C0\uB9CC.."
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 0
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 3
+    Script: "\uC88B\uC544! \uD55C\uBC88 \uB354 \uB3C4\uC804\uC774\uB2E4! \uC774\uBC88\uC5D4
+      \uC9C0\uC9C0 \uC54A\uC744\uAEBC\uC57C!"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0
+  - BG: {fileID: 0}
+    IsMiddle: 1
+    IsSay: 1
+    Ch: {fileID: 11400000, guid: a981554d36bfb8843852048f4c2b951c, type: 2}
+    _faceOne: 3
+    Script: "(\uC74C.. \uC801\uB2F9\uD788 \uC838\uC918\uC57C \uD558\uB098.. \uC544\uB2C8
+      \uADF8\uAC8C \uB354 \uC2E4\uB840\uC778\uAC00..)"
+    TwoCh: {fileID: 11400000, guid: 1e7292ea360879f49acd4aa386460871, type: 2}
+    Position: 0
+    _faceTwo: 0

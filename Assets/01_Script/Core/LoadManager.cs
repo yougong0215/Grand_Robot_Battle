@@ -16,6 +16,8 @@ public enum SceneEnum
     SelectStoreScene,
     Story,
     GameEnd,
+    InvenTory,
+    StoryScript,
     Size,
 }
 

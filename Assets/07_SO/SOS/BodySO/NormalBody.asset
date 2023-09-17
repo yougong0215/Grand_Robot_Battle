@@ -31,7 +31,7 @@ MonoBehaviour:
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 21300000, guid: 93ab06d323c62b343bad78de231e4c51, type: 3}
-  clips: {fileID: 0}
+  clips: {fileID: 7400000, guid: 41d7a31e01487b44c95307fc87adc55e, type: 2}
   names: "\uBC30\uB9AC\uC5B4"
   Count: 1
   Daesa: "\uBC30\uB9AC\uC5B4!!"

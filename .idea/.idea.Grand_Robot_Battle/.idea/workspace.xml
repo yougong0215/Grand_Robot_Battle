@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/AnimationBind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/AnimationBind.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/StoryScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/StoryScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +24,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/e1/4612c112/Length.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/ff/c4137643/StyleScale.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -115,6 +112,7 @@
       <workItem from="1694445762632" duration="1562000" />
       <workItem from="1694528014156" duration="5960000" />
       <workItem from="1694704900977" duration="844000" />
+      <workItem from="1694953668304" duration="965000" />
     </task>
     <servers />
   </component>

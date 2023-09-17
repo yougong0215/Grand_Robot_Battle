@@ -10,10 +10,10 @@ public class AnimAttackBind : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.95f)
+        //Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.75f)
         {
-            Debug.Log($"에니메이션 탈출 : {animator.GetCurrentAnimatorStateInfo(0).length}");
+            //Debug.Log($"에니메이션 탈출 : {animator.GetCurrentAnimatorStateInfo(0).normalizedTime}");
             animator.GetComponent<AnimationBind>().OnAnimationEnd();
             animator.GetComponent<AnimationBind>().EndAnim();
         }

@@ -29,11 +29,15 @@ public class domiIAP : MonoBehaviour, IStoreListener
         if (!(bool)data) {
             Debug.LogWarning("[domiIAP] Server Check Worng");
             cacheCallback.Invoke(false);
+            cacheCallback = null;
             return;
         }
 
         print("[domiIAP] Finish Pay");
+        m_StoreContoller.ConfirmPendingPurchase(cacheProduct);
+        print("[domiIAP] ConfirmPendingPurchase");
         cacheCallback.Invoke(true);
+        cacheCallback = null;
     }
 
     async void Start()

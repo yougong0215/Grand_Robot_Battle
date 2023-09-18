@@ -54,6 +54,7 @@ function PlayerBuyHandler(id, productId) {
         return;
     }
 
+    console.log(`${id}이가 ${productId} 삼`);
     crystalUtil.Add(id, value);
     player.socket.send("Lobby.Reload", null);
 }

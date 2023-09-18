@@ -335,7 +335,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 StoryLoadResource.Instance.isWin = false;
                 LoadManager.LoadScene(SceneEnum.GameEnd);
-
+                
             }
         }
 

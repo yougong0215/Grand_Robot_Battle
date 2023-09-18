@@ -32,6 +32,7 @@ public class BattleEndUI : MonoBehaviour
         
 
         _so = StoryLoadResource.Instance.Loading();
+        StoryLoadResource.Instance.isBattle = false;
 
         string stageStd = "";
         if (_so == null)

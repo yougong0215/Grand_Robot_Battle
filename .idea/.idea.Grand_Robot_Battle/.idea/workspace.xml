@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +118,7 @@
       <workItem from="1694953668304" duration="2978000" />
       <workItem from="1694961219744" duration="3982000" />
       <workItem from="1695040957677" duration="5347000" />
-      <workItem from="1695050893132" duration="1869000" />
+      <workItem from="1695050893132" duration="2315000" />
     </task>
     <servers />
   </component>

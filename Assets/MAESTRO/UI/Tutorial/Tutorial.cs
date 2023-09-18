@@ -12,7 +12,7 @@ public class Tutorial : MonoBehaviour
     private Button _RArrowBtn;
     private Button _exitBtn;
 
-    [SerializeField] private Texture2D[] _guides = new Texture2D[4];
+    [SerializeField] private Texture2D[] _guides = new Texture2D[2];
     private int _page;
 
     private void Awake()
@@ -44,6 +44,8 @@ public class Tutorial : MonoBehaviour
 
     private void ChangePage(bool isNext)
     {
+        if (_page + 1 > _guides.Length || _page - 1 < 0)
+            return;
         _page = isNext ? _page++ : _page--;
         _imagePanel.style.backgroundImage = _guides[_page];
     }

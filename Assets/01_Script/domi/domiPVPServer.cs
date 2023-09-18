@@ -173,9 +173,9 @@ public class domiPVPServer : MonoBehaviour
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력
         _pvpUI.SetPanel(false);
-   
 
-      
+        StartCoroutine((SO()));
+
         // 이어서...
     }
 

@@ -776,7 +776,7 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 86f5db87502a2434da883af92ced38fb,
     type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 3
 --- !u!114 &844607226
 MonoBehaviour:
   m_ObjectHideFlags: 0

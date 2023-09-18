@@ -72,7 +72,7 @@ public class PVPUI : MonoBehaviour
     private float _enemyMaxHP;
     private float _enemyCurrentHP;
 
-    public Button _surrenderBtn;
+    public static string[] cache_reward;
 
     private void Awake()
     {
@@ -80,11 +80,12 @@ public class PVPUI : MonoBehaviour
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
         _SOserver = FindObjectOfType<GetServerToSO>();
-
+        cache_reward = null;
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
         NetworkCore.EventListener["ingame.destory"] = ServerGameDestory;
+        NetworkCore.EventListener["ingame.reward"] = SetReward;
     }
 
     private void OnDestroy() {
@@ -93,6 +94,7 @@ public class PVPUI : MonoBehaviour
         NetworkCore.EventListener.Remove("ingame.AttackControl");
         NetworkCore.EventListener.Remove("ingame.gameresult");
         NetworkCore.EventListener.Remove("ingame.destory");
+        NetworkCore.EventListener.Remove("ingame.reward");
         
     }
 
@@ -137,9 +139,6 @@ public class PVPUI : MonoBehaviour
         _settingPanel = _root.Q<VisualElement>("SettingPanel");
         #endregion
 
-
-        _surrenderBtn = _root.Q<Button>("SurrenderBtn");
-        _surrenderBtn.clicked += SceneManager.LoadScene(SceneEnum.Menu);
         partbtncools = new float[5];
         /* -- 서버에서 처리함
         for (int i = 0; i < 5; i++)
@@ -253,7 +252,7 @@ public class PVPUI : MonoBehaviour
         Debug.Log("로직 시작");
         bool t = SpeedReturn();
 
-        
+
         yield return StartCoroutine(Fight(t, so));
 
         SetPanel(false);
@@ -293,9 +292,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
-                StoryLoadResource.Instance.isWin = true;
                 SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
-                
             }
         }
         else
@@ -333,8 +330,7 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"적의 승리..";
                 yield return new WaitForSeconds(1.5f);
-                StoryLoadResource.Instance.isWin = false;
-                LoadManager.LoadScene(SceneEnum.GameEnd);
+                LoadManager.LoadScene(SceneEnum.Menu);
 
             }
         }
@@ -613,5 +609,9 @@ public class PVPUI : MonoBehaviour
                 partsbtns[i].Q<Label>("미장착").text = parts[i].names;
             }
         }
+    }
+
+    void SetReward(LitJson.JsonData data) {
+        cache_reward = LitJson.JsonMapper.ToObject<string[]>(data.ToJson());
     }
 }

@@ -52,10 +52,13 @@ class Room {
 
     // 승리 보상
     Reward = function(id) {
+        const rewards = [];
         for (let i = 0; i < 5; i++) {
             const itemID = Gacha.RandomItemCode();
             ItemUtil.Give(id, itemID+"_puzzel", 1);
+            rewards.push(itemID);
         }
+        UserList[id]?.socket?.send("ingame.reward", rewards);
     }
 }
 

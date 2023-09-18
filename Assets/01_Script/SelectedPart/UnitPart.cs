@@ -70,7 +70,7 @@ public class UnitPart : MonoBehaviour
             DEF.text = $"DEF : {so.Statues.DEF}";
             SPEED.text = $"SPEED : {so.Statues.SPEED}";
             HP.text = $"HP : {so.Statues.HP}";
-            Name.text = $"{so.name}";
+            Name.text = $"{so.SOname}";
         }
 
         //eq.sprite = s.EquipImage;

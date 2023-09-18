@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class UISlotManager : MonoBehaviour
 {
     RobotSettingAndSOList _robot;
+    [SerializeField] private List<PartUIInfo> _partuiInfos = new();
 
     public UnitPart Prefabs;
 
@@ -16,7 +17,7 @@ public class UISlotManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI DEF;
     [SerializeField] TextMeshProUGUI HP;
     [SerializeField] TextMeshProUGUI SPEED;
-
+    public Stat statues;
 
     static UISlotManager instance = null;
     public static UISlotManager Instance
@@ -25,7 +26,7 @@ public class UISlotManager : MonoBehaviour
         {
             if(instance == null)
             {
-                Debug.Log("¤¸¤¤ ´À¸° À¯´ÏÆ¼");
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ¼");
             }
             return instance;
         }
@@ -42,15 +43,26 @@ public class UISlotManager : MonoBehaviour
 
     public List<PartTypeSelect> CategorySelected;
 
+    public void PartSave()
+    {
+        Stat st = new();
+        _partuiInfos.ForEach((v) =>
+        {
+            if (v.Part != null) st += v.Part.Statues;
+        });
+        statues = st;
+    }
+    
     void Update()
     {
+
         if(_robot._statues != null)
         {
-            ATK.text = $"ATK : {_robot._statues.ATK}";
-            DEF.text = $"DEF : {_robot._statues.DEF}";
-            SPEED.text = $"SPEED : {_robot._statues.SPEED}";
-            HP.text = $"HP : {_robot._statues.HP}";
-            Debug.LogWarning("³ªÁß¿¡ °íÃÄ¾ßµÊ");
+            ATK.text = $"ATK : {statues.ATK}";
+            DEF.text = $"DEF : {statues.DEF}";
+            SPEED.text = $"SPEED : {statues.SPEED}";
+            HP.text = $"HP : {statues.HP}";
+            Debug.LogWarning("ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½Ä¾ßµï¿½");
         }
 
     }

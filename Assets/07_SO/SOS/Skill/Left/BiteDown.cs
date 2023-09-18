@@ -7,7 +7,7 @@ public class BiteDown : PartSkillSO
 {
     protected override void Start()
     {
-        //throw new System.NotImplementedException();
+        
     }
 
     protected override IEnumerator UseingSKill()
@@ -19,7 +19,7 @@ public class BiteDown : PartSkillSO
             else
                 yield return new WaitForSeconds(EventTime[i].EvtTime - EventTime[i - 1].EvtTime);
             _pvp.SetHPValue(_enemy, _me._statues.ATK * _enemy._statues.PercentDef * 1.1f);
-            _pvp.SetText($"콱! 적에게 {_me._statues.ATK * _enemy._statues.PercentDef * 1.1f}의 데미지를 주었다.");
+            _pvp.SetText($"적에게 {_me._statues.ATK * _enemy._statues.PercentDef * 1.1f}의 데미지를 주었다.");
         }
         isEnd = true;
     }

@@ -9,6 +9,8 @@ public class StoryLoadResource : Singleton<StoryLoadResource>
     public StoryScriptSO Out;
     //public BattleEnemySO _enemy;
 
+    public bool isWin = false;
+
     bool isBattle = false;
 
     public bool clear = false;

@@ -16,7 +16,7 @@ MonoBehaviour:
   TitleName: "\uBC84\uB2DD\uC2A4\uD2F8"
   TitlePanelColor: {r: 0, g: 0, b: 0, a: 0}
   StageSprite: {fileID: 2800000, guid: 8e4b26328816b0f4e93d8586f95a742e, type: 3}
-  StageExample: "\uC548\uB155\uD558\uC138\uC694"
+  StageExample: "\uC548\uB155\uD558\uC138\uC694 \"\uBC84\uB2DD\uC2A4\uD2F8\""
   EnemyName: "\uB178\uBA40 \uBD07"
   EnemySprite: {fileID: 2800000, guid: b32f7a6c444101a42abf2a37073e2c50, type: 3}
   EnemyInfo: "\"\uAC00\uC7A5 \uC704\uB300\uD55C\uAC83\uC740 \uAC00\uC7A5 \uBCF4\uD3B8\uC801\uC778

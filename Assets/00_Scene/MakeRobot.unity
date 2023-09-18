@@ -5472,11 +5472,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e89a7c2b9cb910e46be2b25c142c7321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _partuiInfos:
+  - {fileID: 4088924299725172736}
+  - {fileID: 4088924300101163413}
+  - {fileID: 4088924300188963298}
+  - {fileID: 4088924300018002121}
+  - {fileID: 4088924301204966720}
   Prefabs: {fileID: 6771951004530775449, guid: 72fa88a72085a4b4cbf7cdb87cbb2320, type: 3}
   ATK: {fileID: 4088924299884323531}
   DEF: {fileID: 4088924299917409428}
   HP: {fileID: 4088924301381125562}
   SPEED: {fileID: 844022543}
+  statues:
+    HP: 0
+    ATK: 0
+    DEF: 0
+    SPEED: 0
+    Barrier: 0
+    PercentDef: 1
   CategorySelected:
   - {fileID: 4088924301134853617}
   - {fileID: 4088924301099520924}

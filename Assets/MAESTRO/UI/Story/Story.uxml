@@ -29,7 +29,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="Info" style="width: 300px; height: 300px; background-color: rgb(219, 219, 219); margin-left: 30px; margin-right: 30px; margin-top: 30px; margin-bottom: 30px; border-top-left-radius: 30px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px;">
                     <ui:Label text="정보" display-tooltip-when-elided="true" name="info" style="height: 70px; -unity-text-align: middle-center; color: rgb(0, 0, 0); font-size: 45px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
-                    <ui:Label text="text" display-tooltip-when-elided="true" name="infoTxt" style="height: 200px; -unity-text-align: upper-center; color: rgb(87, 87, 87); font-size: 30px; padding-top: 10px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+                    <ui:Label display-tooltip-when-elided="true" name="infoTxt" style="height: 200px; -unity-text-align: upper-center; color: rgb(87, 87, 87); font-size: 30px; padding-top: 10px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); text-overflow: clip; white-space: normal;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

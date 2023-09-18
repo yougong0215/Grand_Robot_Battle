@@ -16,7 +16,7 @@ MonoBehaviour:
   TitleName: "\uC7AC\uB3C4\uC804"
   TitlePanelColor: {r: 0, g: 0, b: 0, a: 0}
   StageSprite: {fileID: 2800000, guid: 9e80287a17f71cf40b7ebe9d71685017, type: 3}
-  StageExample: "\uC548\uB155\uD558\uC138\uC694"
+  StageExample: "\uC774\uBC88\uC5D4..!"
   EnemyName: BB001
   EnemySprite: {fileID: -1304905567622442630, guid: 1e45b110e5190484a99928ba9c307c8b,
     type: 3}

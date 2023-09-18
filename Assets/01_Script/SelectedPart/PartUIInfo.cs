@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,11 @@ public class PartUIInfo : MonoBehaviour
     public bool GetIt()
     {
         return pat != null;
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void Seleted(UnitPart pa, PartSO _partSO = null, string token = "")
@@ -61,7 +67,7 @@ public class PartUIInfo : MonoBehaviour
         _robot.SetingRealPart(pat);
 
 
-
+        UISlotManager.Instance.PartSave();
 
 
     }

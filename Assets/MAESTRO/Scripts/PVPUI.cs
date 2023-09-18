@@ -283,12 +283,12 @@ public class PVPUI : MonoBehaviour
             SetPanel(true);
 
             yield return new WaitForSeconds(2f);
-            if (_enemyRobot._statues.HP <= 0)
+            if (_enemyCurrentHP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
-                SceneManager.LoadScene((int)SceneEnum.GameEnd);
+                SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
             }
         }
         else
@@ -321,7 +321,7 @@ public class PVPUI : MonoBehaviour
 
             }
 
-            if (_robot._statues.HP <= 0)
+            if (_playerCurrentHP <= 0)
             {
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"적의 승리..";

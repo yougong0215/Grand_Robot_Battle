@@ -6,7 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/BattleEnd.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/BattleEnd.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/PVP/SkillObj/UseSkillCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/PVP/SkillObj/UseSkillCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/ServerPVPRobotInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/ServerPVPRobotInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/UI/StoreUISCI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/UI/StoreUISCI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/Scene/StroyScriptUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/Scene/StroyScriptUI.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/StoryScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/SOSK/StoryScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/09_UIToolkit/PVP/BattleEnd.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/09_UIToolkit/PVP/BattleEnd.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/09_UIToolkit/SelectStore/SelectStoreUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/09_UIToolkit/SelectStore/SelectStoreUI.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MakeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MakeUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +129,9 @@
       <workItem from="1694445762632" duration="1562000" />
       <workItem from="1694528014156" duration="5960000" />
       <workItem from="1694704900977" duration="844000" />
-      <workItem from="1694953668304" duration="965000" />
+      <workItem from="1694953668304" duration="2978000" />
+      <workItem from="1694961219744" duration="3982000" />
+      <workItem from="1695040957677" duration="693000" />
     </task>
     <servers />
   </component>

@@ -32,33 +32,36 @@ public static class LoadManager
     {
         // ?????�ъ냼???�덈???��?task泥섎????�㈃ ??�꺼二쇨�?
 
+
+
+        if(SceneReturn== false)
+        {
+            _loadStack.Push(nowScene);
+        }
+        nowScene = (int)enums;
+        
         if(enums == SceneEnum.Menu || enums == SceneEnum.StartScene)
         {
             _loadStack.Clear();
             nowScene = 1;
-            _loadStack.Push(nowScene);
-        }
-        else{
-            if(SceneReturn== false)
-            {
-                _loadStack.Push(nowScene);
-            }
+            //_loadStack.Push(nowScene);
+            SceneManager.LoadScene((int)enums);
+            return;
         }
 
-        nowScene = (int)enums;
-        SceneManager.LoadScene((int)enums);
+        
+        SceneManager.LoadScene(nowScene);
+        Debug.LogError($"{_loadStack.Count} | {enums}");
     }
 
     public static void ReturnBack()
     {
+        int temp =  _loadStack.Pop();
         if(_loadStack.Count == 0)
         {
-            Debug.LogError("??�굅 ?�덈?�硫???�릺?붾뜲 ?�덈????��?: _loadStack(SceneManager) is Empty");
+            LoadManager.LoadScene(SceneEnum.Menu, true);
             return;
         }
-
-        int temp =  _loadStack.Pop();
-                Debug.LogError(temp);
         LoadScene((SceneEnum)temp, true);
     }
 }

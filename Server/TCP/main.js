@@ -11,6 +11,8 @@ require("./Garage/main.js");
 require("./Mail/triggers.js");
 require("./Story/trigger.js");
 require("./Puzzel/main.js");
+require("./AD/main.js");
+require("./Store/main.js");
 require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));

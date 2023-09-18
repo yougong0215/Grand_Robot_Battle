@@ -12,6 +12,7 @@ public class LobbyPlayerInfoPacket {
     public string AvatarURL;
     public int Coin;
     public int Crystal;
+    public int ADtime;
 }
 
 public class LobbyGetInfo : MonoBehaviour
@@ -22,10 +23,12 @@ public class LobbyGetInfo : MonoBehaviour
     // 이벤트 리스너 등록
     private void Awake() {
         NetworkCore.EventListener["Lobby.ResultInfo"] = SetInfo;
+        NetworkCore.EventListener["Lobby.Reload"] = ReloadEvent;
     }
     // 이벤트 리스너 해제
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("Lobby.ResultInfo");
+        NetworkCore.EventListener.Remove("Lobby.Reload");
     }
 
     private void Start() {
@@ -43,8 +46,21 @@ public class LobbyGetInfo : MonoBehaviour
         Document.rootVisualElement.Q("GoldBar").Q<Label>("Gemtxt").text = PlayerInfo.Coin.ToString();
         Document.rootVisualElement.Q("GemBar").Q<Label>("Gemtxt").text = PlayerInfo.Crystal.ToString();
 
+
+
         if (PlayerInfo.AvatarURL != null)
             StartCoroutine(GetProfileImage(PlayerInfo.AvatarURL));
+
+        if (PlayerInfo.ADtime > 0) {
+            StartCoroutine("WaitAdBtn", PlayerInfo.ADtime);
+        }
+    }
+
+    void ReloadEvent(JsonData data) => Start();
+
+    public void ResetWaitAD() {
+        StopCoroutine("WaitAdBtn");
+        StartCoroutine("WaitAdBtn", 60 * 10);
     }
 
     IEnumerator GetProfileImage(string url) {
@@ -64,5 +80,16 @@ public class LobbyGetInfo : MonoBehaviour
                 cache_Profile[url] = ((DownloadHandlerTexture)www.downloadHandler).texture;
             }
         }
+    }
+
+    IEnumerator WaitAdBtn(int time) {
+        var _ADbtn = Document.rootVisualElement.Q<Button>("ADbtn");
+        _ADbtn.style.unityBackgroundImageTintColor = new Color(0.4f, 0.4f, 0.4f);
+
+        while (-- time > 0) {
+            yield return new WaitForSecondsRealtime(1);
+        }
+        
+        _ADbtn.style.unityBackgroundImageTintColor = new Color(1,1,1);
     }
 }

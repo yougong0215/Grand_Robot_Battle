@@ -15,9 +15,9 @@ public class MissileBase : PartSkillSO
         for (int i = 0; i < EventTime.Count; i++)
         {
            if (i == 0)
-                yield return new WaitForSeconds(EventTime[i]);
+                yield return new WaitForSeconds(EventTime[i].EvtTime);
             else
-                yield return new WaitForSeconds(EventTime[i]);
+                yield return new WaitForSeconds(EventTime[i].EvtTime);
             _pvp.SetHPValue(_enemy, (_me._statues.ATK * _enemy._statues.PercentDef) * 0.2f);
 
         }

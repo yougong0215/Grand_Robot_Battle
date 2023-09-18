@@ -8,6 +8,7 @@ public class PurchaseUI : MonoBehaviour
 {
     private UIDocument _doc;
     private VisualElement _root;
+    private domiIAP _IAP;
     private Button _exitBtn;
     private Button[] _purchasebtns = new Button[6];
     private string[] krws = { "990", "4900", "9900", "19000", "29000", "49000" };
@@ -15,6 +16,7 @@ public class PurchaseUI : MonoBehaviour
     private void Awake()
     {
         _doc = GetComponent<UIDocument>();
+        _IAP = GetComponent<domiIAP>();
     }
 
     private void OnEnable()
@@ -24,8 +26,10 @@ public class PurchaseUI : MonoBehaviour
         _exitBtn.clicked += () => ActivePanel(false);
         for (int i = 0; i < _purchasebtns.Length; i++)
         {
+            var saveI = i;
             _purchasebtns[i] = _root.Q<VisualElement>($"{krws[i]}krw").Q<Button>("purchase-btn");
-            _purchasebtns[i].clicked += () => PurchaseCrystal(krws[i]);
+            _purchasebtns[i].clicked += () => PurchaseCrystal(krws[saveI]);
+            _IAP.AddProduct("crystal_"+krws[saveI]);
         }
         _root.style.display = DisplayStyle.None;
     }
@@ -39,5 +43,8 @@ public class PurchaseUI : MonoBehaviour
     private void PurchaseCrystal(string value)
     {
         //서버에 연결
+        _IAP.ShowProduct("crystal_"+value, (bool success) => {
+            print("결제 확인 : "+success.ToString());
+        });
     }
 }

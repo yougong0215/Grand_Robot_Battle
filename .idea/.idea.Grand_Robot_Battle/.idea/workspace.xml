@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/SelectStoreScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/UI/StoreUISCI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/UI/StoreUISCI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Setting/Loby.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Setting/Loby.uss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Loby/LobyUIDocument.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Loby/LobyUIDocument.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Purchase/PurchaseUI.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Purchase/PurchaseUI.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
@@ -118,7 +122,7 @@
       <workItem from="1694953668304" duration="2978000" />
       <workItem from="1694961219744" duration="3982000" />
       <workItem from="1695040957677" duration="5347000" />
-      <workItem from="1695050893132" duration="2315000" />
+      <workItem from="1695050893132" duration="3067000" />
     </task>
     <servers />
   </component>

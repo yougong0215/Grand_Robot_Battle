@@ -13,7 +13,7 @@ public class StoreUISCI : MonoBehaviour
     Button _acceptBtn;
 
     VisualElement _root;
-
+    public PurchaseUI phu;
     
     void OnEnable()
     {
@@ -24,6 +24,8 @@ public class StoreUISCI : MonoBehaviour
         _gachaBtn = _root.Q<Button>("GachaBtn");
         _errorPanel = _root.Q<VisualElement>("error-panel");
         _acceptBtn = _root.Q<Button>("accept-btn");
+        Button  _chargingBtn = _root.Q < Button>("ChargingBtn");
+        _chargingBtn.clicked += () => phu.ActivePanel(true);
         _acceptBtn.clicked += () => Preparingforimplementation(false);
         
         _storeBtn.clicked += () => Preparingforimplementation(true);

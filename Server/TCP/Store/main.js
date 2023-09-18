@@ -31,7 +31,6 @@ TriggerEvent["store.buy"] = function(id, data) {
             return;
         }
 
-        player.socket.send("store.complete", true);
         PlayerBuyHandler(id, result.productId);
     });
 }
@@ -56,5 +55,6 @@ function PlayerBuyHandler(id, productId) {
 
     console.log(`${id}이가 ${productId} 삼`);
     crystalUtil.Add(id, value);
+    player.socket.send("store.complete", true);
     player.socket.send("Lobby.Reload", null);
 }

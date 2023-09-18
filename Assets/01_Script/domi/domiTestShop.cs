@@ -7,6 +7,14 @@ using UnityEngine.Purchasing;
 public class domiTestShop : MonoBehaviour, IStoreListener
 {
     IStoreController m_StoreContoller;
+    Product cacheProduct;
+
+    private void Awake() {
+        NetworkCore.EventListener["store.complete"] = IAP_Complete;
+    }
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("store.complete");
+    }
 
     // Start is called before the first frame update
     async void Start()
@@ -33,14 +41,13 @@ public class domiTestShop : MonoBehaviour, IStoreListener
     {
         print("결제 완료");
         //Retrive the purchased product
-        var product = purchaseEvent.purchasedProduct;
+        var product = cacheProduct = purchaseEvent.purchasedProduct;
         var data = LitJson.JsonMapper.ToObject(product.receipt);
-        NetworkCore.Send("store.test", (string)data["Payload"]);
         GUIUtility.systemCopyBuffer = product.receipt;
 
+        NetworkCore.Send("store.test", (string)data["Payload"]);
         print("Purchase Complete" + product.definition.id);
-
-        return PurchaseProcessingResult.Complete;
+        return PurchaseProcessingResult.Pending;
     }
 
     #region error handeling
@@ -62,4 +69,12 @@ public class domiTestShop : MonoBehaviour, IStoreListener
     }
 
     #endregion
+
+    void IAP_Complete(LitJson.JsonData data) {
+        if (!(bool)data) return;
+
+        print("최종 결제 완료");
+        m_StoreContoller.ConfirmPendingPurchase(cacheProduct);
+        cacheProduct = null;
+    }
 }

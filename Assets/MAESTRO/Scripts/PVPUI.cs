@@ -72,6 +72,8 @@ public class PVPUI : MonoBehaviour
     private float _enemyMaxHP;
     private float _enemyCurrentHP;
 
+    public Button _surrenderBtn;
+
     private void Awake()
     {
         _uiDoc = GetComponent<UIDocument>();
@@ -135,6 +137,9 @@ public class PVPUI : MonoBehaviour
         _settingPanel = _root.Q<VisualElement>("SettingPanel");
         #endregion
 
+
+        _surrenderBtn = _root.Q<Button>("SurrenderBtn");
+        _surrenderBtn.clicked += SceneManager.LoadScene(SceneEnum.Menu);
         partbtncools = new float[5];
         /* -- 서버에서 처리함
         for (int i = 0; i < 5; i++)
@@ -248,7 +253,7 @@ public class PVPUI : MonoBehaviour
         Debug.Log("로직 시작");
         bool t = SpeedReturn();
 
-
+        
         yield return StartCoroutine(Fight(t, so));
 
         SetPanel(false);
@@ -288,7 +293,9 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
+                StoryLoadResource.Instance.isWin = true;
                 SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
+                
             }
         }
         else
@@ -326,7 +333,8 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"적의 승리..";
                 yield return new WaitForSeconds(1.5f);
-                LoadManager.LoadScene(SceneEnum.Menu);
+                StoryLoadResource.Instance.isWin = false;
+                LoadManager.LoadScene(SceneEnum.GameEnd);
 
             }
         }

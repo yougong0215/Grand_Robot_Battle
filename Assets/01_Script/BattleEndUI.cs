@@ -60,11 +60,10 @@ public class BattleEndUI : MonoBehaviour
         
         exitbtn.clicked += () => LoadManager.LoadScene(SceneEnum.Menu);
         
-        if(_so != null)
-        {
-            exitbtn.clicked += () => StoryLoadResource.Instance.Save(null);
-            againbtn.clicked += () => StoryLoadResource.Instance.Save(null);
-        }
+
+        exitbtn.clicked += () => StoryLoadResource.Instance.Save(null);
+        againbtn.clicked += () => StoryLoadResource.Instance.Save(null);
+        
 
 
 

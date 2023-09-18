@@ -153,8 +153,8 @@ public class PartSO : ScriptableObject
     //[SerializeField] public Sprite EquipImage;
 
 
-    [Header("??? ???")]
-        [SerializeField] public AnimationClip clips;
+    [Header("??? ???")] 
+    [SerializeField] public AnimationClip clips;
     [SerializeField] public string names = "";
     [SerializeField] public float Count = 1;
     [SerializeField] [TextArea] public string Daesa = "[�����ȴ�簡�����ϴ�]";

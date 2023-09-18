@@ -139,7 +139,7 @@ public class domiPVPServer : MonoBehaviour
                 myMaxHealth += (int)data["leg"]["health"];
             }
         } catch {};
-
+    
         StartCoroutine(serverInput.FindAndSet());
 
         
@@ -173,9 +173,17 @@ public class domiPVPServer : MonoBehaviour
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력
         _pvpUI.SetPanel(false);
+   
 
-        _pvpUI.SetMaxHP(serverInput.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyInput.GetComponent<RobotSettingAndSOList>()._statues.HP);
-
+      
         // 이어서...
     }
+
+    IEnumerator SO()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _pvpUI.SetMaxHP(MyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP);
+
+    }
+    
 }

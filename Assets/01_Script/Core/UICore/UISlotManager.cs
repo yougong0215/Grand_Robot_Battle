@@ -58,10 +58,10 @@ public class UISlotManager : MonoBehaviour
 
         if(_robot._statues != null)
         {
-            ATK.text = $"ATK : {statues.ATK}";
-            DEF.text = $"DEF : {statues.DEF}";
-            SPEED.text = $"SPEED : {statues.SPEED}";
-            HP.text = $"HP : {statues.HP}";
+            ATK.text = $"ATK : {statues.ATK + 100}";
+            DEF.text = $"DEF : {statues.DEF +10 }";
+            SPEED.text = $"SPEED : {statues.SPEED + 10}";
+            HP.text = $"HP : {statues.HP + 10}";
             Debug.LogWarning("���߿� ���ľߵ�");
         }
 

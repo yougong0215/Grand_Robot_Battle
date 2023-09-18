@@ -835,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &967455341
 Transform:
   m_ObjectHideFlags: 0
@@ -880,7 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc01c4fb0fb0de49bfc093789982add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkMark: {fileID: 0}
+  _checkMark: {fileID: 9197481963319205126, guid: 08237db106560dc41a2c2a59f4b50aab,
+    type: 3}
   rewardItems:
   - ItemID: 
     Count: 0

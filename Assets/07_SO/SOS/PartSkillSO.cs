@@ -6,12 +6,18 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[System.Serializable]
+public class EffectOutPut
+{
+    public ParticleSystem _pl;
+    public float EvtTime;
+}
 
 //[CreateAssetMenu(menuName = "SO/Skill")]
 public abstract class PartSkillSO : ScriptableObject
 {
     [Description("Last List is done Anim Z, if List is Empty")]
-    [SerializeField] protected List<float> EventTime = new();
+    [SerializeField] protected List<EffectOutPut> EventTime = new();
 
     [Header("If BuffHas")]
     [SerializeField] public int Bufftime;

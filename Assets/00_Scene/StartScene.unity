@@ -5724,7 +5724,6 @@ GameObject:
   - component: {fileID: 1368887507}
   - component: {fileID: 1368887508}
   - component: {fileID: 1368887509}
-  - component: {fileID: 1368887510}
   m_Layer: 0
   m_Name: LoginManager
   m_TagString: Untagged
@@ -5837,18 +5836,6 @@ MonoBehaviour:
   totalCoinsTxt: {fileID: 0}
   appId: ca-app-pub-1385093244148841~5602672977
   img: {fileID: 0}
---- !u!114 &1368887510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368887502}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5fd363a67248e549ab4c3400785f326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1377410508
 GameObject:
   m_ObjectHideFlags: 0

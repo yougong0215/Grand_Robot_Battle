@@ -23,10 +23,12 @@ public class LobbyGetInfo : MonoBehaviour
     // 이벤트 리스너 등록
     private void Awake() {
         NetworkCore.EventListener["Lobby.ResultInfo"] = SetInfo;
+        NetworkCore.EventListener["Lobby.Reload"] = ReloadEvent;
     }
     // 이벤트 리스너 해제
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("Lobby.ResultInfo");
+        NetworkCore.EventListener.Remove("Lobby.Reload");
     }
 
     private void Start() {
@@ -53,6 +55,8 @@ public class LobbyGetInfo : MonoBehaviour
             StartCoroutine("WaitAdBtn", PlayerInfo.ADtime);
         }
     }
+
+    void ReloadEvent(JsonData data) => Start();
 
     public void ResetWaitAD() {
         StopCoroutine("WaitAdBtn");

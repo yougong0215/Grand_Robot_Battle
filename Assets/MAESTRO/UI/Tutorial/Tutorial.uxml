@@ -5,7 +5,7 @@
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="left-arrow-btn" class="btnmaster arrowbtn" style="background-color: rgba(188, 188, 188, 0);" />
             <ui:VisualElement name="image-panel" style="flex-grow: 0; width: 1500px; height: 650px; background-color: rgb(255, 255, 255); border-top-left-radius: 14px; border-top-right-radius: 14px; border-bottom-right-radius: 14px; border-bottom-left-radius: 14px;" />
             <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="right-arrow-btn" class="btnmaster arrowbtn" style="background-color: rgba(188, 188, 188, 0); rotate: 0;" />
-            <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-btn" style="position: absolute; width: 80px; height: 80px; top: 27px; left: 26px; font-size: 40px;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="exit-btn" style="position: absolute; width: 120px; height: 120px; top: 27px; left: 26px; font-size: 40px; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BackArrow.png?fileID=2800000&amp;guid=8dc62716644e12041993f6b97b06b260&amp;type=3#BackArrow&apos;); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

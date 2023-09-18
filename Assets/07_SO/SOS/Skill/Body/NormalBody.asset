@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417636d48e186ba48bc13088af8f0d68, type: 3}
   m_Name: NormalBody
   m_EditorClassIdentifier: 
-  EventTime: []
+  EventTime:
+  - _pl: {fileID: 1399491476850481362, guid: 7e691a0229efacd4cba2922df3888456, type: 3}
+    EvtTime: 0.46
   Bufftime: 0
   Buff:
     HP: 0

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4928e3698013fe4f87f92ca6ff2575e, type: 3}
   m_Name: MegaAnchor
   m_EditorClassIdentifier: 
-  EventTime: []
+  EventTime:
+  - _pl: {fileID: 8460667080445658518, guid: a3e2c3406e02f2c4ba86cfb1604277bd, type: 3}
+    EvtTime: 0.58
   Bufftime: 0
   Buff:
     HP: 0

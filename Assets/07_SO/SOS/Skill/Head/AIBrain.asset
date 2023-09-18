@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f432ecc135487de4eb97c2e229b0a19a, type: 3}
   m_Name: AIBrain
   m_EditorClassIdentifier: 
-  EventTime: []
+  EventTime:
+  - _pl: {fileID: 0}
+    EvtTime: 0
+  - _pl: {fileID: 0}
+    EvtTime: 0
   Bufftime: 0
   Buff:
     HP: 0

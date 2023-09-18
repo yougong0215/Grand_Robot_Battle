@@ -529,9 +529,13 @@ public class PVPUI : MonoBehaviour
                 //_panel.text =  $"{result.attacker}은 {result.hitter}에게 {result.power}의 피해를 입혔다. ( {(result.my ? "적" : "나")}의HP : {result.health} )";
                 yield return new WaitForSeconds(3f);
 
-                if (result.why == "domiNotHealthEvent") {
+                if ((result.my ?  _enemyCurrentHP : _playerCurrentHP) <= 0) {
                     _panel.text = result.my ? "나의 승리!!" : "적의 승리..";
                     disableControl = true;
+                    if (result.my) { // 내가 이겼다고 알려줘야함
+                        NetworkCore.Send("ingame.win", null);
+                    }
+                    break;
                 }
 
             } else if (result.why == "domiNotHealthEvent") {

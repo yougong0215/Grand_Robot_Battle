@@ -14,6 +14,22 @@ TriggerEvent["ingame.selectSkill"] = function(id, part) {
     room.SkillChoiceFinish();
 }
 
+TriggerEvent["ingame.win"] = function(id) {
+    const player = UserList[id];
+    const room = RoomManager.getRoomToPlayer(id);
+    if (player === undefined || room === undefined || room.ready === false) return;
+
+    // 다른 플레이어가 이미 스킬을 선택함
+    if (room.SelectSkills !== undefined)
+        for (const key in room.player)
+            if (room.SelectSkills[key] !== false) return;
+
+    // const winName = result_2st.answer ? hitter_name : attacker_name;
+    console.log(`[RoomManager](${room.roomID}) 게임종료!! (2) / ${player.name} 이김!`);
+    room.Reward(id);
+    room.Destroy(); // 방폭
+}
+
 RoomManager.RoomClass.prototype.SkillChoice = function(disableControl) {
     this.SelectSkills = {};
     Object.keys(this.players).forEach(id => {
@@ -94,14 +110,14 @@ function AttackPlayer(room, attackid, hitid, partid) {
     const attacker = room.players[attackid];
     const hitter = room.players[hitid];
 
-    if (attacker.health <= 0)
-        return {
-            answer: false,
-            power: 0,
-            health: 0,
-            soid: null,
-            why: "domiNotHealthEvent"  
-        }
+    // if (attacker.health <= 0)
+    //     return {
+    //         answer: false,
+    //         power: 0,
+    //         health: 0,
+    //         soid: null,
+    //         why: "domiNotHealthEvent"  
+    //     }
 
     // 스킵
     if (partid === -1)
@@ -135,15 +151,15 @@ function AttackPlayer(room, attackid, hitid, partid) {
     }
     
     attackerParts.activeTime = new Date(); // 사용시간 등록
-    hitter.health -= attackerParts.attack;
-    if (hitter.health < 0) hitter.health = 0;
+    // hitter.health -= attackerParts.attack;
+    // if (hitter.health < 0) hitter.health = 0;
 
     return {
         answer: true,
-        power: attackerParts.attack,
-        health: hitter.health,
+        power: 0,
+        health: 0,
         soid: attackerParts.id,
-        why: hitter.health === 0 ? "domiNotHealthEvent" : null
+        why: null
     }
 }
 

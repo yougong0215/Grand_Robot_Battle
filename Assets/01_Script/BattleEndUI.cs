@@ -71,6 +71,9 @@ public class BattleEndUI : MonoBehaviour
 
         exitbtn.clicked += () => StoryLoadResource.Instance.Save(null);
         againbtn.clicked += () => StoryLoadResource.Instance.Save(null);
+
+        StoryLoadResource.Instance.Init = null;
+        StoryLoadResource.Instance.Out = null;
         
 
         if (PVPUI.cache_reward != null) {

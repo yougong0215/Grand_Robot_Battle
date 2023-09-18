@@ -244,6 +244,7 @@ public class PVPUI : MonoBehaviour
 
 
 
+  
     public IEnumerator AIGameLogic(PartSO so)
     {
         // 이거 다 서버로 바꿔야됨
@@ -252,7 +253,7 @@ public class PVPUI : MonoBehaviour
         Debug.Log("로직 시작");
         bool t = SpeedReturn();
 
-
+        
         yield return StartCoroutine(Fight(t, so));
 
         SetPanel(false);
@@ -292,7 +293,9 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"나의 승리..!";
                 yield return new WaitForSeconds(1.5f);
+                StoryLoadResource.Instance.isWin = true;
                 SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
+                
             }
         }
         else
@@ -330,13 +333,15 @@ public class PVPUI : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 _panel.text = $"적의 승리..";
                 yield return new WaitForSeconds(1.5f);
-                LoadManager.LoadScene(SceneEnum.Menu);
+                StoryLoadResource.Instance.isWin = false;
+                LoadManager.LoadScene(SceneEnum.GameEnd);
 
             }
         }
 
         //yield return new WaitForSeconds(2f);
     }
+
 
     public void PartCoolRemove()
     {

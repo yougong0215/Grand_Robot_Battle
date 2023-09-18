@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1_Enemy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1_Enemy.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +116,7 @@
       <workItem from="1694953668304" duration="2978000" />
       <workItem from="1694961219744" duration="3982000" />
       <workItem from="1695040957677" duration="5347000" />
-      <workItem from="1695050893132" duration="1502000" />
+      <workItem from="1695050893132" duration="1869000" />
     </task>
     <servers />
   </component>

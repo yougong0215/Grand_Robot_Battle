@@ -15,7 +15,7 @@ public class domiTestShop : MonoBehaviour, IStoreListener
 
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-        builder.AddProduct("domi_test", ProductType.Consumable);
+        builder.AddProduct("domi_test2", ProductType.Consumable);
 
         UnityPurchasing.Initialize(this, builder);
     }
@@ -26,7 +26,7 @@ public class domiTestShop : MonoBehaviour, IStoreListener
         m_StoreContoller = controller;
 
         // test
-        m_StoreContoller.InitiatePurchase("domi_test");
+        m_StoreContoller.InitiatePurchase("domi_test2");
     }
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs purchaseEvent)
@@ -34,6 +34,9 @@ public class domiTestShop : MonoBehaviour, IStoreListener
         print("결제 완료");
         //Retrive the purchased product
         var product = purchaseEvent.purchasedProduct;
+        var data = LitJson.JsonMapper.ToObject(product.receipt);
+        NetworkCore.Send("store.test", (string)data["Payload"]);
+        GUIUtility.systemCopyBuffer = product.receipt;
 
         print("Purchase Complete" + product.definition.id);
 

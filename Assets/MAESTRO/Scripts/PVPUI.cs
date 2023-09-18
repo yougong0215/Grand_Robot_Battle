@@ -72,17 +72,20 @@ public class PVPUI : MonoBehaviour
     private float _enemyMaxHP;
     private float _enemyCurrentHP;
 
+    public static string[] cache_reward;
+
     private void Awake()
     {
         _uiDoc = GetComponent<UIDocument>();
         _robot = GameObject.Find("MyRobot").GetComponent<RobotSettingAndSOList>();
         _enemyRobot = GameObject.Find("EnemyRobot").GetComponent<RobotSettingAndSOList>();
         _SOserver = FindObjectOfType<GetServerToSO>();
-
+        cache_reward = null;
 
         NetworkCore.EventListener["ingame.AttackControl"] = ActiveControl;
         NetworkCore.EventListener["ingame.gameresult"] = ServerGameResult;
         NetworkCore.EventListener["ingame.destory"] = ServerGameDestory;
+        NetworkCore.EventListener["ingame.reward"] = SetReward;
     }
 
     private void OnDestroy() {
@@ -91,6 +94,7 @@ public class PVPUI : MonoBehaviour
         NetworkCore.EventListener.Remove("ingame.AttackControl");
         NetworkCore.EventListener.Remove("ingame.gameresult");
         NetworkCore.EventListener.Remove("ingame.destory");
+        NetworkCore.EventListener.Remove("ingame.reward");
         
     }
 
@@ -605,5 +609,9 @@ public class PVPUI : MonoBehaviour
                 partsbtns[i].Q<Label>("미장착").text = parts[i].names;
             }
         }
+    }
+
+    void SetReward(LitJson.JsonData data) {
+        cache_reward = LitJson.JsonMapper.ToObject<string[]>(data.ToJson());
     }
 }

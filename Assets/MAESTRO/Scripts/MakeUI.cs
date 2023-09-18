@@ -137,8 +137,9 @@ public class MakeUI : MonoBehaviour
 
     private void GachaRender()
     {
+        _gachaPanel.Clear();
         _gachaPanel.AddToClassList("on");
-
+        
         if (!_is_10)
         {
             VisualElement ele = _randEle.Instantiate();

@@ -79,7 +79,7 @@ public class domiPVPServer : MonoBehaviour
             serverInput.stat.SPEED = (int)player["speed"];
             serverInput.stat.ATK = (int)player["attack"];
             serverInput.stat.DEF = (int)player["shield"];
-
+            
             // 최대 체력 설정
             if ((bool)player["my"])
                 playerMaxHP = (int)player["health"];
@@ -95,7 +95,7 @@ public class domiPVPServer : MonoBehaviour
 
 
             
-            StartCoroutine(serverInput.FindAndSet());
+            StartCoroutine(serverInput.FindAndSet(true));
         }
 
         _pvpUI.SetMaxHP(playerMaxHP, not_playerMaxHP);

@@ -16,6 +16,7 @@ public class StoryScript : MonoBehaviour
     bool _touch = false;
 
     VisualElement _panelInput;
+    private Button _skipBtn;
     Label _text;
     Label _name;
     private VisualElement _single;
@@ -37,6 +38,9 @@ public class StoryScript : MonoBehaviour
         _text = _panelInput.Q<Label>("Text");
         _single = _root.Q<VisualElement>("Single");
         _double = _root.Q<VisualElement>("Double");
+        _skipBtn = _root.Q<Button>("SkipBtn");
+        
+        _skipBtn.clicked += () => SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
         _panelInput.RegisterCallback<ClickEvent>((evt) =>
         {
             Input();
@@ -50,6 +54,13 @@ public class StoryScript : MonoBehaviour
 
     void Input()
     {
+        if(_touch ==true)
+            index += 1;
+        if (index >= SO.Script.Count)
+        {
+            SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
+            return;
+        }
         StoryClass sc = SO.Script[index];
         if (sc.IsSay == false)
         {
@@ -97,30 +108,30 @@ public class StoryScript : MonoBehaviour
         else
         {
             _touch = false;
-            index += 1;
+
             if (index < SO.Script.Count)
             {
+                if (_co != null)
+                    StopCoroutine(_co);
+                _co = StartCoroutine(Scripting(sc));
+            }
 
-                _co = StartCoroutine(Scripting());
-            }
-            else
-            {
-                SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
-            }
         }
     }
     
 
 
-    IEnumerator Scripting()
+    IEnumerator Scripting(StoryClass sc)
     {
         _touch = false;
         string ht = "";
-        for (int i =0;i < SO.Script[index].Script.Length; i++)
+        
+        for (int i =0;i < sc.Script.Length; i++)
         {
-            ht += SO.Script[index].Script[i];
-            _text.text = ht;
+
             yield return new WaitForSeconds(0.05f);
+            ht += sc.Script[i];
+            _text.text = ht;
         }
         _touch = true;
     }

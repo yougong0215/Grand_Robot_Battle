@@ -73,7 +73,7 @@ public class StoryLoadResource : Singleton<StoryLoadResource>
         {
             if(Out == null)
             {
-
+                isBattle = false;
                 return SceneEnum.GameEnd;
             }
             else

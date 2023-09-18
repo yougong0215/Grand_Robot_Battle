@@ -16,6 +16,9 @@ public class EffectOutPut
 //[CreateAssetMenu(menuName = "SO/Skill")]
 public abstract class PartSkillSO : ScriptableObject
 {
+    [SerializeField] public List<GameObject> _effect;
+    [SerializeField] public GameObject _cam;
+    
     [Description("Last List is done Anim Z, if List is Empty")]
     [SerializeField] protected List<EffectOutPut> EventTime = new();
 

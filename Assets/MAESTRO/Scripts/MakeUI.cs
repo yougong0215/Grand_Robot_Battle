@@ -69,8 +69,10 @@ public class MakeUI : MonoBehaviour
     void SetInfo(JsonData data) {
         var PlayerInfo = JsonMapper.ToObject<LobbyPlayerInfoPacket>(data.ToJson());
         // 돈 부분
-        _doc.rootVisualElement.Q("GoldBar").Q<Label>("Gemtxt").text = PlayerInfo.Coin.ToString();
-        _doc.rootVisualElement.Q("GemBar").Q<Label>("Gemtxt").text = PlayerInfo.Crystal.ToString();
+        Debug.Log((PlayerInfo.Crystal.ToString()));
+        VisualElement gb = _root.Q<VisualElement>("GoodsGroup");
+        gb.Q("GemBar").Q<Label>("Gemtxt").text = PlayerInfo.Crystal.ToString();
+        gb.Q("GoldBar").Q<Label>("Gemtxt").text = PlayerInfo.Coin.ToString();
     }
     IEnumerator ResultTurm()
     {

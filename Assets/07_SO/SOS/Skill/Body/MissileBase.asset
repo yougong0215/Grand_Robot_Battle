@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: MissileBase
   m_EditorClassIdentifier: 
   EventTime:
-  - 0.2
-  - 0.05
-  - 0.05
-  - 0.05
-  - 0.05
-  - 0.05
+  - _pl: {fileID: 3003249034610154497, guid: dc0304bc644322c40886bd4a53310ad5, type: 3}
+    EvtTime: 1.08
   Bufftime: 0
   Buff:
     HP: 0

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class StoreUISCI : MonoBehaviour
 {
     UIDocument _uiDocument;
-    Button _exitBtn;
     Button _storeBtn;
     Button _gachaBtn;
     VisualElement _errorPanel;
@@ -20,17 +19,15 @@ public class StoreUISCI : MonoBehaviour
     {
         _uiDocument =GetComponent<UIDocument>();
         _root = _uiDocument.rootVisualElement;
-        _exitBtn = _root.Q<Button>("ExitBtn");
+
         _storeBtn = _root.Q<Button>("StoreBtn");
         _gachaBtn = _root.Q<Button>("GachaBtn");
         _errorPanel = _root.Q<VisualElement>("error-panel");
         _acceptBtn = _root.Q<Button>("accept-btn");
         _acceptBtn.clicked += () => Preparingforimplementation(false);
-
-
-        _exitBtn.clicked += () => SceneLoad("Menu");
+        
         _storeBtn.clicked += () => Preparingforimplementation(true);
-        _gachaBtn.clicked += () => SceneLoad("Gacha");
+        _gachaBtn.clicked += () => LoadManager.LoadScene(SceneEnum.Gacha);
     }
 
     private void Preparingforimplementation(bool isActive)

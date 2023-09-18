@@ -47,16 +47,8 @@ public class UseSkillCamera : MonoBehaviour
             yield return new WaitForSeconds(cams[i].untilTIme);
             cams[i].cam.Priority = -1;
         }
-       if(TryGetComponent<CommonAction>(out CommonAction a))
-        {
-            a.DestroyObj();
-        }
-    }
 
-    public void Hits()
-    {
-        if(co!=null)
-            StopCoroutine(co);
+        yield return new WaitForSeconds(1f);
     }
 
     private void Update()

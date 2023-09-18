@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: MetalBalde
   m_EditorClassIdentifier: 
   EventTime:
-  - 0.6
+  - _pl: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+    EvtTime: 1.13
+  - _pl: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+    EvtTime: 1.14
+  - _pl: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+    EvtTime: 1.15
   Bufftime: 0
   Buff:
     HP: 0

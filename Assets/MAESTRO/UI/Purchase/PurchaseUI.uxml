@@ -11,43 +11,43 @@
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 90개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/326_1.png?fileID=2800000&amp;guid=f6358cfe69310ff4fa0ef2ec714f9190&amp;type=3#326_1&apos;);" />
+                    <ui:Button text="\990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
                 <ui:VisualElement name="4900krw" class="element">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 520개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$4900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/325_1.png?fileID=2800000&amp;guid=e6a18b31074a65449b0ba26f9d04c9e0&amp;type=3#325_1&apos;);" />
+                    <ui:Button text="\4900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
                 <ui:VisualElement name="9900krw" class="element">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 990개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$9900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/325_2.png?fileID=2800000&amp;guid=6905f41c46392bf419e88632b9ec9f9a&amp;type=3#325_2&apos;);" />
+                    <ui:Button text="\9900" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
                 <ui:VisualElement name="19000krw" class="element" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 2000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/327_3.png?fileID=2800000&amp;guid=fe1a2cdd2f18ee64d8939f67814bad8b&amp;type=3#327_3&apos;);" />
+                    <ui:Button text="\19000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
                 <ui:VisualElement name="29000krw" class="element">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 3000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/328.png?fileID=2800000&amp;guid=d3d4778792090ae48a28ac72946ec4e1&amp;type=3#328&apos;);" />
+                    <ui:Button text="\29000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
                 <ui:VisualElement name="49000krw" class="element">
                     <ui:VisualElement name="count-txt-base" class="counttxt" style="flex-grow: 0; flex-shrink: 4;">
                         <ui:Label tabindex="-1" text="크리스탈 5000개" parse-escape-sequences="true" display-tooltip-when-elided="true" name="txt" style="align-items: auto; -unity-text-align: middle-center; font-size: 27px; -unity-font-style: normal;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0;" />
-                    <ui:Button text="$990" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
+                    <ui:VisualElement name="texture" class="image" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/329.png?fileID=2800000&amp;guid=bd175479786a5204aa9a645f23316e0f&amp;type=3#329&apos;);" />
+                    <ui:Button text="\49000" parse-escape-sequences="true" display-tooltip-when-elided="true" name="purchase-btn" class="purbtn" />
                 </ui:VisualElement>
             </ui:ScrollView>
         </ui:VisualElement>

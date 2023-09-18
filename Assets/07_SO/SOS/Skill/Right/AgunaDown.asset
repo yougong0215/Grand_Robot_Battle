@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AgunaDown
   m_EditorClassIdentifier: 
   EventTime:
-  - 0.7
+  - _pl: {fileID: 3299447268083111696, guid: 3e13f6b4f9e72d9419563ce817219e39, type: 3}
+    EvtTime: 0.58
   Bufftime: 0
   Buff:
     HP: 0

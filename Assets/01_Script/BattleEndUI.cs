@@ -77,7 +77,6 @@ public class BattleEndUI : MonoBehaviour
         if (PVPUI.cache_reward != null) {
             int i = 0;
             foreach(string puzzelID in PVPUI.cache_reward) {
-                // VisualElement rooted = _getItem.Instantiate();
                 _getItem.CloneTree(_resultVs);
 
                 var element = _resultVs.ElementAt(i);

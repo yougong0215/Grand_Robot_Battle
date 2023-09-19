@@ -21,7 +21,7 @@ MonoBehaviour:
   Statues:
     HP: 400
     ATK: 0
-    DEF: 40
+    DEF: 8
     SPEED: 0
     Barrier: 0
     PercentDef: 1

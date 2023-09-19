@@ -41,7 +41,7 @@ TriggerEvent["store.buy_onestore"] = async function(id, data) {
     if (player === undefined || data.id === undefined || data.index === undefined || data.token === undefined) return;
 
     const result = await onestore.getPurchaseDetails(data.id, data.token);
-    if (!player.isConnect()) {
+    if (!player.socket.isConnect()) {
         console.log("onestore - 결제 중 오프라인 : "+ data.id + " / "+ id);
         return;
     }
@@ -64,8 +64,7 @@ TriggerEvent["store.buy_onestore"] = async function(id, data) {
         return;
     }
 
-    console.log(result);
-    PlayerBuyHandler(id, result.purchaseId, data.index);
+    PlayerBuyHandler(id, data.id, data.index);
 }
 
 const GiveCrystal_List = {

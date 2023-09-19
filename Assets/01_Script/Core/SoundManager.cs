@@ -60,7 +60,7 @@ public class SoundManager : Singleton<SoundManager>
         AudioSource asource = SoundManager.Instance.gameObject.AddComponent<AudioSource>();
         asource.clip = _sfxList[(int)_soundType];
         asource.Play();
-        Debug.Log("되긴함");
+        //Debug.Log("되긴함");
         StartCoroutine(Destoryed(asource));
     }
 

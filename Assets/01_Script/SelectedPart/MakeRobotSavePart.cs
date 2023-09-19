@@ -13,8 +13,9 @@ public class MakeRobotSavePart : MonoBehaviour
         {
             var pi = transform.GetChild(i).GetComponent<PartUIInfo>();
 
-            if (pi.Part)
-                tokens[pi.Part.PartBase.ToString()] = pi.token;
+            if (pi != null)
+                if(pi.Part != null)
+                    tokens[pi.Part.PartBase.ToString()] = pi.token;
         }
 
         NetworkCore.Send("MakeRobot.SetSetting", tokens);

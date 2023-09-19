@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a832ec05c1b36e48ba2d1eec0ce197e, type: 3}
   m_Name: DXD9
   m_EditorClassIdentifier: 
-  EventTime: []
+  _cam: {fileID: 0}
+  EventTime:
+  - _pl: {fileID: 0}
+    EvtTime: 0.6
+  - _pl: {fileID: 0}
+    EvtTime: 0.1
+  - _pl: {fileID: 0}
+    EvtTime: 0.1
+  - _pl: {fileID: 0}
+    EvtTime: 0.1
+  - _pl: {fileID: 0}
+    EvtTime: 0.1
+  - _pl: {fileID: 0}
+    EvtTime: 0.1
   Bufftime: 0
   Buff:
     HP: 0

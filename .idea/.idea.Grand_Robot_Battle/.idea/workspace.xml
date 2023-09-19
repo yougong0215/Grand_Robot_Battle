@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/dummyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/dummyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/Parts/EarthQuaker/EarthQuakerLeft.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/Parts/EarthQuaker/EarthQuakerLeft.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/Parts/EarthQuaker/EarthQuakerRight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/Parts/EarthQuaker/EarthQuakerRight.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/Parts/GadaraBooster/GadaraBoosterLeft.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/Parts/GadaraBooster/GadaraBoosterLeft.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/Parts/GadaraBooster/GadaraBoosterLeft.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/Parts/GadaraBooster/GadaraBoosterLeft.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/GadaraBooster.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/GadaraBooster.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/EarthQuaker.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/EarthQuaker.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Char.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Char.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/PVP.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/PVP.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/ClickChecking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/ClickChecking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/Listed.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/Listed.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/PartSkillSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Left/DXD9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Left/DXD9.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Right/AgunaDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Right/AgunaDown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Server/data/data.db" afterDir="false" />
     </list>
@@ -54,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "yougong0215",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -130,7 +131,7 @@
       <workItem from="1695040957677" duration="5347000" />
       <workItem from="1695050893132" duration="3926000" />
       <workItem from="1695114591930" duration="3141000" />
-      <workItem from="1695124447954" duration="2601000" />
+      <workItem from="1695124447954" duration="5585000" />
     </task>
     <servers />
   </component>

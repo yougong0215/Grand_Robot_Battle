@@ -29,7 +29,7 @@ public class PurchaseUI : MonoBehaviour
             var saveI = i;
             _purchasebtns[i] = _root.Q<VisualElement>($"{krws[i]}krw").Q<Button>("purchase-btn");
             _purchasebtns[i].clicked += () => PurchaseCrystal(krws[saveI]);
-            _IAP.AddProduct("crystal_"+krws[saveI]);
+            // _IAP.AddProduct("crystal_"+krws[saveI]);
         }
         _root.style.display = DisplayStyle.None;
     }
@@ -43,8 +43,8 @@ public class PurchaseUI : MonoBehaviour
     private void PurchaseCrystal(string value)
     {
         //서버에 연결
-        _IAP.ShowProduct("crystal_"+value, (bool success) => {
-            print("결제 확인 : "+success.ToString());
-        });
+        // _IAP.ShowProduct("crystal_"+value, (bool success) => {
+        //     print("결제 확인 : "+success.ToString());
+        // });
     }
 }

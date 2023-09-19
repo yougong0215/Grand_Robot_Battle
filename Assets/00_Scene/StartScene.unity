@@ -5758,8 +5758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed15248a73c5e6640bf5f296b5850743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Endpoint: 127.0.0.1
-  Port: 3001
+  Endpoint: stack.domi.kr
+  Port: 443
 --- !u!114 &1368887505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7786,8 +7786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f073d97d283573744b92bbc9803fdcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ServerIP: 127.0.0.1
-  ServerPort: 3000
+  ServerIP: play.domi.kr
+  ServerPort: 25565
   BufferSize: 1024
 --- !u!1 &1846734078
 GameObject:

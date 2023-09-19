@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
-  m_Name: ValcanShot
+  m_Name: AgnnaDown
   m_EditorClassIdentifier: 
   PartBase: 1
   _part:
-  - part: {fileID: 8942553178788814242, guid: 83e15054b7a30594facbd3a1f4e2df9c, type: 3}
+  - part: {fileID: 3942315612353014920, guid: 1a0b7ff5360ec9844aef10592373de05, type: 3}
     enums: 5
-  SOname: "\uBC1C\uCE78\uD3EC"
-  Sprite: {fileID: 21300000, guid: 61676baa51a76e646983b3d90b1a6ba1, type: 3}
+  - part: {fileID: 0}
+    enums: 6
+  SOname: "\uC544\uADF8\uB098 \uB2E4\uC6B4"
+  Sprite: {fileID: 21300000, guid: d5eff58598a3de843b7739e1ea01b547, type: 3}
   Statues:
     HP: 0
     ATK: 50
@@ -30,11 +32,11 @@ MonoBehaviour:
     \uCCD0\uBC15\uD788\uB294 3\uAD6C\uC758 \uBBF8\uC0AC\uC77C\uC5D0\uC11C \uB0AD\uB9CC\uC774
     \uB290\uAEF4\uC9C4\uB2E4."
   SkillExplain: 
-  ReplaceMesh: 0
+  ReplaceMesh: 1
   EquipPart: 0
-  SkillImage: {fileID: 21300000, guid: a0b4a33dc9af73f419e6a54cdc0f5565, type: 3}
+  SkillImage: {fileID: 21300000, guid: 98bc50008214ac2439664e9f3858c0f1, type: 3}
   clips: {fileID: 7400000, guid: 22514f6a29b25574d9bacb2f6464306f, type: 2}
-  names: "\uACA9\uD0C4 \uBC1C\uC0AC!!"
+  names: "\uACA9\uD0C4 \uBC1C\uD3EC"
   Count: 1
   Daesa: "\uACA9\uD0C4 \uBC1C\uC0AC!!"
-  skillSo: {fileID: 0}
+  skillSo: {fileID: 11400000, guid: 840a35f791ac5d948991132939a99624, type: 2}

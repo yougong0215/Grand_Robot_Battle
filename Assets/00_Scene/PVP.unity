@@ -1534,6 +1534,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b64fcf667a40d4ab8736dbf9935239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageEffect: {fileID: 2356684799760990452, guid: 0c29803234dfadc428cd2e2316d8a2b4,
+    type: 3}
+  HealthEffect: {fileID: 399057138718582470, guid: 31b484f2a21948343aae72cb4e5e1ef7,
+    type: 3}
+  _robot: {fileID: 0}
+  _enemyRobot: {fileID: 0}
 --- !u!114 &1859384938
 MonoBehaviour:
   m_ObjectHideFlags: 0

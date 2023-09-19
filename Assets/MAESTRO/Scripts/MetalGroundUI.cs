@@ -48,6 +48,7 @@ public class MetalGroundUI : MonoBehaviour
         _winningCountTxt = _root.Q<Label>("Count");
         _matchingStartBtn = _root.Q<Button>("MatchingBtn");
         _matchingStartBtn.clicked += MatchingStart;
+        _myRobotChangeBtn.clicked += () => LoadManager.LoadScene(SceneEnum.MakeRobot);
     }
 
     void MathFinded(LitJson.JsonData data) {

@@ -15,7 +15,7 @@ public class AgunaDown : PartSkillSO
     {
         for (int i = 0; i < EventTime.Count; i++)
         {
-            if (i < 0)
+            if (i == 0)
                 yield return new WaitForSeconds(EventTime[i].EvtTime);
             else
                 yield return new WaitForSeconds(EventTime[i].EvtTime - EventTime[i - 1].EvtTime);

@@ -159,6 +159,10 @@ namespace OneStore.Purchasing
             _purchaseClient.Call(Constants.PurchaseClientEndConnectionMethod);
             _connectionStatus = ConnectionStatus.DISCONNECTED;
         }
+        
+        public void NowClose() {
+            _productInPurchaseFlow = null;
+        }
 
         public void QueryProductDetails(ReadOnlyCollection<string> productIds, ProductType type)
         {

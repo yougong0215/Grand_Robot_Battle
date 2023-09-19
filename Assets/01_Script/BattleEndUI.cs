@@ -32,6 +32,7 @@ public class BattleEndUI : MonoBehaviour
         
 
         _so = StoryLoadResource.Instance.Loading();
+        StoryLoadResource.Instance.isBattle = false;
 
         string stageStd = "";
         if (_so == null)
@@ -68,11 +69,13 @@ public class BattleEndUI : MonoBehaviour
         
         exitbtn.clicked += () => LoadManager.LoadScene(SceneEnum.Menu);
         
-        if(_so != null)
-        {
-            exitbtn.clicked += () => StoryLoadResource.Instance.Save(null);
-            againbtn.clicked += () => StoryLoadResource.Instance.Save(null);
-        }
+
+        exitbtn.clicked += () => StoryLoadResource.Instance.Save(null);
+        againbtn.clicked += () => StoryLoadResource.Instance.Save(null);
+
+        StoryLoadResource.Instance.Init = null;
+        StoryLoadResource.Instance.Out = null;
+        
 
         if (PVPUI.cache_reward != null) {
             int i = 0;

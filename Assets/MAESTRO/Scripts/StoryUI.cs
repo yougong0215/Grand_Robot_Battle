@@ -118,6 +118,7 @@ public class StoryUI : MonoBehaviour
         }
         _leftBtn.clicked += ()=> MovementStage(-1);
         _rightbtn.clicked += () => MovementStage(1);
+        
 
         MovementStage(0);
         print("현재 꺤 스테이지까지 : "+(int)data);

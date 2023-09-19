@@ -11,7 +11,7 @@ public class StoryLoadResource : Singleton<StoryLoadResource>
 
     public bool isWin = false;
 
-    bool isBattle = false;
+    public bool isBattle = false;
 
     public bool clear = false;
 

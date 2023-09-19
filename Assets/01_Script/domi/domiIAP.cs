@@ -82,6 +82,7 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
             m_StoreContoller.ConsumePurchase(purchases[(int)data["index"]]);
             cacheCallback?.Invoke(true);
             cacheCallback = null;
+            print("[domiIAP - onestore] Finish Pay");
         };
 
         int i = 0;
@@ -92,6 +93,7 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
                 index = i,
                 token = item.PurchaseToken
             });
+            print("[domiIAP - onestore] Purchase Check Server / "+ item.ProductId + " / "+ i);
             i ++;
         }
     }

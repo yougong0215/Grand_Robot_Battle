@@ -46,6 +46,15 @@ TriggerEvent["store.buy_onestore"] = async function(id, data) {
         return;
     }
 
+    if (result === undefined) {
+        console.log("onestore - 영수증 찾을 수 없음 : "+ data.id + " / "+ id);
+        player.socket.send("store.complete", {
+            ok: false,
+            index: data.index
+        });
+        return;
+    }
+
     if (result.consumptionState  === 1) {
         console.log("onestore - 이미 소비상태 : "+ data.id + " / "+ result.developerPayload +" / "+ id);
         return;
@@ -56,7 +65,7 @@ TriggerEvent["store.buy_onestore"] = async function(id, data) {
     }
 
     console.log(result);
-    PlayerBuyHandler(id, result.purchaseId);
+    PlayerBuyHandler(id, result.purchaseId, data.index);
 }
 
 const GiveCrystal_List = {
@@ -67,7 +76,7 @@ const GiveCrystal_List = {
     "crystal_29000": 3000,
     "crystal_49000": 5000,
 }
-function PlayerBuyHandler(id, productId) {
+function PlayerBuyHandler(id, productId, index) {
     const player = UserList[id];
     if (player === undefined) return;
 
@@ -79,6 +88,12 @@ function PlayerBuyHandler(id, productId) {
 
     console.log(`${id}이가 ${productId} 삼`);
     crystalUtil.Add(id, value);
-    player.socket.send("store.complete", true);
+    if (index === undefined)
+        player.socket.send("store.complete", true);
+    else
+        player.socket.send("store.complete", {
+            ok: true,
+            index: index
+        });
     player.socket.send("Lobby.Reload", null);
 }

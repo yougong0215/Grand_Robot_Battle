@@ -79,8 +79,8 @@ public class MakeUI : MonoBehaviour
         
         
         yield return new WaitForSeconds(1);
-        _okResult.AddToClassList("on");
-        _moreResult.AddToClassList("on");
+        //_okResult.AddToClassList("on");
+        //_moreResult.AddToClassList("on");
     }
 
     private void Exit(bool isMore)
@@ -108,8 +108,8 @@ public class MakeUI : MonoBehaviour
             StartGacha_1();
         }
 
-        _okResult.RemoveFromClassList("on");
-        _moreResult.RemoveFromClassList("on");
+        //_okResult.RemoveFromClassList("on");
+        //_moreResult.RemoveFromClassList("on");
     }
 
     private void SkipLoading()
@@ -137,8 +137,13 @@ public class MakeUI : MonoBehaviour
 
     private void GachaRender()
     {
-        _gachaPanel.Clear();
+        //_gachaPanel.Clear();
         _gachaPanel.AddToClassList("on");
+
+        _randEleList.ForEach((v) =>
+        {
+            _root.Remove(v);
+        });
         
         if (!_is_10)
         {

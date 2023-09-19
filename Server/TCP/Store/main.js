@@ -1,4 +1,5 @@
 const crystalUtil = require("../lib/crystalUtils.js");
+const onestore = require("./onestore.js");
 const iap = require("iap");
 const iap_token = require(__rootdir+"/Config/IAP_account.json");
 
@@ -33,6 +34,29 @@ TriggerEvent["store.buy"] = function(id, data) {
 
         PlayerBuyHandler(id, result.productId);
     });
+}
+
+TriggerEvent["store.buy_onestore"] = async function(id, data) {
+    const player = UserList[id];
+    if (player === undefined || data.id === undefined || data.index === undefined || data.token === undefined) return;
+
+    const result = await onestore.getPurchaseDetails(data.id, data.token);
+    if (!player.isConnect()) {
+        console.log("onestore - 결제 중 오프라인 : "+ data.id + " / "+ id);
+        return;
+    }
+
+    if (result.consumptionState  === 1) {
+        console.log("onestore - 이미 소비상태 : "+ data.id + " / "+ result.developerPayload +" / "+ id);
+        return;
+    }
+    if (result.purchaseState === 1) {
+        console.log("onestore - 구매 취소됨 : "+ data.id + " / "+ result.developerPayload +" / "+ id);
+        return;
+    }
+
+    console.log(result);
+    PlayerBuyHandler(id, result.purchaseId);
 }
 
 const GiveCrystal_List = {

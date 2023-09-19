@@ -101,7 +101,7 @@ public class StoryUI : MonoBehaviour
             _titleTxt.text = _so.TitleName;
             _imagePanel.style.backgroundImage = new StyleBackground(_so.StageSprite);
             _expTxt.text = _so.StageExample;
-            _enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
+            //_enemyImage.style.backgroundImage = new StyleBackground(_so.EnemySprite);
             _enemyNameTxt.text = _so.EnemyName;
             _enemyInfoTxt.text = _so.EnemyInfo;
 

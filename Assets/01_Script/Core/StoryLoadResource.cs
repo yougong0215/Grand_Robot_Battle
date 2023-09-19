@@ -14,6 +14,7 @@ public class StoryLoadResource : Singleton<StoryLoadResource>
     public bool isBattle = false;
 
     public bool clear = false;
+    public int stageInfo;
 
     public bool isIthave()
     {

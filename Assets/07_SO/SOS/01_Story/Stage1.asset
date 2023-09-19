@@ -23,4 +23,4 @@ MonoBehaviour:
     \uAC83\uC774\uB2E4.\""
   _enemy: {fileID: 11400000, guid: 33db165db57a3d742a6efa76831f3624, type: 2}
   Init: {fileID: 11400000, guid: fac7c76ede13e5241a9d9986822540ba, type: 2}
-  Out: {fileID: 11400000, guid: 0378a20424bee0140814fe2cab8d4630, type: 2}
+  Out: {fileID: 0}

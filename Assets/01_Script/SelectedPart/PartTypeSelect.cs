@@ -11,6 +11,8 @@ public class PartTypeSelect : MonoBehaviour
     [SerializeField] bool InitObj = false;
     [SerializeField] Image cont;
     public PartEnum PartType => _pe;
+    
+    [SerializeField] bool bSelected =false;
 
     private void Start()
     {
@@ -24,6 +26,9 @@ public class PartTypeSelect : MonoBehaviour
         {
             _img.color = new Color(0.3f, 0.3f, 0.3f, 0.6f);
         }
+        if(bSelected)
+            Selected();
+        
     }
 
 

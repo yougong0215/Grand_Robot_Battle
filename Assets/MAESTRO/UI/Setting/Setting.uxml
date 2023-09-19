@@ -28,10 +28,10 @@
                     </ui:Slider>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Button text="계삭버튼" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AcountRemoveBtn" style="left: -40%; top: 17%; width: 100px; height: 40px; -unity-font-definition: none;" />
+            <ui:Button text="계삭버튼" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AcountRemoveBtn" style="left: -40%; top: 17%; width: 100px; height: 40px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="RemovePanel" class="off" style="flex-grow: 0; width: 40%; height: 40%; background-color: rgb(135, 135, 135);">
+    <ui:VisualElement name="RemovePanel" class="off" style="flex-grow: 0; width: 40%; height: 40%; background-color: rgb(135, 135, 135); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);">
         <ui:Label tabindex="-1" text="삭제 곤란" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 32px; -unity-text-align: upper-center; -unity-font-style: bold;" />
         <ui:TextField picking-mode="Ignore" label="삭제 입력 :" value="입력하시오" name="Input" style="flex-direction: column; font-size: 31px; -unity-text-align: upper-center; top: 10%;" />
         <ui:VisualElement name="RemoveBtnPanel" style="flex-grow: 0; flex-direction: row; height: 10%; top: 31%; position: relative;">

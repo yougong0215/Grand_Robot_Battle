@@ -9,8 +9,7 @@ using UnityEngine.UIElements;
 
 public class StoryUI : MonoBehaviour
 {
-
-
+    
     public List<StoryUISO> _storySOList = new List<StoryUISO>();
     private UIDocument _doc;
     private VisualElement _root;
@@ -61,11 +60,14 @@ public class StoryUI : MonoBehaviour
         _expTxt = _root.Q<Label>("ExpText");
         _ingPanel = _root.Q<Label>("ingPanel");
         _ingTxt = _root.Q<Label>("ingTxt");
-        _enemyImage = _root.Q<VisualElement>("EnemyImage");
         _enemyNameTxt = _root.Q<Label>("EnemyName");
         _enemyInfoTxt = _root.Q<Label>("infoTxt");
         
+        // Camera.main.targetTexture = _render;
         
+        
+        _enemyImage = _root.Q<VisualElement>("EnemyImage");
+        //_enemyImage.style.backgroundImage = _render;
 
         _maxStage = _storySOList.Count;
         _gameEnter = _root.Q<Button>("EnterBtn");

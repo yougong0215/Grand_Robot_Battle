@@ -73,6 +73,7 @@ public class Setting : MonoBehaviour
 
     public void ActivePanel(bool isActive)
     {
+        Debug.LogWarning("정상 실행됨");
         _root.style.display = isActive ? DisplayStyle.Flex : DisplayStyle.None;
     }
 

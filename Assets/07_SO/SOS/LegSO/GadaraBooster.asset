@@ -14,24 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PartBase: 4
   _part:
+  - part: {fileID: 3516168585727955334, guid: 4b5c7f87590996b46b5eb13a1da9b3e8, type: 3}
+    enums: 8
+  - part: {fileID: 3516168585727955334, guid: 00a6ee8c0621926418524848ba9168fd, type: 3}
+    enums: 11
   - part: {fileID: 0}
-    enums: 0
+    enums: 12
+  - part: {fileID: 0}
+    enums: 12
   SOname: "\uAC00\uB2E4\uB77C \uBD80\uC2A4\uD130"
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: d3bd4e773a3faa24886bf9c12b939860, type: 3}
   Statues:
     HP: 50
     ATK: 200
     DEF: 0
     SPEED: 0
     Barrier: 0
+    PercentDef: 1
   Explain: "\uBC1C\uBC14\uB2E5\uC5D0 \uCEE4\uB2E4\uB780 \uBD80\uC2A4\uD130\uAC00
     \uB2EC\uB824\uC788\uB294 \uD30C\uCE20.\r\n\uBE60\uB974\uAC8C \uC6C0\uC9C1\uC5EC
     \uC801\uC744 \uD0C0\uACA9\uD55C\uB2E4."
-  ReplaceMesh: 0
+  SkillExplain: 
+  ReplaceMesh: 1
   EquipPart: 0
-  SkillImage: {fileID: 0}
-  EquipImage: {fileID: 0}
+  SkillImage: {fileID: 21300000, guid: d0414c1671c9c244dbddff4ee23ec9f8, type: 3}
   clips: {fileID: 0}
-  names: 
-  Count: 1
+  names: "\uBD80\uC2A4\uD305 \uC2A4\uD0C0\uD130"
+  Count: 3
   Daesa: "\uBD80\uC2A4\uD305 \uC2A4\uD0C0\uD130"
+  skillSo: {fileID: 11400000, guid: 09a4a1d7f2dcd524885151e0880b1d33, type: 2}

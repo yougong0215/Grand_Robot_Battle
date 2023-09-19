@@ -32,42 +32,50 @@ public class ClickChecking : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        try
         {
-
-            if(_doc == null && _can == null)
+            if (Input.GetMouseButtonDown(0))
             {
-                return;
-            }
 
-            if (_doc != null)
-            {
-                _root = _doc.rootVisualElement;
-                _root.RegisterCallback<ClickEvent>(OnClickChecking);
-            }
-            
-
-
-            if (_can != null)
-            {
-                PointerEventData pointerData = new PointerEventData(EventSystem.current)
+                if (_doc == null && _can == null)
                 {
-                    position = Input.mousePosition
-                };
+                    return;
+                }
 
-                List<RaycastResult> results = new List<RaycastResult>();
-                EventSystem.current.RaycastAll(pointerData, results);
-
-                foreach (RaycastResult result in results)
+                if (_doc != null)
                 {
-                    if (result.gameObject.GetComponent<UnityEngine.UI.Button>() != null)
+                    _root = _doc.rootVisualElement;
+                    _root.RegisterCallback<ClickEvent>(OnClickChecking);
+                }
+
+
+
+                if (_can != null)
+                {
+                    PointerEventData pointerData = new PointerEventData(EventSystem.current)
                     {
-                        SoundManager.Instance.PlaySFX(SFXSoundType.BtnClick);
-                        break;
+                        position = Input.mousePosition
+                    };
+
+                    List<RaycastResult> results = new List<RaycastResult>();
+                    EventSystem.current.RaycastAll(pointerData, results);
+
+                    foreach (RaycastResult result in results)
+                    {
+                        if (result.gameObject.GetComponent<UnityEngine.UI.Button>() != null)
+                        {
+                            SoundManager.Instance.PlaySFX(SFXSoundType.BtnClick);
+                            break;
+                        }
                     }
                 }
             }
         }
+        catch
+        {
+            
+        }
+       
     }
 
     private void OnClickChecking(ClickEvent evt)

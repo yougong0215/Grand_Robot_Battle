@@ -19,8 +19,9 @@ public class PVP_GameResult
     public string why;
 }
 public class PVPUI : MonoBehaviour
-{   
-    
+{
+    public GameObject DamageEffect;
+    public GameObject HealthEffect;
     #region 컴포넌트
     private UIDocument _uiDoc;
     private VisualElement _root;
@@ -202,7 +203,30 @@ public class PVPUI : MonoBehaviour
 
     public void SetHPValue(RobotSettingAndSOList _rot, float damage)
     {
-        
+
+
+        if (damage < 0)
+        {
+         
+            GameObject gb = Instantiate(HealthEffect);
+            gb.transform.position = _rot.transform.position + new Vector3(0,0,0);
+            if (gb.gameObject.TryGetComponent<ParticleSystem>(out ParticleSystem ab))
+            {
+                ab.Play();
+                Destroy(ab, 10f);
+            }   
+        }
+        else
+        {
+            GameObject gb = Instantiate(DamageEffect);
+            gb.transform.position = _rot.transform.position + new Vector3(0,2,0);
+            if (gb.gameObject.TryGetComponent<ParticleSystem>(out ParticleSystem ab))
+            {
+                ab.Play();
+                Destroy(ab, 10f);
+            }
+        }
+
         if(_rot == _robot)
         {
             

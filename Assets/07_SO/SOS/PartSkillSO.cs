@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public class EffectOutPut
 {
-    public ParticleSystem _pl;
+    public GameObject _pl;
     public float EvtTime;
 }
 

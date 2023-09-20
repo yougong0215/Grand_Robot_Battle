@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/99_mainUI/ExtiGameUss.uss?fileID=7433441132597879392&amp;guid=596510f76c09c024d97381743fb028d6&amp;type=3#ExtiGameUss" />
+    <ui:VisualElement name="Window" style="flex-grow: 0; width: 80%; height: 80%; left: 50%; top: 50%; translate: -50% -50%; background-image: none; background-color: rgb(152, 152, 152);">
+        <ui:VisualElement name="TopPanel" style="flex-grow: 0; height: 12%; background-color: rgb(255, 253, 54);">
+            <ui:Label tabindex="-1" text="게임 종료" parse-escape-sequences="true" display-tooltip-when-elided="true" style="flex-grow: 1; font-size: 64px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomPanel" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="진짜로 종료 하실껀가요?" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackLabel" style="-unity-text-align: middle-center; font-size: 64px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BtnPanel" style="flex-grow: 0.2; flex-direction: row;">
+            <ui:Button text="계속하기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NoBtn" class="btn" style="flex-grow: 1;" />
+            <ui:Button text="나가기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="YesBtn" class="btn" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

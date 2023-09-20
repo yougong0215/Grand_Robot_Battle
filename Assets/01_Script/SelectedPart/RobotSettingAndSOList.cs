@@ -116,12 +116,7 @@ public class RobotSettingAndSOList : MonoBehaviour
     }
 
 
-    private IEnumerator Start()
-    {
-        yield return StartCoroutine(gameObject.AddComponent<ServerPVPRobotInput>().FindAndSet());
 
-        // 서버 로딩 완료 보내주기
-    }
     private void Awake()
     {
         _bd = GetComponent<AnimationBind>();

@@ -56,8 +56,7 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
 
     public void OnNeedUpdate()
     {
-        // 일단 버그로 비활
-        // m_StoreContoller.LaunchUpdateOrInstallFlow((IapResult result) => {});
+        m_StoreContoller.LaunchUpdateOrInstallFlow((IapResult result) => {});
     }
 
     public void OnProductDetailsFailed(IapResult iapResult)

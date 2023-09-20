@@ -192,6 +192,11 @@ public class PVPUI : MonoBehaviour
     float _playerWid, _enemyWid;
     public void SetMaxHP(float playerHP, float enemyHP)
     {
+        if(StoryLoadResource.Instance.Loading() != null)
+        {
+            _enemtNickname.text = StoryLoadResource.Instance.Loading().EnemyName;
+        }
+
         _playerMaxHP = _playerCurrentHP = playerHP;
         _enemyMaxHP = _enemyCurrentHP = enemyHP;
         _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";

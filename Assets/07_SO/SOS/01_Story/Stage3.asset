@@ -21,6 +21,6 @@ MonoBehaviour:
   EnemySprite: {fileID: 2800000, guid: 191259d1316dc0a47be14535abfdb8d5, type: 3}
   EnemyInfo: "\uCD08 \uBA4B\uC788\uACE0 \uCD08 \uAC15\uD558\uACE0 \uCD08 \uC6D0\uB354\uD480
     \uD55C \uCD08\uCD08\uCD08 \uB85C\uBD07"
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 11400000, guid: 06889c8306788b24d8dffa82c8667737, type: 2}
   Init: {fileID: 11400000, guid: 8f634510be300384d8dfd64ad4137eb0, type: 2}
   Out: {fileID: 0}

@@ -28,7 +28,7 @@ public class GameExit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Application.Quit();
+            _Window.RemoveFromClassList("off");
         }
     }
 }

@@ -142,7 +142,7 @@ public class MakeUI : MonoBehaviour
 
         _randEleList.ForEach((v) =>
         {
-            _root.Remove(v);
+            _gachaPanel.Remove(v);
         });
         
         if (!_is_10)

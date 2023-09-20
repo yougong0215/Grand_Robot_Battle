@@ -69,9 +69,9 @@ public class PVPUI : MonoBehaviour
     [SerializeField] private RobotSettingAndSOList _enemyRobot;  // 임시방편
     #endregion
     private float _playerMaxHP;
-    private float _playerCurrentHP;
+    [SerializeField] private float _playerCurrentHP;
     private float _enemyMaxHP;
-    private float _enemyCurrentHP;
+    [SerializeField] private float _enemyCurrentHP;
 
     public static string[] cache_reward;
 

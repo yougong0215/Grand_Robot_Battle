@@ -169,8 +169,11 @@ public class domiPVPServer : MonoBehaviour
         EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg == null   ? _listed.Leg : a.Leg;
         EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body == null ? _listed.Body : a.Body;
 
-
-        
+        Debug.Log(EnemyInput.Left);
+        Debug.Log(EnemyInput.Right);
+        Debug.Log(EnemyInput.Head);
+        Debug.Log(EnemyInput.Leg);
+        Debug.Log(EnemyInput.Body);
 
 
         print(data["name"]); // 이름
@@ -186,7 +189,7 @@ public class domiPVPServer : MonoBehaviour
     {
         yield return StartCoroutine(EnemyInput.FindAndSet());
         _pvpUI.SetMaxHP(MyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP);
-
+    
     }
     
 }

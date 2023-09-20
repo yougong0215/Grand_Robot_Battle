@@ -18,7 +18,7 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   Statues:
     HP: 0
-    ATK: 20
+    ATK: 7
     DEF: 40
     SPEED: 0
     Barrier: 0

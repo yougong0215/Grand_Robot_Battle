@@ -6,19 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/BattleEndUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartTypeSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartTypeSelect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/domi/domiPVPServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Prefabs/New Animator Override Controller.overrideController" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/01_Story/Stage3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Story.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/ExtiGameUss.uss" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/ExtiGameUss.uss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/StoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.uxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Story/Story.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Story/Story.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +32,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/65/b1ee311a/IResolvedStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/75/f10edcb6/Background.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/e1/4612c112/Length.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/fa/a4347f44/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/ff/c4137643/StyleScale.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7bfd758b02a4936b0078adb4cb60396284000/7a/b48d57c2/NetworkStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/RobotDrag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Leg/GadaraBosster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
@@ -100,10 +100,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27328">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27328" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

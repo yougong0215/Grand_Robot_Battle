@@ -20,7 +20,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: aca6fa030e113084c87dd331671c7482, type: 3}
   Statues:
     HP: 100
-    ATK: 50
+    ATK: 16
     DEF: 0
     SPEED: 0
     Barrier: 0

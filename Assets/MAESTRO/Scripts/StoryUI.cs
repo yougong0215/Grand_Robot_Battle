@@ -30,6 +30,7 @@ public class StoryUI : MonoBehaviour
     private Button _gameEnter;
     [SerializeField] int currentRound = 0;
     int _maxStage;
+    public RobotSettingAndSOList _robot;
 
 
     private void Awake()
@@ -110,7 +111,14 @@ public class StoryUI : MonoBehaviour
 
             StoryLoadResource.Instance.Init = _so.Init;
             StoryLoadResource.Instance.Out = _so.Out;
-
+            
+            _robot.SetingRealPart(_so._enemy.LeftHand);
+            _robot.SetingRealPart(_so._enemy.RightHand);
+            _robot.SetingRealPart(_so._enemy.Head);
+            _robot.SetingRealPart(_so._enemy.Body);
+            _robot.SetingRealPart(_so._enemy.Leg);
+            
+            
             if (_so.id <= ((int)data + 1)) 
             {
                 _gameEnter.text = "에피소드 입장"; // 플레이 가능
@@ -121,6 +129,9 @@ public class StoryUI : MonoBehaviour
                 _gameEnter.SetEnabled(false);
             }
         }
+
+
+        
         _leftBtn.clicked += ()=> MovementStage(-1);
         _rightbtn.clicked += () => MovementStage(1);
         

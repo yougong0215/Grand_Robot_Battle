@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b433b19387d1de04eb6c8c5f38fecc0b, type: 3}
   m_Name: NormalHead
   m_EditorClassIdentifier: 
-  PartBase: 0
-  _part: []
-  SOname: ssss
-  Sprite: {fileID: 0}
+  PartBase: 2
+  _part:
+  - part: {fileID: 0}
+    enums: 13
+  SOname: "\uB178\uBA40 \uD5E4\uB4DC"
+  Sprite: {fileID: 21300000, guid: 6c8f7431f7dc0ae4c8e8ddbce23df33f, type: 3}
   Statues:
     HP: 0
     ATK: 20
@@ -23,8 +25,9 @@ MonoBehaviour:
     SPEED: 0
     Barrier: 0
     PercentDef: 1
-  Explain: 
-  SkillExplain: 
+  Explain: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uD5E4\uB4DC \uD30C\uCE20"
+  SkillExplain: "\uC21C\uAC04 \uACC4\uC0B0 \uC18D\uB3C4\uB97C \uC62C\uB824 \uAE30\uCCB4\uC758
+    \uC18D\uB3C4\uB97C \uB192\uC778\uB2E4."
   ReplaceMesh: 0
   EquipPart: 0
   SkillImage: {fileID: 0}

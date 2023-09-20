@@ -17,6 +17,7 @@ public class MakeUI : MonoBehaviour
     private Button _exitBtn;
 
     private VisualElement _gachaPanel;
+    private VisualElement _randEleContainer;
 
     private Button _okResult;
     private Button _moreResult;
@@ -52,6 +53,7 @@ public class MakeUI : MonoBehaviour
         _1_button = _root.Q<Button>("1_Button");
         _10_button = _root.Q<Button>("10_Button");
         _gachaPanel = _root.Q<VisualElement>("GachaPanel");
+        _randEleContainer = _root.Q("randele-container");
 
         _okResult = _root.Q<Button>("OK");
         _moreResult = _root.Q<Button>("OneMore");
@@ -107,7 +109,7 @@ public class MakeUI : MonoBehaviour
         {
             StartGacha_1();
         }
-
+        NetworkCore.Send("Lobby.RequestInfo", null);
         //_okResult.RemoveFromClassList("on");
         //_moreResult.RemoveFromClassList("on");
     }
@@ -137,13 +139,9 @@ public class MakeUI : MonoBehaviour
 
     private void GachaRender()
     {
-        //_gachaPanel.Clear();
+        _randEleContainer.Clear();
         _gachaPanel.AddToClassList("on");
 
-        _randEleList.ForEach((v) =>
-        {
-            _root.Remove(v);
-        });
         
         if (!_is_10)
         {
@@ -158,7 +156,7 @@ public class MakeUI : MonoBehaviour
             if (so.Sprite != null)
                 ele.Q<VisualElement>("Imaged").style.backgroundImage = new StyleBackground(so.Sprite);
 
-            _gachaPanel.Add(ele);
+            _randEleContainer.Add(ele);
             _randEleList.Add(ele);
         }
         else
@@ -177,7 +175,7 @@ public class MakeUI : MonoBehaviour
                 if (so.Sprite != null)
                     ele.Q<VisualElement>("Imaged").style.backgroundImage = new StyleBackground(so.Sprite);
 
-                _gachaPanel.Add(ele);
+                _randEleContainer.Add(ele);
                 _randEleList.Add(ele);
                 
                 t++;

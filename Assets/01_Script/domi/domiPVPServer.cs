@@ -170,21 +170,21 @@ public class domiPVPServer : MonoBehaviour
         EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body != null ? _listed.Body : a.Body;
 
 
-        StartCoroutine(EnemyInput.FindAndSet());
+        
 
 
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력
         _pvpUI.SetPanel(false);
 
-        StartCoroutine((SO()));
+        StartCoroutine((SO(EnemyInput)));
 
         // 이어서...
     }
 
-    IEnumerator SO()
+    IEnumerator SO(ServerPVPRobotInput EnemyInput)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return StartCoroutine(EnemyInput.FindAndSet());
         _pvpUI.SetMaxHP(MyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP);
 
     }

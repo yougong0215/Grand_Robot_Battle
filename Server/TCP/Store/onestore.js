@@ -30,7 +30,7 @@ exports.getPurchaseDetails = async function(productId, purchaseToken) {
         });
     } catch (err) {
         if (err.response.status == 401) {
-            await CreateToken();
+            if (await CreateToken() === false) return;
             return await exports.getPurchaseDetails(productId, purchaseToken);
         }
 

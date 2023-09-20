@@ -6,26 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/MetalBattleGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/MetalBattleGround.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MetalFace.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MetalFace.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MissileBase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/MissileBase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBody.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBody.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBodyStory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/BodySO/NormalBodyStory.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/AIBrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/AIBrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/NormalHead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/HeadSO/NormalHead.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/BiteDown.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/BiteDown.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/DXD9.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MetalBlader.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/MetalBlader.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalLHand.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalLHand.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalRHand.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LeftArmSO/NormalRHand.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/GadaraBooster.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/GadaraBooster.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/NormalLeg.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/LegSO/NormalLeg.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/AgnnaDown.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/AgnnaDown.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/NormalRSword.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/ValcanShot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/ValcanShot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MetalGroundUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MetalGroundUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/MetalGround/MetalGround 1.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/MetalGround/MetalGround 1.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/RobotDrag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Leg/GadaraBosster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
@@ -109,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27328">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="27328" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

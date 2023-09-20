@@ -43,7 +43,7 @@ public class StoryUI : MonoBehaviour
     }
 
     private void Start() {
-        // NetworkCore.Send("story.clear", 1 /* 스토리 ID (1부터) */);
+        // NetworkCore.Send("story.clear", 1); /* 스토리 ID (1부터) */
         // NetworkCore.Send("story.clear", 2);
         // NetworkCore.Send("story.clear", 3);
         NetworkCore.Send("story.getClearNum", null); // 불러오기 요청
@@ -72,8 +72,7 @@ public class StoryUI : MonoBehaviour
         _maxStage = _storySOList.Count;
         _gameEnter = _root.Q<Button>("EnterBtn");
 
-
-        _gameEnter.clicked += () => StoryLoadResource.Instance.Save(_storySOList[currentRound]);
+        
         _gameEnter.clicked += () => SceneManager.LoadScene((int)StoryLoadResource.Instance.NextScene());
         // _leftBtn.clicked += ()=> MovementStage(-1);
         // _rightbtn.clicked += () => MovementStage(1);
@@ -94,6 +93,10 @@ public class StoryUI : MonoBehaviour
             {
                 currentRound = _maxStage - 1;
             }
+
+            StoryLoadResource.Instance.Save(_storySOList[currentRound]);
+
+            StoryLoadResource.Instance.stageInfo = currentRound;
             StoryUISO _so = _storySOList[currentRound];
             //oryUISO _so = _storySOList[currentRound];
 

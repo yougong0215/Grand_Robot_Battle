@@ -19,7 +19,7 @@ public class BattleEndUI : MonoBehaviour
     VisualElement _resultVs;
 
     [SerializeField] public List<VisualElement> _result = new();
-
+    private Label _clearTitle;
 
     void OnEnable()
     {
@@ -29,14 +29,18 @@ public class BattleEndUI : MonoBehaviour
         exitbtn = _root.Q<Button>("ExitBtn");
         againbtn = _root.Q<Button>("AgainBtn");
         _resultVs = _root.Q<VisualElement>("ItemPanel");
-        
 
+        _clearTitle = _root.Q<Label>("Clear");
+
+
+        
         _so = StoryLoadResource.Instance.Loading();
         StoryLoadResource.Instance.isBattle = false;
 
         string stageStd = "";
         if (_so == null)
         {
+            _clearTitle.text = "Battle";
             stageStd += "배틀 - ";
            
             if (StoryLoadResource.Instance.isWin)
@@ -51,10 +55,12 @@ public class BattleEndUI : MonoBehaviour
         }
         else
         {
+            _clearTitle.text = "Story";
             stageStd += _so.TitleName;
             if (StoryLoadResource.Instance.isWin)
             {
                 stageStd += $" - 클리어!";
+                NetworkCore.Send("story.clear", StoryLoadResource.Instance.stageInfo + 1);
             }
             else
             {

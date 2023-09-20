@@ -14,6 +14,10 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>
         <meta-data android:name="iap:view_option" android:value="popup"/>
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+           android:noHistory="true"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
+        </activity>
     </application>
 
     <queries>

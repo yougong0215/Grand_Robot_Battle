@@ -4775,6 +4775,7 @@ MonoBehaviour:
   _pe: 3
   InitObj: 0
   cont: {fileID: 4088924301204966733}
+  bSelected: 0
 --- !u!224 &4088924300019092869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4900,6 +4901,7 @@ MonoBehaviour:
   _pe: 4
   InitObj: 0
   cont: {fileID: 4088924300188963311}
+  bSelected: 0
 --- !u!114 &4088924300034726874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6443,6 +6445,7 @@ MonoBehaviour:
   _pe: 5
   InitObj: 0
   cont: {fileID: 4088924300018002122}
+  bSelected: 0
 --- !u!114 &4088924301064099798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6613,6 +6616,7 @@ MonoBehaviour:
   _pe: 1
   InitObj: 1
   cont: {fileID: 4088924300101163414}
+  bSelected: 1
 --- !u!224 &4088924301099520925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6717,6 +6721,7 @@ MonoBehaviour:
   _pe: 2
   InitObj: 0
   cont: {fileID: 4088924299725172740}
+  bSelected: 0
 --- !u!224 &4088924301134853620
 RectTransform:
   m_ObjectHideFlags: 0

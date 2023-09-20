@@ -150,9 +150,11 @@ public class domiPVPServer : MonoBehaviour
         serverInput.Leg = serverInput.Leg == null ? _listed.Leg : serverInput.Leg;
         serverInput.Body = serverInput.Body == null ? _listed.Body : serverInput.Body;
 
+        BattleEnemySO a = StoryLoadResource.Instance.Loading()._enemy;
 
 
-
+        
+        
         _pvpUI.SetSkillButton(new PartSO[] {
                     serverInput.Left, serverInput.Right,  serverInput.Body, serverInput.Leg,serverInput.Head
                 }, new int[] {
@@ -161,11 +163,11 @@ public class domiPVPServer : MonoBehaviour
                 });
 
 
-        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand  ? _listed.LeftHand : EnemyInput.Left;
-        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand   ? _listed.RightHand : EnemyInput.Right;
-        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head   ? _listed.Head : EnemyInput.Head;
-        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg    ? _listed.Leg : EnemyInput.Leg;
-        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body  ? _listed.Body : EnemyInput.Body;
+        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand  ? _listed.LeftHand : a.LeftHand;
+        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand   ? _listed.RightHand : a.RightHand;
+        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head   ? _listed.Head : a.Head;
+        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg    ? _listed.Leg : a.Leg;
+        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body  ? _listed.Body : a.Body;
 
         StartCoroutine(EnemyInput.FindAndSet());
 

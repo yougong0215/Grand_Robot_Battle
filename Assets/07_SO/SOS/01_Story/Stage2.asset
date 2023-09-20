@@ -23,5 +23,5 @@ MonoBehaviour:
   EnemyInfo: "\uC2E4\uC804 \uB85C\uBD07 \uC785\uB2C8\uB2E4. \uD2B9\uD788 \uB2E8\uB2E8\uD55C
     \uBC29\uD328\uB97C \uC7A5\uCC29\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
   _enemy: {fileID: 11400000, guid: 4a36e39aacb63bb4bb0dd016547cfc37, type: 2}
-  Init: {fileID: 11400000, guid: 8f634510be300384d8dfd64ad4137eb0, type: 2}
+  Init: {fileID: 11400000, guid: 0378a20424bee0140814fe2cab8d4630, type: 2}
   Out: {fileID: 0}

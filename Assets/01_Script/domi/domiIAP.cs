@@ -112,6 +112,7 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
 
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("store.complete");
+        m_StoreContoller?.EndConnection();
     }
 
     public void ShowProduct(string id, UnityAction<bool> cb) {

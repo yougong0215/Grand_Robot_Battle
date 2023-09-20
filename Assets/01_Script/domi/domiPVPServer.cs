@@ -163,11 +163,12 @@ public class domiPVPServer : MonoBehaviour
                 });
 
 
-        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand  ? _listed.LeftHand : a.LeftHand;
-        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand   ? _listed.RightHand : a.RightHand;
-        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head   ? _listed.Head : a.Head;
-        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg    ? _listed.Leg : a.Leg;
-        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body  ? _listed.Body : a.Body;
+        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand != null  ? _listed.LeftHand : a.LeftHand;
+        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand  != null  ? _listed.RightHand : a.RightHand;
+        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head !=null   ? _listed.Head : a.Head;
+        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg != null   ? _listed.Leg : a.Leg;
+        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body != null ? _listed.Body : a.Body;
+
 
         StartCoroutine(EnemyInput.FindAndSet());
 

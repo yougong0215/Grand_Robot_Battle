@@ -59,6 +59,9 @@ public class NetworkCore : MonoBehaviour
             WhyDisconnect = (string)why;
             client.Close();
         };
+        EventListener["domi.ping"] = (JsonData data) => { // 서버한테 pong을 보내 살아있다는 알림 보냄
+            Send("domi.pong", null);
+        };
     }
     
     // 엔티티가 없어지면 연결을 끊음 (에디터 playmode 가 아니여도 connection이 연결되어있음 ㅇㅅㅇ)

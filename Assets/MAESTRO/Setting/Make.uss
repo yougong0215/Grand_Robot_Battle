@@ -1,5 +1,7 @@
 .panel.off {
     margin-top: 900px;
+    bottom: -100%;
+    position: absolute;
 }
 
 .gacha {
@@ -7,14 +9,17 @@
     width: 80%;
     height: 80%;
     background-color: rgb(241, 241, 241);
-    top: 100px;
+    top: auto;
     transition-property: margin-top;
     transition-duration: 1s;
     margin-top: 900px;
+    bottom: -100%;
 }
 
 .gacha.on {
     margin-top: 0;
+    bottom: 0;
+    transition-duration: 0.25s;
 }
 
 .result {

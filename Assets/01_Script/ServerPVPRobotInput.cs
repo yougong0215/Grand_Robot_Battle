@@ -35,7 +35,7 @@ public class ServerPVPRobotInput : MonoBehaviour
         Debug.LogWarning("나중에 고쳐야됨2");
 
         _robot._statues = stat;
-        Destroy(this);
+
     }
 
     IEnumerator Setting(PartSO so)

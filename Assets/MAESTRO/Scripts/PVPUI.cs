@@ -69,9 +69,9 @@ public class PVPUI : MonoBehaviour
     [SerializeField] private RobotSettingAndSOList _enemyRobot;  // 임시방편
     #endregion
     private float _playerMaxHP;
-    private float _playerCurrentHP;
+    [SerializeField] private float _playerCurrentHP;
     private float _enemyMaxHP;
-    private float _enemyCurrentHP;
+    [SerializeField] private float _enemyCurrentHP;
 
     public static string[] cache_reward;
 
@@ -192,6 +192,11 @@ public class PVPUI : MonoBehaviour
     float _playerWid, _enemyWid;
     public void SetMaxHP(float playerHP, float enemyHP)
     {
+        if (StoryLoadResource.Instance.Loading() != null)
+        {
+            _enemtNickname.text = StoryLoadResource.Instance.Loading().EnemyName;
+        }
+        
         _playerMaxHP = _playerCurrentHP = playerHP;
         _enemyMaxHP = _enemyCurrentHP = enemyHP;
         _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";

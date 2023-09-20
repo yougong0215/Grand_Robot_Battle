@@ -163,30 +163,33 @@ public class domiPVPServer : MonoBehaviour
                 });
 
 
-        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand != null  ? _listed.LeftHand : a.LeftHand;
-        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand  != null  ? _listed.RightHand : a.RightHand;
-        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head !=null   ? _listed.Head : a.Head;
-        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg != null   ? _listed.Leg : a.Leg;
-        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body != null ? _listed.Body : a.Body;
+        EnemyInput.Left = StoryLoadResource.Instance.Loading()._enemy.LeftHand == null  ? _listed.LeftHand : a.LeftHand;
+        EnemyInput.Right = StoryLoadResource.Instance.Loading()._enemy.RightHand  == null  ? _listed.RightHand : a.RightHand;
+        EnemyInput.Head = StoryLoadResource.Instance.Loading()._enemy.Head ==null   ? _listed.Head : a.Head;
+        EnemyInput.Leg = StoryLoadResource.Instance.Loading()._enemy.Leg == null   ? _listed.Leg : a.Leg;
+        EnemyInput.Body = StoryLoadResource.Instance.Loading()._enemy.Body == null ? _listed.Body : a.Body;
 
-
-        StartCoroutine(EnemyInput.FindAndSet());
+        Debug.Log(EnemyInput.Left);
+        Debug.Log(EnemyInput.Right);
+        Debug.Log(EnemyInput.Head);
+        Debug.Log(EnemyInput.Leg);
+        Debug.Log(EnemyInput.Body);
 
 
         print(data["name"]); // 이름
         print(myMaxHealth); // 최대 체력
         _pvpUI.SetPanel(false);
 
-        StartCoroutine((SO()));
+        StartCoroutine((SO(EnemyInput)));
 
         // 이어서...
     }
 
-    IEnumerator SO()
+    IEnumerator SO(ServerPVPRobotInput EnemyInput)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return StartCoroutine(EnemyInput.FindAndSet());
         _pvpUI.SetMaxHP(MyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP, EnemyRobot.GetComponent<RobotSettingAndSOList>()._statues.HP);
-
+    
     }
     
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Unity.Services.Core;
 using OneStore.Purchasing;
+using OneStore.Auth;
 
 struct ShopPacket {
     public string payload;
@@ -37,9 +38,10 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
         throw new System.NotImplementedException();
     }
 
+    // 최종 결제 완료
     public void OnConsumeSucceeded(PurchaseData purchase)
     {
-        throw new System.NotImplementedException();
+        // throw new System.NotImplementedException();
     }
 
     public void OnManageRecurringProduct(IapResult iapResult, PurchaseData purchase, RecurringAction action)
@@ -49,12 +51,12 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
 
     public void OnNeedLogin()
     {
-        throw new System.NotImplementedException();
+        new OneStoreAuthClientImpl().LaunchSignInFlow(signInResult => {});
     }
 
     public void OnNeedUpdate()
     {
-        throw new System.NotImplementedException();
+        m_StoreContoller.LaunchUpdateOrInstallFlow((IapResult result) => {});
     }
 
     public void OnProductDetailsFailed(IapResult iapResult)

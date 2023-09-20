@@ -1,6 +1,6 @@
 const aixos = require("axios");
 
-const END_POINT = "https://sbpp.onestore.co.kr/";
+const END_POINT = "https://iap-apis.onestore.net/";
 const packageName = "com.Isthisno.sdfd";
 const client_secret = "7MSMtdh5PANQZ58wM+yeaNIEwzHsVovYP3HSLXLGd6A=";
 

@@ -128,11 +128,13 @@ public class MakeUI : MonoBehaviour
     {
         // GachaCo = StartCoroutine(GachaCoroutine());
         NetworkCore.Send("Gacha.Start_1", null);
+        NetworkCore.Send("Lobby.RequestInfo", null); // 서버에게 정보 달라고 요청함
     }
 
     private void StartGacha_10()
     {
         NetworkCore.Send("Gacha.Start_10", null);
+        NetworkCore.Send("Lobby.RequestInfo", null); // 서버에게 정보 달라고 요청함
         // GachaCo = StartCoroutine(GachaCoroutine());
         _is_10 = true;
     }

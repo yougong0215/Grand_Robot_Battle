@@ -2,10 +2,14 @@ const sqlite = require("../utils/sqlite.js");
 const UserManager = require("./lib/UserManager.js");
 const Login_Google = require("./lib/LoginModule/google.js");
 
+const pongList = {};
+
 module.exports = function(socket) {
     ////////// socket 초기화 //////////
     // utf-8 로 설정
     socket.setEncoding('utf8');
+
+    socket.setTimeout(1000 * 60 * 3); // 타임아웃 설정
 
     // 편하게 지금 연결중인가?
     socket.isConnect = () => socket.readyState === "open";
@@ -80,7 +84,20 @@ module.exports = function(socket) {
             }
         });
         socket.once("close", function() {
+            if (pongList[socket] !== undefined) {
+                clearTimeout(pongList[socket]);
+                delete pongList[socket];
+            }
             UserManager.RemovePlayer(MyID);
+        });
+        socket.on("timeout", function() {
+            if (pongList[socket] !== undefined) return;
+            pongList[socket] = setTimeout(() => {
+                socket.end();
+                delete pongList[socket];
+            }, 1000 * 60);
+    
+            socket.send("domi.ping", null);
         });
     }
 
@@ -163,4 +180,13 @@ module.exports = function(socket) {
         // 로그인 성공!
         UserManager.AddPlayer(login_ID, socket, login_Avatar);
     });
+}
+
+TriggerEvent["domi.pong"] = function(id) {
+    const player = UserList[id];
+    
+    if (player === undefined || pongList[player.socket] === undefined) return;
+
+    clearTimeout(pongList[player.socket]);
+    delete pongList[player.socket];
 }

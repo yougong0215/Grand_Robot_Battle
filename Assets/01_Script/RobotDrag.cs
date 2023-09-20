@@ -19,7 +19,7 @@ public class RobotDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         // 드래그 중일 때 실행되는 코드
         Debug.LogWarning("돌아가느중");
         float rotationAmount = eventData.delta.x * rotationSpeed * Time.deltaTime;
-        _ts.Rotate(Vector3.up, rotationAmount);
+        _ts.Rotate(Vector3.up, -rotationAmount);
     }
 
     public void OnEndDrag(PointerEventData eventData)

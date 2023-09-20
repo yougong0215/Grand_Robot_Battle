@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/07_SO/SOS/01_Story/SOSK/Scene/StoryScriptUSS.uss?fileID=7433441132597879392&amp;guid=836f47edc7097794e8eb5590a949c107&amp;type=3#StoryScriptUSS" />
     <ui:Button text="Skip" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SkipBtn" style="position: absolute; left: 100%; translate: -100% 0; font-size: 32px; width: 6%; height: 5%; background-color: rgba(188, 188, 188, 0); -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
     <ui:VisualElement name="Background" style="flex-grow: 1;">
-        <ui:VisualElement name="Single" class="CharacterPos" style="flex-grow: 1; position: absolute; background-image: none; top: 2%; left: 50%;" />
-        <ui:VisualElement name="Double" class="CharacterPos" style="flex-grow: 1; position: absolute; background-image: none; top: 2%;" />
+        <ui:VisualElement name="Single" class="CharacterPos" style="flex-grow: 1; position: absolute; background-image: none; left: 50%;" />
+        <ui:VisualElement name="Double" class="CharacterPos" style="flex-grow: 1; position: absolute; background-image: none;" />
         <ui:VisualElement name="HalfBottomRoot" style="flex-grow: 0; bottom: auto; top: 100%; translate: 0 -100%;">
             <ui:Label tabindex="-1" text="Label | Preview" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="font-size: 40px; -unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); width: 40%; left: 7%; -unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 2px;" />
             <ui:VisualElement name="TextPanel" style="flex-grow: 0; background-color: rgba(41, 41, 41, 0.52); flex-direction: column; height: 250px;">

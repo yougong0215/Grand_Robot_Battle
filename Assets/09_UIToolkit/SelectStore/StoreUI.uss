@@ -6,11 +6,13 @@
 .errorpanel {
     left: 713px;
     position: absolute;
-    top: 1000px;
+    top: auto;
     transition-duration: 0.5s;
+    bottom: -500px;
 }
 
 .errorpanel.on {
     position: absolute;
-    top: 200px;
+    top: auto;
+    bottom: 35%;
 }

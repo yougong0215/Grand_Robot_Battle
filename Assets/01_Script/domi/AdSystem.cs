@@ -12,11 +12,12 @@ public class AdSystem : MonoBehaviour
         MobileAds.RaiseAdEventsOnUnityMainThread = true;
         MobileAds.Initialize(initStatus => {
             print("Admob 초기화 완료");
+            LoadRewardedAd();
         });
     }
 
     RewardedAd rewardedAd;
-    public void LoadRewardedAd(Action<GoogleMobileAds.Api.Reward> callback) {
+    public void LoadRewardedAd() {
 
         if (rewardedAd!=null)
         {
@@ -37,8 +38,6 @@ public class AdSystem : MonoBehaviour
             print("Rewarded ad loaded !!");
             rewardedAd = ad;
             RewardedAdEvents(rewardedAd);
-
-            ShowRewardedAd(callback);
         });
     }
     public void ShowRewardedAd(Action<GoogleMobileAds.Api.Reward> callback) {
@@ -79,6 +78,7 @@ public class AdSystem : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Rewarded ad full screen content closed.");
+            LoadRewardedAd();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>

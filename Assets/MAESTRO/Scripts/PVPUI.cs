@@ -567,10 +567,16 @@ public class PVPUI : MonoBehaviour
                     _panel.text = result.my ? "나의 승리!!" : "적의 승리..";
                     disableControl = true;
                     if (result.my) { // 내가 이겼다고 알려줘야함
+                        StoryLoadResource.Instance.isWin = true;
                         NetworkCore.Send("ingame.win", null);
+                    }
+                    else
+                    {
+                                                StoryLoadResource.Instance.isWin = false;
                     }
                     break;
                 }
+                
 
             } else if (result.why == "domiNotHealthEvent") {
                 _panel.text = result.my ? "적의 승리.." : "나의 승리!!";

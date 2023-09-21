@@ -43,7 +43,7 @@ public class Stat
     public float SPEED = 0;
     public float Barrier = 0;
 
-    public float PercentDef = 1;
+       public float PercentDef = 1;
 
 
     public static Stat operator +(Stat output, Stat input)

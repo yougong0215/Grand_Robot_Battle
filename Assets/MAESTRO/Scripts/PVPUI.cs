@@ -207,8 +207,8 @@ public class PVPUI : MonoBehaviour
     }
 
     public void SetHPValue(RobotSettingAndSOList _rot, float damage)
-    {
-
+    {   
+        Debug.Log($"DMG : {damage}");
 
         if (damage < 0)
         {
@@ -247,11 +247,8 @@ public class PVPUI : MonoBehaviour
             {
                 _playerCurrentHP = _playerMaxHP;
             }
-            float t = _playerCurrentHP / _playerMaxHP;
-            Debug.Log(t);
+            
             _playerHpBar.style.width = Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP);
-            Debug.LogWarning(_playerWid);
-                
 
             _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";
             //Debug.Log($"DMG : {Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP)}");
@@ -265,6 +262,11 @@ public class PVPUI : MonoBehaviour
             if(_enemyCurrentHP < 0)
             {
                 _enemyCurrentHP = 0;
+            }
+
+            if (_enemyCurrentHP > _enemyMaxHP)
+            {
+                _enemyCurrentHP = _enemyMaxHP;
             }
             _enemyHpBar.style.width = Mathf.Lerp( 0,_enemyWid, _enemyCurrentHP / _enemyMaxHP);
             _enemyHpText.text = $"{_enemyCurrentHP} / {_enemyMaxHP}";
@@ -571,10 +573,16 @@ public class PVPUI : MonoBehaviour
                     _panel.text = result.my ? "나의 승리!!" : "적의 승리..";
                     disableControl = true;
                     if (result.my) { // 내가 이겼다고 알려줘야함
+                        StoryLoadResource.Instance.isWin = true;
                         NetworkCore.Send("ingame.win", null);
+                    }
+                    else
+                    {
+                                                StoryLoadResource.Instance.isWin = false;
                     }
                     break;
                 }
+                
 
             } else if (result.why == "domiNotHealthEvent") {
                 _panel.text = result.my ? "적의 승리.." : "나의 승리!!";
@@ -599,7 +607,7 @@ public class PVPUI : MonoBehaviour
 
         if (disableControl) {
             yield return new WaitForSeconds(1.5f);
-            LoadManager.LoadScene(SceneEnum.GameEnd);
+            SceneManager.LoadScene((int)SceneEnum.GameEnd);
         }
         else ActiveControl();
     }

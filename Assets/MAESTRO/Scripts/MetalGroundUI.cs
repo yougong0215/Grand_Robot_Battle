@@ -60,6 +60,9 @@ public class MetalGroundUI : MonoBehaviour
 
     void MathFinded(LitJson.JsonData data) {
         print("[Match] 플레이어를 찾음. 배틀로 이동");
+        StoryLoadResource.Instance.Init = null;
+        StoryLoadResource.Instance.Out = null;
+        StoryLoadResource.Instance.Save(null);
         SceneManager.LoadScene("PVP");
     }
 }

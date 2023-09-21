@@ -19,13 +19,6 @@ public class MissileBase : PartSkillSO
             
             else
                 yield return new WaitForSeconds(EventTime[i].EvtTime);
-           if (EventTime[i]._pl != null)
-           {
-               GameObject gm = Instantiate(EventTime[i]._pl.gameObject);
-               gm.gameObject.transform.parent = _me.transform;
-               
-               
-           }
            //Instantiate()
             _pvp.SetHPValue(_enemy, (_me._statues.ATK * _enemy._statues.PercentDef) * 0.2f);
 

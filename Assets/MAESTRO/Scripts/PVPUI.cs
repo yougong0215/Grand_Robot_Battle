@@ -247,11 +247,7 @@ public class PVPUI : MonoBehaviour
             {
                 _playerCurrentHP = _playerMaxHP;
             }
-            float t = _playerCurrentHP / _playerMaxHP;
-            Debug.Log(t);
             _playerHpBar.style.width = Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP);
-            Debug.LogWarning(_playerWid);
-                
 
             _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";
             //Debug.Log($"DMG : {Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP)}");
@@ -599,7 +595,7 @@ public class PVPUI : MonoBehaviour
 
         if (disableControl) {
             yield return new WaitForSeconds(1.5f);
-            LoadManager.LoadScene(SceneEnum.GameEnd);
+            SceneManager.LoadScene((int)SceneEnum.GameEnd);
         }
         else ActiveControl();
     }

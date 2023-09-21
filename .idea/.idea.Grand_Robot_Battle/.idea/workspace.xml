@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/RightArmSO/MegaDrill.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,7 @@
       <workItem from="1695124447954" duration="6072000" />
       <workItem from="1695140283796" duration="618000" />
       <workItem from="1695222939412" duration="2206000" />
-      <workItem from="1695290557756" duration="3537000" />
+      <workItem from="1695290557756" duration="3932000" />
     </task>
     <servers />
   </component>

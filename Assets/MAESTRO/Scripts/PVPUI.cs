@@ -207,8 +207,8 @@ public class PVPUI : MonoBehaviour
     }
 
     public void SetHPValue(RobotSettingAndSOList _rot, float damage)
-    {
-
+    {   
+        Debug.Log($"DMG : {damage}");
 
         if (damage < 0)
         {

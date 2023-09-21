@@ -595,7 +595,7 @@ public class PVPUI : MonoBehaviour
 
         if (disableControl) {
             yield return new WaitForSeconds(1.5f);
-            LoadManager.LoadScene(SceneEnum.GameEnd);
+            SceneManager.LoadScene((int)SceneEnum.GameEnd);
         }
         else ActiveControl();
     }

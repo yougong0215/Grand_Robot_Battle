@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/SelectedPart/PartSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Body/MissileBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Body/MissileBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MetalGroundUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MetalGroundUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Left/LeftShield.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Left/LeftShield.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/PVPUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
     </list>
@@ -131,7 +129,7 @@
       <workItem from="1695124447954" duration="6072000" />
       <workItem from="1695140283796" duration="618000" />
       <workItem from="1695222939412" duration="2206000" />
-      <workItem from="1695290557756" duration="1797000" />
+      <workItem from="1695290557756" duration="2666000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,9 @@ public class LeftShield : PartSkillSO
 
     protected override IEnumerator UseingSKill()
     {
-        yield return null;
+        _pvp.SetText("체력이 100 증가했다.");
+        yield return new WaitForSeconds(0.8f);
+        isEnd = true;
         //throw new System.NotImplementedException();
     }
 

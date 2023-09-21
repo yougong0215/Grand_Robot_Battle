@@ -247,6 +247,7 @@ public class PVPUI : MonoBehaviour
             {
                 _playerCurrentHP = _playerMaxHP;
             }
+            
             _playerHpBar.style.width = Mathf.Lerp(0, _playerWid,_playerCurrentHP / _playerMaxHP);
 
             _playerHpText.text = $"{_playerCurrentHP} / {_playerMaxHP}";
@@ -261,6 +262,11 @@ public class PVPUI : MonoBehaviour
             if(_enemyCurrentHP < 0)
             {
                 _enemyCurrentHP = 0;
+            }
+
+            if (_enemyCurrentHP > _enemyMaxHP)
+            {
+                _enemyCurrentHP = _enemyMaxHP;
             }
             _enemyHpBar.style.width = Mathf.Lerp( 0,_enemyWid, _enemyCurrentHP / _enemyMaxHP);
             _enemyHpText.text = $"{_enemyCurrentHP} / {_enemyMaxHP}";

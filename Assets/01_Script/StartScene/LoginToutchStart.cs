@@ -29,6 +29,12 @@ public class LoginToutchStart : MonoBehaviour
         #endif
     }
 
+    private void OnDestroy() {
+        NetworkCore.EventConnect -= ConnectOK;
+        NetworkCore.EventDisconnect -= ConnectFailed;
+        NetworkCore.EventListener.Remove("Server.PlayerReady");
+    }
+
     public void Connect() {
         if (_disable) return;
 

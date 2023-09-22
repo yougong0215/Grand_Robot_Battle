@@ -9,12 +9,20 @@ public class LoginAlertWindow : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI _title;
     [SerializeField] TextMeshProUGUI _content;
+
+    public static string[] autoContent;
     
     private void Awake() {
         if (instance == null)
             instance = this;
 
         gameObject.SetActive(false);
+
+        // 자동으로 띄우기
+        if (autoContent != null && autoContent.Length == 2) {
+            ShowUI(autoContent[0], autoContent[1]);
+            autoContent = null;
+        }
     }
 
     public static void ShowUI(string title, string content) {

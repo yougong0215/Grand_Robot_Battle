@@ -48,7 +48,9 @@ public static class LoadManager
             SceneManager.LoadScene((int)enums);
             return;
         }
-
+        
+        
+        SoundManager.Instance.SceneLoadDestory();
         
         SceneManager.LoadScene(nowScene);
         Debug.LogError($"{_loadStack.Count} | {enums}");

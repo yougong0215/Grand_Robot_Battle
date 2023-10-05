@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UIElements;
+using Debug = UnityEngine.Debug;
 
 public enum SoundSetting
 {
+    Master,
     background,
-    sfx,
-    uisound,
-    rv
+    SFX,
+    UISound,
 
 }
 
@@ -17,6 +20,7 @@ public class Setting : MonoBehaviour
 {
     private UIDocument _doc;
     private VisualElement _root;
+    [SerializeField] AudioMixer _mixer;
 
     private Slider _bgSlider;
     private Slider _sfxSlider;
@@ -43,13 +47,13 @@ public class Setting : MonoBehaviour
         _exitBtn.clicked += () => ActivePanel(false);
 
         _bgSlider = _root.Q<Slider>("bg-slider");
-        _percentage[0] = _bgSlider.Q<Label>("percentage");
+        _percentage[1] = _bgSlider.Q<Label>("percentage");
         _sfxSlider = _root.Q<Slider>("sfx-slider");
-        _percentage[1] = _sfxSlider.Q<Label>("percentage");
+        _percentage[2] = _sfxSlider.Q<Label>("percentage");
         _uiSlider = _root.Q<Slider>("ui-slider");
-        _percentage[2] = _uiSlider.Q<Label>("percentage");
+        _percentage[3] = _uiSlider.Q<Label>("percentage");
         _rvSliders = _root.Q<Slider>("rv-slider");
-        _percentage[3] = _rvSliders.Q<Label>("percentage");
+        _percentage[0] = _rvSliders.Q<Label>("percentage");
 
         RemovePanel = _root.Q<VisualElement>("RemovePanel");
         NoRemoveBtn = _root.Q<Button>("NoBtn");
@@ -61,12 +65,37 @@ public class Setting : MonoBehaviour
 
         NoRemoveBtn.clicked += () => RemovePanel.AddToClassList("off");
         YesRemoveBtn.clicked += () => RemoveAcountMethod();
-
+        
+        _input = _root.Q<TextField>("Input");
+        
 
         _bgSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.background));
-        _sfxSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.sfx));
-        _uiSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.uisound));
-        _rvSliders.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.rv));
+        _sfxSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.SFX));
+        _uiSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.UISound));
+        _rvSliders.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.Master));
+        for (int i = 0; i < 4; i++)
+        {
+            SoundSetting st = (SoundSetting)(i);
+            _percentage[i].text = $"{SoundManager.Instance.GetValue(st)}%";
+            switch (st)
+            {
+                case SoundSetting.Master:
+                    _rvSliders.value = SoundManager.Instance.GetValue(st);
+                    break;
+                case SoundSetting.UISound:
+                    _uiSlider.value = SoundManager.Instance.GetValue(st);
+                    break;
+                case SoundSetting.SFX:
+                    _sfxSlider.value = SoundManager.Instance.GetValue(st);
+                    break;
+                case SoundSetting.background:
+                    _bgSlider.value = SoundManager.Instance.GetValue(st);
+                    break;
+                default:
+                    break;
+            }
+        }
+        
 
         _root.style.display = DisplayStyle.None;
     }
@@ -79,14 +108,17 @@ public class Setting : MonoBehaviour
 
     private void OnSliderValueChange(ChangeEvent<float> evt, SoundSetting ss)
     {
-        _percentage[(int)ss].text = $"{evt.newValue}%";
+        SoundManager.Instance.MixerSave(ss,evt.newValue);
+        
+        _percentage[(int)ss].text = $"{SoundManager.Instance.GetValue(ss)}%";
+        
+
+        
+        
     }
 
     void RemoveAcountMethod()
     {
-        if(_input.value == "") // 이거 추가
-        {
-            // 여서 삭제
-        }
+        NetworkCore.Send("account.remove", _input.value);
     }
 }

@@ -290,12 +290,8 @@ public class PVPUI : MonoBehaviour
         SetPanel(false);
         yield return StartCoroutine(Fight(!t, so));
         SetPanel(false);
-        //SetPanel();
         Debug.Log("끝");
-        //_atkBtn.AddToClassList("on");
-        //_surrenBtn.AddToClassList("on");
-        //_skipBtn.AddToClassList("on");
-        //yield return new WaitForSeconds(1f);
+
         
         PartsBtnSetting(true);
     }

@@ -110,6 +110,11 @@ public class domiIAP : MonoBehaviour, IPurchaseCallback
         m_StoreContoller.Initialize(this);
     }
 
+    private void Start() {
+        // 소비하지 않은게 있는지 확인하는거임
+        m_StoreContoller.QueryPurchases(ProductType.INAPP);
+    }
+
     private void OnDestroy() {
         NetworkCore.EventListener.Remove("store.complete");
         m_StoreContoller?.EndConnection();

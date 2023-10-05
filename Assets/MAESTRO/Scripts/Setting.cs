@@ -66,7 +66,7 @@ public class Setting : MonoBehaviour
         NoRemoveBtn.clicked += () => RemovePanel.AddToClassList("off");
         YesRemoveBtn.clicked += () => RemoveAcountMethod();
         
-        
+        _input = _root.Q<TextField>("Input");
         
 
         _bgSlider.RegisterValueChangedCallback(evt => OnSliderValueChange(evt, SoundSetting.background));
@@ -119,9 +119,6 @@ public class Setting : MonoBehaviour
 
     void RemoveAcountMethod()
     {
-        if(_input.value == "") // 이거 추가
-        {
-            // 여서 삭제
-        }
+        NetworkCore.Send("account.remove", _input.value);
     }
 }

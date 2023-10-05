@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using LitJson;
+using UnityEngine.SceneManagement;
 
 // 데이터 형식
 class domiPacket {
@@ -51,9 +52,17 @@ public class NetworkCore : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-            throw new System.Exception("[domi Network] 네트워크 코어는 하나의 오브젝트 안에서만 구성해야 합니다.");
+        else {
+            Debug.LogError("[domi Network] 네트워크 코어는 하나의 오브젝트 안에서만 구성해야 합니다.");
+            Destroy(gameObject);
+        }
 
+        NetworkCore.EventDisconnect += (string why) => {
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("StartScene")) return;
+    
+            LoginAlertWindow.autoContent = new string[] {"서버와 연결이 끊어졌습니다.", why ?? "서버와 연결이 끊겼습니다.\n네트워크 상태를 확인하세요."};
+            SceneManager.LoadScene("StartScene");
+        };
         // 연결 끊김 사유
         NetworkCore.EventListener["disconnect.why"] = (JsonData why) => {
             WhyDisconnect = (string)why;

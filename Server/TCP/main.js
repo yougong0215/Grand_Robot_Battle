@@ -13,6 +13,7 @@ require("./Story/trigger.js");
 require("./Puzzel/main.js");
 require("./AD/main.js");
 require("./Store/main.js");
+require("./Friend/main.js");
 require("./TestCodes.js");
 
 const server = net.createServer(require("./connection.js"));

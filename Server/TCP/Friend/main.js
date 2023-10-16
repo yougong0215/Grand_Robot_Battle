@@ -29,3 +29,4 @@ exports.isFollwer = async function(id, target) {
 
 // target이 나를 팔로우 중인가? (이건 좀 이상한듯)
 // exports.isFollow = async (id, target) => await exports.isFollwer(target, id);
+require("./event.js");

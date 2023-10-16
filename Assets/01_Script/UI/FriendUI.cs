@@ -1,8 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LitJson;
 using UnityEngine;
 using UnityEngine.UIElements;
+
+struct FriendPlayer {
+    public string id;
+    public string name;
+}
 
 public class FriendUI : MonoBehaviour
 {
@@ -28,6 +34,12 @@ public class FriendUI : MonoBehaviour
         _serch = _root.Q<ScrollView>("SerchList");
         _exit = _root.Q<Button>("ExitBtn");
         _exit.clicked += () => OpenFriendList(false);
+
+        NetworkCore.EventListener["friend.resultList"] = ResultFriends;
+    }
+
+    private void OnDestroy() {
+        NetworkCore.EventListener.Remove("friend.resultList");
     }
     
     public void OpenFriendList(bool b)
@@ -59,16 +71,34 @@ public class FriendUI : MonoBehaviour
     void ResetFriend()
     {
         // 친구 추가시 혹은 최초 실행시 넣기 
-        Debug.LogWarning("Domi : 추가시 제거2");
+        Debug.LogWarning("Domi : ResetFriend");
+        // _friend.Clear();
+
+        // for (int i = 0; i < 0; i++)
+        // {
+        //     VisualElement _pl = _Profile.Instantiate();
+        //     _pl.style.backgroundImage = new StyleBackground(); // 넣기
+        //     _pl.Q<Label>("NameSpace").text = "Name";
+        //     _pl.Q<Button>("Follow").clicked += FollowInput;
+        //     _pl.Q<Button>("Battle").clicked += BattleInput;
+        // }
+
+        NetworkCore.Send("friend.getList", null);
+    }
+
+    void ResultFriends(JsonData data) {
+        var players = JsonMapper.ToObject<FriendPlayer[]>(data.ToJson());
         _friend.Clear();
 
-        for (int i = 0; i < 0; i++)
+        foreach (var friend in players)
         {
             VisualElement _pl = _Profile.Instantiate();
             _pl.style.backgroundImage = new StyleBackground(); // 넣기
-            _pl.Q<Label>("NameSpace").text = "Name";
+            _pl.Q<Label>("NameSpace").text = friend.id;
             _pl.Q<Button>("Follow").clicked += FollowInput;
             _pl.Q<Button>("Battle").clicked += BattleInput;
+
+            _friend.Add(_pl);
         }
     }
     

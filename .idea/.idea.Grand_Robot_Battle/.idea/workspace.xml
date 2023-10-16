@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8663a816-74df-44cf-80b1-2ea18ec084df" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand_Robot_Battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scene/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scene/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/LoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01_Script/Core/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Script/Core/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99_mainUI/Medium SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/1024x768.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/1024x768.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/Setting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/Setting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/Scripts/MenuUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MAESTRO/UI/Loby/LobyUIDocument.uxml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MAESTRO/UI/Loby/LobyUIDocument.uxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +25,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/05/27db7a15/IStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/34/9f15213a/StyleLength.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/3d/3db1fe70/DisplayStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/3d/4e74aeda/StyleBackground.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/65/b1ee311a/IResolvedStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9d7fc877145d4138982bf12cdd3484c6175000/75/f10edcb6/Background.cs" root0="SKIP_HIGHLIGHTING" />
@@ -33,6 +35,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7bfd758b02a4936b0078adb4cb60396284000/7a/b48d57c2/NetworkStream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/Core/StoryLoadResource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01_Script/RobotDrag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/01_Script/UI/FriendUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/07_SO/SOS/Skill/Leg/GadaraBosster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MAESTRO/UI/GameExit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -78,6 +81,22 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath D:\UnityWorks\Grand_Robot_Battle -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityWorks\Grand_Robot_Battle" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityWorks\Grand_Robot_Battle -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\UnityWorks\Grand_Robot_Battle" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.7f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityWorks\Grand_Robot_Battle -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -87,6 +106,26 @@
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -134,6 +173,8 @@
       <workItem from="1695222939412" duration="2206000" />
       <workItem from="1695290557756" duration="6298000" />
       <workItem from="1696496155024" duration="5759000" />
+      <workItem from="1697383655991" duration="797000" />
+      <workItem from="1697412821900" duration="5040000" />
     </task>
     <servers />
   </component>

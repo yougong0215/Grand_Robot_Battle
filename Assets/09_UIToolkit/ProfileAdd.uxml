@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Profile" style="flex-grow: 0; width: 100%; height: 100px; flex-direction: row; -unity-background-image-tint-color: rgb(178, 178, 178); background-color: rgb(152, 152, 152);">
+        <ui:VisualElement style="flex-grow: 0; width: 100px; height: 100px; align-items: center; justify-content: center;">
+            <ui:VisualElement name="BG" style="flex-grow: 0; width: 90%; height: 90%; background-color: rgb(255, 255, 255); border-top-left-radius: 17px; border-top-right-radius: 17px; border-bottom-right-radius: 17px; border-bottom-left-radius: 17px; align-items: center; justify-content: center;">
+                <ui:VisualElement name="Image" style="flex-grow: 0; width: 90%; height: 90%; background-image: url(&apos;project://database/Assets/MAESTRO/Texture/BattleIcon.png?fileID=2800000&amp;guid=ed92a1a38749a4a448260a39c3bdaec1&amp;type=3#BattleIcon&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="NameSpace" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NameSpace" style="-unity-font-definition: url(&apos;project://database/Assets/99_mainUI/Medium%20SDF.asset?fileID=11400000&amp;guid=6ee49a6dd23af614ca45fb91679fe723&amp;type=2#Medium SDF&apos;); font-size: 20px; flex-grow: 1;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Button text="팔로우" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Follow" style="flex-grow: 1; background-color: rgb(255, 255, 255);" />
+                <ui:Button text="배틀 신청" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Battle" style="flex-grow: 1; background-color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

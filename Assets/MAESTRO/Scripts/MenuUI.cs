@@ -20,6 +20,7 @@ struct MailPreview {
 
 public class MenuUI : MonoBehaviour
 {
+    [SerializeField] FriendUI _friendui;
     PurchaseUI purchaseUI;
     AdSystem _AdSys;
     private UIDocument _doc;
@@ -41,6 +42,7 @@ public class MenuUI : MonoBehaviour
     private Button _adAcceptBtn;
     private Button _adCancleBtn;
     private VisualElement _adPanel;
+    private Button _friendBtn;
 
     VisualElement _storyElem;
     private Button _storyBtn;
@@ -129,6 +131,9 @@ public class MenuUI : MonoBehaviour
         _adCancleBtn = _root.Q<Button>("ad-cancle-btn");
         _adCancleBtn.clicked += () => LookADPanel(false);
         _adPanel = _root.Q("ad-panel");
+        _friendBtn = _root.Q<Button>("Friendbtn");
+
+        _friendBtn.clicked += () => _friendui.OpenFriendList(true);
     }
 
     private void LookADPanel(bool isOk)
